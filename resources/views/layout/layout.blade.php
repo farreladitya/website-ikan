@@ -108,7 +108,7 @@
         <div class="col-6">
             <a @yield('berandaactive') class="navbar navbar-brand" href="/">Beranda</a>
             <a @yield('giziactive') class="navbar navbar-brand" href="/gizi">Gizi</a>
-            <a @yield('kualitasactive') class="navbar navbar-brand" href="#">Kualitas</a>
+            <a @yield('kualitasactive') class="navbar navbar-brand" href="/kualitas">Kualitas</a>
             <a class="navbar navbar-brand" href="#">Fakta</a>
             <a class="navbar navbar-brand" href="#">Mitra</a>
         </div>

@@ -1,0 +1,66 @@
+/* font */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,500;0,900;1,200;1,500;1,900&display=swap");
+
+/* Main CSS */
+:root {
+    --main-color: #8c8c8c;
+    --color-1: #e91e63;
+    --color-2: #f5ae10;
+    --color-3: #09d69c;
+    --bg-dark: #2b2c2f;
+    --shadow-black-100: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --shadow-black-300: 0 5px 15px rgba(0, 0, 0, 0.2);
+    --black-900: #000000;
+    --black-900: #555555;
+    --black-900: #f7f7f7;
+    --black-900: #ffffff;
+    --balck-alpha-100: rgba(0, 0, 0, 0.05);
+}
+
+/* Achievement */
+.achievement {
+    border-radius: 0 0 200px 0;
+}
+.section-padding {
+    padding: 0px 0;
+}
+.section-title {
+    margin-bottom: 60px;
+}
+.section-title img {
+    object-position: 0 30px;
+}
+.section-title h1 {
+    text-align: center;
+}
+.section-title h1 span {
+    color: var(--main-color);
+}
+
+.owl-carousel .owl-dots {
+    padding: 0 15px;
+    text-align: center;
+}
+
+.owl-carousel button.owl-dot {
+    height: 6px;
+    width: 30px;
+    background-color: #dddddd;
+    display: inline-block;
+    margin: 0 4px;
+    border-radius: 5px;
+}
+.owl-carousel button.owl-dot.active {
+  background-color: var(--main-color);
+}
+
+.achievement .achievement-item {
+    margin: 10px;
+    border-radius: 10px;
+    width: 200px;
+    text-align: justify;
+    height: 200px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}

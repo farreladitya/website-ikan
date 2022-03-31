@@ -9,6 +9,8 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" href="{{asset('css/owl.carousel.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/style.css')}}">
 </head>
 <style>
     body{
@@ -54,21 +56,60 @@
         margin-top: 1rem;
         margin-bottom: 1rem;
         border: 0;
-        border-top: 1px solid white;
+        border-top: 1px solid;
     }
     .margincontainer {
         margin-left: 60px;
     }
+    .active{
+        font-weight: bold;
+    }
+    .bayangan{
+        box-shadow: 0px 0px 9px 0px rgba(176,175,175,0.75);
+        -webkit-box-shadow: 0px 0px 9px 0px rgba(176,175,175,0.75);
+        -moz-box-shadow: 0px 0px 9px 0px rgba(176,175,175,0.75);
+    }
+    .buttonradius{
+        border-radius: 35px;
+    }
+    [type='radio'] {
+        display: none;
+    }
+    .center {
+    width: 40%;
+    padding: 10px;
+    }
+    .has-search .form-control {
+    padding-left: 2.375rem;
+    }
+    .has-search .form-control-feedback {
+        position: absolute;
+        z-index: 2;
+        display: block;
+        width: 2.375rem;
+        height: 2.375rem;
+        line-height: 2.375rem;
+        text-align: center;
+        pointer-events: none;
+        color: grey;
+    }
+    .breadcrumb{
+        background-color: #ece9e9;
+    }
+    .breadcrumb-item + .breadcrumb-item::before {
+        content: ">";
+    }
+}
 </style>
 </body>
 <nav class="navbar navbar-expand-sm fixed-top">
     <div class="row">
         <div class="col-3"></div>
         <div class="col-6">
-            <a class="navbar navbar-brand" href="/beranda">Beranda</a>
-            <a class="navbar navbar-brand" href="#">Produk</a>
-            <a class="navbar navbar-brand" href="#">Resep</a>
-            <a class="navbar navbar-brand" href="#">Manfaat</a>
+            <a @yield('berandaactive') class="navbar navbar-brand" href="/">Beranda</a>
+            <a @yield('productactive') class="navbar navbar-brand" href="/gizi">Gizi</a>
+            <a class="navbar navbar-brand" href="#">Kualitas</a>
+            <a class="navbar navbar-brand" href="#">Fakta</a>
             <a class="navbar navbar-brand" href="#">Mitra</a>
         </div>
         <div class="col-3">
@@ -92,9 +133,9 @@
                     <div class="col-md-2 mt-3">
                         <h6 class="text-uppercase mb-4 font-weight-bold">Explore</h6>
                         <p><a class="text-white">Beranda</a></p>
-                        <p><a class="text-white">Produk</a></p>
-                        <p><a class="text-white">Resep</a></p>
-                        <p><a class="text-white">Manfaat</a></p>
+                        <p><a class="text-white">Gizi</a></p>
+                        <p><a class="text-white">Kualitas</a></p>
+                        <p><a class="text-white">Fakta</a></p>
                         <p><a class="text-white">Mitra</a></p>
                     </div>
                     <hr class="w-100 clearfix d-md-none" />
@@ -129,5 +170,8 @@
             </div>
         </footer>
     </div>
+    <script src="{{asset('js/owl.carousel.min.js')}}"></script>
+    <script src="{{asset('js/scrollIt.min.js')}}"></script>
+    <script src="{{asset('js/main.js')}}"></script>
 </body>
 </html>

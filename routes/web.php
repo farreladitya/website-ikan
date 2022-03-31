@@ -19,3 +19,6 @@ Route::get('/', function () {
     return view('beranda');
 });
 
+Route::get('/gizi', function () {
+    return view('gizi.product');
+});

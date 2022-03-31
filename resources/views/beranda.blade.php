@@ -26,7 +26,7 @@
     <div class="col-5" style="margin-top: 190px;">
         <h1 class="font-weight-bold margincontainer" style="font-size:40px"> Susah mencari indikator kualitas hasil laut dan cara mengelolahnya? </h1>
         <p style="font-size: 24px; margin-top:30px" class="margincontainer">Disini pengunjung bisa mencari indikator kualitas dari berbagai hasil laut</p>
-        <button class="button buttonmasuk margincontainer">Pelajari Selengkapnya</button>
+        <a href="/kualitas"><button class="button buttonmasuk margincontainer">Pelajari Selengkapnya</button></a>
     </div>
     <div class="col-7" style="margin-top: 105px;">
         <img src="{{URL::asset('/images/ikan1beranda.png')}}" width="80%" class="float-right">

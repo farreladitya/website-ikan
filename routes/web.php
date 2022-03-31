@@ -19,6 +19,14 @@ Route::get('/', function () {
     return view('beranda');
 });
 
+//Fitur Gizi
 Route::get('gizi', function () {
     return view('gizi.product');
 });
+
+
+//Fitur Kualitas
+Route::get('kualitas', function () {
+    return view('kualitas.product');
+});
+

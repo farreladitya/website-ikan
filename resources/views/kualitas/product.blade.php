@@ -7,7 +7,7 @@
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb mt-1" style="margin-left: 47px">
               <li class="breadcrumb-item"><a class="text-secondary" href="/">Home</a></li>
-              <li class="breadcrumb-item active text-dark" aria-current="page">Gizi</li>
+              <li class="breadcrumb-item active text-dark" aria-current="page">Kualitas</li>
             </ol>
         </nav>
         <h1 class="font-weight-bold display-4 margincontainer" style="margin-top: 115px"> Cari hasil laut apa hari ini? </h1>
@@ -329,6 +329,6 @@
 </div>
 @endsection
 
-@section('giziactive')
+@section('kualitasactive')
 class='navbar navbar-brand active'
 @endsection

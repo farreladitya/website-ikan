@@ -19,7 +19,7 @@
     <div class="col-7">
         <h1 class="font-weight-bold margincontainer" style="margin-top: 130px; font-size:40px"> Bingung dengan nilai gizi dan pantangan pada hasil laut? </h1>
         <p style="font-size: 24px; margin-top:30px; margin-right:80px" class="margincontainer">Disini pengunjung bisa menambah pengetahuan gizi dari hasil laut yang nantinya berkorelasi dengan dampak dan manfaat yang diperoleh saat dikonsumsi</p>
-        <button class="button buttonmasuk margincontainer">Pelajari Selengkapnya</button>
+        <a href="/gizi"><button class="button buttonmasuk margincontainer">Pelajari Selengkapnya</button></a>
     </div>
 </div>
 <div class="row">

@@ -33,7 +33,7 @@
             <h1 class="font-weight-bold" style="font-size:35px; margin-left:35px"> Ikan Sepalopoda</h1>
         </div>
         <div class="col-2" style="margin-top: 15px; margin-left:-60px">
-            <a href = "#" style="font-size:17px;" class="text-secondary">Lihat Selengkapnya</a>
+            <a href = "listkualitasproduct" style="font-size:17px;" class="text-secondary">Lihat Selengkapnya</a>
         </div>
     </div>
     <div class="row">

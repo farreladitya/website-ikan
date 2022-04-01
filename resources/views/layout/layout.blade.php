@@ -99,6 +99,34 @@
     .breadcrumb-item + .breadcrumb-item::before {
         content: ">";
     }
+    .carousel-captions {
+        top: 0;
+        bottom: auto;
+    }
+    .custom-control-label:before{
+        background-color:#dcdada;
+        border: 2px solid black;
+    }
+    .custom-checkbox .custom-control-input:checked~.custom-control-label::before{
+        background-color:black;
+    }
+    .custom-checkbox .custom-control-input:checked~.custom-control-label::after{
+        background-image:url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='%23dcdada' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E");
+    }
+    .card:hover {
+        transform: scale(1.1);
+        transition: all 0.5s ease-in-out;
+        cursor: pointer;
+    }
+    .card-body {
+        padding: 0.5rem;
+    }
+
+    .card-body .description {
+        font-size: 0.78rem;
+        padding-bottom: 8px
+    }
+
 }
 </style>
 </body>

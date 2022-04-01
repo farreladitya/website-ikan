@@ -6,7 +6,7 @@
     <div class="col-5 ">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb mt-1" style="margin-left: 47px">
-              <li class="breadcrumb-item"><a class="text-secondary" href="/">Home</a></li>
+              <li class="breadcrumb-item"><a class="text-secondary" href="/">Beranda</a></li>
               <li class="breadcrumb-item active text-dark" aria-current="page">Gizi</li>
             </ol>
         </nav>
@@ -33,7 +33,7 @@
             <h1 class="font-weight-bold" style="font-size:35px; margin-left:35px"> Ikan Sepalopoda</h1>
         </div>
         <div class="col-2" style="margin-top: 15px; margin-left:-60px">
-            <a href = "#" style="font-size:17px;" class="text-secondary">Lihat Selengkapnya</a>
+            <a href = "/listgiziproduct" style="font-size:17px;" class="text-secondary">Lihat Selengkapnya</a>
         </div>
     </div>
     <div class="row">

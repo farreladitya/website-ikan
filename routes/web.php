@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PageController;
 use App\Http\Controllers\PersebaranController;
 
 
@@ -15,9 +16,7 @@ use App\Http\Controllers\PersebaranController;
 |
 */
 
-Route::get('/', function () {
-    return view('beranda');
-});
+Route::get('/', 'IkanController@index');
 
 //Fitur Gizi
 Route::get('gizi', function () {

@@ -17,7 +17,7 @@
     </div>
 </div>
 <div class="row container mx-auto" style="margin-top: 80px">
-    <div class="col-sm-6">
+    <div class="col-sm-6 my-auto">
         <h3 class="font-weight-bold">Kontak</h3>
         <div class="row">
             <div class="col-sm-3">
@@ -39,7 +39,7 @@
         <p class="mt-3" style="font-size: 20px"> Jl. Kutisari Sel. VII No.12, Kutisari, Kec. Tenggilis Mejoyo, Kota SBY, Jawa Timur 60291, Indonesia</p>
     </div>
     <div class="col-sm-6">
-        <iframe width="600" height="450" style="border:0" loading="lazy" allowfullscreen src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJcVTuPrT71y0RIIivI7OXXVE&key=AIzaSyBuXP-F3ucpIRV4YT9W_ZeXwqg7cl_qols"></iframe>
+        <div class="mapouter"><div class="gmap_canvas"><iframe width="530" height="380" id="gmap_canvas" src="https://maps.google.com/maps?q=cv%20wijaya%20sukses%20&t=&z=19&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div></div>
     </div>
 </div>
 @endsection

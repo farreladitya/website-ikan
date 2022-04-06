@@ -36,3 +36,14 @@ Route::get('listkualitasproduct', function () {
     return view('kualitas.listproduct');
 });
 
+//Fitur Mitra
+Route::get('mitra', function () {
+    return view('mitra.mitra');
+});
+Route::get('/mitra/udbarokah', function () {
+    return view('mitra.udbarokah');
+});
+Route::get('/mitra/cvwijayasuksesbersama', function () {
+    return view('mitra.cvwijaya');
+});
+

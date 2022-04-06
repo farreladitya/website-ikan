@@ -118,6 +118,19 @@
         transition: all 0.5s ease-in-out;
         cursor: pointer;
     }
+    .cards{
+        box-shadow: 0px 0px 10px 0px rgba(136,136,136,0.75);
+        -webkit-box-shadow: 0px 0px 10px 0px rgba(136,136,136,0.75);
+        -moz-box-shadow: 0px 0px 10px 0px rgba(136,136,136,0.75);
+        background-color: #eee8e8;
+        border-radius: 10px;
+        padding: 60px 10px 60px 10px;
+    }
+    .cards:hover {
+        transform: scale(1.1);
+        transition: all 0.5s ease-in-out;
+        cursor: pointer;
+    }
     .card-body {
         padding: 0.5rem;
     }
@@ -137,7 +150,7 @@
             <a @yield('giziactive') class="navbar navbar-brand" href="/gizi">Gizi</a>
             <a @yield('kualitasactive') class="navbar navbar-brand" href="/kualitas">Kualitas</a>
             <a class="navbar navbar-brand" href="#">Fakta</a>
-            <a class="navbar navbar-brand" href="#">Mitra</a>
+            <a @yield('mitraactive') class="navbar navbar-brand" href="/mitra">Mitra</a>
         </div>
         <div class="col-sm-3">
             <button class="button buttonmasuk">Masuk</button>

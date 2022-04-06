@@ -3,7 +3,7 @@
 <head>
 	<title>@yield('title')</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name=”viewport” content=”width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
@@ -126,21 +126,20 @@
         font-size: 0.78rem;
         padding-bottom: 8px
     }
-
 }
 </style>
 </body>
 <nav class="navbar navbar-expand-sm fixed-top">
     <div class="row">
-        <div class="col-3"></div>
-        <div class="col-6">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6">
             <a @yield('berandaactive') class="navbar navbar-brand" href="/">Beranda</a>
             <a @yield('giziactive') class="navbar navbar-brand" href="/gizi">Gizi</a>
             <a @yield('kualitasactive') class="navbar navbar-brand" href="/kualitas">Kualitas</a>
             <a class="navbar navbar-brand" href="#">Fakta</a>
             <a class="navbar navbar-brand" href="#">Mitra</a>
         </div>
-        <div class="col-3">
+        <div class="col-sm-3">
             <button class="button buttonmasuk">Masuk</button>
             <button class="button buttondaftar">Daftar</button>
         </div>
@@ -154,11 +153,11 @@
             <br><br><div class="container p-4 pb-0">
             <section class="">
                 <div class="row">
-                    <div class="col-md-3 mt-3">
+                    <div class="col-sm-3 mt-3">
                         <img src="">
                     </div>
                     <hr class="w-100 clearfix d-md-none" />
-                    <div class="col-md-2 mt-3">
+                    <div class="col-sm-2 mt-3">
                         <h6 class="text-uppercase mb-4 font-weight-bold">Explore</h6>
                         <p><a class="text-white">Beranda</a></p>
                         <p><a class="text-white">Gizi</a></p>
@@ -166,20 +165,18 @@
                         <p><a class="text-white">Fakta</a></p>
                         <p><a class="text-white">Mitra</a></p>
                     </div>
-                    <hr class="w-100 clearfix d-md-none" />
-                    <hr class="w-100 clearfix d-md-none" />
-                    <div class="col-md-2 mt-3">
+                    <div class="col-sm-2 mt-3">
                         <h6 class="text-uppercase mb-4 font-weight-bold">Product</h6>
                         <p><a class="text-white">Sepalopoda</a></p>
                         <p><a class="text-white">Demersal</a></p>
                         <p><a class="text-white">Pelagis</a></p>
                     </div>
-                    <div class="col-md-3 mt-3">
+                    <div class="col-sm-3 mt-3">
                         <h6 class="text-uppercase mb-4 font-weight-bold">Contact Us</h6>
                         <p><i class="fas fa-phone-alt mr-3"></i>123-456-7890</p>
                         <p><i class="fas fa-envelope mr-3"></i>holaLiftmedia.com</p>
                     </div>
-                    <div class="col-md-2 mt-3">
+                    <div class="col-sm-2 mt-3">
                         <h6 class="text-uppercase mb-4 font-weight-bold">Social</h6>
                         <a class="btn-primary btn-floating" style="background-color: #0a142f"
                         href="#!" role="button"><i class="fab fa-facebook-f"></i></a>

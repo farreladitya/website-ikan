@@ -3,7 +3,7 @@
 @section('isikonten')
 
 <div class="row">
-    <div class="col-5 ">
+    <div class="col-sm-5 ">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb mt-1" style="margin-left: 47px">
               <li class="breadcrumb-item"><a class="text-secondary" href="/">Beranda</a></li>
@@ -12,32 +12,32 @@
         </nav>
         <h1 class="font-weight-bold display-4 margincontainer" style="margin-top: 115px"> Cari hasil laut apa hari ini? </h1>
         <div class="row mt-4">
-            <div class="col-9">
+            <div class="col-sm-9">
                 <div class="form-group has-search center float-right" style="width: 87%">
                     <span class="fa fa-search form-control-feedback"></span>
                     <input type="text" class="form-control buttonradius" placeholder="Cari">
                 </div>
             </div>
-            <div class="col-3">
+            <div class="col-sm-3">
                     <button class="button buttonmasuk buttonradius" style="margin-top: 9px; margin-left:-20px">Cari</button>
             </div>
         </div>
     </div>
-    <div class="col-7">
+    <div class="col-sm-7">
         <img src="{{URL::asset('/images/gambarproduct.png')}}" width="85%" class="float-right">
     </div>
 </div>
 <div class="margincontainer">
     <div class="row" style="margin-top: 85px">
-        <div class="col-10">
+        <div class="col-sm-10">
             <h1 class="font-weight-bold" style="font-size:35px; margin-left:35px"> Ikan Sepalopoda</h1>
         </div>
-        <div class="col-2" style="margin-top: 15px; margin-left:-60px">
+        <div class="col-sm-2" style="margin-top: 15px; margin-left:-60px">
             <a href = "/listgiziproduct" style="font-size:17px;" class="text-secondary">Lihat Selengkapnya</a>
         </div>
     </div>
     <div class="row">
-        <div class="col-11" style="margin-left:25px">
+        <div class="col-sm-11" style="margin-left:25px">
         <div class="achievement section-padding mt-3">
               <div class="owl-carousel owl-carousels achievement-carousel">
                 <div class="achievement-item bayangan">
@@ -89,15 +89,15 @@
 </div>
 <div class="margincontainer">
     <div class="row" style="margin-top: 85px">
-        <div class="col-10">
+        <div class="col-sm-10">
             <h1 class="font-weight-bold" style="font-size:35px; margin-left:35px"> Ikan Demersal</h1>
         </div>
-        <div class="col-2" style="margin-top: 15px; margin-left:-60px">
+        <div class="col-sm-2" style="margin-top: 15px; margin-left:-60px">
             <a href = "#" style="font-size:17px;" class="text-secondary">Lihat Selengkapnya</a>
         </div>
     </div>
     <div class="row">
-        <div class="col-11" style="margin-left:25px">
+        <div class="col-sm-11" style="margin-left:25px">
         <div class="achievement section-padding mt-3">
               <div class="owl-carousel owl-carousels achievement-carousel">
                 <div class="achievement-item bayangan">
@@ -149,15 +149,15 @@
 </div>
 <div class="margincontainer">
     <div class="row" style="margin-top: 85px">
-        <div class="col-10">
+        <div class="col-sm-10">
             <h1 class="font-weight-bold" style="font-size:35px; margin-left:35px"> Ikan Pelagis</h1>
         </div>
-        <div class="col-2" style="margin-top: 15px; margin-left:-60px">
+        <div class="col-sm-2" style="margin-top: 15px; margin-left:-60px">
             <a href = "#" style="font-size:17px;" class="text-secondary">Lihat Selengkapnya</a>
         </div>
     </div>
     <div class="row">
-        <div class="col-11" style="margin-left:25px">
+        <div class="col-sm-11" style="margin-left:25px">
         <div class="achievement section-padding mt-3">
               <div class="owl-carousel owl-carousels achievement-carousel">
                 <div class="achievement-item bayangan">
@@ -209,15 +209,15 @@
 </div>
 <div class="margincontainer">
     <div class="row" style="margin-top: 85px">
-        <div class="col-10">
+        <div class="col-sm-10">
             <h1 class="font-weight-bold" style="font-size:35px; margin-left:35px"> Ikan Di Bawah 100.000/kg</h1>
         </div>
-        <div class="col-2" style="margin-top: 15px; margin-left:-60px">
+        <div class="col-sm-2" style="margin-top: 15px; margin-left:-60px">
             <a href = "#" style="font-size:17px;" class="text-secondary">Lihat Selengkapnya</a>
         </div>
     </div>
     <div class="row">
-        <div class="col-11" style="margin-left:25px">
+        <div class="col-sm-11" style="margin-left:25px">
         <div class="achievement section-padding mt-3">
               <div class="owl-carousel owl-carousels achievement-carousel">
                 <div class="achievement-item bayangan">
@@ -269,15 +269,15 @@
 </div>
 <div class="margincontainer">
     <div class="row" style="margin-top: 85px">
-        <div class="col-10">
+        <div class="col-sm-10">
             <h1 class="font-weight-bold" style="font-size:35px; margin-left:35px"> Ikan Di Atas 100.000/kg</h1>
         </div>
-        <div class="col-2" style="margin-top: 15px; margin-left:-60px">
+        <div class="col-sm-2" style="margin-top: 15px; margin-left:-60px">
             <a href = "#" style="font-size:17px;" class="text-secondary">Lihat Selengkapnya</a>
         </div>
     </div>
     <div class="row">
-        <div class="col-11" style="margin-left:25px">
+        <div class="col-sm-11" style="margin-left:25px">
         <div class="achievement section-padding mt-3">
               <div class="owl-carousel owl-carousels achievement-carousel">
                 <div class="achievement-item bayangan">

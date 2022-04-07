@@ -19,18 +19,14 @@ use App\Http\Controllers\PersebaranController;
 Route::get('/', 'IkanController@index');
 
 //Fitur Gizi
-Route::get('gizi', function () {
-    return view('gizi.product');
-});
+Route::get('gizi', 'IkanController@indexGizi');
 
 Route::get('listgiziproduct', function () {
     return view('gizi.listproduct');
 });
 
 //Fitur Kualitas
-Route::get('kualitas', function () {
-    return view('kualitas.product');
-});
+Route::get('kualitas', 'IkanController@indexKualitas');
 
 Route::get('listkualitasproduct', function () {
     return view('kualitas.listproduct');

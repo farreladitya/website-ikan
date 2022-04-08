@@ -20,7 +20,6 @@ Route::get('/', 'IkanController@index');
 
 //Fitur Gizi
 Route::get('gizi', 'IkanController@indexGizi');
-Route::get('/gizi/cari', 'IkanController@cari');
 
 Route::get('listgiziproduct', function () {
     return view('gizi.listproduct');

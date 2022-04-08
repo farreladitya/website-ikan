@@ -121,48 +121,15 @@
         <div class="col-sm-11" style="margin-left:25px">
         <div class="achievement section-padding mt-3">
               <div class="owl-carousel owl-carousels achievement-carousel">
+                @foreach ($under100 as $under)
                 <div class="achievement-item bayangan">
-                  <div class="ach-1 mb-3"><img src="https://imgsrv2.voi.id/eu28c9uuwn_dWbgDPsFBhZ_Yv0VeVW46xtJYlXL8osI/auto/1200/675/sm/1/bG9jYWw6Ly8vcHVibGlzaGVycy8zNjYyOC8yMDIxMDMwMjE5MDItbWFpbi5jcm9wcGVkXzE2MTQ3MDk4ODcuanBn.jpg" alt="ach-1"></div>
-                    <div class="item-text">
-                      <h6>Ikan Lele</h6>
-                      <p>15.000</p>
-                    </div>
-                </div>
-                <div class="achievement-item bayangan">
-                  <div class="ach-1 mb-3"><img src="https://imgsrv2.voi.id/eu28c9uuwn_dWbgDPsFBhZ_Yv0VeVW46xtJYlXL8osI/auto/1200/675/sm/1/bG9jYWw6Ly8vcHVibGlzaGVycy8zNjYyOC8yMDIxMDMwMjE5MDItbWFpbi5jcm9wcGVkXzE2MTQ3MDk4ODcuanBn.jpg" alt="ach-1"></div>
-                    <div class="item-text">
-                      <h6>Ikan Bandeng</h6>
-                      <p>15.000</p>
-                    </div>
-                </div>
-                <div class="achievement-item bayangan">
-                  <div class="ach-1 mb-3"><img src="https://imgsrv2.voi.id/eu28c9uuwn_dWbgDPsFBhZ_Yv0VeVW46xtJYlXL8osI/auto/1200/675/sm/1/bG9jYWw6Ly8vcHVibGlzaGVycy8zNjYyOC8yMDIxMDMwMjE5MDItbWFpbi5jcm9wcGVkXzE2MTQ3MDk4ODcuanBn.jpg" alt="ach-1"></div>
-                    <div class="item-text">
-                      <h6>Ikan Mas</h6>
-                      <p>15.000</p>
-                    </div>
-                </div>
-                <div class="achievement-item bayangan">
-                  <div class="ach-1 mb-3"><img src="https://imgsrv2.voi.id/eu28c9uuwn_dWbgDPsFBhZ_Yv0VeVW46xtJYlXL8osI/auto/1200/675/sm/1/bG9jYWw6Ly8vcHVibGlzaGVycy8zNjYyOC8yMDIxMDMwMjE5MDItbWFpbi5jcm9wcGVkXzE2MTQ3MDk4ODcuanBn.jpg" alt="ach-1"></div>
-                    <div class="item-text">
-                      <h6>Ikan Mujair</h6>
-                      <p>15.000</p>
-                    </div>
-                </div>
-                <div class="achievement-item bayangan">
-                    <div class="ach-1 mb-3"><img src="https://imgsrv2.voi.id/eu28c9uuwn_dWbgDPsFBhZ_Yv0VeVW46xtJYlXL8osI/auto/1200/675/sm/1/bG9jYWw6Ly8vcHVibGlzaGVycy8zNjYyOC8yMDIxMDMwMjE5MDItbWFpbi5jcm9wcGVkXzE2MTQ3MDk4ODcuanBn.jpg" alt="ach-1"></div>
+                    <div class="ach-1 mb-3"><img src="{{$under->Url}}" alt="ach-1"></div>
                       <div class="item-text">
-                        <h6>Ikan Nila</h6>
-                        <p>15.000</p>
+                        <h6>{{$under->nama_ikan}}</h6>
+                        <p>{{$under->harga}}</p>
                       </div>
-                </div>
-                <div class="achievement-item bayangan">
-                    <div class="ach-1 mb-3"><img src="https://imgsrv2.voi.id/eu28c9uuwn_dWbgDPsFBhZ_Yv0VeVW46xtJYlXL8osI/auto/1200/675/sm/1/bG9jYWw6Ly8vcHVibGlzaGVycy8zNjYyOC8yMDIxMDMwMjE5MDItbWFpbi5jcm9wcGVkXzE2MTQ3MDk4ODcuanBn.jpg" alt="ach-1"></div>
-                      <div class="item-text">
-                        <h6>Ikan Pari</h6>
-                        <p>15.000</p>
-                      </div>
-                </div>
+                  </div>
+                @endforeach
               </div>
         </div>
         </div>
@@ -181,48 +148,15 @@
         <div class="col-sm-11" style="margin-left:25px">
         <div class="achievement section-padding mt-3">
               <div class="owl-carousel owl-carousels achievement-carousel">
+                @foreach ($upper100 as $upper)
                 <div class="achievement-item bayangan">
-                  <div class="ach-1 mb-3"><img src="https://imgsrv2.voi.id/eu28c9uuwn_dWbgDPsFBhZ_Yv0VeVW46xtJYlXL8osI/auto/1200/675/sm/1/bG9jYWw6Ly8vcHVibGlzaGVycy8zNjYyOC8yMDIxMDMwMjE5MDItbWFpbi5jcm9wcGVkXzE2MTQ3MDk4ODcuanBn.jpg" alt="ach-1"></div>
-                    <div class="item-text">
-                      <h6>Ikan Lele</h6>
-                      <p>15.000</p>
-                    </div>
-                </div>
-                <div class="achievement-item bayangan">
-                  <div class="ach-1 mb-3"><img src="https://imgsrv2.voi.id/eu28c9uuwn_dWbgDPsFBhZ_Yv0VeVW46xtJYlXL8osI/auto/1200/675/sm/1/bG9jYWw6Ly8vcHVibGlzaGVycy8zNjYyOC8yMDIxMDMwMjE5MDItbWFpbi5jcm9wcGVkXzE2MTQ3MDk4ODcuanBn.jpg" alt="ach-1"></div>
-                    <div class="item-text">
-                      <h6>Ikan Bandeng</h6>
-                      <p>15.000</p>
-                    </div>
-                </div>
-                <div class="achievement-item bayangan">
-                  <div class="ach-1 mb-3"><img src="https://imgsrv2.voi.id/eu28c9uuwn_dWbgDPsFBhZ_Yv0VeVW46xtJYlXL8osI/auto/1200/675/sm/1/bG9jYWw6Ly8vcHVibGlzaGVycy8zNjYyOC8yMDIxMDMwMjE5MDItbWFpbi5jcm9wcGVkXzE2MTQ3MDk4ODcuanBn.jpg" alt="ach-1"></div>
-                    <div class="item-text">
-                      <h6>Ikan Mas</h6>
-                      <p>15.000</p>
-                    </div>
-                </div>
-                <div class="achievement-item bayangan">
-                  <div class="ach-1 mb-3"><img src="https://imgsrv2.voi.id/eu28c9uuwn_dWbgDPsFBhZ_Yv0VeVW46xtJYlXL8osI/auto/1200/675/sm/1/bG9jYWw6Ly8vcHVibGlzaGVycy8zNjYyOC8yMDIxMDMwMjE5MDItbWFpbi5jcm9wcGVkXzE2MTQ3MDk4ODcuanBn.jpg" alt="ach-1"></div>
-                    <div class="item-text">
-                      <h6>Ikan Mujair</h6>
-                      <p>15.000</p>
-                    </div>
-                </div>
-                <div class="achievement-item bayangan">
-                    <div class="ach-1 mb-3"><img src="https://imgsrv2.voi.id/eu28c9uuwn_dWbgDPsFBhZ_Yv0VeVW46xtJYlXL8osI/auto/1200/675/sm/1/bG9jYWw6Ly8vcHVibGlzaGVycy8zNjYyOC8yMDIxMDMwMjE5MDItbWFpbi5jcm9wcGVkXzE2MTQ3MDk4ODcuanBn.jpg" alt="ach-1"></div>
+                    <div class="ach-1 mb-3"><img src="{{$upper->Url}}" alt="ach-1"></div>
                       <div class="item-text">
-                        <h6>Ikan Nila</h6>
-                        <p>15.000</p>
+                        <h6>{{$upper->nama_ikan}}</h6>
+                        <p>{{$upper->harga}}</p>
                       </div>
-                </div>
-                <div class="achievement-item bayangan">
-                    <div class="ach-1 mb-3"><img src="https://imgsrv2.voi.id/eu28c9uuwn_dWbgDPsFBhZ_Yv0VeVW46xtJYlXL8osI/auto/1200/675/sm/1/bG9jYWw6Ly8vcHVibGlzaGVycy8zNjYyOC8yMDIxMDMwMjE5MDItbWFpbi5jcm9wcGVkXzE2MTQ3MDk4ODcuanBn.jpg" alt="ach-1"></div>
-                      <div class="item-text">
-                        <h6>Ikan Pari</h6>
-                        <p>15.000</p>
-                      </div>
-                </div>
+                  </div>
+                @endforeach
               </div>
         </div>
         </div>

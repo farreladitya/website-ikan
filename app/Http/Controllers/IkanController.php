@@ -28,6 +28,21 @@ class IkanController extends Controller
         $pelagis = DB::table('foto_ikan')->join('harga_ikan', 'harga_ikan.ikan_id', '=', 'foto_ikan.ikan_id')->where('jenis_ikan', '=', 'Pelagic')->get();
         $under100 = DB::table('foto_ikan')->join('harga_ikan', 'harga_ikan.ikan_id', '=', 'foto_ikan.ikan_id')->where('harga', '<', 100000)->get();
         $upper100 = DB::table('foto_ikan')->join('harga_ikan', 'harga_ikan.ikan_id', '=', 'foto_ikan.ikan_id')->where('harga', '>', 100000)->get();
-        return view('gizi.product')->with(['sepalopoda'=> $sepalopoda, 'demersal'=> $demersal, 'pelagis'=> $pelagis, 'under100'=> $under100, 'upper100'=>$upper100]);
+        return view('gizi.product')->with([
+            'sepalopoda'=> $sepalopoda,
+            'demersal'=> $demersal,
+            'pelagis'=> $pelagis,
+            'under100'=> $under100,
+            'upper100'=>$upper100,
+        ]);
     }
+    public function cari(Request $request)
+	{
+		$cari = $request->cari;
+        $ikan = DB::table('ikan')->where('nama_ikan', 'like',"%".$request->search."%")->paginate();
+		return view('index',[
+            'ikan' => $ikan
+        ]);
+
+	}
 }

@@ -56,8 +56,8 @@
               <div class="owl-carousel achievement-carousel">
                   @foreach ($ikan as $i)
                   <div class="achievement-item bayangan">
-                    <div class="ach-1 mb-3"><img src="{{$i->Url}}" alt="ach-1"></div>
-                      <div class="item-text">
+                    <div class="ach-1 mb-3"><img src="{{$i->Url}}" style="object-fit: cover" class="w-100 h-100 card-img" alt="ach-1"></div>
+                      <div class="item-text card-body p-1">
                         <h6>{{$i->nama_ikan}}</h6>
                         <p>{{$i->harga}}</p>
                       </div>
@@ -75,12 +75,12 @@
     <div class="col-sm-5" style="margin-top: 80px;">
         <div class="dropdown text-right" style="margin-right: 100px;">
             <button class="btn button buttonmasuk buttonradius dropdown-toggle" type="button" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Baby Tuna
+              Jenis Ikan
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenu">
-              <button class="dropdown-item" type="button">Action</button>
-              <button class="dropdown-item" type="button">Another action</button>
-              <button class="dropdown-item" type="button">Something else here</button>
+              @foreach ($persebaran as $p)
+                <button class="dropdown-item" type="button">{{$p->nama_biasa}}</button>
+              @endforeach
             </div>
         </div>
         <hr style="color = black; margin-right: 100px;" class="mt-5">

@@ -11,7 +11,7 @@
             </ol>
         </nav>
         <h1 class="font-weight-bold display-4 margincontainer" style="margin-top: 115px"> Cari hasil laut apa hari ini? </h1>
-        <form action="{{url('/gizi')}}">
+        <form action="/gizi/cari" method="GET">
         <div class="row mt-4">
             <div class="col-sm-9">
                 <div class="form-group has-search center float-right" style="width: 87%">

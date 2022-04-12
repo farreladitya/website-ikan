@@ -23,6 +23,8 @@ Route::get('gizi', 'IkanController@indexGizi');
 
 Route::get('listgiziproduct', 'IkanController@listproduk');
 
+Route::get('gizi/cari', 'IkanController@cari');
+
 //Fitur Kualitas
 Route::get('kualitas', 'IkanController@indexKualitas');
 

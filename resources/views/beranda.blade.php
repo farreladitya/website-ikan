@@ -79,12 +79,12 @@
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenu">
               @foreach ($persebaran as $p)
-                <button class="dropdown-item" type="button">{{$p->nama_biasa}}</button>
+                <button class="dropdown-item" type="button" >{{$p->nama_biasa}}</button>
               @endforeach
             </div>
         </div>
-        <hr style="color = black; margin-right: 100px;" class="mt-5">
-        <p> 1. Banten </p>
+        <hr style="color = black; margin-right: 100px;" class="mt-1">
+        <p> 1. Jawa Tengah </p>
         <hr style="color = black; margin-right: 100px;" class="mt-1">
         <p> 2. Jawa Barat </p>
         <hr style="color = black; margin-right: 100px;" class="mt-1">

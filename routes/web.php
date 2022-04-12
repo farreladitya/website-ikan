@@ -21,9 +21,7 @@ Route::get('/', 'IkanController@index');
 //Fitur Gizi
 Route::get('gizi', 'IkanController@indexGizi');
 
-Route::get('listgiziproduct', function () {
-    return view('gizi.listproduct');
-});
+Route::get('listgiziproduct', 'IkanController@listproduk');
 
 //Fitur Kualitas
 Route::get('kualitas', 'IkanController@indexKualitas');
@@ -42,4 +40,6 @@ Route::get('/mitra/udbarokah', function () {
 Route::get('/mitra/cvwijayasuksesbersama', function () {
     return view('mitra.cvwijaya');
 });
+
+
 

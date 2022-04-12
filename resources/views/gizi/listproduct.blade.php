@@ -91,105 +91,19 @@
     </div>
         <div class="col-sm-8 container">
             <div class="row">
+                @foreach ($ikan as $i)
                 <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1" onclick="location.href='/';">
-                    <div class="card"> <img class="card-img-top" src="https://imgsrv2.voi.id/eu28c9uuwn_dWbgDPsFBhZ_Yv0VeVW46xtJYlXL8osI/auto/1200/675/sm/1/bG9jYWw6Ly8vcHVibGlzaGVycy8zNjYyOC8yMDIxMDMwMjE5MDItbWFpbi5jcm9wcGVkXzE2MTQ3MDk4ODcuanBn.jpg">
+                    <div class="card"> <img class="card-img-top" src="{{$i->Url}}">
                         <div class="card-body">
-                            <h6 class="font-weight-bold pt-1">Product title</h6>
+                            <h6 class="font-weight-bold pt-1">{{$i->nama_ikan}}</h6>
                             <div class="text-muted description">Space for small product description</div>
                                 <div class="d-flex flex-column">
-                                    <div class="h6 font-weight-bold">36.99 USD</div>
+                                    <div class="h6 font-weight-bold">{{$i->harga}}</div>
                                 </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1 pt-md-0 pt-4">
-                    <div class="card"> <img class="card-img-top" src="https://imgsrv2.voi.id/eu28c9uuwn_dWbgDPsFBhZ_Yv0VeVW46xtJYlXL8osI/auto/1200/675/sm/1/bG9jYWw6Ly8vcHVibGlzaGVycy8zNjYyOC8yMDIxMDMwMjE5MDItbWFpbi5jcm9wcGVkXzE2MTQ3MDk4ODcuanBn.jpg">
-                        <div class="card-body">
-                            <h6 class="font-weight-bold pt-1">Product title</h6>
-                            <div class="text-muted description">Space for small product description</div>
-                                <div class="d-flex flex-column">
-                                    <div class="h6 font-weight-bold">36.99 USD</div>
-                                </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1 pt-lg-0 pt-4">
-                    <div class="card"> <img class="card-img-top" src="https://imgsrv2.voi.id/eu28c9uuwn_dWbgDPsFBhZ_Yv0VeVW46xtJYlXL8osI/auto/1200/675/sm/1/bG9jYWw6Ly8vcHVibGlzaGVycy8zNjYyOC8yMDIxMDMwMjE5MDItbWFpbi5jcm9wcGVkXzE2MTQ3MDk4ODcuanBn.jpg">
-                        <div class="card-body">
-                            <h6 class="font-weight-bold pt-1">Product title</h6>
-                            <div class="text-muted description">Space for small product description</div>
-                                <div class="d-flex flex-column">
-                                    <div class="h6 font-weight-bold">36.99 USD</div>
-                                </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1 pt-lg-4 pt-4">
-                    <div class="card"> <img class="card-img-top" src="https://imgsrv2.voi.id/eu28c9uuwn_dWbgDPsFBhZ_Yv0VeVW46xtJYlXL8osI/auto/1200/675/sm/1/bG9jYWw6Ly8vcHVibGlzaGVycy8zNjYyOC8yMDIxMDMwMjE5MDItbWFpbi5jcm9wcGVkXzE2MTQ3MDk4ODcuanBn.jpg">
-                        <div class="card-body">
-                            <h6 class="font-weight-bold pt-1">Product title</h6>
-                            <div class="text-muted description">Space for small product description</div>
-                                <div class="d-flex flex-column">
-                                    <div class="h6 font-weight-bold">36.99 USD</div>
-                                </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1 pt-lg-4 pt-4">
-                    <div class="card"> <img class="card-img-top" src="https://imgsrv2.voi.id/eu28c9uuwn_dWbgDPsFBhZ_Yv0VeVW46xtJYlXL8osI/auto/1200/675/sm/1/bG9jYWw6Ly8vcHVibGlzaGVycy8zNjYyOC8yMDIxMDMwMjE5MDItbWFpbi5jcm9wcGVkXzE2MTQ3MDk4ODcuanBn.jpg">
-                        <div class="card-body">
-                            <h6 class="font-weight-bold pt-1">Product title</h6>
-                            <div class="text-muted description">Space for small product description</div>
-                                <div class="d-flex flex-column">
-                                    <div class="h6 font-weight-bold">36.99 USD</div>
-                                </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1 pt-lg-4 pt-4">
-                    <div class="card"> <img class="card-img-top" src="https://imgsrv2.voi.id/eu28c9uuwn_dWbgDPsFBhZ_Yv0VeVW46xtJYlXL8osI/auto/1200/675/sm/1/bG9jYWw6Ly8vcHVibGlzaGVycy8zNjYyOC8yMDIxMDMwMjE5MDItbWFpbi5jcm9wcGVkXzE2MTQ3MDk4ODcuanBn.jpg">
-                        <div class="card-body">
-                            <h6 class="font-weight-bold pt-1">Product title</h6>
-                            <div class="text-muted description">Space for small product description</div>
-                                <div class="d-flex flex-column">
-                                    <div class="h6 font-weight-bold">36.99 USD</div>
-                                </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1 pt-lg-4 pt-4">
-                    <div class="card"> <img class="card-img-top" src="https://imgsrv2.voi.id/eu28c9uuwn_dWbgDPsFBhZ_Yv0VeVW46xtJYlXL8osI/auto/1200/675/sm/1/bG9jYWw6Ly8vcHVibGlzaGVycy8zNjYyOC8yMDIxMDMwMjE5MDItbWFpbi5jcm9wcGVkXzE2MTQ3MDk4ODcuanBn.jpg">
-                        <div class="card-body">
-                            <h6 class="font-weight-bold pt-1">Product title</h6>
-                            <div class="text-muted description">Space for small product description</div>
-                                <div class="d-flex flex-column">
-                                    <div class="h6 font-weight-bold">36.99 USD</div>
-                                </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1 pt-lg-4 pt-4">
-                    <div class="card"> <img class="card-img-top" src="https://imgsrv2.voi.id/eu28c9uuwn_dWbgDPsFBhZ_Yv0VeVW46xtJYlXL8osI/auto/1200/675/sm/1/bG9jYWw6Ly8vcHVibGlzaGVycy8zNjYyOC8yMDIxMDMwMjE5MDItbWFpbi5jcm9wcGVkXzE2MTQ3MDk4ODcuanBn.jpg">
-                        <div class="card-body">
-                            <h6 class="font-weight-bold pt-1">Product title</h6>
-                            <div class="text-muted description">Space for small product description</div>
-                                <div class="d-flex flex-column">
-                                    <div class="h6 font-weight-bold">36.99 USD</div>
-                                </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1 pt-lg-4 pt-4">
-                    <div class="card"> <img class="card-img-top" src="https://imgsrv2.voi.id/eu28c9uuwn_dWbgDPsFBhZ_Yv0VeVW46xtJYlXL8osI/auto/1200/675/sm/1/bG9jYWw6Ly8vcHVibGlzaGVycy8zNjYyOC8yMDIxMDMwMjE5MDItbWFpbi5jcm9wcGVkXzE2MTQ3MDk4ODcuanBn.jpg">
-                        <div class="card-body">
-                            <h6 class="font-weight-bold pt-1">Product title</h6>
-                            <div class="text-muted description">Space for small product description</div>
-                                <div class="d-flex flex-column">
-                                    <div class="h6 font-weight-bold">36.99 USD</div>
-                                </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
 

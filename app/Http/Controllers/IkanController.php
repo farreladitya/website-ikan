@@ -53,10 +53,4 @@ class IkanController extends Controller
         return view('gizi.listproduct', ['ikan'=>$ikan]);
     }
 
-    public function listproduk(){
-        $ikan = DB::table('foto_ikan')->join('harga_ikan', 'harga_ikan.ikan_id', '=', 'foto_ikan.ikan_id')->get();
-
-        return view('gizi.listproduct', ['ikan'=>$ikan]);
-    }
-
-}
+};

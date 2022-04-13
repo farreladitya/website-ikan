@@ -56,11 +56,13 @@
               <div class="owl-carousel achievement-carousel">
                   @foreach ($ikan as $i)
                   <div class="achievement-item bayangan">
-                    <div class="ach-1 mb-3"><img src="{{$i->Url}}" style="object-fit: cover" class="w-100 h-100 card-img" alt="ach-1"></div>
-                      <div class="item-text card-body p-1">
+                    <div class="ach-1 mb-3" style="aspect-ratio: 3/2;">
+                        <img src="{{$i->Url}}" style="object-fit: contain" class="w-100 h-100 card-img" alt="ach-1">
+                    </div>
+                    <div class="item-text card-body p-1">
                         <h6>{{$i->nama_ikan}}</h6>
                         <p>{{$i->harga}}</p>
-                      </div>
+                    </div>
                   </div>
                   @endforeach
               </div>

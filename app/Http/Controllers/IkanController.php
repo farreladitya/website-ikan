@@ -40,10 +40,8 @@ class IkanController extends Controller
     public function cari(Request $request)
 	{
 		$cari = $request->cari;
-        $ikan = DB::table('ikan')->where('nama_ikan', 'like',"%".$request->search."%")->paginate();
-		return view('index',[
-            'ikan' => $ikan
-        ]);
+        $ikan = DB::table('foto_ikan')->join('harga_ikan', 'harga_ikan.ikan_id', '=', 'foto_ikan.ikan_id')->where('foto_ikan.nama_ikan', 'like', "%".$cari."%")->get();
+		return view('gizi.listproduct', ['ikan'=> $ikan]);
 
 	}
 

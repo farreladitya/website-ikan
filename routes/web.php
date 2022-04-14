@@ -21,16 +21,15 @@ Route::get('/', 'IkanController@index');
 //Fitur Gizi
 Route::get('gizi', 'IkanController@indexGizi');
 
-Route::get('listgiziproduct', 'IkanController@listproduk');
+Route::get('listgiziproduct', 'IkanController@listprodukgizi');
 
 Route::get('gizi/cari', 'IkanController@cari');
 
 //Fitur Kualitas
 Route::get('kualitas', 'IkanController@indexKualitas');
 
-Route::get('listkualitasproduct', function () {
-    return view('kualitas.listproduct');
-});
+
+Route::get('listkualitasproduct', 'IkanController@listprodukkualitas');
 
 //Fitur Mitra
 Route::get('mitra', function () {

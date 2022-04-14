@@ -42,7 +42,7 @@
               <div class="owl-carousel owl-carousels achievement-carousel">
                 @foreach ($sepalopoda as $s)
                 <div class="achievement-item bayangan">
-                    <div class="ach-1 mb-3"><img src="{{$s->Url}}" alt="ach-1"></div>
+                    <div class="ach-1 mb-3" style="aspect-ratio: 3/2;"><img src="{{$s->Url}}" style="object-fit: contain" class="w-100 h-100 card-img" alt="ach-1"></div>
                       <div class="item-text">
                         <h6>{{$s->nama_ikan}}</h6>
                         <p>{{$s->harga}}</p>
@@ -69,7 +69,7 @@
               <div class="owl-carousel owl-carousels achievement-carousel">
                 @foreach ($demersal as $d)
                 <div class="achievement-item bayangan">
-                    <div class="ach-1 mb-3"><img src="{{$d->Url}}" alt="ach-1"></div>
+                    <div class="ach-1 mb-3" style="aspect-ratio: 3/2;"><img src="{{$d->Url}}" style="object-fit: contain" class="w-100 h-100 card-img" alt="ach-1"></div>
                       <div class="item-text">
                         <h6>{{$d->nama_ikan}}</h6>
                         <p>{{$d->harga}}</p>
@@ -96,7 +96,7 @@
               <div class="owl-carousel owl-carousels achievement-carousel">
                 @foreach ($pelagis as $p)
                 <div class="achievement-item bayangan">
-                    <div class="ach-1 mb-3"><img src="{{$p->Url}}" alt="ach-1"></div>
+                    <div class="ach-1 mb-3" style="aspect-ratio: 3/2;"><img src="{{$p->Url}}" style="object-fit: contain" class="w-100 h-100 card-img" alt="ach-1"></div>
                       <div class="item-text">
                         <h6>{{$p->nama_ikan}}</h6>
                         <p>{{$p->harga}}</p>
@@ -123,7 +123,7 @@
               <div class="owl-carousel owl-carousels achievement-carousel">
                 @foreach ($under100 as $under)
                 <div class="achievement-item bayangan">
-                    <div class="ach-1 mb-3"><img src="{{$under->Url}}" alt="ach-1"></div>
+                    <div class="ach-1 mb-3" style="aspect-ratio: 3/2;"><img src="{{$under->Url}}" style="object-fit: contain" class="w-100 h-100 card-img" alt="ach-1"></div>
                       <div class="item-text">
                         <h6>{{$under->nama_ikan}}</h6>
                         <p>{{$under->harga}}</p>
@@ -150,7 +150,7 @@
               <div class="owl-carousel owl-carousels achievement-carousel">
                 @foreach ($upper100 as $upper)
                 <div class="achievement-item bayangan">
-                    <div class="ach-1 mb-3"><img src="{{$upper->Url}}" alt="ach-1"></div>
+                    <div class="ach-1 mb-3" style="aspect-ratio: 3/2;"><img src="{{$upper->Url}}" style="object-fit: contain" class="w-100 h-100 card-img" alt="ach-1"></div>
                       <div class="item-text">
                         <h6>{{$upper->nama_ikan}}</h6>
                         <p>{{$upper->harga}}</p>

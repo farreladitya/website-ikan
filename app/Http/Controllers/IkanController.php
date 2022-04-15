@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\HargaIkan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Models\Ikan;
 
 class IkanController extends Controller
 {
@@ -46,7 +48,7 @@ class IkanController extends Controller
 	}
 
     public function listprodukgizi(){
-        $ikan = DB::table('foto_ikan')->join('harga_ikan', 'harga_ikan.ikan_id', '=', 'foto_ikan.ikan_id')->get();
+        $ikan = Ikan::all();
 
         return view('gizi.listproduct', ['ikan'=>$ikan]);
     }

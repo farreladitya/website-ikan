@@ -40,12 +40,14 @@ class IkanController extends Controller
         ]);
     }
     public function cari(Request $request)
-	{
-		$cari = $request->cari;
-        $ikan = DB::table('foto_ikan')->join('harga_ikan', 'harga_ikan.ikan_id', '=', 'foto_ikan.ikan_id')->where('foto_ikan.nama_ikan', 'like', "%".$cari."%")->get();
-		return view('gizi.listproduct', ['ikan'=> $ikan]);
+    {
 
-	}
+            $cari = $request->cari;
+            $ikan = DB::table('foto_ikan')->join('harga_ikan', 'harga_ikan.ikan_id', '=', 'foto_ikan.ikan_id')->where('harga_ikan.ikan_id', 'like', "%".$cari."%")->get();
+                return view('gizi.listproduct', ['ikan'=> $ikan]);
+
+
+            }
 
     public function listprodukgizi(){
         $ikan = DB::table('foto_ikan')->join('harga_ikan', 'harga_ikan.ikan_id', '=', 'foto_ikan.ikan_id')->get();

@@ -10,7 +10,7 @@ use App\Models\Ikan;
 class IkanController extends Controller
 {
     public function index(){
-        $ikan = DB::table('foto_ikan')->join('harga_ikan', 'harga_ikan.ikan_id', '=', 'foto_ikan.ikan_id')->paginate(10);
+        $ikan = DB::table('foto_ikan')->join('harga_ikan', 'harga_ikan.ikan_id', '=', 'foto_ikan.ikan_id')->join('persebaran', 'persebaran.ikan_id', '=', 'foto_ikan.ikan_id')->paginate(10);
         $persebaranikan = DB::table('persebaran')->whereNotNull('Persebaran')->get();
 
         return view('beranda', ['ikan'=> $ikan, 'persebaran'=> $persebaranikan]);

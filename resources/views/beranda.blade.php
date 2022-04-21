@@ -72,7 +72,7 @@
 <div class="row">
     <div class="col-sm-1"></div>
     <div class="col-sm-5" style="margin-top: 75px;">
-        <h1 class="font-weight-bold margincontainer" style="margin-right: 55px; font-size:35px"> Hasil Laut Terpopuler</h1>
+        <h1 class="font-weight-bold margincontainer" style="margin-right: 55px; font-size:35px"> Daerah Persebaran Ikan</h1>
         <div class="container-sm">
             <img src="https://thumbs.dreamstime.com/b/asian-ribbon-fish-isolated-white-background-asian-ribbon-fish-115846109.jpg" alt="" style="object-fit: contain" class="w-100 h-100 gambar-persebaran">
         </div>
@@ -84,20 +84,7 @@
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenu">
               @foreach ($persebaran as $p)
-                <button class="dropdown-item jenis-ikan-dropdown" type="button" value="{{$p->Persebaran}}">{{$p->nama_biasa}}</button>
-                <script>
-                    $(document).ready(function(){
-                        $(".jenis-ikan-dropdown").click(function(){
-                            const daerah = $(".jenis-ikan-dropdown").val;
-                            daerah = daerah.split(' ');
-                            $('#daerah-1').text(daerah[0]);
-                            $('#daerah-2').text(daerah[1]);
-                            $('#daerah-3').text(daerah[2]);
-                            $('#daerah-4').text(daerah[3]);
-                            $('#daerah-5').text(daerah[4]);
-                        })
-                    })
-                </script>
+                <button class="dropdown-item" type="button" >{{$p->nama_biasa}}</button>
               @endforeach
             </div>
         </div>
@@ -110,7 +97,7 @@
         <hr style="color = black; margin-right: 100px;" class="mt-1">
         <p id="daerah-4"> 4. Pelabuhan ratu </p>
         <hr style="color = black; margin-right: 100px;" class="mt-1">
-        <p id="daerah-5"> 5. Ujung Genteng </p>
+        <p id="daerah-1"> 5. Ujung Genteng </p>
         <hr style="color = black; margin-right: 100px;" class="mt-1">
     </div>
     <div class="col-sm-1"></div>

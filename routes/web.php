@@ -22,6 +22,7 @@ Route::get('/', 'IkanController@index');
 Route::get('gizi', 'IkanController@indexGizi');
 
 Route::get('listgiziproduct', 'IkanController@listprodukgizi');
+Route::get('listgiziproduct/cari', 'IkanController@cari');
 
 Route::get('gizi/cari', 'IkanController@cari');
 

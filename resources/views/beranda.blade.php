@@ -1,7 +1,6 @@
 @extends('layout.layout')
 @section('title', 'Beranda')
 @section('isikonten')
-
 <div class="row">
     <div class="col-sm-5">
         <h1 class="font-weight-bold display-4 margincontainer" style="margin-top: 115px"> Halo Pecinta Hasil Laut, </h1>
@@ -84,7 +83,7 @@
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenu">
               @foreach ($persebaran as $p)
-                <button class="dropdown-item" type="button" >{{$p->nama_biasa}}</button>
+                <option class="dropdown-item" value="{{$p->Persebaran}}" >{{$p->nama_biasa}}</option>
               @endforeach
             </div>
         </div>

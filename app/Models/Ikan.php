@@ -12,11 +12,11 @@ class Ikan extends Model
 
     protected $table = "ikan";
 
-    public function fotos(){
-        return $this->hasOne('App\Models\FotoIkan', 'ikan_id');
+    public function foto(){
+        return $this->hasOne(FotoIkan::class, 'ikan_id');
     }
 
-    public function hargas(){
+    public function harga(){
         return $this->hasOne(HargaIkan::class, 'ikan_id');
     }
 }

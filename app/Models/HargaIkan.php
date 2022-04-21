@@ -12,7 +12,7 @@ class HargaIkan extends Model
 
     protected $table = "harga_ikan";
 
-    public function ikans(){
+    public function ikan(){
         return $this->belongsTo(Ikan::class, 'ikan_id');
     }
 }

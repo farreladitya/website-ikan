@@ -72,7 +72,10 @@
 <div class="row">
     <div class="col-sm-1"></div>
     <div class="col-sm-5" style="margin-top: 75px;">
-        <h1 class="font-weight-bold margincontainer" style="margin-right: 55px; font-size:35px"> Hasil Laut Terpopuler</h1>
+        <h1 class="font-weight-bold margincontainer" style="margin-right: 55px; font-size:35px"> Daerah Persebaran Ikan</h1>
+        <div class="container-sm">
+            <img src="https://thumbs.dreamstime.com/b/asian-ribbon-fish-isolated-white-background-asian-ribbon-fish-115846109.jpg" alt="" style="object-fit: contain" class="w-100 h-100 gambar-persebaran">
+        </div>
     </div>
     <div class="col-sm-5" style="margin-top: 80px;">
         <div class="dropdown text-right" style="margin-right: 100px;">
@@ -86,15 +89,15 @@
             </div>
         </div>
         <hr style="color = black; margin-right: 100px;" class="mt-1">
-        <p> 1. Jawa Tengah </p>
+        <p> 1. Lawang </p>
         <hr style="color = black; margin-right: 100px;" class="mt-1">
-        <p> 2. Jawa Barat </p>
+        <p> 2. Tuban </p>
         <hr style="color = black; margin-right: 100px;" class="mt-1">
-        <p> 3. DKI Jakarta </p>
+        <p> 3. Jampang </p>
         <hr style="color = black; margin-right: 100px;" class="mt-1">
-        <p> 4. Jawa Timur </p>
+        <p> 4. Pelabuhan ratu </p>
         <hr style="color = black; margin-right: 100px;" class="mt-1">
-        <p> 5. Bali </p>
+        <p> 5. Ujung Genteng </p>
         <hr style="color = black; margin-right: 100px;" class="mt-1">
     </div>
     <div class="col-sm-1"></div>

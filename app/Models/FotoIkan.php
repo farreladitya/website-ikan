@@ -11,8 +11,8 @@ class FotoIkan extends Model
 
     protected $table = "foto_ikan";
 
-    public function ikans(){
-        return $this->belongsTo('App\Models\Ikan', 'ikan_id')->withDefault([
+    public function ikan(){
+        return $this->belongsTo(Ikan::class, 'ikan_id')->withDefault([
             'harga' => 'Tidak diketahui',
         ]);
     }

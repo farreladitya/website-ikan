@@ -61,4 +61,10 @@ class IkanController extends Controller
         return view('kualitas.listproduct', ['ikan'=>$ikan]);
     }
 
+    public function indexIkan($id){
+        $ikan = DB::table('ikan')->where('ikan_id', $id)->get();
+
+        return view('gizi.giziikan', ['ikan'=>$ikan]);
+    }
+
 };

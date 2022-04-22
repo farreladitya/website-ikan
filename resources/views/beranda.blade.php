@@ -1,6 +1,7 @@
 @extends('layout.layout')
 @section('title', 'Beranda')
 @section('isikonten')
+<button id="test ">Hai</button>
 <div class="row">
     <div class="col-sm-5">
         <h1 class="font-weight-bold display-4 margincontainer" style="margin-top: 115px"> Halo Pecinta Hasil Laut, </h1>
@@ -96,7 +97,7 @@
         <hr style="color = black; margin-right: 100px;" class="mt-1">
         <p id="daerah-4"> 4. Pelabuhan ratu </p>
         <hr style="color = black; margin-right: 100px;" class="mt-1">
-        <p id="daerah-1"> 5. Ujung Genteng </p>
+        <p id="daerah-5"> 5. Ujung Genteng </p>
         <hr style="color = black; margin-right: 100px;" class="mt-1">
     </div>
     <div class="col-sm-1"></div>
@@ -141,3 +142,11 @@
 @section('berandaactive')
 class='navbar navbar-brand active'
 @endsection
+
+<script>
+    $(document).ready(function(){
+        $('#hai').on('click', function(){
+            alert("Berhasil");
+        })
+    })
+</script>

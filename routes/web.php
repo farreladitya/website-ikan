@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\PersebaranController;
-
+use GuzzleHttp\Psr7\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +25,7 @@ Route::get('listgiziproduct', 'IkanController@listprodukgizi');
 Route::get('listgiziproduct/cari', 'IkanController@cari');
 
 Route::get('gizi/cari', 'IkanController@cari');
+Route::get('gizi/product/{id}','IkanController@indexIkan');
 
 //Fitur Kualitas
 Route::get('kualitas', 'IkanController@indexKualitas');

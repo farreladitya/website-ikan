@@ -12,7 +12,7 @@
             <div class="col-sm-6">
                 <div class="form-group has-search center float-right" style="width: 78%">
                     <span class="fa fa-search form-control-feedback"></span>
-                    <input type="text" class="form-control buttonradius" placeholder="Cari" name="search" value="{{ old('cari') }}">
+                    <input type="text" class="form-control buttonradius" placeholder="Cari" name="cari" value="{{ old('cari') }}">
                 </div>
             </div>
             <div class="col-sm-2">

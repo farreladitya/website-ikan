@@ -1,7 +1,7 @@
 @extends('layout.layout')
 @section('title', 'Beranda')
 @section('isikonten')
-<button id="test ">Hai</button>
+<button id="test">Hai</button>
 <div class="row">
     <div class="col-sm-5">
         <h1 class="font-weight-bold display-4 margincontainer" style="margin-top: 115px"> Halo Pecinta Hasil Laut, </h1>
@@ -84,7 +84,7 @@
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenu">
               @foreach ($persebaran as $p)
-                <option class="dropdown-item" value="{{$p->Persebaran}}" >{{$p->nama_biasa}}</option>
+                <option class="dropdown-item jenis-ikan" value="{{$p->Persebaran}}" >{{$p->nama_biasa}}</option>
               @endforeach
             </div>
         </div>
@@ -143,10 +143,3 @@
 class='navbar navbar-brand active'
 @endsection
 
-<script>
-    $(document).ready(function(){
-        $('#hai').on('click', function(){
-            alert("Berhasil");
-        })
-    })
-</script>

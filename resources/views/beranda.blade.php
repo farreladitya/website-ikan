@@ -72,7 +72,7 @@
 <div class="row">
     <div class="col-sm-1"></div>
     <div class="col-sm-5" style="margin-top: 75px;">
-        <h1 class="font-weight-bold margincontainer" style="margin-right: 55px; font-size:35px"> Daerah Persebaran Ikan</h1>
+        <h1 class="font-weight-bold margincontainer" style="margin-right: 55px; font-size:35px">Hasil Laut Terpopuler</h1>
         <div class="container-sm">
             <img src="https://thumbs.dreamstime.com/b/asian-ribbon-fish-isolated-white-background-asian-ribbon-fish-115846109.jpg" alt="" style="object-fit: contain" class="w-100 h-100 gambar-persebaran">
         </div>
@@ -82,7 +82,7 @@
             <button class="btn button buttonmasuk buttonradius dropdown-toggle" type="button" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Jenis Ikan
             </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenu">
+            <div class="dropdown-menu" id="pilih-ikan" aria-labelledby="dropdownMenu">
               @foreach ($persebaran as $p)
                 <option class="dropdown-item jenis-ikan" value="{{$p->Persebaran}}" >{{$p->nama_biasa}}</option>
               @endforeach

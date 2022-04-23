@@ -14,9 +14,9 @@
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
     <script>
         $(document).ready(function(){
-            $('.jenis-ikan').click(function(){
-                let daerah = $('.jenis-ikan').val();
-                daerah = daerah.split();
+            $('.jenis-ikan').on("click", function(){
+                let daerah = this.value;
+                daerah = daerah.split(" ");
                 $('#daerah-1').text(daerah[0]);
                 $('#daerah-2').text(daerah[1]);
                 $('#daerah-3').text(daerah[2]);

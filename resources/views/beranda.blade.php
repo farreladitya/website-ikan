@@ -1,5 +1,29 @@
 @extends('layout.layout')
 @section('title', 'Beranda')
+@section('head')
+<script>
+    $(document).ready(function(){
+        $('.jenis-ikan').on("click", function(){
+            let daerah = this.value.split(',')[0];
+            let gambar = this.value.split(',')[1];
+            daerah = daerah.split(" ");
+            let i = 0;
+            while(i<5){
+                if(!daerah[i]){
+                    daerah[i] = '-';
+                };
+                i++;
+            };
+            $('#daerah-1').text(daerah[0]);
+            $('#daerah-2').text(daerah[1]);
+            $('#daerah-3').text(daerah[2]);
+            $('#daerah-4').text(daerah[3]);
+            $('#daerah-5').text(daerah[4]);
+            $('#gambar-persebaran').attr('src', gambar);
+        })
+    })
+</script>
+@endsection
 @section('isikonten')
 <button id="test">Hai</button>
 <div class="row">
@@ -74,7 +98,7 @@
     <div class="col-sm-5" style="margin-top: 75px;">
         <h1 class="font-weight-bold margincontainer" style="margin-right: 55px; font-size:35px">Hasil Laut Terpopuler</h1>
         <div class="container-sm">
-            <img src="https://thumbs.dreamstime.com/b/asian-ribbon-fish-isolated-white-background-asian-ribbon-fish-115846109.jpg" alt="" style="object-fit: contain" class="w-100 h-100 gambar-persebaran">
+            <img src="https://thumbs.dreamstime.com/b/asian-ribbon-fish-isolated-white-background-asian-ribbon-fish-115846109.jpg" alt="" style="object-fit: contain" class="w-100 h-100" id="gambar-persebaran">
         </div>
     </div>
     <div class="col-sm-5" style="margin-top: 80px;">
@@ -84,7 +108,7 @@
             </button>
             <div class="dropdown-menu" id="pilih-ikan" aria-labelledby="dropdownMenu">
               @foreach ($persebaran as $p)
-                <option class="dropdown-item jenis-ikan" value="{{$p->Persebaran}}" >{{$p->nama_biasa}}</option>
+                <option class="dropdown-item jenis-ikan" value="{{$p->Persebaran}},{{$p->Url}}" >{{$p->nama_biasa}}</option>
               @endforeach
             </div>
         </div>

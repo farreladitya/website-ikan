@@ -12,19 +12,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
     <link rel="stylesheet" href="{{asset('css/owl.carousel.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
-    <script>
-        $(document).ready(function(){
-            $('.jenis-ikan').on("click", function(){
-                let daerah = this.value;
-                daerah = daerah.split(" ");
-                $('#daerah-1').text(daerah[0]);
-                $('#daerah-2').text(daerah[1]);
-                $('#daerah-3').text(daerah[2]);
-                $('#daerah-4').text(daerah[3]);
-                $('#daerah-5').text(daerah[4]);
-            })
-        })
-    </script>
+    @section('head')
+    @show
 </head>
 <style>
     body{

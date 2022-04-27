@@ -44,5 +44,7 @@ Route::get('/mitra/cvwijayasuksesbersama', function () {
     return view('mitra.cvwijaya');
 });
 
-
+Route::get('/kualitasikan', function(){
+    return view('kualitas.kualitasikan');
+});
 

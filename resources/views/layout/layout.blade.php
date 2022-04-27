@@ -142,6 +142,27 @@
         font-size: 0.78rem;
         padding-bottom: 8px
     }
+    .responsive-container {
+	position: relative;
+	padding-bottom: 420px; /* 16:9 */
+	padding-top: 0px;
+	height: 0;
+	overflow: hidden;
+    }
+    .responsive-container iframe,
+    .responsive-container object,
+    .responsive-container embed,
+    .responsive-container video
+    {
+        position: absolute;
+        margin-left: auto;
+        margin-right: auto;
+        right: 0;
+        text-align: center;
+        top: 0;
+        left: 0;
+        width: 50%;
+    }
 }
 </style>
 </body>

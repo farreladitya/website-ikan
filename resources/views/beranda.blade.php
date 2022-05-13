@@ -97,7 +97,7 @@
     <div class="col-sm-5" style="margin-top: 75px;">
         <h1 class="font-weight-bold margincontainer" style="margin-right: 55px; font-size:35px">Hasil Laut Terpopuler</h1>
         <div class="container-sm">
-            <img src="https://thumbs.dreamstime.com/b/asian-ribbon-fish-isolated-white-background-asian-ribbon-fish-115846109.jpg" alt="" style="object-fit: contain" class="w-100 h-100" id="gambar-persebaran">
+            <img src="https://cdn.discordapp.com/attachments/844800516630118403/974667191783931924/Ribbon_Fish.png" alt="" style="object-fit: contain" class="w-100 h-100" id="gambar-persebaran">
         </div>
     </div>
     <div class="col-sm-5" style="margin-top: 80px;">

@@ -11,17 +11,19 @@
             </ol>
         </nav>
         <h1 class="font-weight-bold display-4 margincontainer" style="margin-top: 115px"> Cari hasil laut apa hari ini? </h1>
-        <div class="row mt-4">
-            <div class="col-sm-9">
-                <div class="form-group has-search center float-right" style="width: 87%">
-                    <span class="fa fa-search form-control-feedback"></span>
-                    <input type="text" class="form-control buttonradius" placeholder="Cari">
+        <form action="/kualitas/cari" method="GET">
+            <div class="row mt-4">
+                <div class="col-sm-9">
+                    <div class="form-group has-search center float-right" style="width: 87%">
+                        <span class="fa fa-search form-control-feedback"></span>
+                        <input type="text" class="form-control buttonradius" placeholder="Cari" name="cari" value="{{ old('cari') }}">
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                        <button class="button buttonmasuk buttonradius" style="margin-top: 9px; margin-left:-20px" type="submit">Cari</button>
                 </div>
             </div>
-            <div class="col-sm-3">
-                    <button class="button buttonmasuk buttonradius" style="margin-top: 9px; margin-left:-20px">Cari</button>
-            </div>
-        </div>
+            </form>
     </div>
     <div class="col-sm-7">
         <img src="{{URL::asset('/images/gambarproduct.png')}}" width="85%" class="float-right">

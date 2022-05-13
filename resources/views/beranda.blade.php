@@ -25,7 +25,6 @@
 </script>
 @endsection
 @section('isikonten')
-<button id="test">Hai</button>
 <div class="row">
     <div class="col-sm-5">
         <h1 class="font-weight-bold display-4 margincontainer" style="margin-top: 115px"> Halo Pecinta Hasil Laut, </h1>
@@ -113,15 +112,15 @@
             </div>
         </div>
         <hr style="color = black; margin-right: 100px;" class="mt-1" >
-        <p id="daerah-1"> 1. Lawang </p>
+        <a href="/"><p id="daerah-1"> Lawang </p></a>
         <hr style="color = black; margin-right: 100px;" class="mt-1" >
-        <p id="daerah-2"> 2. Tuban </p>
+        <a href="/"><p id="daerah-2"> Tuban </p></a>
         <hr style="color = black; margin-right: 100px;" class="mt-1">
-        <p id="daerah-3"> 3. Jampang </p>
+        <a href="/"><p id="daerah-3"> Jampang </p></a>
         <hr style="color = black; margin-right: 100px;" class="mt-1">
-        <p id="daerah-4"> 4. Pelabuhan ratu </p>
+        <a href="/"><p id="daerah-4"> Pelabuhan ratu </p></a>
         <hr style="color = black; margin-right: 100px;" class="mt-1">
-        <p id="daerah-5"> 5. Ujung Genteng </p>
+        <a href="/"><p id="daerah-5"> Ujung Genteng </p></a>
         <hr style="color = black; margin-right: 100px;" class="mt-1">
     </div>
     <div class="col-sm-1"></div>

@@ -15,6 +15,7 @@ class CreateInputMitraTables extends Migration
     {
         Schema::create('input_mitra_tables', function (Blueprint $table) {
             $table->id();
+            $table->foreign('user_id')->references('id')->on('users');
             $table->string('nama');
             $table->string('ikan');
             $table->string('harga');

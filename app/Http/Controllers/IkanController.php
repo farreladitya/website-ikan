@@ -74,5 +74,4 @@ class IkanController extends Controller
     public function kualitas(){
         return view('kualitas.kualitasikan');
     }
-
 };

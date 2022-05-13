@@ -47,3 +47,7 @@ Route::get('/mitra/cvwijayasuksesbersama', function () {
 
 Route::get('listkualitasproduct/kualitas', 'IkanController@kualitas');
 
+//Dashboard
+Route::get('/dashboard', 'DashboardController@index');
+
+

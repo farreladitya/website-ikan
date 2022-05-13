@@ -71,4 +71,8 @@ class IkanController extends Controller
         return view('gizi.giziikan', ['ikan'=>$ikan]);
     }
 
+    public function kualitas(){
+        return view('kualitas.kualitasikan');
+    }
+
 };

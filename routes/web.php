@@ -28,11 +28,11 @@ Route::get('gizi/cari', 'IkanController@carigizi');
 Route::get('gizi/product/{id}','IkanController@indexIkan');
 
 //Fitur Kualitas
-Route::get('kualitas', 'IkanController@indexKualitas');
-Route::get('kualitas/cari', 'IkanController@carikualitas');
+Route::get('kualitas', 'IkanController@indexKualitas');//Halaman produk kualitas
+Route::get('kualitas/cari', 'IkanController@carikualitas'); //Fitur cari kualitas
 
-Route::get('listkualitasproduct', 'IkanController@listprodukkualitas');
-Route::get('listkualitasproduct/cari', 'IkanController@carikualitas');
+Route::get('listkualitasproduct', 'IkanController@listprodukkualitas'); //Halaman list produk kualitas
+Route::get('listkualitasproduct/cari', 'IkanController@carikualitas'); //Fitur cari dari list kualitas
 
 //Fitur Mitra
 Route::get('mitra', function () {
@@ -45,7 +45,5 @@ Route::get('/mitra/cvwijayasuksesbersama', function () {
     return view('mitra.cvwijaya');
 });
 
-Route::get('/kualitasikan', function(){
-    return view('kualitas.kualitasikan');
-});
+Route::get('listkualitasproduct/kualitas', 'IkanController@kualitas');
 

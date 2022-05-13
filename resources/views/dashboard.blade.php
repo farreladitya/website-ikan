@@ -101,7 +101,7 @@
                 <h1 class="headline"> Welcome to Dashboard </h1>
             </div>
             <div class="col-sm-7">
-                <img src="{{URL::asset('/images/gambarberanda.png')}}" width="110%" class="float-right">
+                <img src="{{URL::asset('/images/gambarberanda.png')}}" width="700px" class="float-right">
             </div>
         </div>
 

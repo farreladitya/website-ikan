@@ -15,7 +15,6 @@ class IkanSeeder extends Seeder
     */
     public function run()
     {
-        $todayDate = new DateTime();
         DB::table('ikan')->insert([
             [
                 'ikan_id' => 's01',

@@ -11,7 +11,7 @@ class IkanController extends Controller
 {
     public function index(){
         $ikan = DB::table('foto_ikan')->join('harga_ikan', 'harga_ikan.ikan_id', '=', 'foto_ikan.ikan_id')->paginate(10);
-        $persebaranikan = DB::table('persebaran')->join('foto_ikan', 'foto_ikan.ikan_id','persebaran.ikan_id')->whereNotNull('Persebaran')->get();
+        $persebaranikan = DB::table('persebaran')->join('foto_ikan', 'foto_ikan.ikan_id','persebaran.ikan_id')->whereNotNull('Persebaran')->get()->keyBy('ikan_id');
 
         return view('beranda', ['ikan'=> $ikan, 'persebaran'=> $persebaranikan]);
     }

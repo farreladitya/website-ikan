@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFotoIkanTable extends Migration
+class CreatePersebaranTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,12 @@ class CreateFotoIkanTable extends Migration
      */
     public function up()
     {
-        Schema::create('foto_ikan', function (Blueprint $table) {
-            $table->string('ikan_id', 3)->primary();
+        Schema::create('persebaran', function (Blueprint $table) {
+            $table->id();
+            $table->string('ikan_id', 3);
             $table->foreign('ikan_id')->references('ikan_id')->on('ikan');
-            $table->string('url_gambar', 177)->nullable();
+            $table->string('persebaran', 127)->nullable();
+            $table->text('url', 101)->nullable();
         });
     }
 
@@ -27,6 +29,6 @@ class CreateFotoIkanTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('foto_ikan');
+        Schema::dropIfExists('persebaran');
     }
 }

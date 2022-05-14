@@ -6,21 +6,21 @@
     <div class="col-sm-12">
         <img src="{{URL::asset('/images/gambarlist.png')}}" width="100%">
         <p style="font-size: 40px; color:black; margin-left: 150px; margin-top:70px" class="carousel-caption carousel-captions"><b>Sepalopoda</b> <br></p>
-        <form action="/listkualitasproduct/cari" method="GET">
-            <div class="row carousel-caption carousel-captions" style="margin-top:150px">
-                <div class="col-sm-4"></div>
-                <div class="col-sm-6">
-                    <div class="form-group has-search center float-right" style="width: 78%">
-                        <span class="fa fa-search form-control-feedback"></span>
-                        <input type="text" class="form-control buttonradius" placeholder="Cari" name="cari" value="{{ old('cari') }}">
-                    </div>
+        <form action="kualitas/listproduct/cari" method="GET">
+        <div class="row carousel-caption carousel-captions" style="margin-top:150px">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-6">
+                <div class="form-group has-search center float-right" style="width: 78%">
+                    <span class="fa fa-search form-control-feedback"></span>
+                    <input type="text" class="form-control buttonradius" placeholder="Cari" name="cari" value="{{ old('cari') }}">
                 </div>
-                <div class="col-sm-2">
-                        <button class="button buttonmasuk buttonradius" style="margin-top: 9px; margin-left:-90px" type="submit" value="CARI">Cari</button>
-                </div>
-
             </div>
-        </form>
+            <div class="col-sm-2">
+                    <button class="button buttonmasuk buttonradius" style="margin-top: 9px; margin-left:-90px" type="submit" value="CARI">Cari</button>
+            </div>
+
+        </div>
+    </form>
     </div>
 </div>
 <div class="row">
@@ -29,8 +29,8 @@
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb mt-1" style="margin-left: 47px">
             <li class="breadcrumb-item"><a class="text-secondary" href="/">Beranda</a></li>
-            <li class="breadcrumb-item"><a class="text-secondary" href="/kualitas">Kualitas</a></li>
-            <li class="breadcrumb-item active text-dark" aria-current="page">List Kualitas</li>
+            <li class="breadcrumb-item"><a class="text-secondary" href="/giziphp">Kualitas</a></li>
+            <li class="breadcrumb-item active text-dark" aria-current="page">List Product</li>
             </ol>
         </nav>
     </div>
@@ -95,19 +95,19 @@
         <div class="col-sm-8 container">
             <div class="row">
                 @foreach ($ikan as $i)
-                <a href="listkualitasproduct/kualitas">
-                    <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1" onclick="location.href='/';">
-                        <div class="card"> <div class="container-gambar" style="aspect-ratio: 3/2;"><img class="card-img-top w-100 h-100" style="object-fit: contain" src="{{$i->Url}}"></div>
-                            <div class="card-body">
-                                <h6 class="font-weight-bold pt-1">{{$i->nama_ikan}}</h6>
-                                <div class="text-muted description">Space for small product description</div>
-                                    <div class="d-flex flex-column">
-                                        <div class="h6 font-weight-bold">{{$i->harga}}</div>
-                                    </div>
-                            </div>
+                <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1" onclick="location.href='/';">
+                    <a href="/kualitas/product/{{$i->ikan_id}}">
+                        <div class="card"> <div class="container-gambar" style="aspect-ratio: 3/2;"><img class="card-img-top w-100 h-100" style="object-fit: contain" src="{{$i->url_gambar}}"></div>
+                        <div class="card-body">
+                            <h6 class="font-weight-bold pt-1">{{$i->nama_biasa}}</h6>
+                            <div class="text-muted description">Space for small product description</div>
+                                <div class="d-flex flex-column">
+                                    <div class="h6 font-weight-bold">{{$i->harga}}</div>
+                                </div>
                         </div>
                     </div>
-                </a>
+                    </a>
+                </div>
                 @endforeach
             </div>
         </div>

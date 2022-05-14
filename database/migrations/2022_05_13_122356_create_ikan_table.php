@@ -18,6 +18,7 @@ class CreateIkanTable extends Migration
             $table->string('jenis_ikan', 10);
             $table->string('nama_ikan', 22);
             $table->string('nama_latin', 22);
+            $table->string('nama_biasa', 22)->nullable();
             $table->integer('berat_minimal');
             $table->integer('berat_maksimal');
             $table->string('kategori_ikan', 35);

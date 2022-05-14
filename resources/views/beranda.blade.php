@@ -4,12 +4,13 @@
 <script>
     $(document).ready(function(){
         $('.jenis-ikan').on("click", function(){
-            let daerah = this.value.split(',')[0];
-            let gambar = this.value.split(',')[1];
-            daerah = daerah.split(" ");
+            let daerah = this.value.split(';')[0];
+            let gambar = this.value.split(';')[1];
+            let nama = this.value.split(';')[2];
+            daerah = daerah.split(",");
             let i = 0;
             while(i<5){
-                if(!daerah[i]){
+                if(daerah[i] === null){
                     daerah[i] = '-';
                 };
                 i++;
@@ -20,6 +21,7 @@
             $('#daerah-4').text(daerah[3]);
             $('#daerah-5').text(daerah[4]);
             $('#gambar-persebaran').attr('src', gambar);
+            $('#dropdownMenu').text(nama);
         })
     })
 </script>
@@ -69,100 +71,104 @@
             </div>
         </div>
         <div class="col-sm-5">
-                <button class="button buttonmasuk buttonradius" style="margin-top: 9px; margin-left:-20px">Cari</button>
+            <button class="button buttonmasuk buttonradius" style="margin-top: 9px; margin-left:-20px">Cari</button>
         </div>
     </div>
     <div class="row">
         <div class="col-sm-3"> </div>
         <div class="col-sm-7" style="margin-left: -40px">
-        <div class="achievement section-padding mt-3">
-              <div class="owl-carousel achievement-carousel">
-                  @foreach ($ikan as $i)
-                  <div class="achievement-item bayangan">
-                    <div class="ach-1 mb-3" style="aspect-ratio: 3/2;">
-                        <img src="{{$i->Url}}" style="object-fit: contain" class="w-100 h-100 card-img" alt="ach-1">
+            <div class="achievement section-padding mt-3">
+                <div class="owl-carousel achievement-carousel">
+                    @foreach ($ikan as $i)
+                    <div class="achievement-item bayangan">
+                        <div class="ach-1 mb-3" style="aspect-ratio: 3/2;">
+                            <img src="{{$i->url_gambar}}" style="object-fit: contain" class="w-100 h-100 card-img" alt="ach-1">
+                        </div>
+                        <div class="item-text card-body p-1">
+                            @if (!$i->nama_biasa)
+                            <h6>{{$i->nama_ikan}}</h6>
+                            @else
+                            <h6>{{$i->nama_biasa}}</h6>
+                            @endif
+                            <p>{{$i->harga}}</p>
+                        </div>
                     </div>
-                    <div class="item-text card-body p-1">
-                        <h6>{{$i->nama_ikan}}</h6>
-                        <p>{{$i->harga}}</p>
-                    </div>
-                  </div>
-                  @endforeach
-              </div>
-        </div>
-        </div>
-</div>
-<div class="row">
-    <div class="col-sm-1"></div>
-    <div class="col-sm-5" style="margin-top: 75px;">
-        <h1 class="font-weight-bold margincontainer" style="margin-right: 55px; font-size:35px">Hasil Laut Terpopuler</h1>
-        <div class="container-sm">
-            <img src="https://cdn.discordapp.com/attachments/844800516630118403/974667191783931924/Ribbon_Fish.png" alt="" style="object-fit: contain" class="w-100 h-100" id="gambar-persebaran">
-        </div>
-    </div>
-    <div class="col-sm-5" style="margin-top: 80px;">
-        <div class="dropdown text-right" style="margin-right: 100px;">
-            <button class="btn button buttonmasuk buttonradius dropdown-toggle" type="button" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Jenis Ikan
-            </button>
-            <div class="dropdown-menu" id="pilih-ikan" aria-labelledby="dropdownMenu">
-              @foreach ($persebaran as $p)
-                <option class="dropdown-item jenis-ikan" value="{{$p->Persebaran}},{{$p->Url}}" >{{$p->nama_biasa}}</option>
-              @endforeach
+                    @endforeach
+                </div>
             </div>
         </div>
-        <hr style="color = black; margin-right: 100px;" class="mt-1" >
-        <a href="/"><p id="daerah-1"> Lawang </p></a>
-        <hr style="color = black; margin-right: 100px;" class="mt-1" >
-        <a href="/"><p id="daerah-2"> Tuban </p></a>
-        <hr style="color = black; margin-right: 100px;" class="mt-1">
-        <a href="/"><p id="daerah-3"> Jampang </p></a>
-        <hr style="color = black; margin-right: 100px;" class="mt-1">
-        <a href="/"><p id="daerah-4"> Pelabuhan ratu </p></a>
-        <hr style="color = black; margin-right: 100px;" class="mt-1">
-        <a href="/"><p id="daerah-5"> Ujung Genteng </p></a>
-        <hr style="color = black; margin-right: 100px;" class="mt-1">
     </div>
-    <div class="col-sm-1"></div>
-</div>
-<div class="row">
-    <div class="col-sm-5" style="margin-top: 85px;">
-        <img src="{{URL::asset('/images/resepberanda.png')}}" width="100%">
-        <p style="font-size: 40px; color:black; text-align:left; margin-left: 110px" class="carousel-caption"><b>Rekomendasi Resep</b> <br>
-            <span class="row row-bottom-margin" style="font-size:19px; margin-left: 0px; margin-top:20px">Bingung mau cari masakan hasil laut yang anti-mainstream? Yuk cek rekomendasi resep terpopuler disini</span>
-            <a href = "#" style="font-size:19px; color: black">Lihat Selengkapnya</a>
-        </p>
+    <div class="row">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-5" style="margin-top: 75px;">
+            <h1 class="font-weight-bold margincontainer" style="margin-right: 55px; font-size:35px">Hasil Laut Terpopuler</h1>
+            <div class="container-sm">
+                <img src="https://cdn.discordapp.com/attachments/844800516630118403/974667191783931924/Ribbon_Fish.png" alt="" style="object-fit: contain" class="w-100 h-100" id="gambar-persebaran">
+            </div>
+        </div>
+        <div class="col-sm-5" style="margin-top: 80px;">
+            <div class="dropdown text-right" style="margin-right: 100px;">
+                <button class="btn button buttonmasuk buttonradius dropdown-toggle" type="button" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Jenis Ikan
+                </button>
+                <div class="dropdown-menu" id="pilih-ikan" aria-labelledby="dropdownMenu">
+                    @foreach ($persebaran as $p)
+                    <option class="dropdown-item jenis-ikan" value="{{$p->persebaran}};{{$p->url_gambar}};{{$p->nama_biasa}}" >{{$p->nama_biasa}}</option>
+                    @endforeach
+                </div>
+            </div>
+            <hr style="color = black; margin-right: 100px;" class="mt-1" >
+            <a href="/"><p id="daerah-1"> Lawang </p></a>
+            <hr style="color = black; margin-right: 100px;" class="mt-1" >
+            <a href="/"><p id="daerah-2"> Tuban </p></a>
+            <hr style="color = black; margin-right: 100px;" class="mt-1">
+            <a href="/"><p id="daerah-3"> Jampang </p></a>
+            <hr style="color = black; margin-right: 100px;" class="mt-1">
+            <a href="/"><p id="daerah-4"> Pelabuhan ratu </p></a>
+            <hr style="color = black; margin-right: 100px;" class="mt-1">
+            <a href="/"><p id="daerah-5"> Ujung Genteng </p></a>
+            <hr style="color = black; margin-right: 100px;" class="mt-1">
+        </div>
+        <div class="col-sm-1"></div>
     </div>
-    <div class="col-sm-6" style="margin-top: 140px">
-        <div class="input-group-btn d-flex justify-content-center" data-toggle="buttons">
-            <label class="btn btn btn-outline-dark buttonradius btn-sm active">
-              <input type="radio" name="options" id="option1" autocomplete="off" checked>Bergizi Tinggi
-            </label>
-            <label class="btn btn btn-outline-dark buttonradius btn-sm ml-3">
-              <input type="radio" name="options" id="option2" autocomplete="off">Olahan Sehat
-            </label>
-            <label class="btn btn btn-outline-dark buttonradius btn-sm ml-3">
-              <input type="radio" name="options" id="option3" autocomplete="off">Ide Jualan
-            </label>
-          </div>
-        <div class="achievement section-padding mt-3">
-              <div class="owl-carousel achievement-carousel">
-                @foreach ($ikan as $i)
-                  <div class="achievement-item bayangan">
-                    <div class="ach-1 mb-3" style="aspect-ratio: 3/2;"><img src="{{$i->Url}}" alt="ach-1" style="object-fit: contain" class="w-100 h-100 card-img"></div>
-                      <div class="item-text">
-                        <h6>{{$i->nama_ikan}}</h6>
-                        <p>{{$i->harga}}</p>
-                      </div>
-                  </div>
-                  @endforeach
-              </div>
+    <div class="row">
+        <div class="col-sm-5" style="margin-top: 85px;">
+            <img src="{{URL::asset('/images/resepberanda.png')}}" width="100%">
+            <p style="font-size: 40px; color:black; text-align:left; margin-left: 110px" class="carousel-caption"><b>Rekomendasi Resep</b> <br>
+                <span class="row row-bottom-margin" style="font-size:19px; margin-left: 0px; margin-top:20px">Bingung mau cari masakan hasil laut yang anti-mainstream? Yuk cek rekomendasi resep terpopuler disini</span>
+                <a href = "#" style="font-size:19px; color: black">Lihat Selengkapnya</a>
+            </p>
         </div>
+        <div class="col-sm-6" style="margin-top: 140px">
+            <div class="input-group-btn d-flex justify-content-center" data-toggle="buttons">
+                <label class="btn btn btn-outline-dark buttonradius btn-sm active">
+                    <input type="radio" name="options" id="option1" autocomplete="off" checked>Bergizi Tinggi
+                </label>
+                <label class="btn btn btn-outline-dark buttonradius btn-sm ml-3">
+                    <input type="radio" name="options" id="option2" autocomplete="off">Olahan Sehat
+                </label>
+                <label class="btn btn btn-outline-dark buttonradius btn-sm ml-3">
+                    <input type="radio" name="options" id="option3" autocomplete="off">Ide Jualan
+                </label>
+            </div>
+            <div class="achievement section-padding mt-3">
+                <div class="owl-carousel achievement-carousel">
+                    @foreach ($ikan as $i)
+                    <div class="achievement-item bayangan">
+                        <div class="ach-1 mb-3" style="aspect-ratio: 3/2;"><img src="{{$i->url_gambar}}" alt="ach-1" style="object-fit: contain" class="w-100 h-100 card-img"></div>
+                        <div class="item-text">
+                            <h6>{{$i->nama_ikan}}</h6>
+                            <p>{{$i->harga}}</p>
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
+            </div>
         </div>
-</div>
-@endsection
+    </div>
+    @endsection
 
-@section('berandaactive')
-class='navbar navbar-brand active'
-@endsection
+    @section('berandaactive')
+    class='navbar navbar-brand active'
+    @endsection
 

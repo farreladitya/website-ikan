@@ -69,7 +69,7 @@ class FotoSeeder extends Seeder
             ],
             [
                 'ikan_id' => 's14',
-                'url_gambar' => null
+                'url_gambar' => 'https://cdn.discordapp.com/attachments/688670293480570889/974998784427851826/Epinephelus_coioides_Thailand_1.jpg'
             ],
             [
                 'ikan_id' => 's15',

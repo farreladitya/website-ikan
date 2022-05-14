@@ -10,8 +10,6 @@ class Ikan extends Model
 {
     use HasFactory;
 
-    protected $table = "ikan";
-
     public function foto(){
         return $this->hasOne(FotoIkan::class, 'ikan_id');
     }

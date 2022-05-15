@@ -9,7 +9,7 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
     <link rel="stylesheet" href="{{asset('css/owl.carousel.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
     @section('head')
@@ -163,7 +163,30 @@
         left: 0;
         width: 50%;
     }
-}
+    .divdetail{
+    width: 100px;
+    height: 206px;
+    background: linear-gradient(163.31deg, #C6DADA -0.92%, rgba(255, 160, 0, 0) 194.15%);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 20px;
+    padding: 25px;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin: 10px;
+    }
+    .divinformasi{
+    background: #E6F5F8;
+    border-radius: 20px;
+    padding: 15px;
+    margin: 10px;
+    }
+    .divactive{
+    background: #0081FE;
+    border-radius: 20px;
+    padding: 15px;
+    margin: 10px;
+    color: white
+    }
 </style>
 </body>
 <nav class="navbar navbar-expand-sm fixed-top">

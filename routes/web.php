@@ -50,4 +50,7 @@ Route::get('listkualitasproduct/kualitas', 'IkanController@kualitas');
 //Dashboard
 Route::get('/dashboard', 'DashboardController@index');
 
+Route::get('/detailproduct', function () {
+    return view('kualitas.detailproduct');
+});
 

@@ -6,7 +6,7 @@
         <div class="position-sticky pt-3">
           <ul class="nav flex-column">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/dashboard">
+              <a class="nav-link" aria-current="page" href="/dashboard">
                 <span data-feather="home"></span>
                 Dashboard
               </a>
@@ -18,7 +18,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/dashboard/index">
+              <a class="nav-link active" href="#">
                 <span data-feather="shopping-cart"></span>
                 Products
               </a>
@@ -43,17 +43,34 @@
             </li>
           </ul>
       </nav>
-    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-        <div class="row">
-            <div class="col-sm-5">
-                <h1 class="headline"> Welcome to Dashboard </h1>
-            </div>
-            <div class="col-sm-7">
-                <img src="{{URL::asset('/images/gambarberanda.png')}}" width="700px" class="float-right">
-            </div>
+
+<main class="mt-4 col-md-9 ms-sm-auto col-lg-10 px-md-4">
+  <h2>Data Produk</h2>
+  <a href="/dashboard/index" class="btn btn-success mb-3">Kembali</a>
+
+  <form action="/dashboard/index/store" method="post">
+    {{ csrf_field() }}
+    <div class="form-group mb-3">
+        <label class="form-label">Nama</label>
+        <input type="text" class="form-control"  name="nama" required="required">
         </div>
-      </div>
-    </main>
-  </div>
-</div>
+        <div class="form-group mb-3">
+        <label class="form-label">Ikan</label>
+        <input type="text" class="form-control"  name="ikan" required="required">
+        </div>
+        <div class="form-group mb-3">
+        <label class="form-label">Harga</label>
+        <input type="text"  class="form-control" name="harga" required="required">
+        </div>
+        <div class="form-group mb-3">
+        <label class="form-label">Berat</label>
+        <input type="text" class="form-control"  name="berat" required="required">
+        </div>
+        <div class="form-group mb-3">
+        <label class="form-label">Gambar</label>
+        <input type="text" class="form-control"  name="gambar" required="required">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</main>
 @endsection

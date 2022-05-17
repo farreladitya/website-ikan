@@ -46,11 +46,17 @@ Route::get('/mitra/cvwijayasuksesbersama', function () {
 });
 
 Route::get('listkualitasproduct/kualitas', 'IkanController@kualitas');
-
-//Dashboard
-Route::get('/dashboard', 'DashboardController@index');
-
 Route::get('/detailproduct', function () {
     return view('kualitas.detailproduct');
 });
+
+//Dashboard
+Route::get('/dashboard', 'DashboardController@index');
+Route::get('/dashboard', 'DashboardController@landing');
+Route::get('/dashboard/index','DashboardController@index');
+Route::get('/dashboard/index/tambah','DashboardController@tambah');
+Route::post('/dashboard/index/store','DashboardController@store');
+Route::get('/dashboard/index/edit/{id}','DashboardController@edit');
+Route::post('/dashboard/index/update','DashboardController@update');
+Route::get('/dashboard/index/hapus/{id}','DashboardController@hapus');
 

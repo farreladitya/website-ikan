@@ -200,8 +200,8 @@
             <a @yield('mitraactive') class="navbar navbar-brand" href="/mitra">Mitra</a>
         </div>
         <div class="col-sm-3">
-            <a class="button buttonmasuk" href="/login">Masuk</a>
-            <a class="button buttondaftar" href="/register">Daftar</a>
+            <button class="button buttonmasuk">Masuk</button>
+            <button class="button buttondaftar">Daftar</button>
         </div>
 </nav>
     <div id="main">

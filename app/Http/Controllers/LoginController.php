@@ -3,18 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-<<<<<<< HEAD
 use Illuminate\Support\Facades\Auth;
 
-=======
->>>>>>> parent of 10071d0 (Revert "Setting Login & Register")
 
 class LoginController extends Controller
 {
     public function index(){
         return view('login');
     }
-<<<<<<< HEAD
 
     public function authenticate(Request $request)
     {
@@ -35,6 +31,3 @@ class LoginController extends Controller
     }
 }
 
-=======
-}
->>>>>>> parent of 10071d0 (Revert "Setting Login & Register")

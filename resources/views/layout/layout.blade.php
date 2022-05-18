@@ -46,6 +46,7 @@
     }
     .button:hover {
         box-shadow: 0 9px 12px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+        color: white;
     }
     .buttondaftar {
         background-color: white;
@@ -202,12 +203,23 @@
 
         <div class="col-sm-3">
         @auth
-            <a class="nav-link dropdown-toggle button buttonmasuk" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <div class="dropdown">
+            <button class="btn button buttonmasuk dropdown-toggle" type="button" id="dropdownnavbar" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Welcome {{ Auth::user()->name }}
+            </button>
+            <div class="dropdown-menu" id="navbarlogin" aria-labelledby="dropdownnavbar" style="background-color: #0a142f;  border: 2px solid white;">
+                <option class="dropdown-item" style="color: white; " role="button"> Logout </option>
+                {{-- @foreach ($persebaran as $p)
+                <option class="dropdown-item jenis-ikan" value="{{$p->persebaran}};{{$p->url_gambar}};{{$p->nama_biasa}}" >{{$p->nama_biasa}}</option>
+                @endforeach --}}
+            </div>
+        </div>
+            {{-- <a class="nav-link dropdown-toggle button buttonmasuk" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Welcome {{ Auth::user()->name }}
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             <li><a class="dropdown-item" href="#">Logout</a></li>
-          </ul>
+          </ul> --}}
             {{-- <a class="button buttonmasuk"> Welcome {{ Auth::user()->name }} </a>
 
             <form action="/logout" method="POST">

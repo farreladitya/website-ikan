@@ -1,12 +1,22 @@
 @extends('layout.layout')
 @section('title', 'Detail Product')
 @section('isikonten')
+@foreach ($ikan as $i)
 
 <div class="row">
     <div class="col-sm-5">
-        <h1 class="font-weight-bold display-4 margincontainer" style="margin-top: 70px"> Ikan Soldier Crooker </h1>
-        <h1 class="font-weight-bold margincontainer" style="margin-top: 30px; color: #96B7D6;"> Rp30000 </h1>
-        <p style="font-size: 22px; color: #96B7D6;" class="margincontainer">50-500 gr/ ekor</p>
+        <h1 class="font-weight-bold display-4 margincontainer" style="margin-top: 70px"> Ikan {{$i->nama_biasa}} </h1>
+        <h1 class="font-weight-bold margincontainer" style="margin-top: 30px; color: #96B7D6;"> @if (!$i->harga)
+             Harga Belum Diketahui
+             @else
+             Rp{{$i->harga}}
+        @endif
+        </h1>
+        <p style="font-size: 22px; color: #96B7D6;" class="margincontainer">@if ($i->berat_minimal == 0 && $i->berat_maksimal == 0)
+            All Size
+            @else
+            {{$i->berat_minimal}}-{{$i->berat_maksimal}} gram/ekor
+        @endif</p>
         <h4 class="font-weight-bold margincontainer" style="margin-top: 30px;"> Penjual : </h4>
         <img src="{{URL::asset('/images/udbarokah.png')}}" width="44%" class="margincontainer" style="margin-top: 10px">
     </div>
@@ -18,12 +28,12 @@
     <div class="col-2 divdetail text-center">
         <p>Nama Latin</p>
         <i class="fa fa-fish fa-lg" style="margin-top: 15px"></i><br><br>
-        <p class="font-weight-bold" style="font-size: 18px; display:inline"> Thunnus albacares </p>
+        <p class="font-weight-bold" style="font-size: 18px; display:inline"> {{$i->nama_latin}}</p>
     </div>
     <div class="col-2 divdetail text-center">
         <p>Kategori Ikan</p>
         <i class="fa fa-list fa-lg" style="margin-top: 15px"></i><br><br>
-        <p class="font-weight-bold" style="font-size: 18px; display:inline"> Ikan Pelagis </p>
+        <p class="font-weight-bold" style="font-size: 18px; display:inline"> Ikan {{$i->jenis_ikan}} </p>
     </div>
     <div class="col-2 divdetail text-center">
         <p>Habitat</p>
@@ -155,19 +165,19 @@
 <h2 class="font-weight-bold text-center" style="margin-top: 100px;"> Rekomendasi Resep </h2>
 {{-- <div class="row">
     <div class="col-sm-11" style="margin-left:25px">
-    <div class="achievement section-padding mt-3">
-          <div class="owl-carousel owl-carousels achievement-carousel">
-            @foreach ($sepalopoda as $s)
-            <div class="achievement-item bayangan">
-                <div class="ach-1 mb-3" style="aspect-ratio: 3/2;"><img src="{{$s->url_gambar}}" alt="ach-1" style="object-fit: contain" class="w-100 h-100 card-img"></div>
-                  <div class="item-text">
-                    <h6>{{$s->nama_ikan}}</h6>
-                    <p>{{$s->harga}}</p>
-                  </div>
-              </div>
-            @endforeach
-          </div>
-    </div>
+        <div class="achievement section-padding mt-3">
+            <div class="owl-carousel owl-carousels achievement-carousel">
+                @foreach ($sepalopoda as $s)
+                <div class="achievement-item bayangan">
+                    <div class="ach-1 mb-3" style="aspect-ratio: 3/2;"><img src="{{$s->url_gambar}}" alt="ach-1" style="object-fit: contain" class="w-100 h-100 card-img"></div>
+                    <div class="item-text">
+                        <h6>{{$s->nama_ikan}}</h6>
+                        <p>{{$s->harga}}</p>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+        </div>
     </div>
 </div> --}}
 <div class="row">
@@ -202,12 +212,12 @@
     </div>
 </form>
 <div class="container" style="margin-top: 150px; margin-bottom:130px">
-        <div class="dropdown">
-            <button class="btn button buttonmasuk dropdown-toggle" type="button" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Urutkan Berdasarkan
-            </button>
-            <div class="dropdown-menu" id="pilih-ikan" aria-labelledby="dropdownMenu">
-                {{-- @foreach ($persebaran as $p)
+    <div class="dropdown">
+        <button class="btn button buttonmasuk dropdown-toggle" type="button" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Urutkan Berdasarkan
+        </button>
+        <div class="dropdown-menu" id="pilih-ikan" aria-labelledby="dropdownMenu">
+            {{-- @foreach ($persebaran as $p)
                 <option class="dropdown-item jenis-ikan" value="{{$p->persebaran}};{{$p->url_gambar}};{{$p->nama_biasa}}" >{{$p->nama_biasa}}</option>
                 @endforeach --}}
             </div>
@@ -222,10 +232,10 @@
             <span class="font-weight-bold" style="background-color:white;color: #253368; padding: 5px 17px;margin-left: -5px;height:34px; display:inline-block; border-radius:5px">Mudah Pengelohaan</span>
             <hr style="color = black;" class="mt-4">
         </div>
-</div>
+    </div>
+    @endforeach
+    @endsection
 
-@endsection
-
-@section('kualitasactive')
-class='navbar navbar-brand active'
-@endsection
+    @section('kualitasactive')
+    class='navbar navbar-brand active'
+    @endsection

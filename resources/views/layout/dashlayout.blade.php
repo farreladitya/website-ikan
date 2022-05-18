@@ -51,6 +51,7 @@
         Welcome {{ Auth::user()->name }}
       </a>
       <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a href="/" class="a:link a:hover"><button type="button" class="dropdown-item">Main Menu</button></a>
         <form action="/logout" method="POST">
             @csrf
             <li><button type="submit" class="dropdown-item">Logout</button></li>

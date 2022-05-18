@@ -208,6 +208,7 @@
                 Welcome {{ Auth::user()->name }}
             </button>
             <div class="dropdown-menu" id="navbarlogin" aria-labelledby="dropdownnavbar" style="background-color: #0a142f;  border: 2px solid white;">
+                <a href="/dashboard" class="a:link a:hover"><button style="color:white" type="button" class="dropdown-item">Dashboard</button></a>
                 <form action="/logout" method="POST">
                     @csrf
                 <button class="dropdown-item" style="color: white; " role="button"> Logout </button>

@@ -54,9 +54,9 @@ Route::get('/detailproduct', function () {
 });
 
 //Dashboard
-Route::get('/dashboard', 'DashboardController@index');
-Route::get('/dashboard', 'DashboardController@landing');
-Route::get('/dashboard/index','DashboardController@index');
+Route::get('/dashboard', 'DashboardController@index')->middleware('auth');
+Route::get('/dashboard', 'DashboardController@landing')->middleware('auth');;
+Route::get('/dashboard/index','DashboardController@index')->middleware('auth');;
 Route::get('/dashboard/index/tambah','DashboardController@tambah');
 Route::post('/dashboard/index/store','DashboardController@store');
 Route::get('/dashboard/index/edit/{id}','DashboardController@edit');
@@ -64,7 +64,10 @@ Route::post('/dashboard/index/update','DashboardController@update');
 Route::get('/dashboard/index/hapus/{id}','DashboardController@hapus');
 
 //Login
-Route::get('/login', 'LoginController@index');
+Route::get('/login', 'LoginController@index')->middleware('guest');
+Route::post('/login', 'LoginController@authenticate');
+Route::post('/logout', 'LoginController@logout');
+
 Route::get('/register', 'RegisterController@index');
 Route::post('/register', 'RegisterController@store');
 

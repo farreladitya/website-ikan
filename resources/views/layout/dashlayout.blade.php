@@ -46,9 +46,26 @@
     <span class="navbar-toggler-icon"></span>
   </button>
     <div class="navbar-nav">
-    <div class="nav-item text-nowrap">
-      <a class="nav-link px-3" href="#">Sign out</a>
-    </div>
+        @auth
+        <a class="nav-link dropdown-toggle button buttonmasuk" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Welcome {{ Auth::user()->name }}
+      </a>
+      <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+        <form action="/logout" method="POST">
+            @csrf
+            <li><button type="submit" class="dropdown-item">Logout</button></li>
+        </form>
+      </ul>
+        {{-- <a class="button buttonmasuk"> Welcome {{ Auth::user()->name }} </a>
+
+        <form action="/logout" method="POST">
+            @csrf
+            <button  class="button buttonmasuk" type="submit">Logout</button>
+        </form> --}}
+    @else
+        <a class="button buttonmasuk" href="/login">Masuk</a>
+        <a class="button buttondaftar" href="/register">Daftar</a>
+    @endauth
   </div>
 </header>
 

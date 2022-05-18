@@ -7,16 +7,32 @@
       <h1 class="h3 mb-3 fw-normal">Registrasi Akun</h1>
 
       <div class="form-floating">
-        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="email">
-        <label for="floatingInput">Alamat Email</label>
+        <input type="email" class="form-control mb-1 @error('email') is-invalid @enderror" id="email" placeholder="name@example.com" name="email" value="{{old('email')}}" required>
+        <label for="email">Alamat Email</label>
+        @error('email')
+        <div class="invalid-feedback">
+            {{ $message }}
+          </div>
+        @enderror
       </div>
       <div class="form-floating">
-        <input type="text" class="form-control" id="floatingInput" placeholder="name" name="name">
-        <label for="floatingInput">Nama</label>
+        <input type="text" class="form-control mb-1 @error('name') is-invalid @enderror" id="name" placeholder="name" name="name" value="{{old('name')}}"  required>
+        <label for="name">Nama</label>
+        @error('name')
+        <div class="invalid-feedback">
+            {{ $message }}
+          </div>
+        @enderror
       </div>
       <div class="form-floating">
-        <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password">
-        <label for="floatingPassword">Kata Sandi</label>
+        <input type="password" class="form-control @error('password') is-invalid @enderror" id="password" placeholder="Password" name="password" required>
+        <label for="password">Kata Sandi</label>
+        @error('password')
+        <div class="invalid-feedback">
+            {{ $message }}
+          </div>
+        @enderror
+
       </div>
 
       <div class="checkbox mb-3">

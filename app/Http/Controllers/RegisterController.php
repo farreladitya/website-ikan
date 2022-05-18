@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class RegisterController extends Controller
 {
@@ -22,15 +23,14 @@ class RegisterController extends Controller
 
     $validated = $request->validate([
         'name' => 'required|max:255',
-        'email' => 'required|unique:users|max:255',
+        'email' => 'required|unique:users|max:255|email:dns',
         'password' => 'required|min:8|max:255'
     ]);
 
-    User::create([
-        'name' => $request->name,
-        'email' => $request->email,
-        'password' => bcrypt($request->password)
-    ]);
+    $validated['password'] = Hash::make($validated['password']);
+
+    User::create($validated);
+
     $request->session()->flash('status', 'Registrasi berhasil, Silahkan Masuk!');
     return redirect('/login');
     }

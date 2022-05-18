@@ -199,10 +199,27 @@
             <a class="navbar navbar-brand" href="#">Fakta</a>
             <a @yield('mitraactive') class="navbar navbar-brand" href="/mitra">Mitra</a>
         </div>
+
         <div class="col-sm-3">
+        @auth
+            {{-- <a class="nav-link dropdown-toggle button buttonmasuk" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Welcome {{ Auth::user()->name }}
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" href="#">Logout</a></li>
+          </ul> --}}
+            <a class="button buttonmasuk"> Welcome {{ Auth::user()->name }} </a>
+
+            <form action="/logout" method="POST">
+                @csrf
+                <button  class="button buttonmasuk" type="submit">Logout</button>
+            </form>
+        @else
             <a class="button buttonmasuk" href="/login">Masuk</a>
             <a class="button buttondaftar" href="/register">Daftar</a>
+        @endauth
         </div>
+
 </nav>
     <div id="main">
         @section('isikonten')

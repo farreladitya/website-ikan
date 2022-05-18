@@ -28,7 +28,8 @@ Route::get('gizi/listproduct', 'IkanController@listprodukgizi');
 Route::get('gizi/listproduct/cari', 'IkanController@carigizi');
 
 Route::get('gizi/cari', 'IkanController@carigizi');
-Route::get('gizi/product/{id}','IkanController@indexIkan');
+Route::get('gizi/product/{id}','IkanController@giziIkan');
+Route::get('gizi/product/detail/{id}','IkanController@detailIkan');
 
 //Fitur Kualitas
 Route::get('kualitas', 'IkanController@indexKualitas');//Halaman produk kualitas
@@ -36,6 +37,8 @@ Route::get('kualitas/cari', 'IkanController@carikualitas'); //Fitur cari kualita
 
 Route::get('kualitas/listproduct', 'IkanController@listprodukkualitas'); //Halaman list produk kualitas
 Route::get('kualitas/listproduct/cari', 'IkanController@carikualitas'); //Fitur cari dari list kualitas
+Route::get('kualitas/product/detail/{id}','IkanController@detailIkan');
+Route::get('kualitas/product/{id}','IkanController@kualitas');
 
 //Fitur Mitra
 Route::get('mitra', function () {

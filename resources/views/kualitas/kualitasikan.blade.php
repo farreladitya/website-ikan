@@ -6,7 +6,9 @@
     <div class="col-sm-5">
         <h1 class="font-weight-bold display-4 margincontainer" style="margin-top: 105px"> Cek Kualitas Ikan Soldier Crooker </h1>
         <p style="font-size: 24px; margin-top:30px" class="margincontainer">Lihat Video dan indikator dibawah untuk mengetahui indikator kualitas ikan</p>
-        <a href = "/#" style="font-size:17px;" class="text-secondary margincontainer">Lihat detail ikan</a>
+        @foreach ($ikan as $i)
+        <a href = "/kualitas/product/detail/{{$i->ikan_id}}" style="font-size:17px;" class="text-secondary margincontainer">Lihat detail ikan</a>
+        @endforeach
     </div>
     <div class="col-sm-7">
         <img src="{{URL::asset('/images/kualitas.png')}}" width="90%" class="float-right">

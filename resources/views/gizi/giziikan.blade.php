@@ -18,7 +18,10 @@
                     <p>
                         Peta gizi membantu <br> pengunjung untuk <br> mengetahui lebih detail <br> manfaat dan efek samping dari ikan
                     </p>
-                    <a href = "/" style="font-size:17px;" class="text-secondary">Lihat Selengkapnya</a>
+                    @foreach ($ikan as $i)
+                    <a href = "/gizi/product/detail/{{$i->ikan_id}}" style="font-size:17px;" class="text-secondary">Lihat Selengkapnya</a>
+                    @endforeach
+
                 </div>
             </div>
         </div>

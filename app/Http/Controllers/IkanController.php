@@ -71,13 +71,21 @@ class IkanController extends Controller
         return view('kualitas.listproduct', ['ikan'=>$ikan]);
     }
 
-    public function indexIkan($id){
-        $ikan = DB::table('ikan')->join('harga_ikan', 'harga_ikan.ikan_id', '=', 'ikan.ikan_id')->join('foto_ikan', 'foto_ikan.ikan_id', '=', 'ikan.ikan_id')->where('ikan_id', $id)->get();
+    public function detailIkan($id){
+        $ikan = DB::table('ikan')->join('harga_ikan', 'harga_ikan.ikan_id', '=', 'ikan.ikan_id')->join('foto_ikan', 'foto_ikan.ikan_id', '=', 'ikan.ikan_id')->where('ikan.ikan_id', $id)->get();
 
-        return view('gizi.giziikan', ['ikan'=>$ikan]);
+        return view('kualitas.detailproduct', ['ikan'=>$ikan]);
     }
 
-    public function kualitas(){
-        return view('kualitas.kualitasikan');
+    public function kualitas($id){
+        $ikan = DB::table('ikan')->join('harga_ikan', 'harga_ikan.ikan_id', '=', 'ikan.ikan_id')->join('foto_ikan', 'foto_ikan.ikan_id', '=', 'ikan.ikan_id')->where('ikan.ikan_id', $id)->get();
+
+        return view('kualitas.kualitasikan', ['ikan'=>$ikan]);
+    }
+
+    public function giziIkan($id){
+        $ikan = DB::table('ikan')->join('harga_ikan', 'harga_ikan.ikan_id', '=', 'ikan.ikan_id')->join('foto_ikan', 'foto_ikan.ikan_id', '=', 'ikan.ikan_id')->where('ikan.ikan_id', $id)->get();
+
+        return view('gizi.giziIkan', ['ikan'=>$ikan]);
     }
 };

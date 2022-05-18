@@ -208,7 +208,10 @@
                 Welcome {{ Auth::user()->name }}
             </button>
             <div class="dropdown-menu" id="navbarlogin" aria-labelledby="dropdownnavbar" style="background-color: #0a142f;  border: 2px solid white;">
-                <option class="dropdown-item" style="color: white; " role="button"> Logout </option>
+                <form action="/logout" method="POST">
+                    @csrf
+                <button class="dropdown-item" style="color: white; " role="button"> Logout </button>
+            </form>
                 {{-- @foreach ($persebaran as $p)
                 <option class="dropdown-item jenis-ikan" value="{{$p->persebaran}};{{$p->url_gambar}};{{$p->nama_biasa}}" >{{$p->nama_biasa}}</option>
                 @endforeach --}}

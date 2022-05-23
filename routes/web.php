@@ -7,6 +7,7 @@ use GuzzleHttp\Psr7\Request;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DashboardController;
+use Illuminate\Routing\RouteGroup;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,14 +58,16 @@ Route::get('/detailproduct', function () {
 });
 
 //Dashboard
-Route::get('/dashboard', 'DashboardController@index')->middleware('auth');
-Route::get('/dashboard', 'DashboardController@landing')->middleware('auth');;
-Route::get('/dashboard/index','DashboardController@index')->middleware('auth');;
-Route::get('/dashboard/index/tambah','DashboardController@tambah');
-Route::post('/dashboard/index/store','DashboardController@store');
-Route::get('/dashboard/index/edit/{id}','DashboardController@edit');
-Route::post('/dashboard/index/update','DashboardController@update');
-Route::get('/dashboard/index/hapus/{id}','DashboardController@hapus');
+Route::group(['middleware' => 'mitra'], function() {
+    Route::get('/dashboard', 'DashboardController@index');
+    Route::get('/dashboard', 'DashboardController@landing');
+    Route::get('/dashboard/index','DashboardController@index');
+    Route::get('/dashboard/index/tambah','DashboardController@tambah');
+    Route::post('/dashboard/index/store','DashboardController@store');
+    Route::get('/dashboard/index/edit/{id}','DashboardController@edit');
+    Route::post('/dashboard/index/update','DashboardController@update');
+    Route::get('/dashboard/index/hapus/{id}','DashboardController@hapus');
+});
 
 //Login
 Route::get('/login', 'LoginController@index')->middleware('guest');

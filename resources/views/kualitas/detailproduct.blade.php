@@ -38,12 +38,12 @@
     <div class="col-2 divdetail text-center">
         <p>Habitat</p>
         <i class="fa fa-water fa-lg" style="margin-top: 15px"></i><br><br>
-        <p class="font-weight-bold" style="font-size: 18px; display:inline"> Air Laut </p>
+        <p class="font-weight-bold" style="font-size: 18px; display:inline"> {{ $i->habitat }} </p>
     </div>
     <div class="col-2 divdetail text-center">
         <p>Tipe Proses</p>
         <i class="fa fa-fish fa-lg" style="margin-top: 15px"></i><br><br>
-        <p class="font-weight-bold" style="font-size: 18px; display:inline"> Whole Round </p>
+        <p class="font-weight-bold" style="font-size: 18px; display:inline"> {{$i->kategori_ikan}} </p>
     </div>
 </div>
 <div class="text-center">
@@ -66,7 +66,7 @@
             <h4 class="font-weight-bold text-left"> Tekstur Daging </h4>
         </div>
         <div class="col-1"></div>
-        <div class="col-1 divinformasi {{-- {{ ($title === "Home") ? 'active' : '' }} --}}">
+        <div class="col-1 divinformasi">
             <h5 style="display:inline">Kenyal</h5>
         </div>
         <div class="col-1 divactive {{-- {{ ($title === "Home") ? 'active' : '' }} --}}">

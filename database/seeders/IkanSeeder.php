@@ -24,6 +24,7 @@ class IkanSeeder extends Seeder
                 'nama_biasa' => 'Layur',
                 'berat_minimal' => 100,
                 'berat_maksimal' => 1000,
+                'habitat' => 'Air Laut',
                 'kategori_ikan' => 'Whole Round',
                 'Url_ikan' => 'https://www.baruna.net/?p=349'
             ],
@@ -35,6 +36,7 @@ class IkanSeeder extends Seeder
                 'nama_biasa' => 'Swanggi',
                 'berat_minimal' => 80,
                 'berat_maksimal' => 500,
+                'habitat' => 'Air Laut',
                 'kategori_ikan' => 'Whole Round,Headless',
                 'Url_ikan' => 'https://www.baruna.net/?p=354'
             ],
@@ -46,6 +48,7 @@ class IkanSeeder extends Seeder
                 'nama_biasa' => 'Kurisi',
                 'berat_minimal' => 50,
                 'berat_maksimal' => 500,
+                'habitat' => 'Air Laut',
                 'kategori_ikan' => 'Whole Round,Scalles,Headless',
                 'Url_ikan' => 'https://www.baruna.net/?p=563'
             ],
@@ -57,6 +60,7 @@ class IkanSeeder extends Seeder
                 'nama_biasa' => 'Gulama Papan',
                 'berat_minimal' => 50,
                 'berat_maksimal' => 500,
+                'habitat' => 'Air Laut',
                 'kategori_ikan' => 'Whole Round',
                 'Url_ikan' => 'https://www.baruna.net/?p=601'
             ],
@@ -68,6 +72,7 @@ class IkanSeeder extends Seeder
                 'nama_biasa' => 'Gulama Pisang',
                 'berat_minimal' => 50,
                 'berat_maksimal' => 500,
+                'habitat' => 'Air Laut',
                 'kategori_ikan' => 'Whole Round',
                 'Url_ikan' => 'https://www.baruna.net/?p=604'
             ],
@@ -79,6 +84,7 @@ class IkanSeeder extends Seeder
                 'nama_biasa' => 'Gulama Gigi Harimau',
                 'berat_minimal' => 50,
                 'berat_maksimal' => 500,
+                'habitat' => 'Air Laut',
                 'kategori_ikan' => 'Whole Round',
                 'Url_ikan' => 'https://www.baruna.net/?p=610'
             ],
@@ -90,6 +96,7 @@ class IkanSeeder extends Seeder
                 'nama_biasa' => 'Kakap Malabar',
                 'berat_minimal' => 1000,
                 'berat_maksimal' => 5000,
+                'habitat' => 'Air Laut',
                 'kategori_ikan' => 'Whole Round,WGGS,Fillet',
                 'Url_ikan' => 'https://www.baruna.net/?p=1118'
             ],
@@ -101,6 +108,7 @@ class IkanSeeder extends Seeder
                 'nama_biasa' => 'Kakap Merah',
                 'berat_minimal' => 1000,
                 'berat_maksimal' => 5000,
+                'habitat' => 'Air Laut',
                 'kategori_ikan' => 'Whole Round,WGGS,Fillet',
                 'Url_ikan' => 'https://www.baruna.net/?p=382'
             ],
@@ -112,6 +120,7 @@ class IkanSeeder extends Seeder
                 'nama_biasa' => 'Kakap Merah Malabar',
                 'berat_minimal' => 1000,
                 'berat_maksimal' => 5000,
+                'habitat' => 'Air Laut',
                 'kategori_ikan' => 'Whole Round,WGGS,Fillet',
                 'Url_ikan' => 'https://www.baruna.net/?p=627'
             ],
@@ -123,6 +132,7 @@ class IkanSeeder extends Seeder
                 'nama_biasa' => 'Sukang',
                 'berat_minimal' => 50,
                 'berat_maksimal' => 1000,
+                'habitat' => 'Air Laut',
                 'kategori_ikan' => 'Whole Round,Headless,Cleaned',
                 'Url_ikan' => 'https://www.baruna.net/?p=715'
             ],
@@ -134,6 +144,7 @@ class IkanSeeder extends Seeder
                 'nama_biasa' => 'Kakap Anggoli',
                 'berat_minimal' => 1000,
                 'berat_maksimal' => 5000,
+                'habitat' => 'Air Laut',
                 'kategori_ikan' => 'Whole Round,WGGS,Fillet',
                 'Url_ikan' => 'https://www.baruna.net/?p=429'
             ],
@@ -145,6 +156,7 @@ class IkanSeeder extends Seeder
                 'nama_biasa' => 'Kakap Pinjalo',
                 'berat_minimal' => 1000,
                 'berat_maksimal' => 5000,
+                'habitat' => 'Air Laut',
                 'kategori_ikan' => 'Whole Round,WGGS,Fillet',
                 'Url_ikan' => 'https://www.baruna.net/?p=438'
             ],
@@ -156,6 +168,7 @@ class IkanSeeder extends Seeder
                 'nama_biasa' => 'Kerapu',
                 'berat_minimal' => 1000,
                 'berat_maksimal' => 5000,
+                'habitat' => 'Air Laut',
                 'kategori_ikan' => 'Whole Round,WGGS,Fillet',
                 'Url_ikan' => 'https://www.baruna.net/?p=660'
             ],
@@ -167,6 +180,7 @@ class IkanSeeder extends Seeder
                 'nama_biasa' => 'Kerapu',
                 'berat_minimal' => 1000,
                 'berat_maksimal' => 5000,
+                'habitat' => 'Air Laut',
                 'kategori_ikan' => 'Whole Round,WGGS,Fillet',
                 'Url_ikan' => 'https://www.baruna.net/?p=657'
             ],
@@ -178,6 +192,7 @@ class IkanSeeder extends Seeder
                 'nama_biasa' => 'Kerapu',
                 'berat_minimal' => 1000,
                 'berat_maksimal' => 5000,
+                'habitat' => 'Air Laut',
                 'kategori_ikan' => 'Whole Round,WGGS,Fillet',
                 'Url_ikan' => 'https://www.baruna.net/?p=662'
             ],
@@ -189,6 +204,7 @@ class IkanSeeder extends Seeder
                 'nama_biasa' => 'Bawal Putih',
                 'berat_minimal' => 50,
                 'berat_maksimal' => 400,
+                'habitat' => 'Air Laut',
                 'kategori_ikan' => 'Whole Round',
                 'Url_ikan' => 'https://www.baruna.net/?p=665'
             ],
@@ -200,6 +216,7 @@ class IkanSeeder extends Seeder
                 'nama_biasa' => 'Bawal Hitam',
                 'berat_minimal' => 100,
                 'berat_maksimal' => 1000,
+                'habitat' => 'Air Laut',
                 'kategori_ikan' => 'Whole Round',
                 'Url_ikan' => 'https://www.baruna.net/?p=668'
             ],
@@ -211,6 +228,7 @@ class IkanSeeder extends Seeder
                 'nama_biasa' => 'Halibut',
                 'berat_minimal' => 200,
                 'berat_maksimal' => 1000,
+                'habitat' => 'Air Laut',
                 'kategori_ikan' => 'Whole Round',
                 'Url_ikan' => 'https://www.baruna.net/?p=671'
             ],
@@ -222,6 +240,7 @@ class IkanSeeder extends Seeder
                 'nama_biasa' => 'Whiting',
                 'berat_minimal' => 0,
                 'berat_maksimal' => 0,
+                'habitat' => 'Air Laut',
                 'kategori_ikan' => 'Whole Round',
                 'Url_ikan' => 'https://www.baruna.net/?p=673'
             ],
@@ -233,6 +252,7 @@ class IkanSeeder extends Seeder
                 'nama_biasa' => 'Silver Whiting',
                 'berat_minimal' => 0,
                 'berat_maksimal' => 0,
+                'habitat' => 'Air Laut',
                 'kategori_ikan' => 'Whole Round',
                 'Url_ikan' => 'https://www.baruna.net/?p=675'
             ],
@@ -244,6 +264,7 @@ class IkanSeeder extends Seeder
                 'nama_biasa' => 'Kadal Laut',
                 'berat_minimal' => 200,
                 'berat_maksimal' => 1000,
+                'habitat' => 'Air Laut',
                 'kategori_ikan' => 'Whole Round',
                 'Url_ikan' => 'https://www.baruna.net/?p=677'
             ],
@@ -255,6 +276,7 @@ class IkanSeeder extends Seeder
                 'nama_biasa' => 'Kapasan',
                 'berat_minimal' => 0,
                 'berat_maksimal' => 0,
+                'habitat' => 'Air Laut',
                 'kategori_ikan' => 'Headless,Guttted',
                 'Url_ikan' => 'https://www.baruna.net/?p=679'
             ],
@@ -266,6 +288,7 @@ class IkanSeeder extends Seeder
                 'nama_biasa' => 'Belut',
                 'berat_minimal' => 1000,
                 'berat_maksimal' => 5000,
+                'habitat' => 'Air Laut',
                 'kategori_ikan' => 'Whole Round,WGGS,Fillet',
                 'Url_ikan' => 'https://www.baruna.net/?p=681'
             ],
@@ -277,6 +300,7 @@ class IkanSeeder extends Seeder
                 'nama_biasa' => 'Pari',
                 'berat_minimal' => 300,
                 'berat_maksimal' => 1000,
+                'habitat' => 'Air Laut',
                 'kategori_ikan' => 'Whole Round',
                 'Url_ikan' => 'https://www.baruna.net/?p=684'
             ],
@@ -288,6 +312,7 @@ class IkanSeeder extends Seeder
                 'nama_biasa' => 'Gurita Kaki Pendek',
                 'berat_minimal' => 30,
                 'berat_maksimal' => 300,
+                'habitat' => 'Air Laut',
                 'kategori_ikan' => 'Whole Round,Whole Cleaned,Flower',
                 'Url_ikan' => 'https://www.baruna.net/?p=764'
             ],
@@ -299,6 +324,7 @@ class IkanSeeder extends Seeder
                 'nama_biasa' => 'Gurita Kaki Panjang',
                 'berat_minimal' => 50,
                 'berat_maksimal' => 2000,
+                'habitat' => 'Air Laut',
                 'kategori_ikan' => 'Whole Round,Whole Cleaned,Ball',
                 'Url_ikan' => 'https://www.baruna.net/?p=766'
             ],
@@ -310,6 +336,7 @@ class IkanSeeder extends Seeder
                 'nama_biasa' => 'Cumi-Cumi',
                 'berat_minimal' => 0,
                 'berat_maksimal' => 0,
+                'habitat' => 'Air Laut',
                 'kategori_ikan' => 'Whole Round,Whole Cleaned,Tube,Ring',
                 'Url_ikan' => 'https://www.baruna.net/?p=768'
             ],
@@ -321,6 +348,7 @@ class IkanSeeder extends Seeder
                 'nama_biasa' => 'Sotong Cangkang Keras',
                 'berat_minimal' => 0,
                 'berat_maksimal' => 0,
+                'habitat' => 'Air Laut',
                 'kategori_ikan' => 'Whole Round,Whole Cleaned',
                 'Url_ikan' => 'https://www.baruna.net/?p=770'
             ],
@@ -332,6 +360,7 @@ class IkanSeeder extends Seeder
                 'nama_biasa' => 'Sotong cangkang Lunak',
                 'berat_minimal' => 0,
                 'berat_maksimal' => 0,
+                'habitat' => 'Air Laut',
                 'kategori_ikan' => 'Whole Round,Whole Cleaned',
                 'Url_ikan' => 'https://www.baruna.net/?p=772'
             ],
@@ -343,6 +372,7 @@ class IkanSeeder extends Seeder
                 'nama_biasa' => 'Tenggiri',
                 'berat_minimal' => 1000,
                 'berat_maksimal' => 5000,
+                'habitat' => 'Air Laut',
                 'kategori_ikan' => 'Whole Round,Steak',
                 'Url_ikan' => 'https://www.baruna.net/?p=755'
             ],
@@ -354,6 +384,7 @@ class IkanSeeder extends Seeder
                 'nama_biasa' => 'Tuna Sirip Kuning',
                 'berat_minimal' => 500,
                 'berat_maksimal' => 2000,
+                'habitat' => 'Air Laut',
                 'kategori_ikan' => 'Whole Round',
                 'Url_ikan' => 'https://www.baruna.net/?p=757'
             ],
@@ -365,6 +396,7 @@ class IkanSeeder extends Seeder
                 'nama_biasa' => 'Cakalang',
                 'berat_minimal' => 500,
                 'berat_maksimal' => 2000,
+                'habitat' => 'Air Laut',
                 'kategori_ikan' => 'Whole Round',
                 'Url_ikan' => 'https://www.baruna.net/?p=759'
             ],
@@ -376,6 +408,7 @@ class IkanSeeder extends Seeder
                 'nama_biasa' => 'Lemadang',
                 'berat_minimal' => 1000,
                 'berat_maksimal' => 5000,
+                'habitat' => 'Air Laut',
                 'kategori_ikan' => 'Whole Round,Fillet',
                 'Url_ikan' => 'https://www.baruna.net/?p=761'
             ],
@@ -387,6 +420,7 @@ class IkanSeeder extends Seeder
                 'nama_biasa' => 'Bandeng',
                 'berat_minimal' => 300,
                 'berat_maksimal' => 1000,
+                'habitat' => 'Air Laut',
                 'kategori_ikan' => 'Whole Round',
                 'Url_ikan' => 'https://www.baruna.net/?p=1110'
             ],

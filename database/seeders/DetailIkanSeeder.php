@@ -22,6 +22,13 @@ class DetailIkanSeeder extends Seeder
                 'berminyak' => 2,
                 'duri' => 2
             ],
+            [
+                'ikan_id' => 's02',
+                'tekstur_daging' => null,
+                'bau_amis' => null,
+                'berminyak' => null,
+                'duri' => null
+            ]
         ]);
     }
 }

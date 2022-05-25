@@ -72,7 +72,7 @@ class IkanController extends Controller
     }
 
     public function detailIkan($id){
-        $ikan = DB::table('ikan')->join('harga_ikan', 'harga_ikan.ikan_id', '=', 'ikan.ikan_id')->join('foto_ikan', 'foto_ikan.ikan_id', '=', 'ikan.ikan_id')->where('ikan.ikan_id', $id)->get();
+        $ikan = DB::table('ikan')->join('harga_ikan', 'harga_ikan.ikan_id', '=', 'ikan.ikan_id')->join('foto_ikan', 'foto_ikan.ikan_id', '=', 'ikan.ikan_id')->leftJoin('detail_ikan', 'detail_ikan.ikan_id', '=', 'ikan.ikan_id')->where('ikan.ikan_id', $id)->get();
 
         return view('kualitas.detailproduct', ['ikan'=>$ikan]);
     }

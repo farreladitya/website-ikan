@@ -18,7 +18,8 @@ class DatabaseSeeder extends Seeder
             IkanSeeder::class,
             HargaSeeder::class,
             FotoSeeder::class,
-            PersebaranSeeder::class
+            PersebaranSeeder::class,
+            DetailIkanSeeder::class
         ]);
     }
 }

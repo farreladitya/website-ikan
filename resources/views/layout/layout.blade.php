@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
     @section('head')
     @show
+    @livewireStyles
 </head>
 <style>
     body{
@@ -300,5 +301,6 @@
             loop:true,
         });
     </script>
+    @livewireScripts
 </body>
 </html>

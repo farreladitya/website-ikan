@@ -57,7 +57,7 @@
             {{$i->berat_minimal}}-{{$i->berat_maksimal}} gram/ekor
             @endif</p>
             <h4 class="font-weight-bold margincontainer" style="margin-top: 30px;"> Penjual : </h4>
-            <img src="{{URL::asset('/images/udbarokah.png')}}" width="44%" class="margincontainer" style="margin-top: 10px">
+            <a href="/mitra/udbarokah" class="margincontainer"> <button class="btn btn-success">Hubungi Penjual</button></a>
         </div>
         <div class="col-sm-7">
             <img src="{{URL::asset('/images/kualitas.png')}}" width="90%" class="float-right">
@@ -172,12 +172,12 @@
     <div class="container" style="background-color: #E6F5F8; border-radius:20px; padding: 50px; margin-top:80px">
         <div class="row">
             <div class="col-sm-7">
-                <h1 class="font-weight-bold display-5 " > Manfaat Sisa-sisa dari Ikan Tuna Sirip Kuning </h1>
+                <h1 class="font-weight-bold display-5 " > Manfaat Sisa-sisa dari Ikan {{$i->nama_biasa}} </h1>
                 <p style="font-size: 22px; margin-top:20px">Bingung cara memanfaatkan sisa ikan yang tidak dikonsumsi? Disini pengunjung bisa mengetahui fakta dari sisa ikan yang memiliki berbagai manfaat</p>
                 <button class="button buttonmasuk buttonradius mt-4">Lihat Selengkapnya</button>
             </div>
             <div class="col-sm-5 my-auto">
-                <img src="{{URL::asset('/images/detailproduct.png')}}" width="75%" class="float-right">
+                <img src="{{$i->url_gambar}}" width="75%" class="float-right">
             </div>
         </div>
     </div>

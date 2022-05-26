@@ -17,7 +17,7 @@ class HargaSeeder extends Seeder
         DB::table(('harga_ikan'))->insert([
             [
                 'ikan_id' => 's01',
-                'harga' => null,
+                'harga' => 0,
                 'url_harga' => null
             ],
             [
@@ -32,17 +32,17 @@ class HargaSeeder extends Seeder
             ],
             [
                 'ikan_id' => 's04',
-                'harga' => null,
+                'harga' => 0,
                 'url_harga' => null
             ],
             [
                 'ikan_id' => 's05',
-                'harga' => null,
+                'harga' => 0,
                 'url_harga' => null
             ],
             [
                 'ikan_id' => 's06',
-                'harga' => null,
+                'harga' => 0,
                 'url_harga' => null
             ],
             [
@@ -67,7 +67,7 @@ class HargaSeeder extends Seeder
             ],
             [
                 'ikan_id' => 's11',
-                'harga' => null,
+                'harga' => 0,
                 'url_harga' => null
             ],
             [
@@ -97,7 +97,7 @@ class HargaSeeder extends Seeder
             ],
             [
                 'ikan_id' => 's17',
-                'harga' => null,
+                'harga' => 0,
                 'url_harga' => null
             ],
             [
@@ -117,12 +117,12 @@ class HargaSeeder extends Seeder
             ],
             [
                 'ikan_id' => 's21',
-                'harga' => null,
+                'harga' => 0,
                 'url_harga' => null
             ],
             [
                 'ikan_id' => 's22',
-                'harga' => null,
+                'harga' => 0,
                 'url_harga' => null
             ],
             [
@@ -137,7 +137,7 @@ class HargaSeeder extends Seeder
             ],
             [
                 'ikan_id' => 's25',
-                'harga' => null,
+                'harga' => 0,
                 'url_harga' => null
             ],
             [

@@ -46,8 +46,12 @@
                 <div class="achievement-item bayangan">
                     <div class="ach-1 mb-3" style="aspect-ratio: 3/2;"><img src="{{$s->url_gambar}}" alt="ach-1" style="object-fit: contain" class="w-100 h-100 card-img"></div>
                       <div class="item-text">
-                        <h6>{{$s->nama_ikan}}</h6>
-                        <p>{{$s->harga}}</p>
+                        <h6>{{$s->nama_biasa}}</h6>
+                        <p>@if ($s->harga === 0)
+                            Harga Tidak Diketahui
+                            @else
+                            {{$s->harga}}
+                        @endif</p>
                       </div>
                   </div>
                 @endforeach
@@ -73,8 +77,12 @@
                 <div class="achievement-item bayangan"  >
                     <div class="ach-1 mb-3" style="aspect-ratio: 3/2;"><img src="{{$d->url_gambar}}" style="object-fit: contain" class="w-100 h-100 card-img" alt="ach-1"></div>
                       <div class="item-text">
-                        <h6>{{$d->nama_ikan}}</h6>
-                        <p>{{$d->harga}}</p>
+                        <h6>{{$d->nama_biasa}}</h6>
+                        <p>@if ($d->harga === 0)
+                            Harga Tidak Diketahui
+                            @else
+                            {{$d->harga}}
+                        @endif</p>
                       </div>
                   </div>
                 @endforeach
@@ -100,8 +108,12 @@
                 <div class="achievement-item bayangan" >
                     <div class="ach-1 mb-3" style="aspect-ratio: 3/2;"><img src="{{$p->url_gambar}}" style="object-fit: contain" class="w-100 h-100 card-img" alt="ach-1"></div>
                       <div class="item-text">
-                        <h6>{{$p->nama_ikan}}</h6>
-                        <p>{{$p->harga}}</p>
+                        <h6>{{$p->nama_biasa}}</h6>
+                        <p>@if ($p->harga === 0)
+                            Harga Tidak Diketahui
+                            @else
+                            {{$p->harga}}
+                        @endif</p>
                       </div>
                   </div>
                 @endforeach
@@ -127,8 +139,12 @@
                 <div class="achievement-item bayangan">
                     <div class="ach-1 mb-3" style="aspect-ratio: 3/2;"><img src="{{$under->url_gambar}}" style="object-fit: contain" class="w-100 h-100 card-img" alt="ach-1"></div>
                       <div class="item-text">
-                        <h6>{{$under->nama_ikan}}</h6>
-                        <p>{{$under->harga}}</p>
+                        <h6>{{$under->nama_biasa}}</h6>
+                        <p>@if ($under->harga === 0)
+                            Harga Tidak Diketahui
+                            @else
+                            {{$under->harga}}
+                        @endif</p>
                       </div>
                   </div>
                 @endforeach
@@ -154,8 +170,12 @@
                 <div class="achievement-item bayangan">
                     <div class="ach-1 mb-3" style="aspect-ratio: 3/2;"><img src="{{$upper->url_gambar}}" style="object-fit: contain" class="w-100 h-100 card-img" alt="ach-1"></div>
                       <div class="item-text">
-                        <h6>{{$upper->nama_ikan}}</h6>
-                        <p>{{$upper->harga}}</p>
+                        <h6>{{$upper->nama_biasa}}</h6>
+                        <p>@if ($upper->harga === 0)
+                            Harga Tidak Diketahui
+                            @else
+                            {{$upper->harga}}
+                        @endif</p>
                       </div>
                   </div>
                 @endforeach

@@ -90,7 +90,11 @@
                             @else
                             <h6>{{$i->nama_biasa}}</h6>
                             @endif
-                            <p>{{$i->harga}}</p>
+                            <p>@if ($i->harga === 0)
+                                Harga Tidak Diketahui
+                                @else
+                                {{$i->harga}}
+                            @endif</p>
                         </div>
                     </div>
                     @endforeach

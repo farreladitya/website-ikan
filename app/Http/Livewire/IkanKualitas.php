@@ -5,7 +5,7 @@ namespace App\Http\Livewire;
 use Illuminate\Support\Facades\DB;
 use Livewire\Component;
 
-class IkanIndex extends Component
+class IkanKualitas extends Component
 {
     public array $kategori = [];
     public array $habitat = [];

@@ -56,19 +56,13 @@
             @else
             {{$i->berat_minimal}}-{{$i->berat_maksimal}} gram/ekor
             @endif</p>
-            <h4 class="font-weight-bold margincontainer" style="margin-top: 30px;"> Penjual : </h4>
-            <a href="/mitra/udbarokah" class="margincontainer"> <button class="btn btn-success">Hubungi Penjual</button></a>
+            <a href="/mitra/udbarokah" class="margincontainer"> <button class="btn btn-success" style="border-radius:20px">Hubungi Penjual</button></a>
         </div>
         <div class="col-sm-7">
             <img src="{{URL::asset('/images/kualitas.png')}}" width="90%" class="float-right">
         </div>
     </div>
-    <div class="row d-flex justify-content-center" style="margin-top: 50px">
-        <div class="col-2 divdetail text-center">
-            <p>Nama Latin</p>
-            <i class="fa fa-fish fa-lg" style="margin-top: 15px"></i><br><br>
-            <p class="font-weight-bold" style="font-size: 18px; display:inline"> {{$i->nama_latin}}</p>
-        </div>
+    <div class="row d-flex justify-content-center" style="margin-top: 50px;">
         <div class="col-2 divdetail text-center">
             <p>Kategori Ikan</p>
             <i class="fa fa-list fa-lg" style="margin-top: 15px"></i><br><br>
@@ -131,7 +125,7 @@
         </div>
         <div class="row d-flex justify-content-center mt-4 berminyak">
             <div class="col-3 my-auto">
-                <h4 class="font-weight-bold text-left"> Berminyak </h4>
+                <h4 class="font-weight-bold text-left">Berminyak </h4>
             </div>
             <div class="col-1"></div>
             <div class="col-1 @if ($i->berminyak == 1)
@@ -181,8 +175,8 @@
             </div>
         </div>
     </div>
-    <h2 class="font-weight-bold text-center" style="margin-top: 100px;"> Rekomendasi Resep </h2>
-    {{-- <div class="row">
+    {{-- <h2 class="font-weight-bold text-center" style="margin-top: 100px;"> Rekomendasi Resep </h2>
+    <div class="row">
         <div class="col-sm-11" style="margin-left:25px">
             <div class="achievement section-padding mt-3">
                 <div class="owl-carousel owl-carousels achievement-carousel">
@@ -199,12 +193,12 @@
             </div>
         </div>
     </div> --}}
-    <div class="row">
+    {{-- <div class="row">
         <div class="col-sm-10"></div>
         <div class="col-sm-2" style="margin-top: 15px; margin-left:-60px">
             <a href = "kualitas/listproduct" style="font-size:17px;" class="text-secondary">Lihat Selengkapnya</a>
         </div>
-    </div>
+    </div> --}}
     <h2 class="font-weight-bold text-center" style="margin-top: 100px;"> Tambah Ulasan </h2>
     <div class="container mt-5">
         <span style="background-color:#1FCD10; color: white;border-radius: 5px 0px 0px 5px; padding: 5px 17px; height:34px; display:inline-block">x20</span>

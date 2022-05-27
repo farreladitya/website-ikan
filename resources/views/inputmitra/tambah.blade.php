@@ -24,7 +24,7 @@
   <h2>Data Produk</h2>
   <a href="/dashboard/index" class="btn btn-success mb-3">Kembali</a>
 
-  <form action="/dashboard/index/store" method="post">
+  <form action="/dashboard/index/store" method="post" enctype="multipart/form-data">
     {{ csrf_field() }}
     <div class="form-group mb-3">
         <label class="form-label">Nama</label>
@@ -42,10 +42,10 @@
         <label class="form-label">Berat</label>
         <input type="text" class="form-control"  name="berat" required="required">
         </div>
-        <div class="form-group mb-3">
-        <label class="form-label">Gambar</label>
-        <input type="text" class="form-control"  name="gambar" required="required">
-        </div>
+        <div class="mb-3">
+        <label for="formFile" class="form-label">Gambar</label>
+        <input class="form-control" type="file" id="formFile" name="gambar" required="required">
+      </div>
         <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 </main>

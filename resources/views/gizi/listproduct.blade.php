@@ -35,7 +35,88 @@
         </nav>
     </div>
 </div>
-<livewire:ikan-index></livewire:ikan-index>
+<form action="{{route('filtergizi')}}" method="GET" class="filterproduk">
+    <div class="row">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-2" style="background-color: #dcdada; border-radius: 25px; padding: 30px; font-size:14px">
+            <div>
+                <h4 class="font-weight-bold">Filter</h4>
+            </div>
+            <div>
+                <p class="font-weight-bold" style="margin-top: 20px; font-size:16px">Kategori</p>
+                    <div class="form-check mt-1 custom-control custom-checkbox">
+                        <input class="form-check-input custom-control-input" type="checkbox" value="Cephalopod" id="defaultCheck1" name="kategori[]" {{ old('kategori.0') == 'Cephalopod' ? 'checked' : '' }}>
+                        <label class="form-check-label custom-control-label" for="defaultCheck1">
+                          Sepalopoda
+                        </label>
+                    </div>
+                    <div class="form-check mt-1 custom-control custom-checkbox">
+                        <input class="form-check-input custom-control-input" type="checkbox" value="Pelagic" id="defaultCheck2" name="kategori[]">
+                        <label class="form-check-label custom-control-label" for="defaultCheck2">
+                          Ikan Pelagis
+                    </div>
+                    <div class="form-check mt-1 custom-control custom-checkbox">
+                        <input class="form-check-input custom-control-input" type="checkbox" value="Demersal" id="defaultCheck3" name="kategori[]">
+                        <label class="form-check-label custom-control-label" for="defaultCheck3">
+                          Ikan Demersal
+                    </div>
+            </div>
+            <div class="py-3">
+                <p class="font-weight-bold" style="font-size:16px">Habitat Ikan</p>
+                    <div class="form-check mt-1 custom-control custom-checkbox">
+                        <input class="form-check-input custom-control-input" type="checkbox" value="Air Laut" id="defaultCheck4" name="habitat[]">
+                        <label class="form-check-label custom-control-label" for="defaultCheck4">
+                          Air Laut
+                        </label>
+                    </div>
+                    <div class="form-check mt-1 custom-control custom-checkbox">
+                        <input class="form-check-input custom-control-input" type="checkbox" value="Air Tawar" id="defaultCheck5" name="habitat[]">
+                        <label class="form-check-label custom-control-label" for="defaultCheck5">
+                          Air Tawar
+                    </div>
+                    <div class="form-check mt-1 custom-control custom-checkbox">
+                        <input class="form-check-input custom-control-input" type="checkbox" value="Air Payau" id="defaultCheck6" name="habitat[]">
+                        <label class="form-check-label custom-control-label" for="defaultCheck6">
+                          Air Payau
+                    </div>
+            </div>
+            <div class="py-4">
+                <p class="font-weight-bold" style="font-size:16px">Harga per kg</p>
+                <input type="text" style="width: 45%" placeholder="Terendah" name="harga_min" value="{{old('harga_min')}}"> - <input type="text"style="width: 45%" placeholder="Tertinggi" name="harga_max" value="{{old('harga_max')}}">
+            </div>
+            <div >
+                <p class="font-weight-bold" style="font-size:16px">Berat Ikan</p>
+                <input type="text" style="width: 45%" placeholder="Terendah" name="berat_min" value="{{old('berat_min')}}"> - <input type="text"style="width: 45%" placeholder="Tertinggi" name="berat_max" value="{{old('berat_max')}}">
+            </div>
+            <div class="py-4">
+                <button type="submit" class="btn btn-primary">Filter</button>
+            </div>
+        </div>
+    </div>
+</form>
+<div class="col-sm-8 container">
+    <div class="row">
+        @foreach ($ikan as $i)
+        <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1" onclick="location.href='/';">
+            <a href="/kualitas/product/{{$i->ikan_id}}">
+                <div class="card"> <div class="container-gambar" style="aspect-ratio: 3/2;"><img class="card-img-top w-100 h-100" style="object-fit: contain" src="{{$i->url_gambar}}"></div>
+                <div class="card-body">
+                    <h6 class="font-weight-bold pt-1">{{$i->nama_biasa}}</h6>
+                    <div class="text-muted description">Space for small product description</div>
+                        <div class="d-flex flex-column">
+                            <div class="h6 font-weight-bold">@if ($i->harga === 0)
+                                Harga Tidak Diketahui
+                                @else
+                                {{$i->harga}}
+                            @endif</div>
+                        </div>
+                </div>
+            </div>
+            </a>
+        </div>
+        @endforeach
+    </div>
+</div>
 
 @endsection
 

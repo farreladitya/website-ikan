@@ -67,7 +67,6 @@ class IkanController extends Controller
 
     public function listprodukkualitas(){
         $ikan = DB::table('ikan')->join('harga_ikan', 'harga_ikan.ikan_id', '=', 'ikan.ikan_id')->join('foto_ikan', 'foto_ikan.ikan_id', '=', 'ikan.ikan_id')->get();
-
         return view('kualitas.listproduct', ['ikan'=>$ikan]);
     }
 
@@ -87,5 +86,73 @@ class IkanController extends Controller
         $ikan = DB::table('ikan')->join('harga_ikan', 'harga_ikan.ikan_id', '=', 'ikan.ikan_id')->join('foto_ikan', 'foto_ikan.ikan_id', '=', 'ikan.ikan_id')->where('ikan.ikan_id', $id)->get();
 
         return view('gizi.giziIkan', ['ikan'=>$ikan]);
+    }
+
+    public function filterprodukkualitas(Request $request){
+        if(!$request->kategori){
+            $request->kategori = ['Cephalopod', 'Pelagic', 'Demersal'];
+        }
+        if(!$request->habitat){
+            $request->habitat = ['Air Laut', 'Air Tawar', 'Air Payau'];
+        }
+        if(!$request->harga_min){
+            $request->harga_min = 0;
+        }
+        if(!$request->harga_max){
+            $request->harga_max = 999999;
+        }
+        if(!$request->berat_min){
+            $request->berat_min = 0;
+        }
+        if(!$request->berat_max){
+            $request->berat_max = 999999;
+        }
+
+        $ikan = DB::table('ikan')
+        ->join('harga_ikan', 'harga_ikan.ikan_id', '=', 'ikan.ikan_id')
+        ->join('foto_ikan', 'foto_ikan.ikan_id', '=', 'ikan.ikan_id')
+        ->whereIn('ikan.jenis_ikan', $request->kategori)
+        ->whereIn('ikan.habitat', $request->habitat)
+        ->where('harga_ikan.harga', '>=', $request->harga_min)
+        ->where('harga_ikan.harga', '<=', $request->harga_max)
+        ->where('ikan.berat_minimal', '>=', $request->berat_min)
+        ->where('ikan.berat_maksimal', '<=', $request->berat_max)
+        ->get();
+
+        return view('kualitas.listproduct', ['ikan'=>$ikan]);
+    }
+
+    public function filterprodukgizi(Request $request){
+        if(!$request->kategori){
+            $request->kategori = ['Cephalopod', 'Pelagic', 'Demersal'];
+        }
+        if(!$request->habitat){
+            $request->habitat = ['Air Laut', 'Air Tawar', 'Air Payau'];
+        }
+        if(!$request->harga_min){
+            $request->harga_min = 0;
+        }
+        if(!$request->harga_max){
+            $request->harga_max = 999999;
+        }
+        if(!$request->berat_min){
+            $request->berat_min = 0;
+        }
+        if(!$request->berat_max){
+            $request->berat_max = 999999;
+        }
+
+        $ikan = DB::table('ikan')
+        ->join('harga_ikan', 'harga_ikan.ikan_id', '=', 'ikan.ikan_id')
+        ->join('foto_ikan', 'foto_ikan.ikan_id', '=', 'ikan.ikan_id')
+        ->whereIn('ikan.jenis_ikan', $request->kategori)
+        ->whereIn('ikan.habitat', $request->habitat)
+        ->where('harga_ikan.harga', '>=', $request->harga_min)
+        ->where('harga_ikan.harga', '<=', $request->harga_max)
+        ->where('ikan.berat_minimal', '>=', $request->berat_min)
+        ->where('ikan.berat_maksimal', '<=', $request->berat_max)
+        ->get();
+
+        return view('gizi.listproduct', ['ikan'=>$ikan]);
     }
 };

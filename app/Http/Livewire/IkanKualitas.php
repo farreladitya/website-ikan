@@ -29,7 +29,7 @@ class IkanKualitas extends Component
         ->where('ikan.berat_maksimal', '<=', $this->berat_max)
         ->get();
 
-        return view('livewire.ikan-index', [
+        return view('livewire.ikan-kualitas', [
             'ikan' => $ikan
         ]);
     }

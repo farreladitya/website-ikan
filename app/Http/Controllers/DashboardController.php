@@ -30,6 +30,7 @@ public function tambah()
     }
 public function store(Request $request)
     {
+
 	// insert data ke table pegawai
 	DB::table('input_mitra_tables')->insert([
 		'nama' => $request->nama,

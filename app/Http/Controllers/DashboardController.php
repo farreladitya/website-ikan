@@ -25,7 +25,8 @@ public function tambah()
     {
         // mengambil data pegawai berdasarkan id yang dipilih
 	    $ikan = DB::table('ikan')->get();
-        return view('inputmitra.tambah',['ikan' => $ikan] );
+	    $tipeikan = DB::table('tipeikan')->get();
+        return view('inputmitra.tambah',['ikan' => $ikan],['tipeikan' => $tipeikan] );
 
     }
 public function store(Request $request)
@@ -35,7 +36,7 @@ public function store(Request $request)
 	DB::table('input_mitra_tables')->insert([
 		'nama' => $request->nama,
 		'ikan' => $request->ikan,
-		'tipe_ikan' => $request->tipe_ikan,
+		'tipeikan' => $request->tipeikan,
 		'harga' => $request->harga,
 		'berat' => $request->berat,
 		'gambar' => $request->gambar

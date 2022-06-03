@@ -43,7 +43,7 @@
             <td>{{ $i->id }}</td>
 			<td>{{ $i->nama }}</td>
 			<td>{{ $i->ikan }}</td>
-			<td>{{ $i->tipe_ikan }}</td>
+			<td>{{ $i->tipeikan }}</td>
 			<td>{{ $i->harga }}</td>
 			<td>{{ $i->berat }}</td>
 			<td>{{ $i->gambar }}</td>

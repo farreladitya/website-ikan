@@ -35,10 +35,11 @@
         </nav>
     </div>
 </div>
-<form action="{{route('filterkualitas')}}" method="GET" class="filterproduk">
+
     <div class="row">
         <div class="col-sm-1"></div>
         <div class="col-sm-2" style="background-color: #dcdada; border-radius: 25px; padding: 30px; font-size:14px">
+            <form action="{{route('filterkualitas')}}" method="GET" class="filterproduk">
             <div>
                 <h4 class="font-weight-bold">Filter</h4>
             </div>
@@ -91,13 +92,12 @@
             <div class="py-4">
                 <button type="submit" class="btn btn-primary">Filter</button>
             </div>
+        </form>
         </div>
-    </div>
-</form>
         <div class="col-sm-8 container">
             <div class="row">
                 @foreach ($ikan as $i)
-                <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1" onclick="location.href='/';">
+                <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1 my-3" onclick="location.href='/';">
                     <a href="/kualitas/product/{{$i->ikan_id}}">
                         <div class="card"> <div class="container-gambar" style="aspect-ratio: 3/2;"><img class="card-img-top w-100 h-100" style="object-fit: contain" src="{{$i->url_gambar}}"></div>
                         <div class="card-body">

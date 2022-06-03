@@ -92,12 +92,11 @@
                 <button type="submit" class="btn btn-primary">Filter</button>
             </div>
         </div>
-    </div>
 </form>
 <div class="col-sm-8 container">
     <div class="row">
         @foreach ($ikan as $i)
-        <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1" onclick="location.href='/';">
+        <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1 my-3" onclick="location.href='/';">
             <a href="/kualitas/product/{{$i->ikan_id}}">
                 <div class="card"> <div class="container-gambar" style="aspect-ratio: 3/2;"><img class="card-img-top w-100 h-100" style="object-fit: contain" src="{{$i->url_gambar}}"></div>
                 <div class="card-body">

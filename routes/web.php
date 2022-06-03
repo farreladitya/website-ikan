@@ -41,6 +41,7 @@ Route::get('kualitas/listproduct', 'IkanController@listprodukkualitas'); //Halam
 Route::get('kualitas/listproduct/filter', 'IkanController@filterprodukkualitas')->name('filterkualitas'); //filter list produk kualitas
 Route::get('kualitas/listproduct/cari', 'IkanController@carikualitas'); //Fitur cari dari list kualitas
 Route::get('kualitas/product/detail/{id}','IkanController@detailIkan');
+Route::post('kualitas/product/detail/{idikan}','IkanController@postulasan')->name('postulasan');
 Route::get('kualitas/product/{id}','IkanController@kualitas');
 
 //Fitur Mitra

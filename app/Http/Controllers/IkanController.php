@@ -6,6 +6,8 @@ use App\Models\HargaIkan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Ikan;
+use DateTime;
+use Illuminate\Support\Facades\Auth;
 
 class IkanController extends Controller
 {
@@ -73,13 +75,37 @@ class IkanController extends Controller
     public function detailIkan($id){
         $ikan = DB::table('ikan')->join('harga_ikan', 'harga_ikan.ikan_id', '=', 'ikan.ikan_id')->join('foto_ikan', 'foto_ikan.ikan_id', '=', 'ikan.ikan_id')->leftJoin('detail_ikan', 'detail_ikan.ikan_id', '=', 'ikan.ikan_id')->where('ikan.ikan_id', $id)->get();
 
-        return view('kualitas.detailproduct', ['ikan'=>$ikan]);
+        $ulasan = DB::table('ulasan')->join('users', 'users.id', '=', 'ulasan.user_id')
+        ->where('ikan_id', $id)
+        ->get();
+
+        return view('kualitas.detailproduct', ['ikan'=>$ikan, 'ulasan' => $ulasan]);
     }
 
     public function kualitas($id){
-        $ikan = DB::table('ikan')->join('harga_ikan', 'harga_ikan.ikan_id', '=', 'ikan.ikan_id')->join('foto_ikan', 'foto_ikan.ikan_id', '=', 'ikan.ikan_id')->where('ikan.ikan_id', $id)->get();
+        $ikan = DB::table('ikan')
+        ->join('harga_ikan', 'harga_ikan.ikan_id', '=', 'ikan.ikan_id')
+        ->join('foto_ikan', 'foto_ikan.ikan_id', '=', 'ikan.ikan_id')
+        ->join('cek_kualitas', 'cek_kualitas.ikan_id', '=', 'ikan.ikan_id')
+        ->where('ikan.ikan_id', $id)
+        ->first();
+
+
 
         return view('kualitas.kualitasikan', ['ikan'=>$ikan]);
+    }
+
+    public function postulasan($idikan, Request $request){
+        $today = new DateTime();
+        DB::table('ulasan')->insert([
+            'ikan_id' => $idikan,
+            'user_id' => Auth::id(),
+            'comment' => $request->comment,
+            'created_at' => $today,
+            'updated_at' => $today
+        ]);
+
+        return redirect()->back();
     }
 
     public function giziIkan($id){

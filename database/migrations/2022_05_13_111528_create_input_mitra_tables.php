@@ -19,7 +19,7 @@ class CreateInputMitraTables extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->string('nama');
             $table->string('ikan');
-            $table->string('tipe_ikan');
+            $table->string('tipeikan');
             $table->string('harga');
             $table->string('berat');
             $table->string('gambar');

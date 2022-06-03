@@ -41,10 +41,11 @@
       </div>
       <div class="form-group mb-3">
         <label class="form-label">Tipe Ikan</label>
-        <select class="form-control" name="tipe_ikan" required="required">
+        <select class="form-control" name="tipeikan" required="required">
           <option value="">--Pilih Tipe Ikan--</option>
-          <option value="">Fresh</option>
-          <option value="">Frozen</option>
+          @foreach ($tipeikan as $t)
+        <option value="{{$t->id}}">{{$t->tipe}}</option>
+        @endforeach
         </select>
       </div>
         <div class="form-group mb-3">

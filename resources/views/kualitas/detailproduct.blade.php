@@ -49,6 +49,9 @@
         text-align: center;
         object-fit: cover;
     }
+    .divs {
+        line-height: 200px;
+    }
 </style>
 @foreach ($ikan as $i)
 <div class="row">
@@ -213,22 +216,25 @@
     <form>
         <div class="container p-3 mt-4" style="background-color: white;">
             <div class="form-group">
-                <textarea placeholder="Bagikan tanggapan terkait ikan tuna sirip kuning" style="border: none; outline: none; font-size:12px" class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+                <textarea placeholder="Bagikan tanggapan terkait ikan tuna sirip kuning" style="border: none; outline: none; font-size:18px" class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
             </div>
             <div class="row">
-                <div class="col-6">
+                <div class="col">
                     <label class="custom-file-upload">
-                        <input type="file" accept=".jpg,.jpeg.,.png" style="button"/>
+                        <input type="file" accept=".jpg,.jpeg.,.png,.mov,.mp4" style="button"/>
                         <img src="{{URL::asset('/images/image-add.png')}}" width="90%" style="max-width: unset; max-height: unset; padding: unset;">
                     </label>
                     <label class="custom-file-upload">
                         <input type="file" accept=".mov,.mp4" style="button"/>
                         <img src="{{URL::asset('/images/video-add.png')}}" width="90%" style="max-width: unset; max-height: unset; padding: unset;">
                     </label>
+                    <div class="divs"></div>
                 </div>
-                <div class="col-6">
+            </div>
+            <div class="row">
+                <div class="col">
                     <div class="text-right">
-                        <button type="submit" class="button buttonmasuk mt-2 " style="width: 130px;">Kirim</button>
+                        <button type="submit" class="button buttonmasuk mt-2" style="width: 130px;">Kirim</button>
                     </div>
                 </div>
             </div>
@@ -249,7 +255,7 @@
         <span class="font-weight-bold" style="background-color:white;color: #253368; padding: 5px 17px;margin-left: -5px;height:34px; display:inline-block;">Duri Sedikit</span>
         <span class="button font-weight-bold" onclick="/" style="background-color:#253368;color: white;border-radius: 0px 5px 5px 0px; padding: 5px 17px;margin-left: -5px;">+</span>
     </div>
-    <div class="container" style="margin-top: 80px; margin-bottom:130px">
+    {{-- <div class="container" style="margin-top: 80px; margin-bottom:130px"> --}}
     {{-- <form action="{{route('postulasan', $i->ikan_id)}}" method="POST">
         @csrf
         <div class="container">
@@ -304,7 +310,7 @@
                 fileReader.onload = function() {
                 var img = document.createElement('img');
                 img.src = fileReader.result;
-                document.getElementsByTagName('div')[0].appendChild(img);
+                document.getElementsByClassName('divs')[0].appendChild(img);
                 };
                 fileReader.readAsDataURL(file);
             } else {
@@ -333,7 +339,7 @@
                     if (success) {
                     var img = document.createElement('img');
                     img.src = image;
-                    document.getElementsByTagName('div')[0].appendChild(img);
+                    document.getElementsByClassName('divs')[0].appendChild(img);
                     URL.revokeObjectURL(url);
                     }
                     return success;

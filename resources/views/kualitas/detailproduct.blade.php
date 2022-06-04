@@ -222,11 +222,7 @@
                 <div class="col">
                     <label class="custom-file-upload">
                         <input type="file" accept=".jpg,.jpeg.,.png,.mov,.mp4" style="button"/>
-                        <img src="{{URL::asset('/images/image-add.png')}}" width="90%" style="max-width: unset; max-height: unset; padding: unset;">
-                    </label>
-                    <label class="custom-file-upload">
-                        <input type="file" accept=".mov,.mp4" style="button"/>
-                        <img src="{{URL::asset('/images/video-add.png')}}" width="90%" style="max-width: unset; max-height: unset; padding: unset;">
+                        <img src="{{URL::asset('/images/upload.png')}}" width="110%" style="max-width: unset; max-height: unset; padding: unset; ">
                     </label>
                     <div class="divs"></div>
                 </div>
@@ -266,7 +262,7 @@
             <button type="submit" class="button buttonmasuk float-right mt-2" style="width: 130px">Kirim</button>
         </div>
     </form> --}}
-    <div class="container" style="margin-top: 150px; margin-bottom:130px">
+    <div class="container" style="margin-top: 70px; margin-bottom:130px">
         <div class="dropdown">
             <button class="btn button buttonmasuk dropdown-toggle" type="button" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Urutkan Berdasarkan

@@ -79,3 +79,14 @@ Route::post('/logout', 'LoginController@logout');
 Route::get('/register', 'RegisterController@index');
 Route::post('/register', 'RegisterController@store');
 
+Route::get('/manfaatikan', function () {
+    return view('gizi.manfaat');
+});
+
+Route::get('/detailgizi', function () {
+    return view('gizi.detailgizi');
+});
+
+Route::get('/detailracun', function () {
+    return view('gizi.detailracun');
+});

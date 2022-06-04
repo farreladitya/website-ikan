@@ -40,11 +40,20 @@
     @endforeach
 @endsection
 @section('isikonten')
+<style>
+    img {
+        max-width: 200px;
+        max-height: 200px;
+        padding: 5px;
+        vertical-align: middle;
+        text-align: center;
+        object-fit: cover;
+    }
+</style>
 @foreach ($ikan as $i)
-
 <div class="row">
     <div class="col-sm-5">
-        <h1 class="font-weight-bold display-4 margincontainer" style="margin-top: 70px"> Ikan {{$i->nama_biasa}} </h1>
+        <h1 class="font-weight-bold display-4 margincontainer" style="margin-top: 130px"> Ikan {{$i->nama_biasa}} </h1>
         <h1 class="font-weight-bold margincontainer" style="margin-top: 30px; color: #96B7D6;"> @if (!$i->harga)
             Harga Belum Diketahui
             @else
@@ -59,7 +68,7 @@
             <a href="/mitra/udbarokah" class="margincontainer"> <button class="btn btn-success" style="border-radius:20px">Hubungi Penjual</button></a>
         </div>
         <div class="col-sm-7">
-            <img src="{{URL::asset('/images/kualitas.png')}}" width="90%" class="float-right">
+            <img src="{{URL::asset('/images/kualitas.png')}}" style="max-width: unset; max-height: unset; padding: unset;" width="90%" class="float-right" >
         </div>
     </div>
     <div class="row d-flex justify-content-center" style="margin-top: 50px;">
@@ -138,7 +147,8 @@
                 @endif divinformasi ">
                 <h5 style="display:inline">Tidak</h5>
             </div>
-            <div class="col-1">
+            {{-- <div class="col-1"></div> --}}
+            <div class="col-1 divinformasi" style="background-color:#ece9e9">
             </div>
         </div>
         <div class="row d-flex justify-content-center mt-4 duri">
@@ -171,7 +181,7 @@
                 <button class="button buttonmasuk buttonradius mt-4">Lihat Selengkapnya</button>
             </div>
             <div class="col-sm-5 my-auto">
-                <img src="{{$i->url_gambar}}" width="75%" class="float-right">
+                <img src="{{$i->url_gambar}}" width="75%" class="float-right" style="max-width: unset; max-height: unset; padding: unset;">
             </div>
         </div>
     </div>
@@ -200,7 +210,31 @@
         </div>
     </div> --}}
     <h2 class="font-weight-bold text-center" style="margin-top: 100px;"> Tambah Ulasan </h2>
-    <div class="container mt-5">
+    <form>
+        <div class="container p-3 mt-4" style="background-color: white;">
+            <div class="form-group">
+                <textarea placeholder="Bagikan tanggapan terkait ikan tuna sirip kuning" style="border: none; outline: none; font-size:12px" class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <label class="custom-file-upload">
+                        <input type="file" accept=".jpg,.jpeg.,.png" style="button"/>
+                        <img src="{{URL::asset('/images/image-add.png')}}" width="90%" style="max-width: unset; max-height: unset; padding: unset;">
+                    </label>
+                    <label class="custom-file-upload">
+                        <input type="file" accept=".mov,.mp4" style="button"/>
+                        <img src="{{URL::asset('/images/video-add.png')}}" width="90%" style="max-width: unset; max-height: unset; padding: unset;">
+                    </label>
+                </div>
+                <div class="col-6">
+                    <div class="text-right">
+                        <button type="submit" class="button buttonmasuk mt-2 " style="width: 130px;">Kirim</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="container" style="margin-top: 80px">
         <span style="background-color:#1FCD10; color: white;border-radius: 5px 0px 0px 5px; padding: 5px 17px; height:34px; display:inline-block">x20</span>
         <span class="font-weight-bold" style="background-color:white; color: #253368;padding: 5px 17px;margin-left: -5px;height:34px; display:inline-block;">Mudah Pengelohaan</span>
         <span class="button font-weight-bold" onclick="/" style="background-color:#253368;color: white;border-radius: 0px 5px 5px 0px; padding: 5px 17px;margin-left: -5px;">+</span>
@@ -215,16 +249,7 @@
         <span class="font-weight-bold" style="background-color:white;color: #253368; padding: 5px 17px;margin-left: -5px;height:34px; display:inline-block;">Duri Sedikit</span>
         <span class="button font-weight-bold" onclick="/" style="background-color:#253368;color: white;border-radius: 0px 5px 5px 0px; padding: 5px 17px;margin-left: -5px;">+</span>
     </div>
-    <form>
-        <div class="container">
-            <p class="mt-5" style="font-size:21px">Apakah ada hal yang ingin dibagikan terkait pemanfaatan sisa atau cara pengolahan?</p>
-            <div class="form-group">
-                <textarea style="border: none; outline: none; font-size:12px" class="form-control" id="exampleFormControlTextarea1" rows="7"></textarea>
-            </div>
-            <button type="submit" class="button buttonmasuk float-right mt-2" style="width: 130px">Kirim</button>
-        </div>
-    </form>
-    <div class="container" style="margin-top: 150px; margin-bottom:130px">
+    <div class="container" style="margin-top: 80px; margin-bottom:130px">
         <div class="dropdown">
             <button class="btn button buttonmasuk dropdown-toggle" type="button" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Urutkan Berdasarkan
@@ -247,6 +272,60 @@
             </div>
         </div>
         @endforeach
+        <script>
+            document.getElementsByTagName('input')[0].addEventListener('change', function(event) {
+            var file = event.target.files[0];
+            var fileReader = new FileReader();
+            if (file.type.match('image')) {
+                fileReader.onload = function() {
+                var img = document.createElement('img');
+                img.src = fileReader.result;
+                document.getElementsByTagName('div')[0].appendChild(img);
+                };
+                fileReader.readAsDataURL(file);
+            } else {
+                fileReader.onload = function() {
+                var blob = new Blob([fileReader.result], {type: file.type});
+                var url = URL.createObjectURL(blob);
+                var video = document.createElement('video');
+                var timeupdate = function() {
+                    if (snapImage()) {
+                    video.removeEventListener('timeupdate', timeupdate);
+                    video.pause();
+                    }
+                };
+                video.addEventListener('loadeddata', function() {
+                    if (snapImage()) {
+                    video.removeEventListener('timeupdate', timeupdate);
+                    }
+                });
+                var snapImage = function() {
+                    var canvas = document.createElement('canvas');
+                    canvas.width = video.videoWidth;
+                    canvas.height = video.videoHeight;
+                    canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
+                    var image = canvas.toDataURL();
+                    var success = image.length > 100000;
+                    if (success) {
+                    var img = document.createElement('img');
+                    img.src = image;
+                    document.getElementsByTagName('div')[0].appendChild(img);
+                    URL.revokeObjectURL(url);
+                    }
+                    return success;
+                };
+                video.addEventListener('timeupdate', timeupdate);
+                video.preload = 'metadata';
+                video.src = url;
+                // Load video in Safari / IE11
+                video.muted = true;
+                video.playsInline = true;
+                video.play();
+                };
+                fileReader.readAsArrayBuffer(file);
+            }
+            });
+        </script>
         @endsection
 
         @section('kualitasactive')

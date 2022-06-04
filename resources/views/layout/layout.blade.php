@@ -136,6 +136,11 @@
         transition: all 0.5s ease-in-out;
         cursor: pointer;
     }
+    .cardss:hover {
+        transform: scale(1.03);
+        transition: all 0.5s ease-in-out;
+        cursor: pointer;
+    }
     .card-body {
         padding: 0.5rem;
     }
@@ -188,6 +193,28 @@
     padding: 15px;
     margin: 10px;
     color: white
+    }
+    .dot {
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    display: inline-block;
+    }
+    .rectangle {
+    height: 25px;
+    width: 25px;
+    display: inline-block;
+    }
+    textarea::placeholder {
+    font-size: 18px;
+    }
+    input[type="file"] {
+    display: none;
+    }
+    .custom-file-upload {
+        display: inline-block;
+        padding: 10px 0px 0px 15px;
+        cursor: pointer;
     }
 </style>
 </body>

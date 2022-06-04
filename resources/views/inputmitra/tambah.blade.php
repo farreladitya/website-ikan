@@ -32,8 +32,22 @@
         </div>
         <div class="form-group mb-3">
         <label class="form-label">Ikan</label>
-        <input type="text" class="form-control"  name="ikan" required="required">
-        </div>
+        <select class="form-control" name="ikan" required="required">
+          <option value="">--Pilih Ikan--</option>
+          @foreach ($ikan as $i)
+        <option value="{{$i->ikan_id}}">{{$i->nama_biasa}}</option>
+        @endforeach
+        </select>
+      </div>
+      <div class="form-group mb-3">
+        <label class="form-label">Tipe Ikan</label>
+        <select class="form-control" name="tipeikan" required="required">
+          <option value="">--Pilih Tipe Ikan--</option>
+          @foreach ($tipeikan as $t)
+        <option value="{{$t->id}}">{{$t->tipe}}</option>
+        @endforeach
+        </select>
+      </div>
         <div class="form-group mb-3">
         <label class="form-label">Harga</label>
         <input type="text"  class="form-control" name="harga" required="required">

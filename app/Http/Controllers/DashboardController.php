@@ -23,9 +23,10 @@ public function index()
     // method untuk menampilkan view form tambah pegawai
 public function tambah()
     {
-
-        // memanggil view tambah
-        return view('inputmitra.tambah');
+        // mengambil data pegawai berdasarkan id yang dipilih
+	    $ikan = DB::table('ikan')->get();
+	    $tipeikan = DB::table('tipeikan')->get();
+        return view('inputmitra.tambah',['ikan' => $ikan],['tipeikan' => $tipeikan] );
 
     }
 public function store(Request $request)
@@ -35,6 +36,7 @@ public function store(Request $request)
 	DB::table('input_mitra_tables')->insert([
 		'nama' => $request->nama,
 		'ikan' => $request->ikan,
+		'tipeikan' => $request->tipeikan,
 		'harga' => $request->harga,
 		'berat' => $request->berat,
 		'gambar' => $request->gambar

@@ -1,43 +1,43 @@
 @extends('layout.layout')
 @section('title', 'Detail Product')
 @section('head')
-    @foreach ($ikan as $i)
-    @if ($i->tekstur_daging === null && $i->bau_amis === null && $i->berminyak === null && $i->duri === null)
-        <style>
-            .informasi-ikan{
-            display:none
-        }
-        </style>
-    @endif
-        @if ($i->tekstur_daging === null)
-            <style>
-            .tekstur{
-                display:none
-            }
-            </style>
-        @endif
-        @if ($i->bau_amis === null)
-            <style>
-            .bau-amis{
-                display:none
-            }
-            </style>
-        @endif
-        @if ($i->berminyak === null)
-            <style>
-            .berminyak{
-                display:none
-            }
-            </style>
-        @endif
-        @if ($i->duri === null)
-            <style>
-            .duri{
-                display:none
-            }
-            </style>
-        @endif
-    @endforeach
+@foreach ($ikan as $i)
+@if ($i->tekstur_daging === null && $i->bau_amis === null && $i->berminyak === null && $i->duri === null)
+<style>
+    .informasi-ikan{
+        display:none
+    }
+</style>
+@endif
+@if ($i->tekstur_daging === null)
+<style>
+    .tekstur{
+        display:none
+    }
+</style>
+@endif
+@if ($i->bau_amis === null)
+<style>
+    .bau-amis{
+        display:none
+    }
+</style>
+@endif
+@if ($i->berminyak === null)
+<style>
+    .berminyak{
+        display:none
+    }
+</style>
+@endif
+@if ($i->duri === null)
+<style>
+    .duri{
+        display:none
+    }
+</style>
+@endif
+@endforeach
 @endsection
 @section('isikonten')
 <style>
@@ -250,6 +250,17 @@
         <span class="button font-weight-bold" onclick="/" style="background-color:#253368;color: white;border-radius: 0px 5px 5px 0px; padding: 5px 17px;margin-left: -5px;">+</span>
     </div>
     <div class="container" style="margin-top: 80px; margin-bottom:130px">
+    {{-- <form action="{{route('postulasan', $i->ikan_id)}}" method="POST">
+        @csrf
+        <div class="container">
+            <p class="mt-5" style="font-size:21px">Apakah ada hal yang ingin dibagikan terkait pemanfaatan sisa atau cara pengolahan?</p>
+            <div class="form-group">
+                <textarea style="border: none; outline: none; font-size:12px" class="form-control" id="exampleFormControlTextarea1" rows="7" name="comment"></textarea>
+            </div>
+            <button type="submit" class="button buttonmasuk float-right mt-2" style="width: 130px">Kirim</button>
+        </div>
+    </form> --}}
+    <div class="container" style="margin-top: 150px; margin-bottom:130px">
         <div class="dropdown">
             <button class="btn button buttonmasuk dropdown-toggle" type="button" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Urutkan Berdasarkan
@@ -261,14 +272,27 @@
                 </div>
             </div>
             <div class="mt-4">
-                <p style="font-size:14px">Djonny</p>
-                <p style="font-size:14px">16 Februari 2022</p>
-                <span class="font-weight-bold" style="background-color:white;color: #253368; padding: 5px 17px;margin-left: -5px;height:34px; display:inline-block; border-radius:5px">Mudah Pengelohaan</span>
+                @if (!$ulasan)
+                <h2>Belum ada ulasan. Beri ulasan untuk produk ini...</h2>
+                @else
+                @foreach ($ulasan as $u)
+                <h3 style="font-size:14px">{{$u->name}}</h3>
+                @php
+                    $tanggalpost = date('d M Y', strtotime($u->created_at));
+                @endphp
+                <p style="font-size:14px">{{$tanggalpost}}</p>
+                @if ($u->tags)
+                @php
+                    $tag = implode(';', $u->tags);
+                @endphp
+                    @foreach ($tag as $t)
+                    <span class="font-weight-bold" style="background-color:white;color: #253368; padding: 5px 17px;margin-left: -5px;height:34px; display:inline-block; border-radius:5px">{{$t}}</span>
+                    @endforeach
+                @endif
+                <p>{{$u->comment}}</p>
                 <hr style="color = black;" class="mt-4">
-                <p style="font-size:14px">Djonny</p>
-                <p style="font-size:14px">16 Februari 2022</p>
-                <span class="font-weight-bold" style="background-color:white;color: #253368; padding: 5px 17px;margin-left: -5px;height:34px; display:inline-block; border-radius:5px">Mudah Pengelohaan</span>
-                <hr style="color = black;" class="mt-4">
+                @endforeach
+                @endif
             </div>
         </div>
         @endforeach

@@ -19,7 +19,9 @@ class DatabaseSeeder extends Seeder
             HargaSeeder::class,
             FotoSeeder::class,
             PersebaranSeeder::class,
-            DetailIkanSeeder::class
+            DetailIkanSeeder::class,
+            ulasanSeeder::class,
+            CekKualitasSeeder::class,
         ]);
     }
 }

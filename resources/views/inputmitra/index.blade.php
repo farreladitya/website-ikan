@@ -30,6 +30,7 @@
           <th scope="col">ID</th>
           <th scope="col">Nama</th>
           <th scope="col">Ikan</th>
+          <th scope="col">Tipe Ikan</th>
           <th scope="col">Harga</th>
           <th scope="col">Berat</th>
           <th scope="col">Gambar</th>
@@ -42,6 +43,7 @@
             <td>{{ $i->id }}</td>
 			<td>{{ $i->nama }}</td>
 			<td>{{ $i->ikan }}</td>
+			<td>{{ $i->tipeikan }}</td>
 			<td>{{ $i->harga }}</td>
 			<td>{{ $i->berat }}</td>
 			<td>{{ $i->gambar }}</td>

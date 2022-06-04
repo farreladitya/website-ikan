@@ -225,7 +225,7 @@
             <a @yield('berandaactive') class="navbar navbar-brand" href="/">Beranda</a>
             <a @yield('giziactive') class="navbar navbar-brand" href="/gizi">Gizi</a>
             <a @yield('kualitasactive') class="navbar navbar-brand" href="/kualitas">Kualitas</a>
-            <a class="navbar navbar-brand" href="#">Fakta</a>
+            <a @yield('faktaactive') class="navbar navbar-brand" href="/faktaikan">Fakta</a>
             <a @yield('mitraactive') class="navbar navbar-brand" href="/mitra">Mitra</a>
         </div>
 

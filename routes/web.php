@@ -91,3 +91,11 @@ Route::get('/detailgizi', function () {
 Route::get('/detailracun', function () {
     return view('gizi.detailracun');
 });
+
+Route::get('/listpenjual', function () {
+    return view('listpenjual');
+});
+
+Route::get('/faktaikan', function () {
+    return view('fakta');
+});

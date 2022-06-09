@@ -92,9 +92,7 @@ Route::get('/detailracun', function () {
     return view('gizi.detailracun');
 });
 
-Route::get('/listpenjual', function () {
-    return view('listpenjual');
-});
+Route::get('/listpenjual/{persebaran}', 'OutletController@index');
 
 Route::get('/faktaikan', function () {
     return view('fakta');

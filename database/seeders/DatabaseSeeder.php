@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
             DetailIkanSeeder::class,
             ulasanSeeder::class,
             CekKualitasSeeder::class,
+            OutletSeeder::class,
         ]);
     }
 }

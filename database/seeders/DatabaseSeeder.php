@@ -29,7 +29,8 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             RacunSeeder::class,
             ListGiziSeeder::class,
-            EfekSampingSeeder::class
+            EfekSampingSeeder::class,
+            OutletSeeder::class,
         ]);
     }
 }

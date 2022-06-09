@@ -88,9 +88,7 @@ Route::get('/detailgizi/{idgizi}', 'IkanController@detailgizi')->name('detailgiz
 
 Route::get('/detailracun/{idracun}', 'IkanController@detailracun')->name('detailracun'); //halaman detail gizi
 
-Route::get('/listpenjual', function () {
-    return view('listpenjual');
-});
+Route::get('/listpenjual/{persebaran}', 'OutletController@index');
 
 Route::get('/faktaikan', function () {
     return view('fakta');

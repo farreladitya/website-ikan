@@ -4,7 +4,9 @@
 <div style="background-color: #C6DADA">
     <div class="row">
         <div class="col-6">
-            <h1 class="font-weight-bold display-4" style="margin-left:75px; margin-top: 70px"> Jawa Timur </h1>
+            @foreach ($outlet as $o)
+            <h1 class="font-weight-bold display-4" style="margin-left:75px; margin-top: 70px">{{$o->persebaran}}</h1>
+            @endforeach
             <form action="/listpenjual/cari" method="GET">
                 <div class="row mt-4 mb-4">
                     <div class="col-sm-9">
@@ -19,6 +21,7 @@
                 </div>
             </form>
         </div>
+
         <div class="col-6 my-auto">
             <img src="{{URL::asset('/images/penjual.png')}}" width="80%" class="float-right">
         </div>
@@ -36,39 +39,20 @@
     </div>
 </div>
 <div class="container mt-5">
-    <div class="row">
+
+    @foreach ($outlet as $o)
+    <div class="row mb-3">
         <div class="col-4">
             <img src="{{URL::asset('/images/gambarpenjual.png')}}" width="100%">
         </div>
         <div class="col-8 my-auto">
-            <h2 class="font-weight-bold"> Guntur Ikan Laut </h2>
-            <p>Jl. Salihara No.8, RT.11/RW.3, Jatipadang</p>
+            <h2 class="font-weight-bold"> {{$o->nama_outlet}}</h2>
+            <p>{{$o->lokasi}}</p>
             <h4 class="font-weight-bold"> Rp 30.000/Kg </h4>
             <button class="button buttonmasuk buttonradius mt-3">Lihat Toko <i class="fas fa-arrow-right ml-2"></i> </button>
         </div>
     </div>
-    <div class="row mt-5">
-        <div class="col-4">
-            <img src="{{URL::asset('/images/gambarpenjual.png')}}" width="100%">
-        </div>
-        <div class="col-8 my-auto">
-            <h2 class="font-weight-bold"> Guntur Ikan Laut </h2>
-            <p>Jl. Salihara No.8, RT.11/RW.3, Jatipadang</p>
-            <h4 class="font-weight-bold"> Rp 30.000/Kg </h4>
-            <button class="button buttonmasuk buttonradius mt-3">Lihat Toko <i class="fas fa-arrow-right ml-2"></i> </button>
-        </div>
-    </div>
-    <div class="row mt-5">
-        <div class="col-4">
-            <img src="{{URL::asset('/images/gambarpenjual.png')}}" width="100%">
-        </div>
-        <div class="col-8 my-auto">
-            <h2 class="font-weight-bold"> Guntur Ikan Laut </h2>
-            <p>Jl. Salihara No.8, RT.11/RW.3, Jatipadang</p>
-            <h4 class="font-weight-bold"> Rp 30.000/Kg </h4>
-            <button class="button buttonmasuk buttonradius mt-3">Lihat Toko <i class="fas fa-arrow-right ml-2"></i> </button>
-        </div>
-    </div>
+    @endforeach
 </div>
 @endsection
 

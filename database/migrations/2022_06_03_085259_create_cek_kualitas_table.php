@@ -17,6 +17,7 @@ class CreateCekKualitasTable extends Migration
             $table->string('ikan_id');
             $table->foreign('ikan_id')->references('ikan_id')->on('ikan')->onDelete('cascade');
             $table->string('url_video');
+            $table->string('timestamp');
         });
     }
 

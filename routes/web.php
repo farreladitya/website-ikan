@@ -40,7 +40,7 @@ Route::get('kualitas/cari', 'IkanController@carikualitas'); //Fitur cari kualita
 Route::get('kualitas/listproduct', 'IkanController@listprodukkualitas'); //Halaman list produk kualitas
 Route::get('kualitas/listproduct/filter', 'IkanController@filterprodukkualitas')->name('filterkualitas'); //filter list produk kualitas
 Route::get('kualitas/listproduct/cari', 'IkanController@carikualitas'); //Fitur cari dari list kualitas
-Route::get('kualitas/product/detail/{id}','IkanController@detailIkan');
+Route::get('kualitas/product/detail/{id}','IkanController@detailIkan')->name('detailproduk');
 Route::post('kualitas/product/detail/{idikan}','IkanController@postulasan')->name('postulasan');
 Route::get('kualitas/product/{id}','IkanController@kualitas');
 
@@ -84,13 +84,9 @@ Route::get('/manfaatikan', function () {
     return view('gizi.manfaat');
 });
 
-Route::get('/detailgizi', function () {
-    return view('gizi.detailgizi');
-});
+Route::get('/detailgizi/{idgizi}', 'IkanController@detailgizi')->name('detailgizi'); //halaman detail gizi
 
-Route::get('/detailracun', function () {
-    return view('gizi.detailracun');
-});
+Route::get('/detailracun/{idracun}', 'IkanController@detailracun')->name('detailracun'); //halaman detail gizi
 
 Route::get('/listpenjual', function () {
     return view('listpenjual');

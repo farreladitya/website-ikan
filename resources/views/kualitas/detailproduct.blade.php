@@ -213,12 +213,13 @@
         </div>
     </div> --}}
     <h2 class="font-weight-bold text-center" style="margin-top: 100px;"> Tambah Ulasan </h2>
-    <form>
+    <form action="{{route('postulasan', ['idikan'=>$i->ikan_id])}}" method="POST">
+        @csrf
         <div class="container p-3 mt-4" style="background-color: white;">
             <div class="form-group">
-                <textarea placeholder="Bagikan tanggapan terkait ikan tuna sirip kuning" style="border: none; outline: none; font-size:18px" class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+                <textarea placeholder="Bagikan tanggapan terkait ikan {{$i->nama_biasa}}" style="border: none; outline: none; font-size:18px" class="form-control" id="exampleFormControlTextarea1" rows="5" name="comment" required></textarea>
             </div>
-            <div class="row">
+            {{-- <div class="row">
                 <div class="col">
                     <label class="custom-file-upload">
                         <input type="file" accept=".jpg,.jpeg.,.png,.mov,.mp4" style="button"/>
@@ -226,7 +227,7 @@
                     </label>
                     <div class="divs"></div>
                 </div>
-            </div>
+            </div> --}}
             <div class="row">
                 <div class="col">
                     <div class="text-right">
@@ -274,13 +275,16 @@
                 </div>
             </div>
             <div class="mt-4">
-                @if (!$ulasan)
-                <h2>Belum ada ulasan. Beri ulasan untuk produk ini...</h2>
+                @if (!Auth::check())
+                    <h3>Login terlebih dahulu untuk memberikan ulasan</h3>
+                @else
+                @if (!$ulasan->first())
+                <h3>Belum ada ulasan. Beri ulasan untuk produk ini...</h3>
                 @else
                 @foreach ($ulasan as $u)
                 <h3 style="font-size:14px">{{$u->name}}</h3>
                 @php
-                    $tanggalpost = date('d M Y', strtotime($u->created_at));
+                    $tanggalpost = date('d M Y ', strtotime($u->created_at));
                 @endphp
                 <p style="font-size:14px">{{$tanggalpost}}</p>
                 @if ($u->tags)
@@ -294,6 +298,7 @@
                 <p>{{$u->comment}}</p>
                 <hr style="color = black;" class="mt-4">
                 @endforeach
+                @endif
                 @endif
             </div>
         </div>

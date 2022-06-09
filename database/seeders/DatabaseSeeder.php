@@ -22,6 +22,14 @@ class DatabaseSeeder extends Seeder
             DetailIkanSeeder::class,
             ulasanSeeder::class,
             CekKualitasSeeder::class,
+            GiziIkanSeeder::class,
+            ManfaatSeeder::class,
+            KonsumenSeeder::class,
+            ManfaatKonsumenSeeder::class,
+            UserSeeder::class,
+            RacunSeeder::class,
+            ListGiziSeeder::class,
+            EfekSampingSeeder::class
         ]);
     }
 }

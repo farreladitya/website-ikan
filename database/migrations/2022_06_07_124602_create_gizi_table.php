@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUlasanTable extends Migration
+class CreateGiziTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,13 @@ class CreateUlasanTable extends Migration
      */
     public function up()
     {
-        Schema::create('ulasan', function (Blueprint $table) {
+        Schema::create('gizi', function (Blueprint $table) {
             $table->id();
             $table->string('ikan_id');
             $table->foreign('ikan_id')->references('ikan_id')->on('ikan')->onDelete('cascade');
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->string('tags')->nullable();
-            $table->string('comment');
-            //$table->string('gambar_ulasan')->nullable();
-            $table->timestamps();
+            $table->string('gizi', 700)->nullable();
+            $table->string('racun', 700)->nullable();
+            $table->string('url_gizi')->nullable();
         });
     }
 
@@ -33,6 +30,6 @@ class CreateUlasanTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ulasan');
+        Schema::dropIfExists('gizi');
     }
 }

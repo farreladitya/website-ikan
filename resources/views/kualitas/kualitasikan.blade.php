@@ -1,7 +1,6 @@
 @extends('layout.layout')
 @section('title', 'Kualitas Ikan')
 @section('isikonten')
-
 <div class="row">
     <div class="col-sm-5">
         <h1 class="font-weight-bold display-4 margincontainer" style="margin-top: 105px"> Cek Kualitas Ikan {{$ikan->nama_biasa}} </h1>
@@ -14,6 +13,27 @@
 </div>
 
 <div class="responsive-container d-flex align-items-center justify-content-center" style="margin-top: 80px"><div id="player"></div></div>
+@php
+    $waktuts = [];
+    $timestamp = explode(',', $ikan->timestamp);
+    $namats = [];
+    $timeshow = [];
+    foreach ($timestamp as $ts) {
+        $w = explode(' ', $ts); //pisahkan antara waktu dan nama
+        $splitw = explode(':', $w[0]); //pisahkan menit dan detik dari waktu
+        array_push($timeshow, $w[0]);
+        $detik = strval(($splitw[0]*60) + ($splitw[1]));
+        $n = $w[1].' '.$w[2]; //concat nama timestamp (kata pertama dan kedua)
+        array_push($waktuts, $detik);
+        array_push($namats, $n);
+    }
+    $detikts = $waktuts[0];
+    for ($i=0; $i < count($waktuts); $i++) {
+        if ($i !== 0) {
+            $detikts = $detikts.', '.$waktuts[$i];
+        }
+    }
+@endphp
 <script>
   var tag = document.createElement('script');
   tag.src = "https://www.youtube.com/iframe_api";
@@ -26,15 +46,20 @@
     });
   }
   function setCurrentTime(slideNum) {
-    var object = [ 0, 133, 193 ];
+    var object = [{{$detikts}}];
     player.seekTo(object[slideNum]);
   }
 </script>
 
+@php
+    $x = 0;
+@endphp
+
+@foreach ($namats as $namatimestamp)
 <div class="row">
     <div class="col-2"></div>
     <div class="col-1">
-        <button type="button" href="#demo" data-toggle="collapse" id="arrow" class="btn btn-default float-right" onclick="show()"> <i class="fa fa-angle-down"></i> </button>
+        <button type="button" href="#demo" data-toggle="collapse" id="arrow" class="btn btn-default float-right" onclick="show()"><i class="fa fa-angle-down"></i> </button>
         <script>
             function show() {
                 $('#arrow').find("i").toggleClass("fa-angle-down fa-angle-up");
@@ -42,49 +67,17 @@
         </script>
     </div>
     <div class="col-6">
-        <p class="font-weight-bold" style="font-size:24px">Cek Warna </p>
-        <a class="font-weight-light" style="color: black" href="javascript:void(0);" onclick="setCurrentTime(0)">0:00</a>
+        <p class="font-weight-bold" style="font-size:24px">{{$namatimestamp}}</p>
+        <a class="font-weight-light" style="color: black" href="javascript:void(0);" onclick="setCurrentTime({{$x}})">{{$timeshow[$x]}}</a>
         <div id="demo" class="collapse mt-3">
             <img src="{{URL::asset('/images/detailvideo.png')}}" width="90%">
         </div>
     </div>
 </div>
-<div class="row mt-5">
-    <div class="col-2"></div>
-    <div class="col-1">
-        <button type="button" href="#demo1" data-toggle="collapse" id="arrow1" class="btn btn-default float-right" onclick="show1()"> <i class="fa fa-angle-down"></i> </button>
-        <script>
-            function show1() {
-                $('#arrow1').find("i").toggleClass("fa-angle-down fa-angle-up");
-            }
-        </script>
-    </div>
-    <div class="col-6">
-        <p class="font-weight-bold" style="font-size:24px">Cek Insang </p>
-        <a class="font-weight-light" style="color: black" href="javascript:void(0);" onclick="setCurrentTime(1)">2:13</a>
-        <div id="demo1" class="collapse mt-3">
-            <img src="{{URL::asset('/images/detailvideo.png')}}" width="90%">
-        </div>
-    </div>
-</div>
-<div class="row mt-5">
-    <div class="col-2"></div>
-    <div class="col-1">
-        <button type="button" href="#demo2" data-toggle="collapse" id="arrow2" class="btn btn-default float-right" onclick="show2()"> <i class="fa fa-angle-down"></i> </button>
-        <script>
-            function show2() {
-                $('#arrow2').find("i").toggleClass("fa-angle-down fa-angle-up");
-            }
-        </script>
-    </div>
-    <div class="col-6">
-        <p class="font-weight-bold" style="font-size:24px">Cek Warna </p>
-        <a class="font-weight-light" style="color: black" href="javascript:void(0);" onclick="setCurrentTime(2)">3:13</a>
-        <div id="demo2" class="collapse mt-3">
-            <img src="{{URL::asset('/images/detailvideo.png')}}" width="90%">
-        </div>
-    </div>
-</div>
+@php
+    $x++;
+@endphp
+@endforeach
 
 @endsection
 

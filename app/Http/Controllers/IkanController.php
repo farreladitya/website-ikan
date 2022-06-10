@@ -189,16 +189,15 @@ class IkanController extends Controller
     public function detailgizi($idgizi){
         $gizi = DB::table('list_gizi')->where('gizi_id', $idgizi)->first();
         $manfaat = DB::table('manfaat')->get();
-        $efeksamping = DB::table('efek_samping')->get();
-        $ikan = DB::table('gizi')->join('ikan', 'ikan.ikan_id', '=', 'gizi.ikan_id')->join('foto_ikan', 'foto_ikan.ikan_id', '=', 'ikan.ikan_id')->join('harga_ikan', 'harga_ikan.ikan_id', '=', 'ikan.ikan_id')->get();
-
+        $efeksamping = DB::table('efek_samping')->where('efek_samping.ktrt_gizi', 'like', "%".$gizi->nama_gizi."%")->get();
+        $ikan = DB::table('ikan')->join('gizi', 'ikan.ikan_id', '=', 'gizi.ikan_id')->join('foto_ikan', 'foto_ikan.ikan_id', '=', 'ikan.ikan_id')->join('harga_ikan', 'harga_ikan.ikan_id', '=', 'ikan.ikan_id')->where('gizi.gizi', 'like', "%".$gizi->nama_gizi."%")->get();
         return view('gizi.detailgizi', ['gizi' => $gizi, 'manfaat'=>$manfaat, 'efeksamping'=>$efeksamping, 'ikan'=>$ikan]);
     }
 
     public function detailracun($idracun){
         $racun = DB::table('racun')->where('racun_id', $idracun)->first();
-        $efeksamping = DB::table('efek_samping')->get();
-        $ikan = DB::table('gizi')->join('ikan', 'ikan.ikan_id', '=', 'gizi.ikan_id')->join('foto_ikan', 'foto_ikan.ikan_id', '=', 'ikan.ikan_id')->join('harga_ikan', 'harga_ikan.ikan_id', '=', 'ikan.ikan_id')->get();
+        $efeksamping = DB::table('efek_samping')->where('efek_samping.ktrt_racun', 'like', "%".$racun->nama_racun."%")->get();
+        $ikan = DB::table('gizi')->join('ikan', 'ikan.ikan_id', '=', 'gizi.ikan_id')->join('foto_ikan', 'foto_ikan.ikan_id', '=', 'ikan.ikan_id')->join('harga_ikan', 'harga_ikan.ikan_id', '=', 'ikan.ikan_id')->where('gizi.racun', 'like', "%".$racun->nama_racun."%")->get();
 
         return view('gizi.detailracun', ['racun' => $racun, 'efeksamping'=>$efeksamping, 'ikan'=>$ikan]);
     }

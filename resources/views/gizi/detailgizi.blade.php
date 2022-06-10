@@ -1,5 +1,5 @@
 @extends('layout.layout')
-@section('title', 'Gizi Ikan')
+@section('title', 'Detail Gizi')
 @section('isikonten')
 <img src="{{URL::asset('/images/omega31.png')}}" height="424px">
 <div class="text-center mt-5">
@@ -30,33 +30,30 @@ foreach ($manfaat as $m) {
 </div>
 @endif
 
+@if ($efeksamping->count() != 0)
 <div class="row container ">
     <div class="col-1"></div>
     <div class="col-7 ml-5">
         <h4 class="font-weight-bold mt-4">Efek Samping {{$gizi->nama_gizi}} :</h4>
         <ul class="mt-3" style="font-size: 18px">
             @foreach ($efeksamping as $efek)
-            @php
-            $listracun = explode(',', $efek->ktrt_gizi);
-            @endphp
-            @if (in_array($gizi->nama_gizi, $listracun))
             <li>{{$efek->efek_samping}}</li>
-            @endif
             @endforeach
         </ul>
     </div>
 </div>
+@endif
 
+@if ($ikan->count() != 0)
 <div class="row container mt-4">
     <div class="col-1"></div>
     <div class="col-10 ml-5">
         <h4 class="font-weight-bold">Banyak ditemukan pada hasil laut :</h4>
-        {{-- INI CAROUSEL NTAR BENERIN
             <div class="row">
                 <div class="col-sm-11" style="margin-left:25px">
                     <div class="achievement section-padding mt-3">
                         <div class="owl-carousel owl-carousels achievement-carousel">
-                            @foreach ($pelagis as $p)
+                            @foreach ($ikan as $p)
                             <div class="achievement-item bayangan" >
                                 <div class="ach-1 mb-3" style="aspect-ratio: 3/2;"><img src="{{$p->url_gambar}}" style="object-fit: contain" class="w-100 h-100 card-img" alt="ach-1"></div>
                                 <div class="item-text">
@@ -72,9 +69,10 @@ foreach ($manfaat as $m) {
                             </div>
                         </div>
                     </div>
-                </div> --}}
+                </div>
             </div>
         </div>
+@endif
         <div class="row container">
             <div class="col-1"></div>
             <div class="col-7 ml-5">

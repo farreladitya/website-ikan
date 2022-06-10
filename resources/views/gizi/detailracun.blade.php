@@ -31,7 +31,7 @@
                             @foreach ($ikan as $p)
                             <div class="achievement-item bayangan" >
                                 <div class="ach-1 mb-3" style="aspect-ratio: 3/2;"><img src="{{$p->url_gambar}}" style="object-fit: contain" class="w-100 h-100 card-img" alt="ach-1"></div>
-                                <div class="item-text">
+                                <div class="pl-lg-2 item-text">
                                     <h6>{{$p->nama_biasa}}</h6>
                                     <p>@if ($p->harga === 0)
                                         Harga Tidak Diketahui

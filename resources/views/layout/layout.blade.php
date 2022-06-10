@@ -327,6 +327,13 @@
             dots:true,
             loop:true,
         });
+        $('.owl-carouselss').owlCarousel({
+            autoplay:true,
+            autoplayHoverPause:true,
+            items:4,
+            dots:true,
+            loop:true,
+        });
     </script>
     @livewireScripts
 </body>

@@ -121,10 +121,17 @@
                     @endforeach
                 </div>
             </div>
-            @foreach ($outlet as $o )
             <hr style="color = black; margin-right: 100px;" class="mt-1" >
-            <a href="/listpenjual/{{$o->persebaran}}"><p id="daerah-1"> {{$o->persebaran}}</p></a>
-            @endforeach
+            <a href="{{route('listoutlet', ['persebaran' => 'Lawang'])}}" id="linkdaerah-1"><p id="daerah-1"> Lawang </p></a>
+            <hr style="color = black; margin-right: 100px;" class="mt-1" >
+            <a href="{{route('listoutlet', ['persebaran' => 'Tuban'])}}" id="'linkdaerah-2"><p id="daerah-2"> Tuban </p></a>
+            <hr style="color = black; margin-right: 100px;" class="mt-1">
+            <a href="{{route('listoutlet', ['persebaran' => 'Jampang'])}}" id="'linkdaerah-3"><p id="daerah-3"> Jampang </p></a>
+            <hr style="color = black; margin-right: 100px;" class="mt-1">
+            <a href="{{route('listoutlet', ['persebaran' => 'Pelabuhan Ratu'])}}" id="'linkdaerah-4"><p id="daerah-4"> Pelabuhan ratu </p></a>
+            <hr style="color = black; margin-right: 100px;" class="mt-1">
+            <a href="{{route('listoutlet', ['persebaran' => 'Ujung Genteng'])}}" id="'linkdaerah-5"><p id="daerah-5"> Ujung Genteng </p></a>
+            <hr style="color = black; margin-right: 100px;" class="mt-1">
         </div>
         <div class="col-sm-1"></div>
     </div>

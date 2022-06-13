@@ -117,7 +117,7 @@ foreach ($listgizi as $lg) {
 $kandungangizi = explode(',' , $m->kandungan);
 @endphp
 @if (in_array($namaKandungan, $kandungangizi))
-<div class="mt-5 cardss" onclick="location.href='/';">
+<div class="mt-5 cardss" onclick="location.href='{{route('detailManfaat', ['idmanfaat' => $m->manfaat_id])}}';">
     <span style="font-size: 20px">{{$m->manfaat}}</span>
     <span class="rectangle float-right" style="background-color: #1FCD10;"></span>
     <hr style="color:#C6DADA">

@@ -72,11 +72,11 @@ class IkanController extends Controller
         return view('kualitas.listproduct', ['ikan'=>$ikan]);
     }
 
-    public function detailIkan($id){
-        $ikan = DB::table('ikan')->join('harga_ikan', 'harga_ikan.ikan_id', '=', 'ikan.ikan_id')->join('foto_ikan', 'foto_ikan.ikan_id', '=', 'ikan.ikan_id')->leftJoin('detail_ikan', 'detail_ikan.ikan_id', '=', 'ikan.ikan_id')->where('ikan.ikan_id', $id)->get();
+    public function detailIkan($idikan){
+        $ikan = DB::table('ikan')->join('harga_ikan', 'harga_ikan.ikan_id', '=', 'ikan.ikan_id')->join('foto_ikan', 'foto_ikan.ikan_id', '=', 'ikan.ikan_id')->leftJoin('detail_ikan', 'detail_ikan.ikan_id', '=', 'ikan.ikan_id')->where('ikan.ikan_id', $idikan)->get();
 
         $ulasan = DB::table('ulasan')->select('ulasan.comment', 'users.name', 'ulasan.created_at', 'ulasan.tags')->join('users', 'users.id', '=', 'ulasan.user_id')
-        ->where('ikan_id', $id)
+        ->where('ikan_id', $idikan)
         ->get();
 
         return view('kualitas.detailproduct', ['ikan'=>$ikan, 'ulasan' => $ulasan]);
@@ -103,7 +103,13 @@ class IkanController extends Controller
             'updated_at' => $today
         ]);
 
-        return $this->detailIkan($idikan);
+        $ikan = DB::table('ikan')->join('harga_ikan', 'harga_ikan.ikan_id', '=', 'ikan.ikan_id')->join('foto_ikan', 'foto_ikan.ikan_id', '=', 'ikan.ikan_id')->leftJoin('detail_ikan', 'detail_ikan.ikan_id', '=', 'ikan.ikan_id')->where('ikan.ikan_id', $idikan)->get();
+
+        $ulasan = DB::table('ulasan')->select('ulasan.comment', 'users.name', 'ulasan.created_at', 'ulasan.tags')->join('users', 'users.id', '=', 'ulasan.user_id')
+        ->where('ikan_id', $idikan)
+        ->get();
+
+        return view('kualitas.detailproduct', ['ikan'=>$ikan, 'ulasan' => $ulasan]);
     }
 
     public function giziIkan($id){
@@ -200,5 +206,12 @@ class IkanController extends Controller
         $ikan = DB::table('gizi')->join('ikan', 'ikan.ikan_id', '=', 'gizi.ikan_id')->join('foto_ikan', 'foto_ikan.ikan_id', '=', 'ikan.ikan_id')->join('harga_ikan', 'harga_ikan.ikan_id', '=', 'ikan.ikan_id')->where('gizi.racun', 'like', "%".$racun->nama_racun."%")->get();
 
         return view('gizi.detailracun', ['racun' => $racun, 'efeksamping'=>$efeksamping, 'ikan'=>$ikan]);
+    }
+
+    public function detailManfaat($idmanfaat){
+        $manfaat = DB::table('manfaat')->where('manfaat_id', $idmanfaat)->first();
+        $ikan = DB::table('gizi')->join('ikan', 'ikan.ikan_id', '=', 'gizi.ikan_id')->join('foto_ikan', 'foto_ikan.ikan_id', '=', 'gizi.ikan_id')->get();
+
+        return view('gizi.manfaat', compact('manfaat', 'ikan'));
     }
 };

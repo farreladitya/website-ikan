@@ -213,7 +213,7 @@
         </div>
     </div> --}}
     <h2 class="font-weight-bold text-center" style="margin-top: 100px;"> Tambah Ulasan </h2>
-    <form action="{{route('postulasan', ['idikan'=>$i->ikan_id])}}" method="POST">
+    <form action="kualitas/product/detail/{{$i->ikan_id}}" method="POST">
         @csrf
         <div class="container p-3 mt-4" style="background-color: white;">
             <div class="form-group">
@@ -253,7 +253,7 @@
         <span class="button font-weight-bold" onclick="/" style="background-color:#253368;color: white;border-radius: 0px 5px 5px 0px; padding: 5px 17px;margin-left: -5px;">+</span>
     </div>
     {{-- <div class="container" style="margin-top: 80px; margin-bottom:130px"> --}}
-    {{-- <form action="{{route('postulasan', $i->ikan_id)}}" method="POST">
+    {{-- <form action="{{route('postulasan', {'idikan' => $i->ikan_id})}}" method="POST">
         @csrf
         <div class="container">
             <p class="mt-5" style="font-size:21px">Apakah ada hal yang ingin dibagikan terkait pemanfaatan sisa atau cara pengolahan?</p>

@@ -96,8 +96,8 @@
 <div class="col-sm-8 container">
     <div class="row">
         @foreach ($ikan as $i)
-        <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1 my-3" onclick="location.href='/';">
-            <a href="/gizi/product/{{$i->ikan_id}}">
+        <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1 my-3" onclick="location.href='{{route('detailproduk', ['idikan' => $i->ikan_id])}}';">
+            <a href="/gizi/product/{{$i->ikan_id}}" @method('GET')>
                 <div class="card"> <div class="container-gambar" style="aspect-ratio: 3/2;"><img class="card-img-top w-100 h-100" style="object-fit: contain" src="{{$i->url_gambar}}"></div>
                 <div class="card-body">
                     <h6 class="font-weight-bold pt-1">{{$i->nama_biasa}}</h6>

@@ -25,10 +25,10 @@ public function index()
 public function tambah()
     {
         // mengambil data pegawai berdasarkan id yang dipilih
-        $inputmitra = InputMitra::get();
+
 	    $ikan = DB::table('ikan')->get();
 	    $tipeikan = DB::table('tipeikan')->get();
-        return view('inputmitra.tambah',['ikan' => $ikan],['tipeikan' => $tipeikan],['input_mitra_tables' => $inputmitra] );
+        return view('inputmitra.tambah',['ikan' => $ikan],['tipeikan' => $tipeikan] );
 
     }
 public function store(Request $request)
@@ -36,7 +36,7 @@ public function store(Request $request)
 
   // menyimpan data file yang diupload ke variabel $file
   $file = $request->file('gambar');
-  
+
 
   $nama_file = time()."_".$file->getClientOriginalName();
 
@@ -52,6 +52,8 @@ public function store(Request $request)
     'berat' => $request->berat,
     'gambar' => $nama_file
   ]);
+
+
 	// alihkan halaman ke halaman pegawai
 	return redirect('/dashboard/index');
 

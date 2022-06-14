@@ -31,10 +31,6 @@
         <input type="hidden" class="form-control"  name="id" value="{{$i->id}}">
         </div>
         <div class="form-group mb-3">
-        <label class="form-label">Nama</label>
-        <input type="text" class="form-control"  name="nama" value="{{$i->nama}}">
-        </div>
-        <div class="form-group mb-3">
         <label class="form-label">Ikan</label>
         <input type="text" class="form-control"  name="ikan" value="{{$i->ikan}}">
         </div>

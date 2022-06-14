@@ -17,15 +17,14 @@ class CreateInputMitraTables extends Migration
             $table->id();
             $table->bigInteger('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
-            $table->string('nama');
             $table->string('ikan');
             $table->string('tipeikan');
-            $table->string('harga');
+            $table->integer('harga');
             $table->string('berat');
             $table->string('gambar');
             $table->timestamps();
         });
-    }
+    } 
 
     /**
      * Reverse the migrations.

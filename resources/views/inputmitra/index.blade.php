@@ -27,8 +27,7 @@
     <table class="table table-striped table-sm">
       <thead>
         <tr>
-          <th scope="col">ID</th>
-          <th scope="col">Nama</th>
+          <th scope="col">No</th>
           <th scope="col">Ikan</th>
           <th scope="col">Tipe Ikan</th>
           <th scope="col">Harga</th>
@@ -40,8 +39,7 @@
       <tbody>
         @foreach($input_mitra_tables as $i)
         <tr>
-            <td>{{ $i->id }}</td>
-			<td>{{ $i->nama }}</td>
+            <td>{{ $loop->iteration }}</td>
 			<td>{{ $i->ikan }}</td>
 			<td>{{ $i->tipeikan }}</td>
             <td>@php

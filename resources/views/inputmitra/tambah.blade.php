@@ -26,16 +26,12 @@
 
   <form action="/dashboard/index/store" method="post" enctype="multipart/form-data">
     {{ csrf_field() }}
-    <div class="form-group mb-3">
-        <label class="form-label">Nama</label>
-        <input type="text" class="form-control"  name="nama" required="required">
-        </div>
         <div class="form-group mb-3">
         <label class="form-label">Ikan</label>
         <select class="form-control" name="ikan" required="required">
           <option value="">--Pilih Ikan--</option>
           @foreach ($ikan as $i)
-        <option value="{{$i->ikan_id}}">{{$i->nama_biasa}}</option>
+        <option value="{{$i->nama_biasa}}">{{$i->nama_biasa}}</option>
         @endforeach
         </select>
       </div>

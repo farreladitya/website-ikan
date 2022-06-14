@@ -24,8 +24,8 @@ class CreateInputMitraTables extends Migration
             $table->string('gambar');
             $table->timestamps();
         });
-    } 
-
+    }
+    
     /**
      * Reverse the migrations.
      *

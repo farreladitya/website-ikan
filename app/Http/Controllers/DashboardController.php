@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\InputMitra;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Models\User;
 
 class DashboardController extends Controller
 {
@@ -17,6 +18,8 @@ public function index()
     	// mengambil data dari table pegawai
     	$inputmitra = DB::table('input_mitra_tables')->get();
 
+
+
     	// mengirim data pegawai ke view index
     	return view('inputmitra.index',['input_mitra_tables' => $inputmitra]);
 
@@ -28,13 +31,18 @@ public function tambah()
 
 	    $ikan = DB::table('ikan')->get();
 	    $tipeikan = DB::table('tipeikan')->get();
-        return view('inputmitra.tambah',['ikan' => $ikan],['tipeikan' => $tipeikan] );
+
+
+
+        return view('inputmitra.tambah',['ikan' => $ikan],['tipeikan' => $tipeikan]);
 
     }
 public function store(Request $request)
     {
 
   // menyimpan data file yang diupload ke variabel $file
+  $users = User::with('inputMitra')->get();
+  $input_mitra = InputMitra::with('user')->get();
   $file = $request->file('gambar');
 
 
@@ -45,7 +53,7 @@ public function store(Request $request)
   $file->move($tujuan_upload,$nama_file);
 
   InputMitra::create([
-    'nama' => $request->nama,
+    'user_id' => auth()->user()->id,
     'ikan' => $request->ikan,
     'tipeikan' => $request->tipeikan,
     'harga' => $request->harga,

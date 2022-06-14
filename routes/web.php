@@ -93,3 +93,6 @@ Route::get('/listpenjual/{persebaran}', 'OutletController@index')->name('listout
 Route::get('/faktaikan', function () {
     return view('fakta');
 });
+
+Route::get('/penjual/{namaikan}', 'IkanController@listpenjual'); //fitur hubungi penjual dari detail product
+

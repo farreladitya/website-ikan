@@ -211,7 +211,21 @@ class IkanController extends Controller
     public function detailManfaat($idmanfaat){
         $manfaat = DB::table('manfaat')->where('manfaat_id', $idmanfaat)->first();
         $ikan = DB::table('gizi')->join('ikan', 'ikan.ikan_id', '=', 'gizi.ikan_id')->join('foto_ikan', 'foto_ikan.ikan_id', '=', 'gizi.ikan_id')->get();
+        $gizi = DB::table('list_gizi')->get();
 
-        return view('gizi.manfaat', compact('manfaat', 'ikan'));
+        return view('gizi.manfaat', compact('manfaat', 'ikan', 'gizi'));
+    }
+
+    public function listpenjual($namaikan){
+        $jumlahmitra = DB::table('input_mitra_tables')->where('ikan', $namaikan)->count();
+        if($jumlahmitra == 0){
+            return redirect('/mitra');
+        }else if($jumlahmitra == 1){
+            $mitra = DB::table('input_mitra_tables')->where('ikan', $namaikan)->first();
+
+            return redirect('mitra/'.$mitra->nama_mitra);
+        }else{
+            return redirect('/mitra');
+        }
     }
 };

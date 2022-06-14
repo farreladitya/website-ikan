@@ -10,7 +10,7 @@ class InputMitra extends Model
 {
     protected $table = "input_mitra_tables";
 
-    protected $fillable = ['nama','ikan', 'tipeikan', 'harga', 'berat', 'gambar', 'user_id'];
+    protected $fillable = ['nama','ikan','nama_mitra', 'tipeikan', 'harga', 'berat', 'gambar', 'user_id'];
 
     public function user()
     {

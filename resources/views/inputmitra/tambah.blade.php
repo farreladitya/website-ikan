@@ -26,6 +26,7 @@
 
   <form action="/dashboard/index/store" method="post" enctype="multipart/form-data">
     {{ csrf_field() }}
+        <input type="hidden" value="{{$user->name}}" name="namamitra">
         <div class="form-group mb-3">
         <label class="form-label">Ikan</label>
         <select class="form-control" name="ikan" required="required">

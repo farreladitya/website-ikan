@@ -68,7 +68,7 @@
             @else
             {{$i->berat_minimal}}-{{$i->berat_maksimal}} gram/ekor
             @endif</p>
-            <a href="/mitra/udbarokah" class="margincontainer"> <button class="btn btn-success" style="border-radius:20px">Hubungi Penjual</button></a>
+            <a href="/penjual/{{$i->nama_biasa}}" class="margincontainer"> <button class="btn btn-success" style="border-radius:20px">Hubungi Penjual</button></a>
         </div>
         <div class="col-sm-7">
             <img src="{{URL::asset('/images/kualitas.png')}}" style="max-width: unset; max-height: unset; padding: unset;" width="90%" class="float-right" >

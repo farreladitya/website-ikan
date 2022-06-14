@@ -22,9 +22,14 @@
         <div class="row">
         @php
         $namaGizi = explode(',', $manfaat->kandungan);
+
         @endphp
         @foreach ($namaGizi as $n)
-            <div class="col-2 text-center mx-4">
+            @foreach ($gizi as $g)
+                @if ($g->nama_gizi == $n)
+                    <div class="col-2 text-center mx-4" onclick="location.href='/detailgizi/{{$g->gizi_id}}'">
+                @endif
+            @endforeach
                 <img src="{{URL::asset('/images/gizi.png')}}" height="70%">
                 <p class="font-weight-bold mt-3">{{$n}}</p>
             </div>

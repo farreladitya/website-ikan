@@ -6,6 +6,7 @@ use App\Models\InputMitra;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
 {
@@ -16,7 +17,7 @@ public function landing(){
 public function index()
     {
     	// mengambil data dari table pegawai
-    	$inputmitra = DB::table('input_mitra_tables')->get();
+    	$inputmitra = DB::table('input_mitra_tables')->where('nama_mitra', auth()->user()->name)->get();
 
 
 
@@ -31,10 +32,9 @@ public function tambah()
 
 	    $ikan = DB::table('ikan')->get();
 	    $tipeikan = DB::table('tipeikan')->get();
+        $user = DB::table('users')->where('id', Auth::id())->first();
 
-
-
-        return view('inputmitra.tambah',['ikan' => $ikan],['tipeikan' => $tipeikan]);
+        return view('inputmitra.tambah',['ikan' => $ikan,'tipeikan' => $tipeikan, 'user'=>$user]);
 
     }
 public function store(Request $request)
@@ -55,6 +55,7 @@ public function store(Request $request)
   InputMitra::create([
     'user_id' => auth()->user()->id,
     'ikan' => $request->ikan,
+    'nama_mitra' => auth()->user()->name,
     'tipeikan' => $request->tipeikan,
     'harga' => $request->harga,
     'berat' => $request->berat,

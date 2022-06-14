@@ -14,7 +14,8 @@
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
     @section('head')
     @show
-    @livewireStyles
+     {{-- Harga Format --}}
+   <script src="~/Scripts/autoNumeric/autoNumeric.min.js" type="text/javascript"></script>
 </head>
 <style>
     body{

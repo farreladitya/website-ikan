@@ -47,9 +47,10 @@
         <input type="text" class="form-control"  name="berat" value="{{$i->berat}}">
         </div>
         <div class="form-group mb-3">
-        <label class="form-label">Gambar</label>
-        <input type="text" class="form-control"  name="gambar" value="{{$i->gambar}}">
-        </div>
+        <label for="formFile" class="form-label">Gambar</label>
+        <input class="form-control" type="file" id="formFile" name="gambar" value="{{$i->gambar}}">
+        <img src="/gambar_ikan/{{$i->gambar}}" width="300px">
+      </div>
         <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 @endforeach

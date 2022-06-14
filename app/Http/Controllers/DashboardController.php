@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\InputMitra;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -24,23 +25,33 @@ public function index()
 public function tambah()
     {
         // mengambil data pegawai berdasarkan id yang dipilih
+        $inputmitra = InputMitra::get();
 	    $ikan = DB::table('ikan')->get();
 	    $tipeikan = DB::table('tipeikan')->get();
-        return view('inputmitra.tambah',['ikan' => $ikan],['tipeikan' => $tipeikan] );
+        return view('inputmitra.tambah',['ikan' => $ikan],['tipeikan' => $tipeikan],['input_mitra_tables' => $inputmitra] );
 
     }
 public function store(Request $request)
     {
 
-	// insert data ke table pegawai
-	DB::table('input_mitra_tables')->insert([
-		'nama' => $request->nama,
-		'ikan' => $request->ikan,
-		'tipeikan' => $request->tipeikan,
-		'harga' => $request->harga,
-		'berat' => $request->berat,
-		'gambar' => $request->gambar
-	]);
+  // menyimpan data file yang diupload ke variabel $file
+  $file = $request->file('gambar');
+  
+
+  $nama_file = time()."_".$file->getClientOriginalName();
+
+            // isi dengan nama folder tempat kemana file diupload
+  $tujuan_upload = 'gambar_ikan';
+  $file->move($tujuan_upload,$nama_file);
+
+  InputMitra::create([
+    'nama' => $request->nama,
+    'ikan' => $request->ikan,
+    'tipeikan' => $request->tipeikan,
+    'harga' => $request->harga,
+    'berat' => $request->berat,
+    'gambar' => $nama_file
+  ]);
 	// alihkan halaman ke halaman pegawai
 	return redirect('/dashboard/index');
 

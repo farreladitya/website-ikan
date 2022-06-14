@@ -32,7 +32,7 @@
           <th scope="col">Ikan</th>
           <th scope="col">Tipe Ikan</th>
           <th scope="col">Harga</th>
-          <th scope="col">Berat</th>
+          <th scope="col">Berat (Kg)</th>
           <th scope="col">Gambar</th>
           <th scope="col">Opsi</th>
         </tr>
@@ -44,9 +44,11 @@
 			<td>{{ $i->nama }}</td>
 			<td>{{ $i->ikan }}</td>
 			<td>{{ $i->tipeikan }}</td>
-			<td>{{ $i->harga }}</td>
+            <td>@php
+                echo "Rp. " . number_format($i->harga,0,",",".",);
+            @endphp</td>
 			<td>{{ $i->berat }}</td>
-			<td>{{ $i->gambar }}</td>
+			<td><img width="150px" src="{{ url('/gambar_ikan/'.$i->gambar) }}"></td>
 			<td>
 				<a href="/dashboard/index/edit/{{ $i->id }}" class="btn btn-warning" >Edit</a>
 				|

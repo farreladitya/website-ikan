@@ -93,7 +93,9 @@
                             <p>@if ($i->harga === 0)
                                 Harga Tidak Diketahui
                                 @else
-                                {{$i->harga}}
+                                @php
+                                    echo "Rp. " . number_format($i->harga,0,",",".",);
+                                @endphp
                             @endif</p>
                         </div>
                     </div>
@@ -162,7 +164,9 @@
                         <div class="ach-1 mb-3" style="aspect-ratio: 3/2;"><img src="{{$i->url_gambar}}" alt="ach-1" style="object-fit: contain" class="w-100 h-100 card-img"></div>
                         <div class="pl-lg-2 item-text">
                             <h6>{{$i->nama_ikan}}</h6>
-                            <p>{{$i->harga}}</p>
+                            <p>@php
+                                echo "Rp. " . number_format($i->harga,0,",",".",);
+                            @endphp</p>
                         </div>
                     </div>
                     @endforeach

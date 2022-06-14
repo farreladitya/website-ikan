@@ -44,7 +44,7 @@
         <select class="form-control" name="tipeikan" required="required">
           <option value="">--Pilih Tipe Ikan--</option>
           @foreach ($tipeikan as $t)
-        <option value="{{$t->id}}">{{$t->tipe}}</option>
+        <option value="{{$t->tipe}}">{{$t->tipe}}</option>
         @endforeach
         </select>
       </div>

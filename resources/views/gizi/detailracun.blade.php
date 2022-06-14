@@ -25,9 +25,9 @@
     <div class="col-10 ml-5">
         <h4 class="font-weight-bold">Banyak ditemukan pada hasil laut :</h4>
             <div class="row">
-                <div class="col-sm-11" style="margin-left:25px">
+                <div class="col-sm-12">
                     <div class="achievement section-padding mt-3">
-                        <div class="owl-carousel owl-carousels achievement-carousel">
+                        <div class="owl-carousel owl-carouselss achievement-carousel">
                             @foreach ($ikan as $p)
                             <div class="achievement-item bayangan" >
                                 <div class="ach-1 mb-3" style="aspect-ratio: 3/2;"><img src="{{$p->url_gambar}}" style="object-fit: contain" class="w-100 h-100 card-img" alt="ach-1"></div>

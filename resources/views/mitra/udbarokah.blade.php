@@ -41,6 +41,23 @@
         <div class="mapouter"><div class="gmap_canvas"><iframe width="530" height="380" id="gmap_canvas" src="https://maps.google.com/maps?q=kantor%20balai%20desa%20mertani%20lamongan&t=&z=17&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div></div>
     </div>
 </div>
+<div class="container mt-5">
+    <h3 class="font-weight-bold text-center">Produk Mitra</h3>
+    <form action="/" method="GET">
+        <div class="row mt-4 mb-4">
+            <div class="col-sm-8">
+                <div class="form-group has-search center float-right" style="width: 62%">
+                    <span class="fa fa-search form-control-feedback"></span>
+                    <input type="text" class="form-control buttonradius" placeholder="Cari ikan" name="cari" value="{{ old('cari') }}">
+                </div>
+            </div>
+            <div class="col-sm-3">
+                    <button class="button buttonmasuk buttonradius" style="margin-top: 9px; margin-left:-20px" type="submit">Cari</button>
+            </div>
+            <div class="col-1"></div>
+        </div>
+    </form>
+</div>
 @endsection
 
 @section('mitraactive')

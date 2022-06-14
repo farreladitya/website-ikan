@@ -17,15 +17,21 @@
     </div>
 </div>
 <div class="row d-flex justify-content-center mt-4">
-    @php
-    $namaGizi = explode(',', $manfaat->kandungan);
-    @endphp
-    @foreach ($namaGizi as $n)
-    <div class="col-2 text-center">
-        <img src="{{URL::asset('/images/gizi.png')}}" height="70%">
-        <p class="font-weight-bold mt-3">{{$n}}</p>
+    <div class="col-1"></div>
+    <div class="col-10 ml-5">
+        <div class="row">
+        @php
+        $namaGizi = explode(',', $manfaat->kandungan);
+        @endphp
+        @foreach ($namaGizi as $n)
+            <div class="col-2 text-center mx-4">
+                <img src="{{URL::asset('/images/gizi.png')}}" height="70%">
+                <p class="font-weight-bold mt-3">{{$n}}</p>
+            </div>
+        @endforeach
+        </div>
     </div>
-    @endforeach
+    <div class="col-1"></div>
 </div>
 
 <div class="row container mt-3">
@@ -35,7 +41,7 @@
         <div class="row">
             <div class="col-sm-11" style="margin-left:25px">
                 <div class="achievement section-padding mt-3">
-                    <div class="owl-carousel owl-carousels achievement-carousel">
+                    <div class="owl-carousel owl-carouselss achievement-carousel">
                         @foreach ($ikan as $i)
                         @php
                         //memisahkan antar data dalam gizi ikan dan manfaat

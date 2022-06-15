@@ -47,12 +47,8 @@ Route::post('kualitas/product/detail/{idikan}','IkanController@postulasan')->nam
 Route::get('kualitas/product/{id}','IkanController@kualitas');
 
 //Fitur Mitra
-Route::get('mitra', function () {
-    return view('mitra.mitra');
-});
-Route::get('/mitra/udbarokah', function () {
-    return view('mitra.udbarokah');
-});
+Route::get('/mitra', 'MitraController@index');
+Route::get('/mitra/udbarokah', 'MitraController@productbarokah');
 Route::get('/mitra/cvwijayasuksesbersama', function () {
     return view('mitra.cvwijaya');
 });

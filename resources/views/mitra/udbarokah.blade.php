@@ -62,10 +62,9 @@
     <div class="row">
         @foreach ($input_mitra_tables as $i)
         <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1 my-3" onclick="location.href='/';">
-                <div class="card"> <div class="container-gambar" style="aspect-ratio: 3/2;"><img class="card-img-top w-100 h-100" style="object-fit: contain" src="{{ url('/gambar_ikan/'.$i->gambar) }}"></div>
+                <div class="card"> <div class="container-gambar" style="aspect-ratio: 3/2;"><img class="card-img-top w-100 h-100" style="aspect-ratio: 3/2" src="{{ url('/gambar_ikan/'.$i->gambar) }}"></div>
                 <div class="card-body">
                     <h6 class="font-weight-bold pt-1">{{$i->ikan}}</h6>
-                    <div class="text-muted description">Space for small product description</div>
                         <div class="d-flex flex-column">
                             <div class="h6 font-weight-bold">@if ($i->harga === 0)
                                 Harga Tidak Diketahui

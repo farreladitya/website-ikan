@@ -51,12 +51,20 @@
         <div class="row container">
             <div class="col-1"></div>
             <div class="col-7 ml-5">
-                <h4 class="font-weight-bold mt-5">Tips pilih ikan bebas merkuri :</h4>
+                <h4 class="font-weight-bold mt-5">Tips dan ciri-ciri</h4>
                 <ul class="mt-3" style="font-size: 18px">
-                    <li>Mata yang bening</li>
-                    <li>Daging yang terlihat cerah</li>
-                    <li>Tidak terdapat bintik-bintik gelap</li>
-                    <li>Hindari beberapa jenis ikan laut yang besar dan hidup di laut dalam</li>
+                    @if ($efeksamping->count() != 0)
+                    @foreach ($efeksamping as $efek)
+                        @php
+                            $tips = explode(',', $efek->ktrt_kondisi);
+                        @endphp
+                        @foreach ($tips as $t)
+                        @if ($t != null)
+                            <li>{{$t}}</li>
+                        @endif
+                        @endforeach
+                    @endforeach
+                    @endif
                 </ul>
             </div>
         </div>

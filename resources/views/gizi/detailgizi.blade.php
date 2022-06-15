@@ -76,9 +76,12 @@ foreach ($manfaat as $m) {
         <div class="row container">
             <div class="col-1"></div>
             <div class="col-7 ml-5">
-                <h4 class="font-weight-bold mt-5">Tips Konsumsi omega-3</h4>
+                <h4 class="font-weight-bold mt-5">Tips dan ciri-ciri</h4>
                 <ul class="mt-3" style="font-size: 18px">
-                    <li>Omega-3 sekitar 1,6 gram setiap hari</li>
+                    @foreach ($efeksamping as $efek)
+                    <li>{{$efek->ktrt_kondisi}}</li>
+                    @endforeach
+
                 </ul>
             </div>
         </div>

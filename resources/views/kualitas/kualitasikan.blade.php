@@ -59,17 +59,17 @@
 <div class="row">
     <div class="col-2"></div>
     <div class="col-1">
-        <button type="button" href="#demo" data-toggle="collapse" id="arrow" class="btn btn-default float-right" onclick="show()"><i class="fa fa-angle-down"></i> </button>
+        <button type="button" href="#demo{{$x}}" data-toggle="collapse" id="arrow{{$x}}" class="btn btn-default float-right" onclick="show({{$x}})"><i class="fa fa-angle-down"></i> </button>
         <script>
-            function show() {
-                $('#arrow').find("i").toggleClass("fa-angle-down fa-angle-up");
+            function show(x) {
+                $('#arrow'+ x).find("i").toggleClass("fa-angle-down fa-angle-up");
             }
         </script>
     </div>
     <div class="col-6">
         <p class="font-weight-bold" style="font-size:24px">{{$namatimestamp}}</p>
         <a class="font-weight-light" style="color: black" href="javascript:void(0);" onclick="setCurrentTime({{$x}})">{{$timeshow[$x]}}</a>
-        <div id="demo" class="collapse mt-3">
+        <div id="demo{{$x}}" class="collapse mt-3">
             <img src="{{URL::asset('/images/detailvideo.png')}}" width="90%">
         </div>
     </div>

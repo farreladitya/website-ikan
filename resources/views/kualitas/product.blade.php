@@ -43,7 +43,7 @@
             <div class="achievement section-padding mt-3">
                 <div class="owl-carousel owl-carousels achievement-carousel">
                     @foreach ($sepalopoda as $s)
-                        <div class="achievement-item bayangan" onclick="location.href='{{route('detailproduk', ['idikan' => $s->ikan_id])}}';">
+                        <div class="achievement-item bayangan" onclick="location.href='kualitas/product/{{$s->ikan_id}}';">
                             <div class="ach-1 mb-3" style="aspect-ratio: 3/2;"><img src="{{$s->url_gambar}}" alt="ach-1" style="object-fit: contain" class="w-100 h-100 card-img"></div>
                             <div class="pl-lg-2 item-text">
                                 <h6>{{$s->nama_biasa}}</h6>
@@ -75,7 +75,7 @@
                 <div class="achievement section-padding mt-3">
                     <div class="owl-carousel owl-carousels achievement-carousel">
                         @foreach ($demersal as $d)
-                            <div class="achievement-item bayangan" onclick="location.href='{{route('detailproduk', ['idikan' => $d->ikan_id])}}';" >
+                            <div class="achievement-item bayangan" onclick="location.href='kualitas/product/{{$d->ikan_id}}';" >
                                 <div class="ach-1 mb-3" style="aspect-ratio: 3/2;"><img src="{{$d->url_gambar}}" style="object-fit: contain" class="w-100 h-100 card-img" alt="ach-1"></div>
                                 <div class="pl-lg-2 item-text">
                                     <h6>{{$d->nama_biasa}}</h6>
@@ -107,7 +107,7 @@
                     <div class="achievement section-padding mt-3">
                         <div class="owl-carousel owl-carousels achievement-carousel">
                             @foreach ($pelagis as $p)
-                                <div class="achievement-item bayangan" onclick="location.href='{{route('detailproduk', ['idikan' => $p->ikan_id])}}';">
+                                <div class="achievement-item bayangan" onclick="location.href='kualitas/product/{{$p->ikan_id}}';">
                                     <div class="ach-1 mb-3" style="aspect-ratio: 3/2;"><img src="{{$p->url_gambar}}" style="object-fit: contain" class="w-100 h-100 card-img" alt="ach-1"></div>
                                     <div class="pl-lg-2 item-text">
                                         <h6>{{$p->nama_biasa}}</h6>
@@ -139,7 +139,7 @@
                         <div class="achievement section-padding mt-3">
                             <div class="owl-carousel owl-carousels achievement-carousel">
                                 @foreach ($under100 as $under)
-                                    <div class="achievement-item bayangan" onclick="location.href='{{route('detailproduk', ['idikan' => $under->ikan_id])}}';">
+                                    <div class="achievement-item bayangan" onclick="location.href='kualitas/product/{{$under->ikan_id}}';">
                                         <div class="ach-1 mb-3" style="aspect-ratio: 3/2;"><img src="{{$under->url_gambar}}" style="object-fit: contain" class="w-100 h-100 card-img" alt="ach-1"></div>
                                         <div class="pl-lg-2 item-text">
                                             <h6>{{$under->nama_biasa}}</h6>
@@ -171,7 +171,7 @@
                             <div class="achievement section-padding mt-3">
                                 <div class="owl-carousel owl-carousels achievement-carousel">
                                     @foreach ($upper100 as $upper)
-                                        <div class="achievement-item bayangan" onclick="location.href='{{route('detailproduk', ['idikan' => $upper->ikan_id])}}';">
+                                        <div class="achievement-item bayangan" onclick="location.href='kualitas/product/{{$upper->ikan_id}}';">
                                             <div class="ach-1 mb-3" style="aspect-ratio: 3/2;"><img src="{{$upper->url_gambar}}" style="object-fit: contain" class="w-100 h-100 card-img" alt="ach-1"></div>
                                             <div class="pl-lg-2 item-text">
                                                 <h6>{{$upper->nama_biasa}}</h6>

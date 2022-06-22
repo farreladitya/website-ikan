@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CommentModel;
 use App\Models\HargaIkan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Ikan;
 use DateTime;
 use Illuminate\Support\Facades\Auth;
+use PhpParser\Comment;
 
 class IkanController extends Controller
 {
@@ -227,5 +229,20 @@ class IkanController extends Controller
         }else{
             return redirect('/mitra');
         }
+    }
+
+    public function faktaikan($ikanid){
+        $ikan = DB::table('ikan')->join('foto_ikan', 'foto_ikan.ikan_id', '=', 'ikan.ikan_id')->where('ikan.ikan_id', $ikanid)->first();
+        $comment = DB::table('comment')->select('isicomment', 'comment.created_at', 'isicomment', 'users.name')->join('users', 'users.id', '=', 'comment.user_id')->where('ikan_id', $ikanid)->get();
+        return view('fakta', ['ikan'=>$ikan, 'comment' => $comment]);
+    }
+
+    public function simpancomment($ikanId, Request $request){
+        $comment = new CommentModel();
+        $comment->user_id = Auth::id();
+        $comment->ikan_id = $ikanId;
+        $comment->isicomment = $request->isicomment;
+        $comment->save();
+        return redirect()->back();
     }
 };

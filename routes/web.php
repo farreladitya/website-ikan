@@ -7,6 +7,7 @@ use GuzzleHttp\Psr7\Request;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\IkanController;
 use Illuminate\Routing\RouteGroup;
 
 /*
@@ -47,8 +48,12 @@ Route::post('kualitas/product/detail/{idikan}','IkanController@postulasan')->nam
 Route::get('kualitas/product/{id}','IkanController@kualitas');
 
 //Fitur Mitra
-Route::get('/mitra', 'MitraController@index');
-Route::get('/mitra/udbarokah', 'MitraController@productbarokah');
+Route::get('mitra', function () {
+    return view('mitra.mitra');
+});
+Route::get('/mitra/udbarokah', function () {
+    return view('mitra.udbarokah');
+});
 Route::get('/mitra/cvwijayasuksesbersama', function () {
     return view('mitra.cvwijaya');
 });
@@ -86,9 +91,8 @@ Route::get('/detailracun/{idracun}', 'IkanController@detailracun')->name('detail
 
 Route::get('/listpenjual/{persebaran}', 'OutletController@index')->name('listoutlet'); //halaman list outlet
 
-Route::get('/faktaikan', function () {
-    return view('fakta');
-});
+Route::get('/faktaikan/{ikanid}', 'IkanController@faktaikan');
 
 Route::get('/penjual/{namaikan}', 'IkanController@listpenjual'); //fitur hubungi penjual dari detail product
 
+Route::post('/faktaikan/{ikanId}', 'IkanController@simpancomment');

@@ -5,11 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class FotoIkan extends Model
+class CommentModel extends Model
 {
     use HasFactory;
-
-    protected $table = "foto_ikan";
+    protected $table = "comment";
 
     public function ikan(){
         return $this->belongsTo(Ikan::class, 'ikan_id');

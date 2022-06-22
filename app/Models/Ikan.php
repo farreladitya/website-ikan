@@ -17,4 +17,8 @@ class Ikan extends Model
     public function harga(){
         return $this->hasOne(HargaIkan::class, 'ikan_id');
     }
+
+    public function comment(){
+        return $this->hasMany(HargaIkan::class, 'ikan_id');
+    }
 }

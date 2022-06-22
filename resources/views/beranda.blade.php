@@ -165,7 +165,11 @@
                         <div class="pl-lg-2 item-text">
                             <h6>{{$i->nama_ikan}}</h6>
                             <p>@php
-                                echo "Rp. " . number_format($i->harga,0,",",".",);
+                                if ($i->harga == 0) {
+                                    echo "Harga Tidak Diketahui";
+                                }else{
+                                    echo "Rp. " . number_format($i->harga,0,",",".",);
+                                }
                             @endphp</p>
                         </div>
                     </div>

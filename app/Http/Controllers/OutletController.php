@@ -9,10 +9,10 @@ class OutletController extends Controller
 {
     public function index($persebaran){
         // mengambil data dari table pegawai
-        $outlet = DB::table('outlet')->where('persebaran', $persebaran)->get();
+        $outlet = DB::table('outlet')->where('persebaran', 'like','%'.$persebaran.'%')->get();
 
         // mengirim data pegawai ke view index
-        return view('listpenjual',['outlet' => $outlet]);
+        return view('listpenjual',['outlet' => $outlet, 'persebaran' => $persebaran] );
 
     }
 }

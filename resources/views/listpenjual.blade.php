@@ -4,9 +4,7 @@
 <div style="background-color: #C6DADA">
     <div class="row">
         <div class="col-6">
-            @foreach ($outlet as $o)
-            <h1 class="font-weight-bold display-4" style="margin-left:75px; margin-top: 70px">{{$o->persebaran}}</h1>
-            @endforeach
+            <h1 class="font-weight-bold display-4" style="margin-left:75px; margin-top: 70px">{{$persebaran}}</h1>
             <form action="/listpenjual/cari" method="GET">
                 <div class="row mt-4 mb-4">
                     <div class="col-sm-9">

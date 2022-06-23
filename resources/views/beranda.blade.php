@@ -10,7 +10,7 @@
             daerah = daerah.split(",");
             let i = 0;
             while(i<5){
-                if(daerah[i] === null){
+                if(!daerah[i]){
                     daerah[i] = '-';
                 };
                 i++;
@@ -22,6 +22,21 @@
             $('#daerah-5').text(daerah[4]);
             $('#gambar-persebaran').attr('src', gambar);
             $('#dropdownMenu').text(nama);
+
+            if(daerah[0] == '-'){
+                $('#linkdaerah-1').attr('href','/');
+            }
+            else{
+                $('#linkdaerah-1').attr('href','/listpenjual/'+ daerah[0]);
+            }
+
+            $('#linkdaerah-1').attr('href','/listpenjual/'+ daerah[0]);
+            $('#linkdaerah-2').attr('href','/listpenjual/'+ daerah[1]);
+            $('#linkdaerah-3').attr('href','/listpenjual/'+ daerah[2]);
+            $('#linkdaerah-4').attr('href','/listpenjual/'+ daerah[3]);
+            $('#linkdaerah-5').attr('href','/listpenjual/'+ daerah[4]);
+
+
         })
     })
 </script>
@@ -126,13 +141,13 @@
             <hr style="color = black; margin-right: 100px;" class="mt-1" >
             <a href="{{route('listoutlet', ['persebaran' => 'Lawang'])}}" id="linkdaerah-1"><p id="daerah-1"> Lawang </p></a>
             <hr style="color = black; margin-right: 100px;" class="mt-1" >
-            <a href="{{route('listoutlet', ['persebaran' => 'Tuban'])}}" id="'linkdaerah-2"><p id="daerah-2"> Tuban </p></a>
+            <a href="{{route('listoutlet', ['persebaran' => 'Tuban'])}}" id="linkdaerah-2"><p id="daerah-2"> Tuban </p></a>
             <hr style="color = black; margin-right: 100px;" class="mt-1">
-            <a href="{{route('listoutlet', ['persebaran' => 'Jampang'])}}" id="'linkdaerah-3"><p id="daerah-3"> Jampang </p></a>
+            <a href="{{route('listoutlet', ['persebaran' => 'Jampang'])}}" id="linkdaerah-3"><p id="daerah-3"> Jampang </p></a>
             <hr style="color = black; margin-right: 100px;" class="mt-1">
-            <a href="{{route('listoutlet', ['persebaran' => 'Pelabuhan Ratu'])}}" id="'linkdaerah-4"><p id="daerah-4"> Pelabuhan ratu </p></a>
+            <a href="{{route('listoutlet', ['persebaran' => 'Pelabuhan Ratu'])}}" id="linkdaerah-4"><p id="daerah-4"> Pelabuhan ratu </p></a>
             <hr style="color = black; margin-right: 100px;" class="mt-1">
-            <a href="{{route('listoutlet', ['persebaran' => 'Ujung Genteng'])}}" id="'linkdaerah-5"><p id="daerah-5"> Ujung Genteng </p></a>
+            <a href="{{route('listoutlet', ['persebaran' => 'Ujung Genteng'])}}" id="linkdaerah-5"><p id="daerah-5"> Ujung Genteng </p></a>
             <hr style="color = black; margin-right: 100px;" class="mt-1">
         </div>
         <div class="col-sm-1"></div>

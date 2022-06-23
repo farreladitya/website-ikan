@@ -17,6 +17,7 @@ class IkanController extends Controller
         $ikan = DB::table('ikan')->join('harga_ikan', 'harga_ikan.ikan_id', '=', 'ikan.ikan_id')->join('foto_ikan', 'foto_ikan.ikan_id', '=', 'ikan.ikan_id')->get();
         $persebaranikan = DB::table('persebaran')->join('foto_ikan', 'foto_ikan.ikan_id','=', 'persebaran.ikan_id')->join('ikan', 'ikan.ikan_id','=', 'persebaran.ikan_id')->whereNotNull('persebaran')->get()->keyBy('ikan_id');
         $outlet = DB::table('outlet')->get();
+        
         return view('beranda', ['ikan'=> $ikan, 'persebaran'=> $persebaranikan, 'outlet' => $outlet]);
     }
 

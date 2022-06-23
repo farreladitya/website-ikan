@@ -24,52 +24,49 @@
     <div class="col-1"></div>
     <div class="col-10 ml-5">
         <h4 class="font-weight-bold">Banyak ditemukan pada hasil laut :</h4>
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="achievement section-padding mt-3">
-                        <div class="owl-carousel owl-carouselss achievement-carousel">
-                            @foreach ($ikan as $p)
-                            <div class="achievement-item bayangan" >
-                                <div class="ach-1 mb-3" style="aspect-ratio: 3/2;"><img src="{{$p->url_gambar}}" style="object-fit: contain" class="w-100 h-100 card-img" alt="ach-1"></div>
-                                <div class="pl-lg-2 item-text">
-                                    <h6>{{$p->nama_biasa}}</h6>
-                                    <p>@if ($p->harga === 0)
-                                        Harga Tidak Diketahui
-                                        @else
-                                        {{$p->harga}}
-                                        @endif</p>
-                                    </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="achievement section-padding mt-3">
+                    <div class="owl-carousel owl-carouselss achievement-carousel">
+                        @foreach ($ikan as $p)
+                        <div class="achievement-item bayangan" >
+                            <div class="ach-1 mb-3" style="aspect-ratio: 3/2;"><img src="{{$p->url_gambar}}" style="object-fit: contain" class="w-100 h-100 card-img" alt="ach-1"></div>
+                            <div class="pl-lg-2 item-text">
+                                <h6>{{$p->nama_biasa}}</h6>
+                                <p>@if ($p->harga === 0)
+                                    Harga Tidak Diketahui
+                                    @else
+                                    {{$p->harga}}
+                                    @endif</p>
                                 </div>
-                                @endforeach
                             </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-@endif
-        <div class="row container">
-            <div class="col-1"></div>
-            <div class="col-7 ml-5">
-                <h4 class="font-weight-bold mt-5">Tips dan ciri-ciri</h4>
-                <ul class="mt-3" style="font-size: 18px">
-                    @if ($efeksamping->count() != 0)
-                    @foreach ($efeksamping as $efek)
-                        @php
-                            $tips = explode(',', $efek->ktrt_kondisi);
-                        @endphp
-                        @foreach ($tips as $t)
-                        @if ($t != null)
-                            <li>{{$t}}</li>
-                        @endif
-                        @endforeach
-                    @endforeach
-                    @endif
-                </ul>
-            </div>
-        </div>
-        @endsection
+    </div>
+    @endif
+    @if ($racun->ket_kondisi != null)
+    <div class="row container">
+        <div class="col-1"></div>
+        <div class="col-7 ml-5">
+            <h4 class="font-weight-bold mt-5">Tips dan ciri-ciri</h4>
+            <ul class="mt-3" style="font-size: 18px">
+                @php
+                    $kondisi = explode('|', $racun->ket_kondisi);
+                @endphp
+                @foreach ($kondisi as $k)
+                <li>{{$k}}</li>
+                @endforeach
 
-        @section('giziactive')
-        class='navbar navbar-brand active'
-        @endsection
+            </ul>
+        </div>
+    </div>
+    @endif
+    @endsection
+
+    @section('giziactive')
+    class='navbar navbar-brand active'
+    @endsection

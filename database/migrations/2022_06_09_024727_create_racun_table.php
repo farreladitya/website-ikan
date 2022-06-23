@@ -16,6 +16,7 @@ class CreateRacunTable extends Migration
         Schema::create('racun', function (Blueprint $table) {
             $table->string('racun_id')->primary();
             $table->string('nama_racun');
+            $table->string('ket_kondisi')->nullable();
         });
     }
 

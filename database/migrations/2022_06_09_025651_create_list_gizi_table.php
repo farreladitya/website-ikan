@@ -16,6 +16,7 @@ class CreateListGiziTable extends Migration
         Schema::create('list_gizi', function (Blueprint $table) {
             $table->string('gizi_id')->primary();
             $table->string('nama_gizi');
+            $table->string('ket_kondisi')->nullable();
         });
     }
 

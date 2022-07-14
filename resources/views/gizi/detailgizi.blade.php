@@ -4,7 +4,7 @@
 <img src="{{URL::asset('/images/omega31.png')}}" height="424px">
 <div class="text-center mt-5">
     <h1 class="font-weight-bold"> {{$gizi->nama_gizi}} </h1>
-    <a href = "/" style="font-size:19px;" class="text-dark">[Edit]</a>
+    {{-- <a href = "/" style="font-size:19px;" class="text-dark">[Edit]</a> --}}
 </div>
 @php
 $benefit = 0;

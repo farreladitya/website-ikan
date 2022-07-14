@@ -89,4 +89,6 @@ Route::get('/faktaikan/{ikanid}', 'IkanController@faktaikan');
 
 Route::get('/penjual/{namaikan}', 'IkanController@listpenjual'); //fitur hubungi penjual dari detail product
 
-Route::post('/faktaikan/{ikanId}', 'IkanController@simpancomment');
+Route::post('/faktaikan/{ikanId}', 'IkanController@simpancomment')->name('simpancomment'); //simpan comment di fakta ikan
+
+Route::post('summernoteeditor',array('as'=>'summernoteeditor.post','uses'=>'SummernoteController@postSummernoteeditor')); //buat nyimpan komentar di halaman fakta ikan

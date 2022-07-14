@@ -1,5 +1,25 @@
 @extends('layout.layout')
 @section('title', 'Gizi Ikan')
+@section('head')
+{{-- <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.4/summernote.css" rel="stylesheet">
+<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.4/summernote.js"></script> --}}
+<script src="https://cdn.tiny.cloud/1/jx8bu33q2vocfbq0qvzimbauu2jtc5mtw6vlvumvxmbmqewv/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+{{-- <script>
+    $(document).ready(function() {
+
+        $('#technig').summernote({
+
+            height:300,
+
+        });
+
+    });
+</script> --}}
+
+<script src="//cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sceditor@3/minified/themes/default.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/sceditor@3/minified/sceditor.min.js"></script>
+@endsection
 @section('isikonten')
 <style>
     img {
@@ -28,20 +48,14 @@
     @csrf
     <div class="container p-3 mt-5" style="background-color: white;">
         <div class="form-group">
-            <textarea placeholder="Bagikan cara memanfaatkan sisa-sisa ikan {{$ikan->nama_biasa}}" style="border: none; outline: none; font-size:18px" class="form-control" id="exampleFormControlTextarea1" rows="5" name="isicomment"></textarea>
+            <textarea placeholder="Bagikan cara memanfaatkan sisa-sisa ikan {{$ikan->nama_biasa}}" style="border: none; outline: none; font-size:18px" class="form-control" name="content" id="content" cols="30" rows="10"></textarea>
         </div>
         <div class="row">
-            <div class="col-1 my-auto">
-                <label class="custom-file-upload">
-                    <input type="file" accept=".jpg,.jpeg.,.png,.mov,.mp4" style="button"/>
-                    <img src="{{URL::asset('/images/upload.png')}}" width="150%" style="max-width: unset; max-height: unset; padding: unset; ">
-                </label>
-            </div>
-            <div class="col-10 mx-4 my-auto">
+            {{-- <div class="col-10 mx-4 my-auto">
                 <input type="text" placeholder="Tambah konteks" style="height:34px;">
-                {{-- <span class="font-weight-bold" style="background-color:white; color: #253368;padding: 5px 17px;margin-left: -5px;height:34px; display:inline-block;">Mudah Pengelohaan</span> --}}
+                <span class="font-weight-bold" style="background-color:white; color: #253368;padding: 5px 17px;margin-left: -5px;height:34px; display:inline-block;">Mudah Pengelohaan</span>
                 <span class="button font-weight-bold" onclick="/" style="background-color:#253368;color: white;border-radius: 0px 5px 5px 0px; padding: 5px 17px;margin-left: -5px;">+</span>
-            </div>
+            </div> --}}
         </div>
         <div class="divs"></div>
         <div class="row">
@@ -103,8 +117,15 @@
         @foreach ($comment as $c)
         <div class="row">
             <span>{{$c->name}}</span>
-            <span>{{$c->created_at}}</span>
-            <p>{{$c->isicomment}}</p>
+        </div>
+        <div class="row">
+            @php
+            $tanggalcomment = strtotime($c->created_at);
+            @endphp
+            <span>dipost pada : {{date("d/m/y", $tanggalcomment)}}</span>
+        </div>
+        <div class="row">
+            <p>{!! $c->isicomment !!}</p>
         </div>
         @endforeach
         @endif
@@ -163,8 +184,45 @@
             }
         });
     </script>
-    @endsection
 
-    @section('faktaactive')
-    class='navbar navbar-brand active'
-    @endsection
+    <form method="POST" action="{{route('simpancomment', ["ikanId" => $ikan->ikan_id])}}">
+        @csrf
+
+
+    </form>
+
+    <script>
+        tinymce.init({
+            selector: 'textarea',
+            plugins: 'a11ychecker advcode casechange export formatpainter image editimage linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tableofcontents tinycomments tinymcespellchecker',
+            toolbar: 'a11ycheck addcomment showcomments casechange checklist code export formatpainter image editimage pageembed permanentpen table tableofcontents',
+            toolbar_mode: 'floating',
+            tinycomments_mode: 'embedded',
+            tinycomments_author: 'Author name',
+            relative_urls: false,
+            file_browser_callback : function(field_name, url, type, win) {
+                var x = window.innerWidth || document.documentElement.clientWidth || document.getElementsByTagName('body')[0].clientWidth;
+                var y = window.innerHeight|| document.documentElement.clientHeight|| document.getElementsByTagName('body')[0].clientHeight;
+
+                var cmsURL = editor_config.path_absolute + 'laravel-filemanager?field_name=' + field_name;
+                if (type == 'image') {
+                    cmsURL = cmsURL + "&type=Images";
+                } else {
+                    cmsURL = cmsURL + "&type=Files";
+                }
+
+                tinyMCE.activeEditor.windowManager.open({
+                    file : cmsURL,
+                    title : 'Filemanager',
+                    width : x * 0.8,
+                    height : y * 0.8,
+                    resizable : "yes",
+                    close_previous : "no"
+                });
+            }});
+        </script>
+        @endsection
+
+        @section('faktaactive')
+        class='navbar navbar-brand active'
+        @endsection

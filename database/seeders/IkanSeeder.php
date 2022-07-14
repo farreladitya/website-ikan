@@ -19,410 +19,389 @@ class IkanSeeder extends Seeder
             [
                 'ikan_id' => 's01',
                 'jenis_ikan' => 'Demersal',
-                'nama_ikan' => 'Ribbon Fish',
-                'nama_latin' => 'lepturacanthus savala',
-                'nama_biasa' => 'Layur',
+                'nama_ikan' => 'Ikan Dori',
                 'berat_minimal' => 100,
                 'berat_maksimal' => 1000,
                 'habitat' => 'Air Laut',
-                'kategori_ikan' => 'Whole Round',
-                'Url_ikan' => 'https://www.baruna.net/?p=349'
+                'kategori_ikan' => 'Whole Round'
             ],
             [
                 'ikan_id' => 's02',
                 'jenis_ikan' => 'Demersal',
-                'nama_ikan' => 'Big Eye',
-                'nama_latin' => 'priacanthus tayenus',
-                'nama_biasa' => 'Swanggi',
+                'nama_ikan' => 'Ikan Kerapu Bebek',
                 'berat_minimal' => 80,
                 'berat_maksimal' => 500,
                 'habitat' => 'Air Laut',
-                'kategori_ikan' => 'Whole Round,Headless',
-                'Url_ikan' => 'https://www.baruna.net/?p=354'
+                'kategori_ikan' => 'Whole Round|Headless'
             ],
             [
                 'ikan_id' => 's03',
                 'jenis_ikan' => 'Demersal',
-                'nama_ikan' => 'Golden Threadfin Bream',
-                'nama_latin' => 'nemipterus virgatus',
-                'nama_biasa' => 'Kurisi',
+                'nama_ikan' => 'Ikan Kerapu Macan',
                 'berat_minimal' => 50,
                 'berat_maksimal' => 500,
                 'habitat' => 'Air Laut',
-                'kategori_ikan' => 'Whole Round,Scalles,Headless',
-                'Url_ikan' => 'https://www.baruna.net/?p=563'
+                'kategori_ikan' => 'Whole Round|Scalles Headless'
             ],
             [
                 'ikan_id' => 's04',
                 'jenis_ikan' => 'Demersal',
-                'nama_ikan' => 'Soldier Croaker',
-                'nama_latin' => 'nibea soldado',
-                'nama_biasa' => 'Gulama Papan',
+                'nama_ikan' => 'Ikan Kerapu Lumpur',
                 'berat_minimal' => 50,
                 'berat_maksimal' => 500,
                 'habitat' => 'Air Laut',
-                'kategori_ikan' => 'Whole Round',
-                'Url_ikan' => 'https://www.baruna.net/?p=601'
+                'kategori_ikan' => 'Whole Round'
             ],
             [
                 'ikan_id' => 's05',
                 'jenis_ikan' => 'Demersal',
-                'nama_ikan' => 'Panna Croaker',
-                'nama_latin' => 'panna microdon',
-                'nama_biasa' => 'Gulama Pisang',
+                'nama_ikan' => 'Ikan Kerapu Sunu',
                 'berat_minimal' => 50,
                 'berat_maksimal' => 500,
                 'habitat' => 'Air Laut',
-                'kategori_ikan' => 'Whole Round',
-                'Url_ikan' => 'https://www.baruna.net/?p=604'
+                'kategori_ikan' => 'Whole Round'
             ],
             [
                 'ikan_id' => 's06',
                 'jenis_ikan' => 'Demersal',
-                'nama_ikan' => 'Tigertooth Croaker',
-                'nama_latin' => 'otolithes ruber',
-                'nama_biasa' => 'Gulama Gigi Harimau',
+                'nama_ikan' => 'Ikan Kerapu Cantang',
                 'berat_minimal' => 50,
                 'berat_maksimal' => 500,
                 'habitat' => 'Air Laut',
-                'kategori_ikan' => 'Whole Round',
-                'Url_ikan' => 'https://www.baruna.net/?p=610'
+                'kategori_ikan' => 'Whole Round'
             ],
             [
                 'ikan_id' => 's07',
                 'jenis_ikan' => 'Demersal',
-                'nama_ikan' => 'Malabar Snapper',
-                'nama_latin' => 'lutjanus malabaricus',
-                'nama_biasa' => 'Kakap Malabar',
+                'nama_ikan' => 'Ikan Kakap Merah',
                 'berat_minimal' => 1000,
                 'berat_maksimal' => 5000,
                 'habitat' => 'Air Laut',
-                'kategori_ikan' => 'Whole Round,WGGS,Fillet',
-                'Url_ikan' => 'https://www.baruna.net/?p=1118'
+                'kategori_ikan' => 'Whole Round|WGGS|Fillet'
             ],
             [
                 'ikan_id' => 's08',
                 'jenis_ikan' => 'Demersal',
-                'nama_ikan' => 'Blood Snapper',
-                'nama_latin' => 'lutjanus sp',
-                'nama_biasa' => 'Kakap Merah',
+                'nama_ikan' => 'Ikan Kakap Domba',
                 'berat_minimal' => 1000,
                 'berat_maksimal' => 5000,
                 'habitat' => 'Air Laut',
-                'kategori_ikan' => 'Whole Round,WGGS,Fillet',
-                'Url_ikan' => 'https://www.baruna.net/?p=382'
+                'kategori_ikan' => 'Whole Round|WGGS|Fillet'
             ],
             [
                 'ikan_id' => 's09',
                 'jenis_ikan' => 'Demersal',
-                'nama_ikan' => 'Emperor Red Snapper',
-                'nama_latin' => 'lutjanus sebae',
-                'nama_biasa' => 'Kakap Merah Malabar',
+                'nama_ikan' => 'Ikan Kakap Batu',
                 'berat_minimal' => 1000,
                 'berat_maksimal' => 5000,
                 'habitat' => 'Air Laut',
-                'kategori_ikan' => 'Whole Round,WGGS,Fillet',
-                'Url_ikan' => 'https://www.baruna.net/?p=627'
+                'kategori_ikan' => 'Whole Round|WGGS|Fillet'
             ],
             [
                 'ikan_id' => 's10',
                 'jenis_ikan' => 'Demersal',
-                'nama_ikan' => 'Leather Jacket',
-                'nama_latin' => 'aluterus monoceros',
-                'nama_biasa' => 'Sukang',
+                'nama_ikan' => 'Ikan Kakap Sirip Kuning',
                 'berat_minimal' => 50,
                 'berat_maksimal' => 1000,
                 'habitat' => 'Air Laut',
-                'kategori_ikan' => 'Whole Round,Headless,Cleaned',
-                'Url_ikan' => 'https://www.baruna.net/?p=715'
+                'kategori_ikan' => 'Whole Round|Headless Cleaned'
             ],
             [
                 'ikan_id' => 's11',
                 'jenis_ikan' => 'Demersal',
-                'nama_ikan' => 'Gold Band Snapper',
-                'nama_latin' => 'goldband jobfish',
-                'nama_biasa' => 'Kakap Anggoli',
+                'nama_ikan' => 'Ikan Kakap Putih',
                 'berat_minimal' => 1000,
                 'berat_maksimal' => 5000,
                 'habitat' => 'Air Laut',
-                'kategori_ikan' => 'Whole Round,WGGS,Fillet',
-                'Url_ikan' => 'https://www.baruna.net/?p=429'
+                'kategori_ikan' => 'Whole Round|WGGS|Fillet'
             ],
             [
                 'ikan_id' => 's12',
                 'jenis_ikan' => 'Demersal',
-                'nama_ikan' => 'Pinjalo Snapper',
-                'nama_latin' => 'pinjalo pinjalo',
-                'nama_biasa' => 'Kakap Pinjalo',
+                'nama_ikan' => 'Cumi Bangka',
                 'berat_minimal' => 1000,
                 'berat_maksimal' => 5000,
                 'habitat' => 'Air Laut',
-                'kategori_ikan' => 'Whole Round,WGGS,Fillet',
-                'Url_ikan' => 'https://www.baruna.net/?p=438'
+                'kategori_ikan' => 'Whole Round|WGGS|Fillet'
             ],
             [
                 'ikan_id' => 's13',
                 'jenis_ikan' => 'Demersal',
-                'nama_ikan' => 'Sandy Grouper',
-                'nama_latin' => 'epinephelus sp',
-                'nama_biasa' => 'Kerapu',
+                'nama_ikan' => 'Cumi Sero',
                 'berat_minimal' => 1000,
                 'berat_maksimal' => 5000,
                 'habitat' => 'Air Laut',
-                'kategori_ikan' => 'Whole Round,WGGS,Fillet',
-                'Url_ikan' => 'https://www.baruna.net/?p=660'
+                'kategori_ikan' => 'Whole Round|WGGS|Fillet'
             ],
             [
                 'ikan_id' => 's14',
                 'jenis_ikan' => 'Demersal',
-                'nama_ikan' => 'Spotted Grouper',
-                'nama_latin' => 'epinephelus sp',
-                'nama_biasa' => 'Kerapu',
+                'nama_ikan' => 'Cumi Asin Kering',
                 'berat_minimal' => 1000,
                 'berat_maksimal' => 5000,
                 'habitat' => 'Air Laut',
-                'kategori_ikan' => 'Whole Round,WGGS,Fillet',
-                'Url_ikan' => 'https://www.baruna.net/?p=657'
+                'kategori_ikan' => 'Whole Round|WGGS|Fillet'
             ],
             [
                 'ikan_id' => 's15',
                 'jenis_ikan' => 'Demersal',
-                'nama_ikan' => 'Strip Grouper',
-                'nama_latin' => 'epinephelus sp',
-                'nama_biasa' => 'Kerapu',
+                'nama_ikan' => 'Sotong',
                 'berat_minimal' => 1000,
                 'berat_maksimal' => 5000,
                 'habitat' => 'Air Laut',
-                'kategori_ikan' => 'Whole Round,WGGS,Fillet',
-                'Url_ikan' => 'https://www.baruna.net/?p=662'
+                'kategori_ikan' => 'Whole Round|WGGS|Fillet'
             ],
             [
                 'ikan_id' => 's16',
                 'jenis_ikan' => 'Demersal',
-                'nama_ikan' => 'Silver Pomfret',
-                'nama_latin' => 'pampus argentus',
-                'nama_biasa' => 'Bawal Putih',
+                'nama_ikan' => 'Udang Rebon',
                 'berat_minimal' => 50,
                 'berat_maksimal' => 400,
                 'habitat' => 'Air Laut',
-                'kategori_ikan' => 'Whole Round',
-                'Url_ikan' => 'https://www.baruna.net/?p=665'
+                'kategori_ikan' => 'Whole Round'
             ],
             [
                 'ikan_id' => 's17',
                 'jenis_ikan' => 'Demersal',
-                'nama_ikan' => 'Black Pomfret',
-                'nama_latin' => 'parastromateus niger',
-                'nama_biasa' => 'Bawal Hitam',
+                'nama_ikan' => 'Udang Jerbung',
                 'berat_minimal' => 100,
                 'berat_maksimal' => 1000,
                 'habitat' => 'Air Laut',
-                'kategori_ikan' => 'Whole Round',
-                'Url_ikan' => 'https://www.baruna.net/?p=668'
+                'kategori_ikan' => 'Whole Round'
             ],
             [
                 'ikan_id' => 's18',
                 'jenis_ikan' => 'Demersal',
-                'nama_ikan' => 'Halibut',
-                'nama_latin' => 'psettodes erumei',
-                'nama_biasa' => 'Halibut',
+                'nama_ikan' => 'Udang Peci',
                 'berat_minimal' => 200,
                 'berat_maksimal' => 1000,
                 'habitat' => 'Air Laut',
-                'kategori_ikan' => 'Whole Round',
-                'Url_ikan' => 'https://www.baruna.net/?p=671'
+                'kategori_ikan' => 'Whole Round'
             ],
             [
                 'ikan_id' => 's19',
                 'jenis_ikan' => 'Demersal',
-                'nama_ikan' => 'Silver Whiting',
-                'nama_latin' => 'sillago sihama',
-                'nama_biasa' => 'Whiting',
+                'nama_ikan' => 'Udang Pancet',
                 'berat_minimal' => 0,
                 'berat_maksimal' => 0,
                 'habitat' => 'Air Laut',
-                'kategori_ikan' => 'Whole Round',
-                'Url_ikan' => 'https://www.baruna.net/?p=673'
+                'kategori_ikan' => 'Whole Round'
             ],
             [
                 'ikan_id' => 's20',
                 'jenis_ikan' => 'Demersal',
-                'nama_ikan' => 'Whiting',
-                'nama_latin' => 'sillago bassensis',
-                'nama_biasa' => 'Silver Whiting',
+                'nama_ikan' => 'Udang Vaname',
                 'berat_minimal' => 0,
                 'berat_maksimal' => 0,
                 'habitat' => 'Air Laut',
-                'kategori_ikan' => 'Whole Round',
-                'Url_ikan' => 'https://www.baruna.net/?p=675'
+                'kategori_ikan' => 'Whole Round'
             ],
             [
                 'ikan_id' => 's21',
                 'jenis_ikan' => 'Demersal',
-                'nama_ikan' => 'Lizard Fish',
-                'nama_latin' => 'saurida tumbil',
-                'nama_biasa' => 'Kadal Laut',
+                'nama_ikan' => 'Udang Galah',
                 'berat_minimal' => 200,
                 'berat_maksimal' => 1000,
                 'habitat' => 'Air Laut',
-                'kategori_ikan' => 'Whole Round',
-                'Url_ikan' => 'https://www.baruna.net/?p=677'
+                'kategori_ikan' => 'Whole Round'
             ],
             [
                 'ikan_id' => 's22',
                 'jenis_ikan' => 'Demersal',
-                'nama_ikan' => 'Silver Biddy',
-                'nama_latin' => 'gerres kapas',
-                'nama_biasa' => 'Kapasan',
-                'berat_minimal' => 0,
+                'nama_ikan' => 'Ikan Asin',
+                'berat_minimal' => 00,
                 'berat_maksimal' => 0,
                 'habitat' => 'Air Laut',
-                'kategori_ikan' => 'Headless,Guttted',
-                'Url_ikan' => 'https://www.baruna.net/?p=679'
+                'kategori_ikan' => 'Whole Round'
             ],
             [
                 'ikan_id' => 's23',
                 'jenis_ikan' => 'Demersal',
-                'nama_ikan' => 'Yellow Pike Conger Eel',
-                'nama_latin' => 'congresox talabon',
-                'nama_biasa' => 'Belut',
+                'nama_ikan' => 'Ikan Tongkol/Cob',
                 'berat_minimal' => 1000,
                 'berat_maksimal' => 5000,
                 'habitat' => 'Air Laut',
-                'kategori_ikan' => 'Whole Round,WGGS,Fillet',
-                'Url_ikan' => 'https://www.baruna.net/?p=681'
+                'kategori_ikan' => 'Whole Round|WGGS|Fillet'
             ],
             [
                 'ikan_id' => 's24',
                 'jenis_ikan' => 'Demersal',
-                'nama_ikan' => 'String Ray',
-                'nama_latin' => 'trigon sp',
-                'nama_biasa' => 'Pari',
+                'nama_ikan' => 'Ikan Teri/Anchovy',
                 'berat_minimal' => 300,
                 'berat_maksimal' => 1000,
                 'habitat' => 'Air Laut',
-                'kategori_ikan' => 'Whole Round',
-                'Url_ikan' => 'https://www.baruna.net/?p=684'
+                'kategori_ikan' => 'Whole Round'
             ],
             [
                 'ikan_id' => 's25',
                 'jenis_ikan' => 'Cephalopod',
-                'nama_ikan' => 'Short Leg Octopus',
-                'nama_latin' => 'octopus ocellatus',
-                'nama_biasa' => 'Gurita Kaki Pendek',
-                'berat_minimal' => 30,
-                'berat_maksimal' => 300,
+                'nama_ikan' => 'Ikan Sarden/Sardines',
+                'berat_minimal' => 100,
+                'berat_maksimal' => 1000,
                 'habitat' => 'Air Laut',
-                'kategori_ikan' => 'Whole Round,Whole Cleaned,Flower',
-                'Url_ikan' => 'https://www.baruna.net/?p=764'
+                'kategori_ikan' => 'Whole Round|Whole Cleaned|Flower'
             ],
             [
                 'ikan_id' => 's26',
                 'jenis_ikan' => 'Cephalopod',
-                'nama_ikan' => 'Long Leg Octopus',
-                'nama_latin' => 'octopus sp',
-                'nama_biasa' => 'Gurita Kaki Panjang',
+                'nama_ikan' => 'Ikan Belanak/Mullet',
                 'berat_minimal' => 50,
                 'berat_maksimal' => 2000,
                 'habitat' => 'Air Laut',
-                'kategori_ikan' => 'Whole Round,Whole Cleaned,Ball',
-                'Url_ikan' => 'https://www.baruna.net/?p=766'
+                'kategori_ikan' => 'Whole Round|Whole Cleaned|Ball'
             ],
             [
                 'ikan_id' => 's27',
                 'jenis_ikan' => 'Cephalopod',
-                'nama_ikan' => 'Squid',
-                'nama_latin' => 'loligo sp',
-                'nama_biasa' => 'Cumi-Cumi',
+                'nama_ikan' => 'Ikan Layur',
                 'berat_minimal' => 0,
                 'berat_maksimal' => 0,
                 'habitat' => 'Air Laut',
-                'kategori_ikan' => 'Whole Round,Whole Cleaned,Tube,Ring',
-                'Url_ikan' => 'https://www.baruna.net/?p=768'
+                'kategori_ikan' => 'Whole Round|Whole Cleaned|Tube|Ring'
             ],
             [
                 'ikan_id' => 's28',
                 'jenis_ikan' => 'Cephalopod',
-                'nama_ikan' => 'Cuttle Fish',
-                'nama_latin' => 'sepia sp',
-                'nama_biasa' => 'Sotong Cangkang Keras',
+                'nama_ikan' => 'Ikan Baronang',
                 'berat_minimal' => 0,
                 'berat_maksimal' => 0,
                 'habitat' => 'Air Laut',
-                'kategori_ikan' => 'Whole Round,Whole Cleaned',
-                'Url_ikan' => 'https://www.baruna.net/?p=770'
+                'kategori_ikan' => 'Whole Round|Whole Cleaned'
             ],
             [
                 'ikan_id' => 's29',
                 'jenis_ikan' => 'Cephalopod',
-                'nama_ikan' => 'Soft Cuttle Fish',
-                'nama_latin' => 'sepia sp',
-                'nama_biasa' => 'Sotong cangkang Lunak',
+                'nama_ikan' => 'Ikan Cod',
                 'berat_minimal' => 0,
                 'berat_maksimal' => 0,
                 'habitat' => 'Air Laut',
-                'kategori_ikan' => 'Whole Round,Whole Cleaned',
-                'Url_ikan' => 'https://www.baruna.net/?p=772'
+                'kategori_ikan' => 'Whole Round|Whole Cleaned'
             ],
             [
                 'ikan_id' => 's30',
                 'jenis_ikan' => 'Pelagic',
-                'nama_ikan' => 'Spanish Mackerel',
-                'nama_latin' => 'scomberomorus solandri',
-                'nama_biasa' => 'Tenggiri',
+                'nama_ikan' => 'Ikan Lele/Catfish',
                 'berat_minimal' => 1000,
                 'berat_maksimal' => 5000,
                 'habitat' => 'Air Laut',
-                'kategori_ikan' => 'Whole Round,Steak',
-                'Url_ikan' => 'https://www.baruna.net/?p=755'
+                'kategori_ikan' => 'Whole Round|Steak'
             ],
             [
                 'ikan_id' => 's31',
                 'jenis_ikan' => 'Pelagic',
-                'nama_ikan' => 'Baby Tuna',
-                'nama_latin' => 'thunus albacares',
-                'nama_biasa' => 'Tuna Sirip Kuning',
+                'nama_ikan' => 'Atlantic Salmon',
                 'berat_minimal' => 500,
                 'berat_maksimal' => 2000,
                 'habitat' => 'Air Laut',
-                'kategori_ikan' => 'Whole Round',
-                'Url_ikan' => 'https://www.baruna.net/?p=757'
+                'kategori_ikan' => 'Whole Round'
             ],
             [
                 'ikan_id' => 's32',
                 'jenis_ikan' => 'Pelagic',
-                'nama_ikan' => 'Skipjack Tuna',
-                'nama_latin' => 'katsuwonus pelamis',
-                'nama_biasa' => 'Cakalang',
+                'nama_ikan' => 'Chinook Salmon',
                 'berat_minimal' => 500,
                 'berat_maksimal' => 2000,
                 'habitat' => 'Air Laut',
-                'kategori_ikan' => 'Whole Round',
-                'Url_ikan' => 'https://www.baruna.net/?p=759'
+                'kategori_ikan' => 'Whole Round'
             ],
             [
                 'ikan_id' => 's33',
                 'jenis_ikan' => 'Pelagic',
-                'nama_ikan' => 'Dolphin Fish',
-                'nama_latin' => 'corvphaena hippurus',
-                'nama_biasa' => 'Lemadang',
-                'berat_minimal' => 1000,
+                'nama_ikan' => 'Chum/Dog Salmon',
+                'berat_minimal' => 100,
                 'berat_maksimal' => 5000,
                 'habitat' => 'Air Laut',
-                'kategori_ikan' => 'Whole Round,Fillet',
-                'Url_ikan' => 'https://www.baruna.net/?p=761'
+                'kategori_ikan' => 'Whole Round|Fillet'
             ],
             [
                 'ikan_id' => 's34',
                 'jenis_ikan' => 'Pelagic',
-                'nama_ikan' => 'Milkfish',
-                'nama_latin' => 'chanos chanos',
-                'nama_biasa' => 'Bandeng',
+                'nama_ikan' => 'Sockeye Salmon',
                 'berat_minimal' => 300,
                 'berat_maksimal' => 1000,
                 'habitat' => 'Air Laut',
-                'kategori_ikan' => 'Whole Round',
-                'Url_ikan' => 'https://www.baruna.net/?p=1110'
+                'kategori_ikan' => 'Whole Round'
+            ],
+            [
+                'ikan_id' => 's35',
+                'jenis_ikan' => 'Pelagic',
+                'nama_ikan' => 'Coho Salmon',
+                'berat_minimal' => 0,
+                'berat_maksimal' => 0,
+                'habitat' => 'Air Laut',
+                'kategori_ikan' => 'Whole Round'
+            ],
+            [
+                'ikan_id' => 's36',
+                'jenis_ikan' => 'Pelagic',
+                'nama_ikan' => 'Pink Salmon',
+                'berat_minimal' => 0,
+                'berat_maksimal' => 0,
+                'habitat' => 'Air Laut',
+                'kategori_ikan' => 'Whole Round'
+            ],
+            [
+                'ikan_id' => 's37',
+                'jenis_ikan' => 'Cephalopod',
+                'nama_ikan' => 'Dungeness Crab',
+                'berat_minimal' => 0,
+                'berat_maksimal' => 0,
+                'habitat' => 'Air Laut',
+                'kategori_ikan' => 'Whole Round|Whole Cleaned'
+            ],
+            [
+                'ikan_id' => 's38',
+                'jenis_ikan' => 'Cephalopod',
+                'nama_ikan' => 'Alaskan King Crab',
+                'berat_minimal' => 0,
+                'berat_maksimal' => 0,
+                'habitat' => 'Air Laut',
+                'kategori_ikan' => 'Whole Round|Whole Cleaned'
+            ],
+            [
+                'ikan_id' => 's39',
+                'jenis_ikan' => 'Cephalopod',
+                'nama_ikan' => 'Blue Crab',
+                'berat_minimal' => 0,
+                'berat_maksimal' => 0,
+                'habitat' => 'Air Laut',
+                'kategori_ikan' => 'Whole Round|Whole Cleaned'
+            ],
+            [
+                'ikan_id' => 's40',
+                'jenis_ikan' => 'Cephalopod',
+                'nama_ikan' => 'Kepiting Bakau',
+                'berat_minimal' => 0,
+                'berat_maksimal' => 0,
+                'habitat' => 'Air Laut',
+                'kategori_ikan' => 'Whole Round|Whole Cleaned'
+            ],
+            [
+                'ikan_id' => 's41',
+                'jenis_ikan' => 'Cephalopod',
+                'nama_ikan' => 'Lobster',
+                'berat_minimal' => 0,
+                'berat_maksimal' => 0,
+                'habitat' => 'Air Laut',
+                'kategori_ikan' => 'Whole Round|Whole Cleaned'
+            ],
+            [
+                'ikan_id' => 's42',
+                'jenis_ikan' => 'Cephalopod',
+                'nama_ikan' => 'Pacific Oyster',
+                'berat_minimal' => 0,
+                'berat_maksimal' => 0,
+                'habitat' => 'Air Laut',
+                'kategori_ikan' => 'Whole Round|Whole Cleaned'
+            ],
+            [
+                'ikan_id' => 's43',
+                'jenis_ikan' => 'Cephalopod',
+                'nama_ikan' => 'Eastern Oyster',
+                'berat_minimal' => 0,
+                'berat_maksimal' => 0,
+                'habitat' => 'Air Laut',
+                'kategori_ikan' => 'Whole Round|Whole Cleaned'
             ],
         ]);
     }

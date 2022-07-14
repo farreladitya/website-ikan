@@ -32,6 +32,7 @@ class DatabaseSeeder extends Seeder
             EfekSampingSeeder::class,
             OutletSeeder::class,
             TipeIkanSeeder::class,
+            InputMitraSeeder::class
         ]);
     }
 }

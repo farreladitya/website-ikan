@@ -17,8 +17,7 @@ public function landing(){
 public function index()
     {
     	// mengambil data dari table pegawai
-    	$inputmitra = DB::table('input_mitra_tables')->where('nama_mitra', auth()->user()->name)->get();
-
+    	$inputmitra = DB::table('input_mitra_tables')->join('ikan', 'ikan.ikan_id', '=', 'input_mitra_tables.ikan')->where('nama_mitra', auth()->user()->name)->get();
 
 
     	// mengirim data pegawai ke view index
@@ -52,9 +51,11 @@ public function store(Request $request)
   $tujuan_upload = 'gambar_ikan';
   $file->move($tujuan_upload,$nama_file);
 
+  $ikan = DB::table('ikan')->where('nama_ikan', $request->ikan)->first();
+
   InputMitra::create([
     'user_id' => auth()->user()->id,
-    'ikan' => $request->ikan,
+    'ikan' => $ikan->ikan_id,
     'nama_mitra' => auth()->user()->name,
     'tipeikan' => $request->tipeikan,
     'harga' => $request->harga,
@@ -71,8 +72,9 @@ public function edit($id)
     {
 	// mengambil data pegawai berdasarkan id yang dipilih
 	$inputmitra = DB::table('input_mitra_tables')->where('id',$id)->get();
+    $ikan= DB::table('ikan')->get();
 	// passing data pegawai yang didapat ke view edit.blade.php
-	return view('inputmitra.edit',['input_mitra_tables' => $inputmitra]);
+	return view('inputmitra.edit',['input_mitra_tables' => $inputmitra, 'ikan'=>$ikan]);
 
     }
 // update data pegawai

@@ -13,11 +13,13 @@ class MitraController extends Controller
     }
 
     public function productbarokah() {
-        $input_mitra_tables = DB::table('input_mitra_tables')->where('user_id', '=', 2)->get();
-        return view('mitra.udbarokah', compact('input_mitra_tables'));
+        $input_mitra_tables = DB::table('input_mitra_tables')->join('ikan', 'ikan.ikan_id', '=', 'input_mitra_tables.ikan')->where('user_id', '=', 2)->get();
+        $fotoikan = DB::table('foto_ikan')->get();
+        return view('mitra.udbarokah', compact('input_mitra_tables', 'fotoikan'));
     }
     public function productcvwijaya(){
-        $input_mitra_tables = DB::table('input_mitra_tables')->where('user_id', '=', 3)->get();
-        return view('mitra.cvwijaya', compact('input_mitra_tables'));
+        $input_mitra_tables = DB::table('input_mitra_tables')->join('ikan', 'ikan.ikan_id', '=', 'input_mitra_tables.ikan')->where('user_id', '=', 3)->get();
+        $fotoikan = DB::table('foto_ikan')->get();
+        return view('mitra.cvwijaya', compact('input_mitra_tables', 'fotoikan'));
     }
 }

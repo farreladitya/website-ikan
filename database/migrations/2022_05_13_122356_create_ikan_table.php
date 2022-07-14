@@ -16,7 +16,7 @@ class CreateIkanTable extends Migration
         Schema::create('ikan', function (Blueprint $table) {
             $table->string('ikan_id', 3)->primary();
             $table->string('jenis_ikan', 10);
-            $table->string('nama_ikan', 22);
+            $table->string('nama_ikan', 50);
             $table->integer('berat_minimal');
             $table->integer('berat_maksimal');
             $table->string('habitat');

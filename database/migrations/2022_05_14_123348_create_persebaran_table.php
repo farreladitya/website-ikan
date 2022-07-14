@@ -17,7 +17,7 @@ class CreatePersebaranTable extends Migration
             $table->id();
             $table->string('ikan_id', 3);
             $table->foreign('ikan_id')->references('ikan_id')->on('ikan');
-            $table->string('persebaran', 127)->nullable();
+            $table->string('persebaran', 999)->nullable();
             $table->text('url', 101)->nullable();
         });
     }

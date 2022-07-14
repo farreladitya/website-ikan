@@ -32,7 +32,11 @@
         </div>
         <div class="form-group mb-3">
         <label class="form-label">Ikan</label>
-        <input type="text" class="form-control"  name="ikan" value="{{$i->ikan}}">
+        @foreach ($ikan as $k)
+            @if ($i->ikan == $k->ikan_id)
+            <input type="text" disabled class="form-control"  name="ikan" value="{{$k->nama_ikan}}">
+            @endif
+        @endforeach
         </div>
         <div class="form-group mb-3">
         <label class="form-label">Harga</label>

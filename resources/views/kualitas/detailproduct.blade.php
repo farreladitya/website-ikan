@@ -56,7 +56,7 @@
 @foreach ($ikan as $i)
 <div class="row">
     <div class="col-sm-5">
-        <h1 class="font-weight-bold display-4 margincontainer" style="margin-top: 130px"> Ikan {{$i->nama_biasa}} </h1>
+        <h1 class="font-weight-bold display-4 margincontainer" style="margin-top: 130px"> Ikan {{$i->nama_ikan}} </h1>
         <h1 class="font-weight-bold margincontainer" style="margin-top: 30px; color: #96B7D6;"> @if (!$i->harga)
             Harga Belum Diketahui
             @else
@@ -68,7 +68,11 @@
             @else
             {{$i->berat_minimal}}-{{$i->berat_maksimal}} gram/ekor
             @endif</p>
-            <a href="/penjual/{{$i->nama_biasa}}" class="margincontainer"> <button class="btn btn-success" style="border-radius:20px">Hubungi Penjual</button></a>
+            @if ($penjual != 0)
+            <a href="/penjual/{{$i->ikan_id}}" class="margincontainer"> <button class="btn btn-success" style="border-radius:20px">Hubungi Penjual</button></a>
+            @else
+            <p style="font-size: 22px; color: #96B7D6;" class="margincontainer"> Belum ada mitra yang menjual ikan ini </p>
+            @endif
         </div>
         <div class="col-sm-7">
             <img src="{{URL::asset('/images/kualitas.png')}}" style="max-width: unset; max-height: unset; padding: unset;" width="90%" class="float-right" >
@@ -93,27 +97,30 @@
     </div>
     <div class="text-center informasi-ikan">
         <h2 class="font-weight-bold" style="margin-top: 100px;"> Informasi Ikan </h2>
+        @if ($i->tekstur_daging)
         <div class="row d-flex justify-content-center mt-5">
             <div class="col-3 my-auto tekstur" >
                 <h4 class="font-weight-bold text-left"> Tekstur Daging </h4>
             </div>
             <div class="col-1 tekstur"></div>
-            <div class="col-1 @if ($i->tekstur_daging == 1)
+            <div class="col-1 @if ($i->tekstur_daging == 1 || $i->tekstur_daging == 4 || $i->tekstur_daging == 5 || $i->tekstur_daging == 7)
                 divactive
                 @endif divinformasi tekstur">
                 <h5 style="display:inline">Kenyal</h5>
             </div>
-            <div class="col-1 @if ($i->tekstur_daging == 2)
+            <div class="col-1 @if ($i->tekstur_daging == 2 || $i->tekstur_daging == 4 || $i->tekstur_daging == 6 || $i->tekstur_daging == 7)
                 divactive
                 @endif divinformasi tekstur">
                 <h5 style="display:inline">Lembut</h5>
             </div>
-            <div class="col-1 @if ($i->tekstur_daging == 3)
+            <div class="col-1 @if ($i->tekstur_daging == 3 || $i->tekstur_daging == 6 || $i->tekstur_daging == 5 || $i->tekstur_daging == 7)
                 divactive
                 @endif divinformasi tekstur">
                 <h5 style="display:inline">Padat</h5>
             </div>
         </div>
+        @endif
+        @if ($i->bau_amis)
         <div class="row d-flex justify-content-center mt-4 bau-amis">
             <div class="col-3 my-auto">
                 <h4 class="font-weight-bold text-left"> Bau Amis </h4>
@@ -127,14 +134,11 @@
             <div class="col-1 @if ($i->bau_amis == 2)
                 divactive
                 @endif divinformasi ">
-                <h5 style="display:inline">Tidak Terlalu</h5>
-            </div>
-            <div class="col-1 @if ($i->bau_amis == 3)
-                divactive
-                @endif divinformasi ">
                 <h5 style="display:inline">Tidak</h5>
             </div>
         </div>
+        @endif
+        @if ($i->berminyak)
         <div class="row d-flex justify-content-center mt-4 berminyak">
             <div class="col-3 my-auto">
                 <h4 class="font-weight-bold text-left">Berminyak </h4>
@@ -154,6 +158,8 @@
             <div class="col-1 divinformasi" style="background-color:#ece9e9">
             </div>
         </div>
+        @endif
+        @if ($i->duri)
         <div class="row d-flex justify-content-center mt-4 duri">
             <div class="col-3 my-auto">
                 <h4 class="font-weight-bold text-left"> Duri </h4>
@@ -162,24 +168,21 @@
             <div class="col-1 @if ($i->duri == 1)
                 divactive
                 @endif divinformasi">
-                <h5 style="display:inline">Tidak Ada</h5>
+                <h5 style="display:inline">Ya</h5>
             </div>
             <div class="col-1 @if ($i->duri == 2)
                 divactive
-                @endif divinformasi ">
-                <h5 style="display:inline">Sedikit</h5>
+                @endif divinformasi">
+                <h5 style="display:inline">Tidak</h5>
             </div>
-            <div class="col-1 @if ($i->duri == 3)
-                divactive
-                @endif divinformasi ">
-                <h5 style="display:inline">Banyak</h5>
             </div>
         </div>
+        @endif
     </div>
     <div class="container" style="background-color: #E6F5F8; border-radius:20px; padding: 50px; margin-top:80px">
         <div class="row">
             <div class="col-sm-7">
-                <h1 class="font-weight-bold display-5 " > Manfaat Sisa-sisa dari Ikan {{$i->nama_biasa}} </h1>
+                <h1 class="font-weight-bold display-5 " > Manfaat Sisa-sisa dari Ikan {{$i->nama_ikan}} </h1>
                 <p style="font-size: 22px; margin-top:20px">Bingung cara memanfaatkan sisa ikan yang tidak dikonsumsi? Disini pengunjung bisa mengetahui fakta dari sisa ikan yang memiliki berbagai manfaat</p>
                 <button class="button buttonmasuk buttonradius mt-4">Lihat Selengkapnya</button>
             </div>
@@ -217,7 +220,7 @@
         @csrf
         <div class="container p-3 mt-4" style="background-color: white;">
             <div class="form-group">
-                <textarea placeholder="Bagikan tanggapan terkait ikan {{$i->nama_biasa}}" style="border: none; outline: none; font-size:18px" class="form-control" id="exampleFormControlTextarea1" rows="5" name="comment" required></textarea>
+                <textarea placeholder="Bagikan tanggapan terkait ikan {{$i->nama_ikan}}" style="border: none; outline: none; font-size:18px" class="form-control" id="exampleFormControlTextarea1" rows="5" name="comment" required></textarea>
             </div>
             {{-- <div class="row">
                 <div class="col">
@@ -237,7 +240,7 @@
             </div>
         </div>
     </form>
-    <div class="container" style="margin-top: 80px">
+    {{-- <div class="container" style="margin-top: 80px">
         <span style="background-color:#1FCD10; color: white;border-radius: 5px 0px 0px 5px; padding: 5px 17px; height:34px; display:inline-block">x20</span>
         <span class="font-weight-bold" style="background-color:white; color: #253368;padding: 5px 17px;margin-left: -5px;height:34px; display:inline-block;">Mudah Pengelohaan</span>
         <span class="button font-weight-bold" onclick="/" style="background-color:#253368;color: white;border-radius: 0px 5px 5px 0px; padding: 5px 17px;margin-left: -5px;">+</span>
@@ -251,7 +254,7 @@
         <span style="background-color:#1FCD10; color: white;border-radius: 5px 0px 0px 5px; padding: 5px 17px; height:34px; display:inline-block">x20</span>
         <span class="font-weight-bold" style="background-color:white;color: #253368; padding: 5px 17px;margin-left: -5px;height:34px; display:inline-block;">Duri Sedikit</span>
         <span class="button font-weight-bold" onclick="/" style="background-color:#253368;color: white;border-radius: 0px 5px 5px 0px; padding: 5px 17px;margin-left: -5px;">+</span>
-    </div>
+    </div> --}}
     {{-- <div class="container" style="margin-top: 80px; margin-bottom:130px"> --}}
     {{-- <form action="{{route('postulasan', {'idikan' => $i->ikan_id})}}" method="POST">
         @csrf
@@ -270,7 +273,7 @@
             </button>
             <div class="dropdown-menu" id="pilih-ikan" aria-labelledby="dropdownMenu">
                 {{-- @foreach ($persebaran as $p)
-                    <option class="dropdown-item jenis-ikan" value="{{$p->persebaran}};{{$p->url_gambar}};{{$p->nama_biasa}}" >{{$p->nama_biasa}}</option>
+                    <option class="dropdown-item jenis-ikan" value="{{$p->persebaran}};{{$p->url_gambar}};{{$p->nama_ikan}}" >{{$p->nama_ikan}}</option>
                     @endforeach --}}
                 </div>
             </div>

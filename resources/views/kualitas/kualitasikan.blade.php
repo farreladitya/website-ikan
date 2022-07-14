@@ -3,7 +3,7 @@
 @section('isikonten')
 <div class="row">
     <div class="col-sm-5">
-        <h1 class="font-weight-bold display-4 margincontainer" style="margin-top: 105px"> Cek Kualitas Ikan {{$ikan->nama_biasa}} </h1>
+        <h1 class="font-weight-bold display-4 margincontainer" style="margin-top: 105px"> Cek Kualitas Ikan {{$ikan->nama_ikan}} </h1>
         <p style="font-size: 24px; margin-top:30px" class="margincontainer">Lihat Video dan indikator dibawah untuk mengetahui indikator kualitas ikan</p>
         <a href = "/kualitas/product/detail/{{$ikan->ikan_id}}" style="font-size:17px;" class="text-secondary margincontainer">Lihat detail ikan</a>
     </div>

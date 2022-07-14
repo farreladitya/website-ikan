@@ -33,7 +33,7 @@ Route::get('gizi/listproduct/cari', 'IkanController@carigizi');
 Route::get('gizi/cari', 'IkanController@carigizi');
 Route::get('gizi/product/{id}','IkanController@giziIkan'); //halaman kandungan gizi pada ika
 Route::get('gizi/product/detail/{id}','IkanController@detailIkan'); //halaman detail produk dari route gizi
-Route::get('manfaat/{idmanfaat}', 'IkanController@detailManfaat')->name('detailManfaat');
+Route::get('manfaat/{idmanfaat}', 'IkanController@detailManfaat')->name('detailManfaat'); //halaman detail manfaat
 
 
 //Fitur Kualitas

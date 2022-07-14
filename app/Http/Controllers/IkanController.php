@@ -82,7 +82,9 @@ class IkanController extends Controller
         ->where('ikan_id', $idikan)
         ->get();
 
-        return view('kualitas.detailproduct', ['ikan'=>$ikan, 'ulasan' => $ulasan]);
+        $penjual = DB::table('input_mitra_tables')->where('ikan', $idikan)->count();
+
+        return view('kualitas.detailproduct', ['ikan'=>$ikan, 'ulasan' => $ulasan, 'penjual' => $penjual]);
     }
 
     public function kualitas($id){
@@ -215,8 +217,9 @@ class IkanController extends Controller
         $manfaat = DB::table('manfaat')->where('manfaat_id', $idmanfaat)->first();
         $ikan = DB::table('gizi')->join('ikan', 'ikan.ikan_id', '=', 'gizi.ikan_id')->join('foto_ikan', 'foto_ikan.ikan_id', '=', 'gizi.ikan_id')->get();
         $gizi = DB::table('list_gizi')->get();
+        $konsumen = DB::table('manfaat_konsumen')->join('konsumen', 'konsumen.konsumen_id', '=', 'manfaat_konsumen.konsumen_id')->where('manfaat_id', $idmanfaat)->get();
 
-        return view('gizi.manfaat', compact('manfaat', 'ikan', 'gizi'));
+        return view('gizi.manfaat', compact('manfaat', 'ikan', 'gizi', 'konsumen'));
     }
 
     public function listpenjual($namaikan){

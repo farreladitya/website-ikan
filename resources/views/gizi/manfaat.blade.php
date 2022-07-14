@@ -7,12 +7,14 @@
     <div class="col-7 ml-5">
         <h1 class="font-weight-bold" style="display: inline"> {{$manfaat->manfaat}} </h1>
         {{-- <a href = "/" style="font-size:19px;" class="text-dark">[Edit]</a> --}}
+        @if ($konsumen->count() != 0)
         <h4 class="font-weight-bold mt-5">Cocok untuk :</h4>
         <ul class="mt-3" style="font-size: 18px">
-            <li>Lansia</li>
-            <li>Balita</li>
-            <li>Anak-anak</li>
+            @foreach ($konsumen as $k)
+            <li>{{$k->jenis_konsumen}}</li>
+            @endforeach
         </ul>
+        @endif
         <h4 class="font-weight-bold mt-5">Gizi yang dibutuhkan :</h4>
     </div>
 </div>
@@ -20,20 +22,20 @@
     <div class="col-1"></div>
     <div class="col-10 ml-5">
         <div class="row">
-        @php
-        $namaGizi = explode(',', $manfaat->kandungan);
+            @php
+            $namaGizi = explode(',', $manfaat->kandungan);
 
-        @endphp
-        @foreach ($namaGizi as $n)
+            @endphp
+            @foreach ($namaGizi as $n)
             @foreach ($gizi as $g)
-                @if ($g->nama_gizi == $n)
-                    <div class="col-2 text-center mx-4" onclick="location.href='/detailgizi/{{$g->gizi_id}}'">
+            @if ($g->nama_gizi == $n)
+            <div class="col-2 text-center mx-4" onclick="location.href='/detailgizi/{{$g->gizi_id}}'">
                 @endif
-            @endforeach
+                @endforeach
                 <img src="{{URL::asset('/images/gizi.png')}}" height="70%">
                 <p class="font-weight-bold mt-3">{{$n}}</p>
             </div>
-        @endforeach
+            @endforeach
         </div>
     </div>
     <div class="col-1"></div>
@@ -48,7 +50,7 @@
                 <div class="achievement section-padding mt-3">
                     <div class="owl-carousel owl-carousels achievement-carousel">
                         @php
-                             $namaGizi = explode(',', $manfaat->kandungan);
+                        $namaGizi = explode(',', $manfaat->kandungan);
                         @endphp
                         @foreach ($ikan as $i)
                         @php
@@ -59,28 +61,28 @@
 
                         {{-- mendapatkan nama kandungan --}}
                         @foreach ($splitgizi as $gizi)
-                            @php
-                            $k = explode(' ', $gizi); //memisahkan nama gizi, dan satuan gizi
-                            $kandunganikan  = $k[0]; //mendapatkan nama gizi
-                            @endphp
+                        @php
+                        $k = explode(' ', $gizi); //memisahkan nama gizi, dan satuan gizi
+                        $kandunganikan  = $k[0]; //mendapatkan nama gizi
+                        @endphp
 
-                            {{-- melihat apakah kandungan ikan terdapat dalam list kandungan dalam manfaat --}}
-                            @if (in_array($kandunganikan, $namaGizi) && $i->ikan_id != $kodeikansebelumnya)
-                            <div class="achievement-item bayangan">
-                                <div class="ach-1 mb-3" style="aspect-ratio: 3/2;"><img src="{{$i->url_gambar}}" alt="ach-1" style="object-fit: contain" class="w-100 h-100 card-img"></div>
-                                <div class="pl-lg-2 item-text">
-                                    <h6>{{$i->nama_ikan}}</h6>
-                                </div>
+                        {{-- melihat apakah kandungan ikan terdapat dalam list kandungan dalam manfaat --}}
+                        @if (in_array($kandunganikan, $namaGizi) && $i->ikan_id != $kodeikansebelumnya)
+                        <div class="achievement-item bayangan">
+                            <div class="ach-1 mb-3" style="aspect-ratio: 3/2;"><img src="{{$i->url_gambar}}" alt="ach-1" style="object-fit: contain" class="w-100 h-100 card-img"></div>
+                            <div class="pl-lg-2 item-text">
+                                <h6>{{$i->nama_ikan}}</h6>
                             </div>
-                            <script>
-                                console.log("<?= $i->nama_ikan ?>");
-                            </script>
-                            @php
-                                $kodeikansebelumnya = $i->ikan_id;
-                            @endphp
-                            @else
-                            @continue;
-                            @endif
+                        </div>
+                        <script>
+                            console.log("<?= $i->nama_ikan ?>");
+                        </script>
+                        @php
+                        $kodeikansebelumnya = $i->ikan_id;
+                        @endphp
+                        @else
+                        @continue;
+                        @endif
                         @endforeach
                         @endforeach
                     </div>

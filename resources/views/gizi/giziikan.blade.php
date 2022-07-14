@@ -25,7 +25,7 @@
 </div> --}}
 <div class="row">
     <div class="col-sm-5">
-        <h1 class="font-weight-bold display-4 margincontainer" style="margin-top: 105px"> Cek Gizi Ikan {{$ikan->nama_biasa}} </h1>
+        <h1 class="font-weight-bold display-4 margincontainer" style="margin-top: 105px"> Cek Gizi Ikan {{$ikan->nama_ikan}} </h1>
         <p style="font-size: 24px; margin-top:30px" class="margincontainer">Peta gizi membantu pengunjung untuk mengetahui lebih detail manfaat dan efek samping dari ikan</p>
         <a href = "{{route('detailproduk', $ikan->ikan_id)}}" style="font-size:17px;" class="text-secondary margincontainer">Lihat detail ikan</a>
     </div>
@@ -35,17 +35,14 @@
 </div>
 <div class="text-center">
     <h2 class="font-weight-bold mt-5" > Kandungan </h2>
-    <a href = "/" style="font-size:19px;" class="text-dark">[Edit]</a>
+    {{-- <a href = "/" style="font-size:19px;" class="text-dark">[Edit]</a>
     <div class="dropdown mt-4">
-        <button class="btn button buttonmasuk dropdown-toggle" type="button" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Pilih jenis konsumen
-        </button>
         <div class="dropdown-menu" id="pilih-konsumen" aria-labelledby="dropdownMenu">
             <option class="dropdown-item jenis-konsumen">1</option>
             <option class="dropdown-item jenis-konsumen">2</option>
             <option class="dropdown-item jenis-konsumen">3</option>
         </div>
-    </div>
+    </div> --}}
     <div class="mt-5">
         <span class="dot" style="background-color: #253368;"></span>
         <p class="ml-2" style="display: inline-block; vertical-align: middle;">Gizi</p>

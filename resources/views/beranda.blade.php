@@ -100,10 +100,10 @@
                             <img src="{{$i->url_gambar}}" style="object-fit: contain" class="w-100 h-100 card-img" alt="ach-1">
                         </div>
                         <div class="pl-lg-2 item-text card-body p-1">
-                            @if (!$i->nama_biasa)
+                            @if (!$i->nama_ikan)
                             <h6>{{$i->nama_ikan}}</h6>
                             @else
-                            <h6>{{$i->nama_biasa}}</h6>
+                            <h6>{{$i->nama_ikan}}</h6>
                             @endif
                             <p>@if ($i->harga === 0)
                                 Harga Tidak Diketahui
@@ -124,7 +124,7 @@
         <div class="col-sm-5" style="margin-top: 75px;">
             <h1 class="font-weight-bold margincontainer" style="margin-right: 55px; font-size:35px">Hasil Laut Terpopuler</h1>
             <div class="container-sm">
-                <img src="https://cdn.discordapp.com/attachments/844800516630118403/974667191783931924/Ribbon_Fish.png" alt="" style="object-fit: contain" class="w-100 h-100" id="gambar-persebaran">
+                <img src="https://cdn.discordapp.com/attachments/993508870032986152/993509822387462226/01_Ikan_Dori-removebg-preview.png" alt="" style="object-fit: contain" class="w-100 h-100" id="gambar-persebaran">
             </div>
         </div>
         <div class="col-sm-5" style="margin-top: 80px;">
@@ -134,25 +134,25 @@
                 </button>
                 <div class="dropdown-menu" id="pilih-ikan" aria-labelledby="dropdownMenu">
                     @foreach ($persebaran as $p)
-                    <option class="dropdown-item jenis-ikan" value="{{$p->persebaran}};{{$p->url_gambar}};{{$p->nama_biasa}}" >{{$p->nama_biasa}}</option>
+                    <option class="dropdown-item jenis-ikan" value="{{$p->persebaran}};{{$p->url_gambar}};{{$p->nama_ikan}}" >{{$p->nama_ikan}}</option>
                     @endforeach
                 </div>
             </div>
             <hr style="color = black; margin-right: 100px;" class="mt-1" >
-            <a href="{{route('listoutlet', ['persebaran' => 'Lawang'])}}" id="linkdaerah-1"><p id="daerah-1"> Lawang </p></a>
+            <a href="{{route('listoutlet', ['persebaran' => 'Atlantik Timur'])}}" id="linkdaerah-1"><p id="daerah-1"> Atlantik Timur </p></a>
             <hr style="color = black; margin-right: 100px;" class="mt-1" >
-            <a href="{{route('listoutlet', ['persebaran' => 'Tuban'])}}" id="linkdaerah-2"><p id="daerah-2"> Tuban </p></a>
+            <a href="{{route('listoutlet', ['persebaran' => 'Mediterania'])}}" id="linkdaerah-2"><p id="daerah-2"> Mediterania </p></a>
             <hr style="color = black; margin-right: 100px;" class="mt-1">
-            <a href="{{route('listoutlet', ['persebaran' => 'Jampang'])}}" id="linkdaerah-3"><p id="daerah-3"> Jampang </p></a>
+            <a href="{{route('listoutlet', ['persebaran' => 'Laut Hitam'])}}" id="linkdaerah-3"><p id="daerah-3"> Laut Hitam </p></a>
             <hr style="color = black; margin-right: 100px;" class="mt-1">
-            <a href="{{route('listoutlet', ['persebaran' => 'Pelabuhan Ratu'])}}" id="linkdaerah-4"><p id="daerah-4"> Pelabuhan ratu </p></a>
+            <a href="{{route('listoutlet', ['persebaran' => 'Australia'])}}" id="linkdaerah-4"><p id="daerah-4"> Australia </p></a>
             <hr style="color = black; margin-right: 100px;" class="mt-1">
-            <a href="{{route('listoutlet', ['persebaran' => 'Ujung Genteng'])}}" id="linkdaerah-5"><p id="daerah-5"> Ujung Genteng </p></a>
+            <a href="{{route('listoutlet', ['persebaran' => 'Selandia Baru'])}}" id="linkdaerah-5"><p id="daerah-5"> Selandia Baru </p></a>
             <hr style="color = black; margin-right: 100px;" class="mt-1">
         </div>
         <div class="col-sm-1"></div>
     </div>
-    <div class="row">
+    {{-- <div class="row">
         <div class="col-sm-5" style="margin-top: 85px;">
             <img src="{{URL::asset('/images/resepberanda.png')}}" width="100%">
             <p style="font-size: 40px; color:black; text-align:left; margin-left: 110px" class="carousel-caption"><b>Rekomendasi Resep</b> <br>
@@ -192,7 +192,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     @endsection
 
     @section('berandaactive')

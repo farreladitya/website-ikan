@@ -46,7 +46,7 @@
                     <div class="achievement-item bayangan" onclick="location.href='gizi/product/{{$s->ikan_id}}';">
                         <div class="ach-1 mb-3" style="aspect-ratio: 3/2;"><img src="{{$s->url_gambar}}" alt="ach-1" style="object-fit: contain" class="w-100 h-100 card-img"></div>
                           <div class="pl-lg-2 item-text">
-                            <h6>{{$s->nama_biasa}}</h6>
+                            <h6>{{$s->nama_ikan}}</h6>
                             {{-- <p>@if ($s->harga === 0)
                                 Harga Tidak Diketahui
                                 @else
@@ -78,7 +78,7 @@
                     <div class="achievement-item bayangan" onclick="location.href='gizi/product/{{$d->ikan_id}}';" >
                         <div class="ach-1 mb-3" style="aspect-ratio: 3/2;"><img src="{{$d->url_gambar}}" style="object-fit: contain" class="w-100 h-100 card-img" alt="ach-1"></div>
                           <div class="pl-lg-2 item-text">
-                            <h6>{{$d->nama_biasa}}</h6>
+                            <h6>{{$d->nama_ikan}}</h6>
                             {{-- <p>@if ($d->harga === 0)
                                 Harga Tidak Diketahui
                                 @else
@@ -110,7 +110,7 @@
                     <div class="achievement-item bayangan" onclick="location.href='gizi/product/{{$p->ikan_id}}';">
                         <div class="ach-1 mb-3" style="aspect-ratio: 3/2;"><img src="{{$p->url_gambar}}" style="object-fit: contain" class="w-100 h-100 card-img" alt="ach-1"></div>
                           <div class="pl-lg-2 item-text">
-                            <h6>{{$p->nama_biasa}}</h6>
+                            <h6>{{$p->nama_ikan}}</h6>
                             {{-- <p>@if ($p->harga === 0)
                                 Harga Tidak Diketahui
                                 @else
@@ -141,7 +141,7 @@
                     <div class="achievement-item bayangan" onclick="location.href='gizi/product/{{$under->ikan_id}}';">
                         <div class="ach-1 mb-3" style="aspect-ratio: 3/2;"><img src="{{$under->url_gambar}}" style="object-fit: contain" class="w-100 h-100 card-img" alt="ach-1"></div>
                           <div class="pl-lg-2 item-text">
-                            <h6>{{$under->nama_biasa}}</h6>
+                            <h6>{{$under->nama_ikan}}</h6>
                             {{-- <p>@if ($under->harga === 0)
                                 Harga Tidak Diketahui
                                 @else
@@ -173,7 +173,7 @@
                     <div class="achievement-item bayangan" onclick="location.href='gizi/product/{{$upper->ikan_id}}';">
                         <div class="ach-1 mb-3" style="aspect-ratio: 3/2;"><img src="{{$upper->url_gambar}}" style="object-fit: contain" class="w-100 h-100 card-img" alt="ach-1"></div>
                           <div class="pl-lg-2 item-text">
-                            <h6>{{$upper->nama_biasa}}</h6>
+                            <h6>{{$upper->nama_ikan}}</h6>
                             {{-- <p>@if ($upper->harga === 0)
                                 Harga Tidak Diketahui
                                 @else

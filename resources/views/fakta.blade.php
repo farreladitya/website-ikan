@@ -37,7 +37,7 @@
 <div style="background-color: #C6DADA">
     <div class="row">
         <div class="col-6">
-            <h1 class="font-weight-bold" style="margin-left:75px; margin-top: 70px; font-size:48px"> Manfaat sisa-sisa Ikan {{$ikan->nama_biasa}} </h1>
+            <h1 class="font-weight-bold" style="margin-left:75px; margin-top: 70px; font-size:48px"> Manfaat sisa-sisa Ikan {{$ikan->nama_ikan}} </h1>
         </div>
         <div class="col-6 my-auto text-center">
             <img src="{{URL::asset('/images/SeekPng3.png')}}" width="60%" style="max-width: unset; max-height: unset; padding: unset; ">
@@ -48,7 +48,7 @@
     @csrf
     <div class="container p-3 mt-5" style="background-color: white;">
         <div class="form-group">
-            <textarea placeholder="Bagikan cara memanfaatkan sisa-sisa ikan {{$ikan->nama_biasa}}" style="border: none; outline: none; font-size:18px" class="form-control" name="content" id="content" cols="30" rows="10"></textarea>
+            <textarea placeholder="Bagikan cara memanfaatkan sisa-sisa ikan {{$ikan->nama_ikan}}" style="border: none; outline: none; font-size:18px" class="form-control" name="content" id="content" cols="30" rows="10"></textarea>
         </div>
         <div class="row">
             {{-- <div class="col-10 mx-4 my-auto">
@@ -74,155 +74,160 @@
         </button>
         <div class="dropdown-menu" id="pilih-ikan" aria-labelledby="dropdownMenu">
             {{-- @foreach ($persebaran as $p)
-                <option class="dropdown-item jenis-ikan" value="{{$p->persebaran}};{{$p->url_gambar}};{{$p->nama_biasa}}" >{{$p->nama_biasa}}</option>
+                <option class="dropdown-item jenis-ikan" value="{{$p->persebaran}};{{$p->url_gambar}};{{$p->nama_ikan}}" >{{$p->nama_ikan}}</option>
                 @endforeach --}}
             </div>
         </div>
         <div class="mt-4">
             {{-- @if (!Auth::check())
                 <h3>Login terlebih dahulu untuk memberikan ulasan</h3>
-            @else
-            @if (!$ulasan->first())
-            <h3>Belum ada ulasan. Beri ulasan untuk produk ini...</h3>
-            @else
-            @foreach ($ulasan as $u)
-            <h3 style="font-size:14px">{{$u->name}}</h3>
-            @php
+                @else
+                @if (!$ulasan->first())
+                <h3>Belum ada ulasan. Beri ulasan untuk produk ini...</h3>
+                @else
+                @foreach ($ulasan as $u)
+                <h3 style="font-size:14px">{{$u->name}}</h3>
+                @php
                 $tanggalpost = date('d M Y ', strtotime($u->created_at));
-            @endphp
-            <p style="font-size:14px">{{$tanggalpost}}</p>
-            @if ($u->tags)
-            @php
+                @endphp
+                <p style="font-size:14px">{{$tanggalpost}}</p>
+                @if ($u->tags)
+                @php
                 $tag = implode(';', $u->tags);
-            @endphp
+                @endphp
                 @foreach ($tag as $t)
                 <span class="font-weight-bold" style="background-color:white;color: #253368; padding: 5px 17px;margin-left: -5px;height:34px; display:inline-block; border-radius:5px">{{$t}}</span>
                 @endforeach
-            @endif
-            <p>{{$u->comment}}</p>
-            <hr style="color = black;" class="mt-4">
-            @endforeach
-            @endif
-            @endif --}}
+                @endif
+                <p>{{$u->comment}}</p>
+                <hr style="color = black;" class="mt-4">
+                @endforeach
+                @endif
+                @endif --}}
 
-            {{-- ini aku ambil tag nya aja ntar ini dihapus pake yang atas aja --}}
-            <h3 style="font-size:14px">Djonny</h3>
-            <p style="font-size:14px">16 Februari 2022</p>
-            <p>Mudah pengelohaan</p>
-            <hr style="color = black;" class="mt-4">
+                {{-- ini aku ambil tag nya aja ntar ini dihapus pake yang atas aja --}}
+                @if ($comment)
+                @foreach ($comment as $c)
+                <h3 style="font-size:14px">{{$c->name}}</h3>
+                @php
+                $tanggalcomment = strtotime($c->created_at);
+                @endphp
+                <p style="font-size:14px">{{date("d/m/y", $tanggalcomment)}}</p>
+                <p>{!! $c->isicomment !!}</p>
+                <hr style="color = black;" class="mt-4">
+                @endforeach
+                @else
+                <h3 style="font-size:14px">Belum ada tips manfaat untuk ikan ini</h3>
+                @endif
+            </div>
         </div>
-    </div>
-    {{-- <div class="container" style="margin-top: 70px; margin-bottom:130px">
-        @if ($comment)
-        @foreach ($comment as $c)
-        <div class="row">
-            <span>{{$c->name}}</span>
-        </div>
-        <div class="row">
-            @php
-            $tanggalcomment = strtotime($c->created_at);
-            @endphp
-            <span>dipost pada : {{date("d/m/y", $tanggalcomment)}}</span>
-        </div>
-        <div class="row">
-            <p>{!! $c->isicomment !!}</p>
-        </div>
-        @endforeach
-        @endif
-    </div> --}}
-    <script>
-        document.getElementsByTagName('input')[0].addEventListener('change', function(event) {
-            var file = event.target.files[0];
-            var fileReader = new FileReader();
-            if (file.type.match('image')) {
-                fileReader.onload = function() {
-                    var img = document.createElement('img');
-                    img.src = fileReader.result;
-                    document.getElementsByClassName('divs')[0].appendChild(img);
-                };
-                fileReader.readAsDataURL(file);
-            } else {
-                fileReader.onload = function() {
-                    var blob = new Blob([fileReader.result], {type: file.type});
-                    var url = URL.createObjectURL(blob);
-                    var video = document.createElement('video');
-                    var timeupdate = function() {
-                        if (snapImage()) {
-                            video.removeEventListener('timeupdate', timeupdate);
-                            video.pause();
-                        }
+        {{-- <div class="container" style="margin-top: 70px; margin-bottom:130px">
+
+            <div class="row">
+                <span></span>
+            </div>
+            <div class="row">
+
+                <span>dipost pada : </span>
+            </div>
+            <div class="row">
+                <p></p>
+            </div>
+
+        </div> --}}
+        <script>
+            document.getElementsByTagName('input')[0].addEventListener('change', function(event) {
+                var file = event.target.files[0];
+                var fileReader = new FileReader();
+                if (file.type.match('image')) {
+                    fileReader.onload = function() {
+                        var img = document.createElement('img');
+                        img.src = fileReader.result;
+                        document.getElementsByClassName('divs')[0].appendChild(img);
                     };
-                    video.addEventListener('loadeddata', function() {
-                        if (snapImage()) {
-                            video.removeEventListener('timeupdate', timeupdate);
-                        }
-                    });
-                    var snapImage = function() {
-                        var canvas = document.createElement('canvas');
-                        canvas.width = video.videoWidth;
-                        canvas.height = video.videoHeight;
-                        canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
-                        var image = canvas.toDataURL();
-                        var success = image.length > 100000;
-                        if (success) {
-                            var img = document.createElement('img');
-                            img.src = image;
-                            document.getElementsByClassName('divs')[0].appendChild(img);
-                            URL.revokeObjectURL(url);
-                        }
-                        return success;
-                    };
-                    video.addEventListener('timeupdate', timeupdate);
-                    video.preload = 'metadata';
-                    video.src = url;
-                    // Load video in Safari / IE11
-                    video.muted = true;
-                    video.playsInline = true;
-                    video.play();
-                };
-                fileReader.readAsArrayBuffer(file);
-            }
-        });
-    </script>
-
-    <form method="POST" action="{{route('simpancomment', ["ikanId" => $ikan->ikan_id])}}">
-        @csrf
-
-
-    </form>
-
-    <script>
-        tinymce.init({
-            selector: 'textarea',
-            plugins: 'a11ychecker advcode casechange export formatpainter image editimage linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tableofcontents tinycomments tinymcespellchecker',
-            toolbar: 'a11ycheck addcomment showcomments casechange checklist code export formatpainter image editimage pageembed permanentpen table tableofcontents',
-            toolbar_mode: 'floating',
-            tinycomments_mode: 'embedded',
-            tinycomments_author: 'Author name',
-            relative_urls: false,
-            file_browser_callback : function(field_name, url, type, win) {
-                var x = window.innerWidth || document.documentElement.clientWidth || document.getElementsByTagName('body')[0].clientWidth;
-                var y = window.innerHeight|| document.documentElement.clientHeight|| document.getElementsByTagName('body')[0].clientHeight;
-
-                var cmsURL = editor_config.path_absolute + 'laravel-filemanager?field_name=' + field_name;
-                if (type == 'image') {
-                    cmsURL = cmsURL + "&type=Images";
+                    fileReader.readAsDataURL(file);
                 } else {
-                    cmsURL = cmsURL + "&type=Files";
+                    fileReader.onload = function() {
+                        var blob = new Blob([fileReader.result], {type: file.type});
+                        var url = URL.createObjectURL(blob);
+                        var video = document.createElement('video');
+                        var timeupdate = function() {
+                            if (snapImage()) {
+                                video.removeEventListener('timeupdate', timeupdate);
+                                video.pause();
+                            }
+                        };
+                        video.addEventListener('loadeddata', function() {
+                            if (snapImage()) {
+                                video.removeEventListener('timeupdate', timeupdate);
+                            }
+                        });
+                        var snapImage = function() {
+                            var canvas = document.createElement('canvas');
+                            canvas.width = video.videoWidth;
+                            canvas.height = video.videoHeight;
+                            canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
+                            var image = canvas.toDataURL();
+                            var success = image.length > 100000;
+                            if (success) {
+                                var img = document.createElement('img');
+                                img.src = image;
+                                document.getElementsByClassName('divs')[0].appendChild(img);
+                                URL.revokeObjectURL(url);
+                            }
+                            return success;
+                        };
+                        video.addEventListener('timeupdate', timeupdate);
+                        video.preload = 'metadata';
+                        video.src = url;
+                        // Load video in Safari / IE11
+                        video.muted = true;
+                        video.playsInline = true;
+                        video.play();
+                    };
+                    fileReader.readAsArrayBuffer(file);
                 }
-
-                tinyMCE.activeEditor.windowManager.open({
-                    file : cmsURL,
-                    title : 'Filemanager',
-                    width : x * 0.8,
-                    height : y * 0.8,
-                    resizable : "yes",
-                    close_previous : "no"
-                });
-            }});
+            });
         </script>
-        @endsection
 
-        @section('faktaactive')
-        class='navbar navbar-brand active'
-        @endsection
+        <form method="POST" action="{{route('simpancomment', ["ikanId" => $ikan->ikan_id])}}">
+            @csrf
+
+
+        </form>
+
+        <script>
+            tinymce.init({
+                selector: 'textarea',
+                plugins: 'a11ychecker advcode casechange export formatpainter image editimage linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste  advtable tableofcontents tinycomments tinymcespellchecker',
+                toolbar: 'a11ycheck addcomment showcomments casechange checklist code export formatpainter image editimage pageembed permanentpen table tableofcontents',
+                toolbar_mode: 'floating',
+                tinycomments_mode: 'embedded',
+                tinycomments_author: 'Author name',
+                relative_urls: false,
+                file_browser_callback : function(field_name, url, type, win) {
+                    var x = window.innerWidth || document.documentElement.clientWidth || document.getElementsByTagName('body')[0].clientWidth;
+                    var y = window.innerHeight|| document.documentElement.clientHeight|| document.getElementsByTagName('body')[0].clientHeight;
+
+                    var cmsURL = editor_config.path_absolute + 'laravel-filemanager?field_name=' + field_name;
+                    if (type == 'image') {
+                        cmsURL = cmsURL + "&type=Images";
+                    } else {
+                        cmsURL = cmsURL + "&type=Files";
+                    }
+
+                    tinyMCE.activeEditor.windowManager.open({
+                        file : cmsURL,
+                        title : 'Filemanager',
+                        width : x * 0.8,
+                        height : y * 0.8,
+                        resizable : "yes",
+                        close_previous : "no"
+                    });
+                }});
+            </script>
+            @endsection
+
+            @section('faktaactive')
+            class='navbar navbar-brand active'
+            @endsection

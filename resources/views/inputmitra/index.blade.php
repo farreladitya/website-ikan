@@ -41,12 +41,17 @@
                             @foreach($input_mitra_tables as $i)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
-                                <td>{{ $i->ikan }}</td>
+                                <td>{{ $i->nama_ikan }}</td>
                                 <td>{{ $i->tipeikan }}</td>
                                 <td>@php
                                     echo "Rp. " . number_format($i->harga,0,",",".",);
                                     @endphp</td>
-                                    <td>{{ $i->berat }}</td>
+                                    @if (!$i->berat)
+                                        <td>-</td>
+                                        @else
+                                        <td>{{ $i->berat }}</td>
+                                    @endif
+
                                     <td><img width="150px" src="{{ url('/gambar_ikan/'.$i->gambar) }}"></td>
                                     <td>
                                         <a href="/dashboard/index/edit/{{ $i->id }}" class="btn btn-warning" >Edit</a>

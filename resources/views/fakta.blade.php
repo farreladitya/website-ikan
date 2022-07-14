@@ -64,8 +64,41 @@
                 @endforeach --}}
             </div>
         </div>
+        <div class="mt-4">
+            {{-- @if (!Auth::check())
+                <h3>Login terlebih dahulu untuk memberikan ulasan</h3>
+            @else
+            @if (!$ulasan->first())
+            <h3>Belum ada ulasan. Beri ulasan untuk produk ini...</h3>
+            @else
+            @foreach ($ulasan as $u)
+            <h3 style="font-size:14px">{{$u->name}}</h3>
+            @php
+                $tanggalpost = date('d M Y ', strtotime($u->created_at));
+            @endphp
+            <p style="font-size:14px">{{$tanggalpost}}</p>
+            @if ($u->tags)
+            @php
+                $tag = implode(';', $u->tags);
+            @endphp
+                @foreach ($tag as $t)
+                <span class="font-weight-bold" style="background-color:white;color: #253368; padding: 5px 17px;margin-left: -5px;height:34px; display:inline-block; border-radius:5px">{{$t}}</span>
+                @endforeach
+            @endif
+            <p>{{$u->comment}}</p>
+            <hr style="color = black;" class="mt-4">
+            @endforeach
+            @endif
+            @endif --}}
+
+            {{-- ini aku ambil tag nya aja ntar ini dihapus pake yang atas aja --}}
+            <h3 style="font-size:14px">Djonny</h3>
+            <p style="font-size:14px">16 Februari 2022</p>
+            <p>Mudah pengelohaan</p>
+            <hr style="color = black;" class="mt-4">
+        </div>
     </div>
-    <div class="container" style="margin-top: 70px; margin-bottom:130px">
+    {{-- <div class="container" style="margin-top: 70px; margin-bottom:130px">
         @if ($comment)
         @foreach ($comment as $c)
         <div class="row">
@@ -75,7 +108,7 @@
         </div>
         @endforeach
         @endif
-    </div>
+    </div> --}}
     <script>
         document.getElementsByTagName('input')[0].addEventListener('change', function(event) {
             var file = event.target.files[0];

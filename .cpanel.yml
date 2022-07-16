@@ -1,5 +1,5 @@
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/websites/cariikan.com
+    - export DEPLOYPATH=/home/cariikan/cariikan.com
 
     - /usr/bin/rsync -Paz * $DEPLOYPATH --delete

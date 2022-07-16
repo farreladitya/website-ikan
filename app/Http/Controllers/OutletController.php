@@ -15,4 +15,5 @@ class OutletController extends Controller
         return view('listpenjual',['outlet' => $outlet, 'persebaran' => $persebaran] );
 
     }
+
 }

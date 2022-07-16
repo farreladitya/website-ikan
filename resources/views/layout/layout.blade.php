@@ -340,6 +340,26 @@
             loop:true,
         });
     </script>
+    <script>
+    function showOffline() {
+	    document.getElementById("onlineOut").style.display = "none";
+        var x = document.getElementById("offlineOut");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+    }
+    function showOnline() {
+	    document.getElementById("offlineOut").style.display = "none";
+        var x = document.getElementById("onlineOut");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+    }
+    </script>
     @livewireScripts
 </body>
 </html>

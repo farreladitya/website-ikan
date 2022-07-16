@@ -29,15 +29,31 @@
     <h2 class="font-weight-bold mt-5"> Pencarian Terpopuler </h2>
     <div class="input-group-btn mt-4" data-toggle="buttons">
         <label class="btn btn btn-outline-dark buttonradius btn-sm active pl-3 pr-3">
-            <input type="radio" name="options" id="option1" autocomplete="off" checked>Offline
+            <input type="radio" onclick="showOffline()" name="options" id="option1" autocomplete="off" checked>Offline
         </label>
         <label class="btn btn btn-outline-dark buttonradius btn-sm ml-3 pl-3 pr-3">
-            <input type="radio" name="options" id="option2" autocomplete="off">Online
+            <input type="radio" onclick="showOnline()" name="options" id="option2" autocomplete="off">Online
         </label>
     </div>
 </div>
-<div class="container mt-5">
-
+<div id="offlineOut" class="container mt-5">
+    <p>Offline</p>
+    @foreach ($outlet as $o)
+    <div class="row mb-3">
+        <div class="col-4">
+            <img src="{{URL::asset('/images/gambarpenjual.png')}}" width="100%">
+        </div>
+        <div class="col-8 my-auto">
+            <h2 class="font-weight-bold"> {{$o->nama_outlet}}</h2>
+            <p>{{$o->lokasi}}</p>
+            <h4 class="font-weight-bold"> Rp 30.000/Kg </h4>
+            <button class="button buttonmasuk buttonradius mt-3">Lihat Toko <i class="fas fa-arrow-right ml-2"></i> </button>
+        </div>
+    </div>
+    @endforeach
+</div>
+<div id="onlineOut" style="display: none" class="container mt-5">
+    <p>Online</p>
     @foreach ($outlet as $o)
     <div class="row mb-3">
         <div class="col-4">

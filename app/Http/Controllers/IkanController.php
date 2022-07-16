@@ -76,15 +76,11 @@ class IkanController extends Controller
     }
 
     public function detailIkan($idikan){
-        $ikan = DB::table('ikan')->join('harga_ikan', 'harga_ikan.ikan_id', '=', 'ikan.ikan_id')->join('foto_ikan', 'foto_ikan.ikan_id', '=', 'ikan.ikan_id')->leftJoin('detail_ikan', 'detail_ikan.ikan_id', '=', 'ikan.ikan_id')->where('ikan.ikan_id', $idikan)->get();
-
-        $ulasan = DB::table('ulasan')->select('ulasan.comment', 'users.name', 'ulasan.created_at', 'ulasan.tags')->join('users', 'users.id', '=', 'ulasan.user_id')
-        ->where('ikan_id', $idikan)
-        ->get();
+        $ikan = DB::table('ikan')->join('harga_ikan', 'harga_ikan.ikan_id', '=', 'ikan.ikan_id')->join('foto_ikan', 'foto_ikan.ikan_id', '=', 'ikan.ikan_id')->leftJoin('detail_ikan', 'detail_ikan.ikan_id', '=', 'ikan.ikan_id')->where('ikan.ikan_id', $idikan)->first();
 
         $penjual = DB::table('input_mitra_tables')->where('ikan', $idikan)->count();
 
-        return view('kualitas.detailproduct', ['ikan'=>$ikan, 'ulasan' => $ulasan, 'penjual' => $penjual]);
+        return view('kualitas.detailproduct', ['i'=>$ikan, 'penjual' => $penjual]);
     }
 
     public function kualitas($id){
@@ -99,22 +95,24 @@ class IkanController extends Controller
     }
 
     public function postulasan($idikan, Request $request){
-        $today = new DateTime();
-        DB::table('ulasan')->insert([
-            'ikan_id' => $idikan,
-            'user_id' => Auth::id(),
-            'comment' => $request->comment,
-            'created_at' => $today,
-            'updated_at' => $today
-        ]);
+        if(!Auth::check()){
+            return redirect()->back() ->with('alert', 'Login terlebih dahulu!');
+        }else{
+            $today = new DateTime();
+            DB::table('ulasan')->insert([
+                'ikan_id' => $idikan,
+                'user_id' => Auth::id(),
+                'comment' => $request->comment,
+                'created_at' => $today,
+                'updated_at' => $today
+            ]);
 
-        $ikan = DB::table('ikan')->join('harga_ikan', 'harga_ikan.ikan_id', '=', 'ikan.ikan_id')->join('foto_ikan', 'foto_ikan.ikan_id', '=', 'ikan.ikan_id')->leftJoin('detail_ikan', 'detail_ikan.ikan_id', '=', 'ikan.ikan_id')->where('ikan.ikan_id', $idikan)->get();
+            $ikan = DB::table('ikan')->join('harga_ikan', 'harga_ikan.ikan_id', '=', 'ikan.ikan_id')->join('foto_ikan', 'foto_ikan.ikan_id', '=', 'ikan.ikan_id')->leftJoin('detail_ikan', 'detail_ikan.ikan_id', '=', 'ikan.ikan_id')->where('ikan.ikan_id', $idikan)->first();
+            $penjual = DB::table('input_mitra_tables')->where('ikan', $idikan)->count();
+            return redirect('/kualitas/product/detail/'.$idikan);
+        }
 
-        $ulasan = DB::table('ulasan')->select('ulasan.comment', 'users.name', 'ulasan.created_at', 'ulasan.tags')->join('users', 'users.id', '=', 'ulasan.user_id')
-        ->where('ikan_id', $idikan)
-        ->get();
 
-        return view('kualitas.detailproduct', ['ikan'=>$ikan, 'ulasan' => $ulasan]);
     }
 
     public function giziIkan($id){

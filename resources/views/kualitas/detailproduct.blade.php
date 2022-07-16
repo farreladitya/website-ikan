@@ -1,7 +1,6 @@
 @extends('layout.layout')
 @section('title', 'Detail Product')
 @section('head')
-@foreach ($ikan as $i)
 @if ($i->tekstur_daging === null && $i->bau_amis === null && $i->berminyak === null && $i->duri === null)
 <style>
     .informasi-ikan{
@@ -37,8 +36,18 @@
     }
 </style>
 @endif
-@endforeach
+
+<script>
+    var msg = '{{Session::get('alert')}}';
+    var exist = '{{Session::has('alert')}}';
+    if(exist){
+        alert(msg);
+    }
+</script>
+
 @endsection
+
+
 @section('isikonten')
 <style>
     img {
@@ -53,7 +62,6 @@
         line-height: 200px;
     }
 </style>
-@foreach ($ikan as $i)
 <div class="row">
     <div class="col-sm-5">
         <h1 class="font-weight-bold display-4 margincontainer" style="margin-top: 130px"> Ikan {{$i->nama_ikan}} </h1>
@@ -175,8 +183,8 @@
                 @endif divinformasi">
                 <h5 style="display:inline">Tidak</h5>
             </div>
-            </div>
         </div>
+
         @endif
     </div>
     <div class="container" style="background-color: #E6F5F8; border-radius:20px; padding: 50px; margin-top:80px">
@@ -191,46 +199,13 @@
             </div>
         </div>
     </div>
-    {{-- <h2 class="font-weight-bold text-center" style="margin-top: 100px;"> Rekomendasi Resep </h2>
-    <div class="row">
-        <div class="col-sm-11" style="margin-left:25px">
-            <div class="achievement section-padding mt-3">
-                <div class="owl-carousel owl-carousels achievement-carousel">
-                    @foreach ($sepalopoda as $s)
-                    <div class="achievement-item bayangan">
-                        <div class="ach-1 mb-3" style="aspect-ratio: 3/2;"><img src="{{$s->url_gambar}}" alt="ach-1" style="object-fit: contain" class="w-100 h-100 card-img"></div>
-                        <div class="item-text">
-                            <h6>{{$s->nama_ikan}}</h6>
-                            <p>{{$s->harga}}</p>
-                        </div>
-                    </div>
-                    @endforeach
-                </div>
-            </div>
-        </div>
-    </div> --}}
-    {{-- <div class="row">
-        <div class="col-sm-10"></div>
-        <div class="col-sm-2" style="margin-top: 15px; margin-left:-60px">
-            <a href = "kualitas/listproduct" style="font-size:17px;" class="text-secondary">Lihat Selengkapnya</a>
-        </div>
-    </div> --}}
     <h2 class="font-weight-bold text-center" style="margin-top: 100px;"> Tambah Ulasan </h2>
-    <form action="kualitas/product/detail/{{$i->ikan_id}}" method="POST">
+    <form action="/kualitas/product/detail/{{$i->ikan_id}}" method="POST">
         @csrf
         <div class="container p-3 mt-4" style="background-color: white;">
             <div class="form-group">
                 <textarea placeholder="Bagikan tanggapan terkait ikan {{$i->nama_ikan}}" style="border: none; outline: none; font-size:18px" class="form-control" id="exampleFormControlTextarea1" rows="5" name="comment" required></textarea>
             </div>
-            {{-- <div class="row">
-                <div class="col">
-                    <label class="custom-file-upload">
-                        <input type="file" accept=".jpg,.jpeg.,.png,.mov,.mp4" style="button"/>
-                        <img src="{{URL::asset('/images/upload.png')}}" width="110%" style="max-width: unset; max-height: unset; padding: unset; ">
-                    </label>
-                    <div class="divs"></div>
-                </div>
-            </div> --}}
             <div class="row">
                 <div class="col">
                     <div class="text-right">
@@ -240,128 +215,68 @@
             </div>
         </div>
     </form>
-    {{-- <div class="container" style="margin-top: 80px">
-        <span style="background-color:#1FCD10; color: white;border-radius: 5px 0px 0px 5px; padding: 5px 17px; height:34px; display:inline-block">x20</span>
-        <span class="font-weight-bold" style="background-color:white; color: #253368;padding: 5px 17px;margin-left: -5px;height:34px; display:inline-block;">Mudah Pengelohaan</span>
-        <span class="button font-weight-bold" onclick="/" style="background-color:#253368;color: white;border-radius: 0px 5px 5px 0px; padding: 5px 17px;margin-left: -5px;">+</span>
-    </div>
-    <div class="container mt-5">
-        <span style="background-color:#1FCD10; color: white;border-radius: 5px 0px 0px 5px; padding: 5px 17px; height:34px; display:inline-block">x20</span>
-        <span class="font-weight-bold" style="background-color:white; color: #253368; padding: 5px 17px;margin-left: -5px;height:34px; display:inline-block;">Tekstur Lembut</span>
-        <span class="button font-weight-bold" onclick="/" style="background-color:#253368;color: white;border-radius: 0px 5px 5px 0px; padding: 5px 17px;margin-left: -5px;">+</span>
-    </div>
-    <div class="container mt-5">
-        <span style="background-color:#1FCD10; color: white;border-radius: 5px 0px 0px 5px; padding: 5px 17px; height:34px; display:inline-block">x20</span>
-        <span class="font-weight-bold" style="background-color:white;color: #253368; padding: 5px 17px;margin-left: -5px;height:34px; display:inline-block;">Duri Sedikit</span>
-        <span class="button font-weight-bold" onclick="/" style="background-color:#253368;color: white;border-radius: 0px 5px 5px 0px; padding: 5px 17px;margin-left: -5px;">+</span>
-    </div> --}}
-    {{-- <div class="container" style="margin-top: 80px; margin-bottom:130px"> --}}
-    {{-- <form action="{{route('postulasan', {'idikan' => $i->ikan_id})}}" method="POST">
-        @csrf
-        <div class="container">
-            <p class="mt-5" style="font-size:21px">Apakah ada hal yang ingin dibagikan terkait pemanfaatan sisa atau cara pengolahan?</p>
-            <div class="form-group">
-                <textarea style="border: none; outline: none; font-size:12px" class="form-control" id="exampleFormControlTextarea1" rows="7" name="comment"></textarea>
-            </div>
-            <button type="submit" class="button buttonmasuk float-right mt-2" style="width: 130px">Kirim</button>
-        </div>
-    </form> --}}
-    <div class="container" style="margin-top: 70px; margin-bottom:130px">
-        <div class="dropdown">
-            <button class="btn button buttonmasuk dropdown-toggle" type="button" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Urutkan Berdasarkan
-            </button>
-            <div class="dropdown-menu" id="pilih-ikan" aria-labelledby="dropdownMenu">
-                {{-- @foreach ($persebaran as $p)
-                    <option class="dropdown-item jenis-ikan" value="{{$p->persebaran}};{{$p->url_gambar}};{{$p->nama_ikan}}" >{{$p->nama_ikan}}</option>
-                    @endforeach --}}
-                </div>
-            </div>
-            <div class="mt-4">
-                @if (!Auth::check())
-                    <h3>Login terlebih dahulu untuk memberikan ulasan</h3>
-                @else
-                @if (!$ulasan->first())
-                <h3>Belum ada ulasan. Beri ulasan untuk produk ini...</h3>
-                @else
-                @foreach ($ulasan as $u)
-                <h3 style="font-size:14px">{{$u->name}}</h3>
-                @php
-                    $tanggalpost = date('d M Y ', strtotime($u->created_at));
-                @endphp
-                <p style="font-size:14px">{{$tanggalpost}}</p>
-                @if ($u->tags)
-                @php
-                    $tag = implode(';', $u->tags);
-                @endphp
-                    @foreach ($tag as $t)
-                    <span class="font-weight-bold" style="background-color:white;color: #253368; padding: 5px 17px;margin-left: -5px;height:34px; display:inline-block; border-radius:5px">{{$t}}</span>
-                    @endforeach
-                @endif
-                <p>{{$u->comment}}</p>
-                <hr style="color = black;" class="mt-4">
-                @endforeach
-                @endif
-                @endif
-            </div>
-        </div>
-        @endforeach
+        <livewire:ulasan />
         <script>
             document.getElementsByTagName('input')[0].addEventListener('change', function(event) {
-            var file = event.target.files[0];
-            var fileReader = new FileReader();
-            if (file.type.match('image')) {
-                fileReader.onload = function() {
-                var img = document.createElement('img');
-                img.src = fileReader.result;
-                document.getElementsByClassName('divs')[0].appendChild(img);
-                };
-                fileReader.readAsDataURL(file);
-            } else {
-                fileReader.onload = function() {
-                var blob = new Blob([fileReader.result], {type: file.type});
-                var url = URL.createObjectURL(blob);
-                var video = document.createElement('video');
-                var timeupdate = function() {
-                    if (snapImage()) {
-                    video.removeEventListener('timeupdate', timeupdate);
-                    video.pause();
-                    }
-                };
-                video.addEventListener('loadeddata', function() {
-                    if (snapImage()) {
-                    video.removeEventListener('timeupdate', timeupdate);
-                    }
-                });
-                var snapImage = function() {
-                    var canvas = document.createElement('canvas');
-                    canvas.width = video.videoWidth;
-                    canvas.height = video.videoHeight;
-                    canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
-                    var image = canvas.toDataURL();
-                    var success = image.length > 100000;
-                    if (success) {
-                    var img = document.createElement('img');
-                    img.src = image;
-                    document.getElementsByClassName('divs')[0].appendChild(img);
-                    URL.revokeObjectURL(url);
-                    }
-                    return success;
-                };
-                video.addEventListener('timeupdate', timeupdate);
-                video.preload = 'metadata';
-                video.src = url;
-                // Load video in Safari / IE11
-                video.muted = true;
-                video.playsInline = true;
-                video.play();
-                };
-                fileReader.readAsArrayBuffer(file);
-            }
+                var file = event.target.files[0];
+                var fileReader = new FileReader();
+                if (file.type.match('image')) {
+                    fileReader.onload = function() {
+                        var img = document.createElement('img');
+                        img.src = fileReader.result;
+                        document.getElementsByClassName('divs')[0].appendChild(img);
+                    };
+                    fileReader.readAsDataURL(file);
+                } else {
+                    fileReader.onload = function() {
+                        var blob = new Blob([fileReader.result], {type: file.type});
+                        var url = URL.createObjectURL(blob);
+                        var video = document.createElement('video');
+                        var timeupdate = function() {
+                            if (snapImage()) {
+                                video.removeEventListener('timeupdate', timeupdate);
+                                video.pause();
+                            }
+                        };
+
+                        video.addEventListener('loadeddata', function() {
+                            if (snapImage()) {
+                                video.removeEventListener('timeupdate', timeupdate);
+                            };
+                        });
+
+                        var snapImage = function() {
+                            var canvas = document.createElement('canvas');
+                            canvas.width = video.videoWidth;
+                            canvas.height = video.videoHeight;
+                            canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
+                            var image = canvas.toDataURL();
+                            var success = image.length > 100000;
+                            if (success) {
+                                var img = document.createElement('img');
+                                img.src = image;
+                                document.getElementsByClassName('divs')[0].appendChild(img);
+                                URL.revokeObjectURL(url);
+                            }
+                            return success;
+                        };
+
+                        video.addEventListener('timeupdate', timeupdate);
+                        video.preload = 'metadata';
+                        video.src = url;
+                        // Load video in Safari / IE11
+                        video.muted = true;
+                        video.playsInline = true;
+                        video.play();
+                    };
+                    fileReader.readAsArrayBuffer(file);
+                }
             });
         </script>
-        @endsection
+    </div>
+</div>
+    @endsection
 
-        @section('kualitasactive')
-        class='navbar navbar-brand active'
-        @endsection
+    @section('kualitasactive')
+    class='navbar navbar-brand active'
+    @endsection

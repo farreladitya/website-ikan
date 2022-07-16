@@ -217,6 +217,10 @@
         padding: 10px 0px 0px 15px;
         cursor: pointer;
     }
+    .jumbotronn {
+    background-color: #253368;
+    color: white;
+    }
 </style>
 </body>
 <nav class="navbar navbar-expand-sm fixed-top">

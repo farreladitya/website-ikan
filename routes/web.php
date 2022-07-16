@@ -57,6 +57,10 @@ Route::get('/detailproduct', function () {
     return view('kualitas.detailproduct');
 });
 
+Route::get('/tentangkami', function () {
+    return view('tentangkami');
+});
+
 //Dashboard
 Route::group(['middleware' => 'mitra'], function() {
     Route::get('/dashboard', 'DashboardController@index');

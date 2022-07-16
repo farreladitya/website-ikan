@@ -13,7 +13,9 @@
             </select>
         </div>
         <div class="mt-4">
-            @if ($comment)
+            @if (!$comment->first())
+            <h3>Belum ada tips manfaat untuk ikan ini</h3>
+            @else
             @foreach ($comment as $c)
             <h3 style="font-size:14px">{{$c->name}}</h3>
             @php
@@ -23,8 +25,6 @@
             <p>{!! $c->isicomment !!}</p>
             <hr style="color = black;" class="mt-4">
             @endforeach
-            @else
-            <h3 style="font-size:14px">Belum ada tips manfaat untuk ikan ini</h3>
             @endif
         </div>
     </div>

@@ -95,7 +95,7 @@
             <div class="achievement section-padding mt-3">
                 <div class="owl-carousel achievement-carousel">
                     @foreach ($ikan as $i)
-                    <div class="achievement-item bayangan">
+                    <div class="achievement-item bayangan" onclick="location.href='{{route('fakta', ['ikanid' => $i->ikan_id])}}';">
                         <div class="ach-1 mb-3" style="aspect-ratio: 3/2;">
                             <img src="{{$i->url_gambar}}" style="object-fit: contain" class="w-100 h-100 card-img" alt="ach-1">
                         </div>

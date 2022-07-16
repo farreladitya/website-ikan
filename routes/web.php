@@ -85,7 +85,7 @@ Route::get('/detailracun/{idracun}', 'IkanController@detailracun')->name('detail
 
 Route::get('/listpenjual/{persebaran}', 'OutletController@index')->name('listoutlet'); //halaman list outlet
 
-Route::get('/faktaikan/{ikanid}', 'IkanController@faktaikan');
+Route::get('/faktaikan/{ikanid}', 'IkanController@faktaikan')->name("fakta"); //halaman fakta ikan
 
 Route::get('/penjual/{namaikan}', 'IkanController@listpenjual'); //fitur hubungi penjual dari detail product
 

@@ -67,7 +67,7 @@
         </div>
     </div>
 </form>
-<livewire:fakta />
+<livewire:fakta :ikan="$ikan"/>
 <script>
     document.getElementsByTagName('input')[0].addEventListener('change', function(event) {
         var file = event.target.files[0];

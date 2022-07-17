@@ -8,22 +8,20 @@ use Livewire\Component;
 class Fakta extends Component
 {
     public $sorting;
-    public $idikan;
 
-    public function mount($ikan){
+    public function mount(){
         $this->sorting = "default";
-        $this->idikan = $ikan->ikan_id;
     }
 
 
     public function render()
     {
         if($this->sorting == "ASC"){
-            $comment = CommentModel::orderBy("created_at", "ASC")->where('ikan_id',  $this->idikan)->get();
+            $comment = CommentModel::orderBy("created_at", "ASC")->get();
         }else if($this->sorting == "DESC"){
-            $comment = CommentModel::orderBy("created_at", "DESC")->where('ikan_id',  $this->idikan)->get();
+            $comment = CommentModel::orderBy("created_at", "DESC")->get();
         }else{
-            $comment = CommentModel::where('ikan_id', $this->idikan)->get();
+            $comment = CommentModel::all();
         }
         return view('livewire.fakta', ['comment'=>$comment]);
     }

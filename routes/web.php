@@ -89,11 +89,11 @@ Route::get('/detailracun/{idracun}', 'IkanController@detailracun')->name('detail
 
 Route::get('/listpenjual/{persebaran}', 'OutletController@index')->name('listoutlet'); //halaman list outlet
 
-Route::get('/faktaikan/{ikanid}', 'IkanController@faktaikan')->name("fakta"); //halaman fakta ikan
+Route::get('/faktaikan', 'IkanController@faktaikan')->name("fakta"); //halaman fakta ikan
 
 Route::get('/penjual/{namaikan}', 'IkanController@listpenjual'); //fitur hubungi penjual dari detail product
 
-Route::post('/faktaikan/{ikanId}', 'IkanController@simpancomment')->name('simpancomment'); //simpan comment di fakta ikan
+Route::post('/faktaikan', 'IkanController@simpancomment')->name('simpancomment'); //simpan comment di fakta ikan
 
 Route::post('summernoteeditor',array('as'=>'summernoteeditor.post','uses'=>'SummernoteController@postSummernoteeditor')); //buat nyimpan komentar di halaman fakta ikan
 

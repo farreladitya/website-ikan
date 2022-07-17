@@ -37,18 +37,18 @@
 <div style="background-color: #C6DADA">
     <div class="row">
         <div class="col-6">
-            <h1 class="font-weight-bold" style="margin-left:75px; margin-top: 70px; font-size:48px"> Manfaat sisa-sisa Ikan {{$ikan->nama_ikan}} </h1>
+            <h1 class="font-weight-bold" style="margin-left:75px; margin-top: 70px; font-size:48px"> Manfaat sisa-sisa Ikan</h1>
         </div>
         <div class="col-6 my-auto text-center">
             <img src="{{URL::asset('/images/SeekPng3.png')}}" width="60%" style="max-width: unset; max-height: unset; padding: unset; ">
         </div>
     </div>
 </div>
-<form action="/faktaikan/{{$ikan->ikan_id}}" method="POST">
+<form action="/faktaikan" method="POST">
     @csrf
     <div class="container p-3 mt-5" style="background-color: white;">
         <div class="form-group">
-            <textarea placeholder="Bagikan cara memanfaatkan sisa-sisa ikan {{$ikan->nama_ikan}}" style="border: none; outline: none; font-size:18px" class="form-control" name="content" id="content" cols="30" rows="10"></textarea>
+            <textarea placeholder="Bagikan cara memanfaatkan sisa-sisa ikan" style="border: none; outline: none; font-size:18px" class="form-control" name="content" id="content" cols="30" rows="10"></textarea>
         </div>
         <div class="row">
             {{-- <div class="col-10 mx-4 my-auto">
@@ -67,7 +67,7 @@
         </div>
     </div>
 </form>
-<livewire:fakta :ikan="$ikan"/>
+<livewire:fakta/>
 <script>
     document.getElementsByTagName('input')[0].addEventListener('change', function(event) {
         var file = event.target.files[0];

@@ -79,14 +79,10 @@
         <p style="font-size: 22px; margin-top:30px; margin-right: 60px" class=" text-center">Bingung cara memanfaatkan sisa ikan yang tidak dikonsumsi? Disini pengunjung bisa <br>mengetahui fakta dari sisa ikan yang memiliki berbagai manfaat. </p>
     </div>
     <div class="row">
-        <div class="col-sm-7">
-            <div class="form-group has-search center float-right">
-                <span class="fa fa-search form-control-feedback"></span>
-                <input type="text" class="form-control buttonradius" placeholder="Cari">
-            </div>
-        </div>
-        <div class="col-sm-5">
-            <button class="button buttonmasuk buttonradius" style="margin-top: 9px; margin-left:-20px">Cari</button>
+        <div class="col-sm-12">
+            <center>
+                <a href="/faktaikan"><button class="button buttonmasuk margincontainer">Pelajari Selengkapnya</button></a>
+            </center>
         </div>
     </div>
     <div class="row">
@@ -95,7 +91,7 @@
             <div class="achievement section-padding mt-3">
                 <div class="owl-carousel achievement-carousel">
                     @foreach ($ikan as $i)
-                    <div class="achievement-item bayangan" onclick="location.href='{{route('fakta', ['ikanid' => $i->ikan_id])}}';">
+                    <div class="achievement-item bayangan">
                         <div class="ach-1 mb-3" style="aspect-ratio: 3/2;">
                             <img src="{{$i->url_gambar}}" style="object-fit: contain" class="w-100 h-100 card-img" alt="ach-1">
                         </div>

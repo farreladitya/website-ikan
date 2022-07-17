@@ -34,7 +34,8 @@
         <label class="form-label">Ikan</label>
         @foreach ($ikan as $k)
             @if ($i->ikan == $k->ikan_id)
-            <input type="text" disabled class="form-control"  name="ikan" value="{{$k->nama_ikan}}">
+            <input type="hidden" name="ikan" value="{{$k->ikan_id}}">
+            <input type="text" disabled class="form-control"  name="namaikan" value="{{$k->nama_ikan}}">
             @endif
         @endforeach
         </div>

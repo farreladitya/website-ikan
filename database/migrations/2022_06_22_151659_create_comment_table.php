@@ -15,8 +15,6 @@ class CreateCommentTable extends Migration
     {
         Schema::create('comment', function (Blueprint $table) {
             $table->id('comment_id');
-            $table->string('ikan_id');
-            $table->foreign('ikan_id')->references('ikan_id')->on('ikan')->onDelete('cascade');
             $table->bigInteger('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->longText('isicomment');

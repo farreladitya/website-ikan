@@ -121,7 +121,7 @@ class IkanController extends Controller
         $manfaat = DB::table('manfaat')->get();
         $listgizi = DB::table('list_gizi')->get();
         $efeksamping = DB::table('efek_samping')->get();
-        $racun = DB::table('gizi')->get();
+        $racun = DB::table('gizi')->where('ikan_id', $id)->first();
         $listracun = DB::table('racun')->get();
 
         return view('gizi.giziikan', ['ikan'=>$ikan, 'gizi' => $gizi, 'manfaat' => $manfaat, 'listgizi' => $listgizi, 'efeksamping' => $efeksamping, 'racun'=>$racun, 'listracun'=>$listracun]);
@@ -200,7 +200,7 @@ class IkanController extends Controller
         $manfaat = DB::table('manfaat')->get();
         $tipsgizi = DB::table('tipsgizi')->where('gizi_id', $idgizi)->first();
         $ikan = DB::table('ikan')->join('gizi', 'ikan.ikan_id', '=', 'gizi.ikan_id')->join('foto_ikan', 'foto_ikan.ikan_id', '=', 'ikan.ikan_id')->join('harga_ikan', 'harga_ikan.ikan_id', '=', 'ikan.ikan_id')->where('gizi.gizi', 'like', "%".$gizi->nama_gizi."%")->get();
-        return view('gizi.detailgizi', ['gizi' => $gizi, 'tipsgizi' => $tipsgizi, 'manfaat'=>$manfaat, 'efeksamping'=>$efeksamping, 'ikan'=>$ikan]);
+        return view('gizi.detailgizi', ['gizi' => $gizi, 'tipsgizi' => $tipsgizi, 'manfaat'=>$manfaat, 'ikan'=>$ikan]);
     }
 
     public function detailracun($idracun){
@@ -234,16 +234,14 @@ class IkanController extends Controller
         }
     }
 
-    public function faktaikan($ikanid){
-        $ikan = DB::table('ikan')->join('foto_ikan', 'foto_ikan.ikan_id', '=', 'ikan.ikan_id')->where('ikan.ikan_id', $ikanid)->first();
-        $comment = DB::table('comment')->select('isicomment', 'comment.created_at', 'isicomment', 'users.name')->join('users', 'users.id', '=', 'comment.user_id')->where('ikan_id', $ikanid)->get();
-        return view('fakta', ['ikan'=>$ikan, 'comment' => $comment]);
+    public function faktaikan(){
+        $comment = DB::table('comment')->select('isicomment', 'comment.created_at', 'isicomment', 'users.name')->join('users', 'users.id', '=', 'comment.user_id')->get();
+        return view('fakta', ['comment' => $comment]);
     }
 
-    public function simpancomment($ikanId, Request $request){
+    public function simpancomment(Request $request){
         $comment = new CommentModel();
         $comment->user_id = Auth::id();
-        $comment->ikan_id = $ikanId;
         $comment->isicomment = $request['content'];
         $comment->save();
         return redirect()->back();

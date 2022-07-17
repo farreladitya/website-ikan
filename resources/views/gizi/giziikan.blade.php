@@ -121,9 +121,9 @@ $kandungangizi = explode(',' , $m->kandungan);
 </div>
 @endif
 @endforeach
-<p class="text-center mt-4">Sumber : https://hallosehat.com</p>
 </div>
 @endforeach
+@if ($racun->racun)
 @php
 $racun = explode(',', $gizi->racun);
 @endphp
@@ -161,9 +161,9 @@ $kandunganGiziEfek = explode(',' , $efek->ktrt_racun);
 </div>
 @endif
 @endforeach
-<p class="text-center mt-4">Sumber : https://hallosehat.com</p>
 </div>
 @endforeach
+@endif
 @endsection
 @section('giziactive')
 class='navbar navbar-brand active'

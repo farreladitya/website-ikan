@@ -5,8 +5,8 @@
 <div class="row">
     <div class="col-sm-12">
         <img src="{{URL::asset('/images/gambarlist.png')}}" width="100%">
-        <p style="font-size: 40px; color:black; margin-left: 150px; margin-top:70px" class="carousel-caption carousel-captions"><b>Sepalopoda</b> <br></p>
-        <form action="gizi/listproduct/cari" method="GET">
+        <p style="font-size: 40px; color:black; margin-left: 150px; margin-top:70px" class="carousel-caption carousel-captions"><b>List Produk</b> <br></p>
+        <form action="/gizi/listproduct/cari" method="GET">
         <div class="row carousel-caption carousel-captions" style="margin-top:150px">
             <div class="col-sm-4"></div>
             <div class="col-sm-6">
@@ -80,14 +80,14 @@
                           Air Payau
                     </div>
             </div>
-            <div class="py-4">
+            {{-- <div class="py-4">
                 <p class="font-weight-bold" style="font-size:16px">Harga per kg</p>
                 <input type="text" style="width: 45%" placeholder="Terendah" name="harga_min" value="{{old('harga_min')}}"> - <input type="text"style="width: 45%" placeholder="Tertinggi" name="harga_max" value="{{old('harga_max')}}">
             </div>
             <div >
                 <p class="font-weight-bold" style="font-size:16px">Berat Ikan</p>
                 <input type="text" style="width: 45%" placeholder="Terendah" name="berat_min" value="{{old('berat_min')}}"> - <input type="text"style="width: 45%" placeholder="Tertinggi" name="berat_max" value="{{old('berat_max')}}">
-            </div>
+            </div> --}}
             <div class="py-4">
                 <button type="submit" class="btn btn-primary">Filter</button>
             </div>
@@ -96,14 +96,12 @@
 <div class="col-sm-8 container">
     <div class="row">
         @foreach ($ikan as $i)
-        <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1 my-3" onclick="location.href='{{route('detailproduk', ['idikan' => $i->ikan_id])}}';">
-            <a href="/gizi/product/{{$i->ikan_id}}" @method('GET')
+        <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1 my-3" onclick="location.href='/gizi/product/{{$i->ikan_id}}';">
                 <div class="card"> <div class="container-gambar" style="aspect-ratio: 3/2;"><img class="card-img-top w-100 h-100" style="object-fit: contain" src="{{$i->url_gambar}}"></div>
                 <div class="card-body">
                     <h6 class="font-weight-bold pt-1">{{$i->nama_ikan}}</h6>
                 </div>
             </div>
-            </a>
         </div>
         @endforeach
     </div>

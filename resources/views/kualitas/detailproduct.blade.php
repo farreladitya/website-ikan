@@ -192,7 +192,7 @@
             <div class="col-sm-7">
                 <h1 class="font-weight-bold display-5 " > Manfaat Sisa-sisa dari Ikan {{$i->nama_ikan}} </h1>
                 <p style="font-size: 22px; margin-top:20px">Bingung cara memanfaatkan sisa ikan yang tidak dikonsumsi? Disini pengunjung bisa mengetahui fakta dari sisa ikan yang memiliki berbagai manfaat</p>
-                <button class="button buttonmasuk buttonradius mt-4">Lihat Selengkapnya</button>
+                <a href="/faktaikan"><button class="button buttonmasuk buttonradius mt-4">Lihat Selengkapnya</button></a>
             </div>
             <div class="col-sm-5 my-auto">
                 <img src="{{$i->url_gambar}}" width="75%" class="float-right" style="max-width: unset; max-height: unset; padding: unset;">

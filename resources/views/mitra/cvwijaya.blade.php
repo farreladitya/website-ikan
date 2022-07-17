@@ -53,7 +53,7 @@
                 </div>
             </div>
             <div class="col-sm-3">
-                    <button class="button buttonmasuk buttonradius" style="margin-top: 9px; margin-left:-20px" type="submit">Cari</button>
+                <button class="button buttonmasuk buttonradius" style="margin-top: 9px; margin-left:-20px" type="submit">Cari</button>
             </div>
             <div class="col-1"></div>
         </div>
@@ -67,30 +67,36 @@
                 src="{{ url('/gambar_ikan/'.$i->gambar) }}"
                 @else
                 @foreach ($fotoikan as $foto)
-                    @if ($foto->ikan_id == $i->ikan)
-                    src="{{$foto->url_gambar}}"
-                    @endif
+                @if ($foto->ikan_id == $i->ikan)
+                src="{{$foto->url_gambar}}"
+                @endif
                 @endforeach
                 @endif></div>
                 <div class="card-body">
                     <h6 class="font-weight-bold pt-1">{{$i->nama_ikan}}</h6>
+                    <p>{{$i->tipeikan}}</p>
+                    @if ($i->berat)
+                    <p>{{$i->berat}} KG</p>
+                    @endif
                     @if ($i->harga)
                     <div class="d-flex flex-column">
-                        <div class="h6 font-weight-bold">@if ($i->harga === 0)
+                        <div class="h6 font-weight-bold">
+                            @if ($i->harga === 0)
                             Harga Tidak Diketahui
                             @else
                             @php
                             echo "Rp. " . number_format($i->harga,0,",",".",);
                             @endphp
-                            @endif</div>
+                            @endif
                         </div>
-                        @endif
                     </div>
+                    @endif
                 </div>
-            </a>
-        </div>
-        @endforeach
+            </div>
+        </a>
     </div>
+    @endforeach
+</div>
 </div>
 @endsection
 

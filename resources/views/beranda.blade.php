@@ -105,13 +105,6 @@
                             @else
                             <h6>{{$i->nama_ikan}}</h6>
                             @endif
-                            <p>@if ($i->harga === 0)
-                                Harga Tidak Diketahui
-                                @else
-                                @php
-                                    echo "Rp. " . number_format($i->harga,0,",",".",);
-                                @endphp
-                            @endif</p>
                         </div>
                     </div>
                     @endforeach

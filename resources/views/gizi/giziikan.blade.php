@@ -121,18 +121,6 @@ $kandungangizi = explode(',' , $m->kandungan);
 </div>
 @endif
 @endforeach
-@foreach ($efeksamping as $efek)
-@php
-$kandunganGiziEfek = explode(',' , $efek->ktrt_gizi);
-@endphp
-@if (in_array($namaKandungan, $kandunganGiziEfek))
-<div class="mt-5 cardss" onclick="location.href='{{route('detailefeksamping', ['idefeksamping' => $efek->efek_samping_id])}}';">
-    <span style="font-size: 20px">{{$efek->efek_samping}}</span>
-    <span class="rectangle float-right" style="background-color: #FF0000;"></span>
-    <hr style="color:#C6DADA">
-</div>
-@endif
-@endforeach
 <p class="text-center mt-4">Sumber : https://hallosehat.com</p>
 </div>
 @endforeach

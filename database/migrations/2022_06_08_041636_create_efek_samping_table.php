@@ -18,8 +18,6 @@ class CreateEfekSampingTable extends Migration
             $table->string('efek_samping');
             $table->string('nama_ikan')->nullable();
             $table->string('ktrt_racun')->nullable();
-            $table->string('ktrt_gizi')->nullable();
-            $table->string('ktrt_kondisi')->nullable();
             $table->string('url_efek_samping', 600);
         });
     }

@@ -247,4 +247,17 @@ class IkanController extends Controller
         $comment->save();
         return redirect()->back();
     }
+
+    public function detailEfekSamping($idefeksamping){
+        $efeksamping = DB::table('efek_samping')->where('efek_samping_id', $idefeksamping)->first();
+        $racun = DB::table('racun')->get();
+        if($efeksamping->nama_ikan == "Semua ikan laut"){
+            $ikans = DB::table('ikan')->join('foto_ikan', 'foto_ikan.ikan_id', '=', 'ikan.ikan_id')->get();
+        }else{
+            $namaikans = explode(',', $efeksamping->nama_ikan);
+            $ikans = DB::table('ikan')->join('foto_ikan', 'foto_ikan.ikan_id', '=', 'ikan.ikan_id')->wherein('nama_ikan', $namaikans)->get();
+        }
+
+        return view('gizi.efeksamping', compact('efeksamping', 'ikans', 'racun'));
+    }
 };

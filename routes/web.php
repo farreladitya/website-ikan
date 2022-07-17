@@ -98,3 +98,5 @@ Route::post('/faktaikan/{ikanId}', 'IkanController@simpancomment')->name('simpan
 Route::post('summernoteeditor',array('as'=>'summernoteeditor.post','uses'=>'SummernoteController@postSummernoteeditor')); //buat nyimpan komentar di halaman fakta ikan
 
 Route::get('tentangkami', 'DashboardController@tentangkami')->name("tentangkami");
+
+Route::get('/efeksamping/{idefeksamping}', 'IkanController@detailEfekSamping')->name('detailefeksamping');

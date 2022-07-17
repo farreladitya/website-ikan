@@ -126,7 +126,7 @@ $kandungangizi = explode(',' , $m->kandungan);
 $kandunganGiziEfek = explode(',' , $efek->ktrt_gizi);
 @endphp
 @if (in_array($namaKandungan, $kandunganGiziEfek))
-<div class="mt-5 cardss" onclick="location.href='/';">
+<div class="mt-5 cardss" onclick="location.href='{{route('detailefeksamping', ['idefeksamping' => $efek->efek_samping_id])}}';">
     <span style="font-size: 20px">{{$efek->efek_samping}}</span>
     <span class="rectangle float-right" style="background-color: #FF0000;"></span>
     <hr style="color:#C6DADA">
@@ -166,7 +166,7 @@ foreach ($listracun as $lr) {
 $kandunganGiziEfek = explode(',' , $efek->ktrt_racun);
 @endphp
 @if (in_array($r, $kandunganGiziEfek))
-<div class="mt-5 cardss" onclick="location.href='/';">
+<div class="mt-5 cardss" onclick="location.href='{{route('detailefeksamping', ['idefeksamping' => $efek->efek_samping_id])}}';">
     <span style="font-size: 20px">{{$efek->efek_samping}}</span>
     <span class="rectangle float-right" style="background-color: #FF0000;"></span>
     <hr style="color:#C6DADA">

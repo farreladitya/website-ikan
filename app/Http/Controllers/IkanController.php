@@ -199,7 +199,6 @@ class IkanController extends Controller
         $gizi = DB::table('list_gizi')->where('gizi_id', $idgizi)->first();
         $manfaat = DB::table('manfaat')->get();
         $tipsgizi = DB::table('tipsgizi')->where('gizi_id', $idgizi)->first();
-        $efeksamping = DB::table('efek_samping')->where('efek_samping.ktrt_gizi', 'like', "%".$gizi->nama_gizi."%")->get();
         $ikan = DB::table('ikan')->join('gizi', 'ikan.ikan_id', '=', 'gizi.ikan_id')->join('foto_ikan', 'foto_ikan.ikan_id', '=', 'ikan.ikan_id')->join('harga_ikan', 'harga_ikan.ikan_id', '=', 'ikan.ikan_id')->where('gizi.gizi', 'like', "%".$gizi->nama_gizi."%")->get();
         return view('gizi.detailgizi', ['gizi' => $gizi, 'tipsgizi' => $tipsgizi, 'manfaat'=>$manfaat, 'efeksamping'=>$efeksamping, 'ikan'=>$ikan]);
     }

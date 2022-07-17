@@ -39,7 +39,7 @@
 
 <div id="offlineOut" class="container mt-5">
     @foreach ($outlet as $o)
-    @if ($o->jenis === 'offline')
+    @if ($o->kategori === 'offline')
     <div class="row mb-3">
         <div class="col-4">
             <img src="{{URL::asset('/images/gambarpenjual.png')}}" width="100%">
@@ -59,7 +59,7 @@
 
 <div id="onlineOut" style="display: none" class="container mt-5">
     @foreach ($outlet as $o)
-    @if ($o->jenis === 'online')
+    @if ($o->kategori === 'online')
     <div class="row mb-3">
         <div class="col-4">
             <img src="{{URL::asset('/images/gambarpenjual.png')}}" width="100%">

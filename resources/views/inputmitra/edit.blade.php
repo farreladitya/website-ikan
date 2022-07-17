@@ -25,7 +25,7 @@
   <a href="/dashboard/index" class="btn btn-success mb-3">Kembali</a>
 
   @foreach($input_mitra_tables as $i)
-  <form action="/dashboard/index/update" method="post">
+  <form action="/dashboard/index/update" method="post" enctype="multipart/form-data">
     {{ csrf_field() }}
     <div class="form-group mb-3">
         <input type="hidden" class="form-control"  name="id" value="{{$i->id}}">

@@ -84,10 +84,7 @@ class DashboardController extends Controller
 
 
         $nama_file = time()."_".$file->getClientOriginalName();
-
-        // isi dengan nama folder tempat kemana file diupload
-        $tujuan_upload = 'gambar_ikan';
-        $file->move($tujuan_upload,$nama_file);
+        
         // update data pegawai
         DB::table('input_mitra_tables')->where('id',$request->id)->update([
             'ikan' => $request->ikan,
@@ -95,6 +92,11 @@ class DashboardController extends Controller
             'berat' => $request->berat,
             'gambar' => $nama_file
         ]);
+
+
+        // isi dengan nama folder tempat kemana file diupload
+        $tujuan_upload = 'gambar_ikan';
+        $file->move($tujuan_upload,$nama_file);
         // alihkan halaman ke halaman pegawai
         return redirect('/dashboard/index');
     }

@@ -124,7 +124,7 @@ class IkanController extends Controller
         $racun = DB::table('gizi')->get();
         $listracun = DB::table('racun')->get();
 
-        return view('gizi.giziIkan', ['ikan'=>$ikan, 'gizi' => $gizi, 'manfaat' => $manfaat, 'listgizi' => $listgizi, 'efeksamping' => $efeksamping, 'racun'=>$racun, 'listracun'=>$listracun]);
+        return view('gizi.giziikan', ['ikan'=>$ikan, 'gizi' => $gizi, 'manfaat' => $manfaat, 'listgizi' => $listgizi, 'efeksamping' => $efeksamping, 'racun'=>$racun, 'listracun'=>$listracun]);
     }
 
     public function filterprodukkualitas(Request $request){

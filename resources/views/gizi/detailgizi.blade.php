@@ -30,20 +30,6 @@ foreach ($manfaat as $m) {
 </div>
 @endif
 
-@if ($efeksamping->count() != 0)
-<div class="row container ">
-    <div class="col-1"></div>
-    <div class="col-7 ml-5">
-        <h4 class="font-weight-bold mt-4">Efek Samping {{$gizi->nama_gizi}} :</h4>
-        <ul class="mt-3" style="font-size: 18px">
-            @foreach ($efeksamping as $efek)
-            <li>{{$efek->efek_samping}}</li>
-            @endforeach
-        </ul>
-    </div>
-</div>
-@endif
-
 @if ($ikan->count() != 0)
 <div class="row container mt-4">
     <div class="col-1"></div>

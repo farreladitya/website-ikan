@@ -23,31 +23,31 @@ class GiziIkanSeeder extends Seeder
             ],
             [
                 'ikan_id' => 's02',
-                'gizi' => 'Kalori 230 kkal,Protein 48 gram,Selenium 91.25 mikrogram,Omega3 0.65 gram,Fosfor 405 miligram,Vitamin B6 0.75 miligram,Vitamin B5 1.875 miligram,Vitamin B12 1.5 mikrogram',
+                'gizi' => 'Kalori 230 kkal,Protein 48 gram,Selenium 91.25 mikrogram,Omega-3 0.65 gram,Fosfor 405 miligram,Vitamin B6 0.75 miligram,Vitamin B5 1.875 miligram,Vitamin B12 1.5 mikrogram',
                 'racun' => 'Timbal,Merkuri,Kadmium,Anisakis Simplex,Cestodes,Vibrio,Salmonella,Shigella,Clostridium Botulinum,Staphylococcus,Aureus,Clostridium Perfringens,Bacillus Cereus,Kandungan Mikroplastik,Methyl Mercury,Vibrio Vulnificus',
                 'url_gizi'=> 'https://hellosehat.com/nutrisi/fakta-gizi/manfaat-ikan-kembung/'
             ],
             [
                 'ikan_id' => 's03',
-                'gizi' => 'Kalori 230 kkal,Protein 48 gram,Selenium 91.25 mikrogram,Omega3 0.65 gram,Fosfor 405 miligram,Vitamin B6 0.75 miligram,Vitamin B5 1.875 miligram,Vitamin B12 1.5 mikrogram',
+                'gizi' => 'Kalori 230 kkal,Protein 48 gram,Selenium 91.25 mikrogram,Omega-3 0.65 gram,Fosfor 405 miligram,Vitamin B6 0.75 miligram,Vitamin B5 1.875 miligram,Vitamin B12 1.5 mikrogram',
                 'racun' => 'Timbal,Merkuri,Kadmium,Anisakis Simplex,Cestodes,Vibrio,Salmonella,Shigella,Clostridium Botulinum,Staphylococcus,Aureus,Clostridium Perfringens,Bacillus Cereus,Kandungan Mikroplastik,Methyl Mercury,Vibrio Vulnificus',
                 'url_gizi'=> 'https://nilaigizi.com/gizi/detailproduk/935/nilai-kandungan-gizi-kuro-segar,https://www.panganku.org/id-ID/view'
             ],
             [
                 'ikan_id' => 's04',
-                'gizi' => 'Kalori 230 kkal,Protein 48 gram,Selenium 91.25 mikrogram,Omega3 0.65 gram,Fosfor 405 miligram,Vitamin B6 0.75 miligram,Vitamin B5 1.875 miligram,Vitamin B12 1.5 mikrogram',
+                'gizi' => 'Kalori 230 kkal,Protein 48 gram,Selenium 91.25 mikrogram,Omega-3 0.65 gram,Fosfor 405 miligram,Vitamin B6 0.75 miligram,Vitamin B5 1.875 miligram,Vitamin B12 1.5 mikrogram',
                 'racun' => 'Timbal,Merkuri,Kadmium,Anisakis Simplex,Cestodes,Vibrio,Salmonella,Shigella,Clostridium Botulinum,Staphylococcus,Aureus,Clostridium Perfringens,Bacillus Cereus,Kandungan Mikroplastik,Methyl Mercury,Vibrio Vulnificus',
                 'url_gizi'=> 'https://nilaigizi.com/gizi/detailproduk/935/nilai-kandungan-gizi-kuro-segar,https://www.panganku.org/id-ID/view'
             ],
             [
                 'ikan_id' => 's05',
-                'gizi' => 'Kalori 230 kkal,Protein 48 gram,Selenium 91.25 mikrogram,Omega3 0.65 gram,Fosfor 405 miligram,Vitamin B6 0.75 miligram,Vitamin B5 1.875 miligram,Vitamin B12 1.5 mikrogram',
+                'gizi' => 'Kalori 230 kkal,Protein 48 gram,Selenium 91.25 mikrogram,Omega-3 0.65 gram,Fosfor 405 miligram,Vitamin B6 0.75 miligram,Vitamin B5 1.875 miligram,Vitamin B12 1.5 mikrogram',
                 'racun' => 'Timbal,Merkuri,Kadmium,Anisakis Simplex,Cestodes,Vibrio,Salmonella,Shigella,Clostridium Botulinum,Staphylococcus,Aureus,Clostridium Perfringens,Bacillus Cereus,Kandungan Mikroplastik,Methyl Mercury,Vibrio Vulnificus',
                 'url_gizi'=> 'https://nilaigizi.com/gizi/detailproduk/935/nilai-kandungan-gizi-kuro-segar,https://www.panganku.org/id-ID/view'
             ],
             [
                 'ikan_id' => 's06',
-                'gizi' => 'Kalori 230 kkal,Protein 48 gram,Selenium 91.25 mikrogram,Omega3 0.65 gram,Fosfor 405 miligram,Vitamin B6 0.75 miligram,Vitamin B5 1.875 miligram,Vitamin B12 1.5 mikrogram',
+                'gizi' => 'Kalori 230 kkal,Protein 48 gram,Selenium 91.25 mikrogram,Omega-3 0.65 gram,Fosfor 405 miligram,Vitamin B6 0.75 miligram,Vitamin B5 1.875 miligram,Vitamin B12 1.5 mikrogram',
                 'racun' => 'Timbal,Merkuri,Kadmium,Anisakis Simplex,Cestodes,Vibrio,Salmonella,Shigella,Clostridium Botulinum,Staphylococcus,Aureus,Clostridium Perfringens,Bacillus Cereus,Kandungan Mikroplastik,Methyl Mercury,Vibrio Vulnificus',
                 'url_gizi'=> 'https://nilaigizi.com/gizi/detailproduk/935/nilai-kandungan-gizi-kuro-segar,https://www.panganku.org/id-ID/view'
             ],

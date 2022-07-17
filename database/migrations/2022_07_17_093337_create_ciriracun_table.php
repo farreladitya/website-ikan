@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRacunTable extends Migration
+class CreateCiriracunTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,11 @@ class CreateRacunTable extends Migration
      */
     public function up()
     {
-        Schema::create('racun', function (Blueprint $table) {
+        Schema::create('ciriracun', function (Blueprint $table) {
             $table->string('racun_id')->primary();
-            $table->string('nama_racun');
+            $table->foreign('racun_id')->references('racun_id')->on('racun')->onDelete('cascade');
+            $table->string('ciriracun');
+            $table->timestamps();
         });
     }
 
@@ -26,6 +28,6 @@ class CreateRacunTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('racun');
+        Schema::dropIfExists('ciriracun');
     }
 }

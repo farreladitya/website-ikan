@@ -73,17 +73,19 @@ foreach ($manfaat as $m) {
             </div>
         </div>
 @endif
-        @if ($gizi->ket_kondisi != null)
+
+{{-- Tips gizi --}}
+        @if ($tipsgizi)
         <div class="row container">
             <div class="col-1"></div>
             <div class="col-7 ml-5">
-                <h4 class="font-weight-bold mt-5">Tips dan ciri-ciri</h4>
+                <h4 class="font-weight-bold mt-5">Tips gizi :</h4>
                 <ul class="mt-3" style="font-size: 18px">
                     @php
-                        $kondisi = explode('|', $gizi->ket_kondisi);
+                        $tips = explode('|', $tipsgizi->tipsgizi)
                     @endphp
-                    @foreach ($kondisi as $k)
-                    <li>{{$k}}</li>
+                    @foreach ($tips as $t)
+                    <li>{{$t}}</li>
                     @endforeach
                 </ul>
             </div>

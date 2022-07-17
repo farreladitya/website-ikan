@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateListGiziTable extends Migration
+class CreateTipsgiziTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,11 @@ class CreateListGiziTable extends Migration
      */
     public function up()
     {
-        Schema::create('list_gizi', function (Blueprint $table) {
+        Schema::create('tipsgizi', function (Blueprint $table) {
             $table->string('gizi_id')->primary();
-            $table->string('nama_gizi');
+            $table->foreign('gizi_id')->references('gizi_id')->on('list_gizi')->onDelete('cascade');
+            $table->string('tipsgizi');
+            $table->timestamps();
         });
     }
 
@@ -26,6 +28,6 @@ class CreateListGiziTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('list_gizi');
+        Schema::dropIfExists('tipsgizi');
     }
 }

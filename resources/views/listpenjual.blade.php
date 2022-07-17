@@ -36,9 +36,10 @@
         </label>
     </div>
 </div>
+
 <div id="offlineOut" class="container mt-5">
-    <p>Offline</p>
     @foreach ($outlet as $o)
+    @if ($o->jenis === 'offline')
     <div class="row mb-3">
         <div class="col-4">
             <img src="{{URL::asset('/images/gambarpenjual.png')}}" width="100%">
@@ -46,26 +47,32 @@
         <div class="col-8 my-auto">
             <h2 class="font-weight-bold"> {{$o->nama_outlet}}</h2>
             <p>{{$o->lokasi}}</p>
-            <h4 class="font-weight-bold"> Rp 30.000/Kg </h4>
-            <button class="button buttonmasuk buttonradius mt-3">Lihat Toko <i class="fas fa-arrow-right ml-2"></i> </button>
+            <h4 class="font-weight-bold"> @php
+                echo "Rp. " . number_format($o->harga,0,",",".",);
+            @endphp/Kg </h4>
+            <a href="{{$o->url}}" class="button buttonmasuk buttonradius mt-3">Lihat Toko <i class="fas fa-arrow-right ml-2"></i> </a>
         </div>
     </div>
+    @endif
     @endforeach
 </div>
+
 <div id="onlineOut" style="display: none" class="container mt-5">
-    <p>Online</p>
     @foreach ($outlet as $o)
+    @if ($o->jenis === 'online')
     <div class="row mb-3">
         <div class="col-4">
             <img src="{{URL::asset('/images/gambarpenjual.png')}}" width="100%">
         </div>
         <div class="col-8 my-auto">
             <h2 class="font-weight-bold"> {{$o->nama_outlet}}</h2>
-            <p>{{$o->lokasi}}</p>
-            <h4 class="font-weight-bold"> Rp 30.000/Kg </h4>
-            <button class="button buttonmasuk buttonradius mt-3">Lihat Toko <i class="fas fa-arrow-right ml-2"></i> </button>
+            <h4 class="font-weight-bold"> @php
+                echo "Rp. " . number_format($o->harga,0,",",".",);
+            @endphp/Kg </h4>
+            <a href="{{$o->url}}" class="button buttonmasuk buttonradius mt-3">Lihat Toko <i class="fas fa-arrow-right ml-2"></i> </a>
         </div>
     </div>
+    @endif
     @endforeach
 </div>
 @endsection

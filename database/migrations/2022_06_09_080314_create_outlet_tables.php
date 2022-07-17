@@ -22,6 +22,8 @@ class CreateOutletTables extends Migration
             $table->string('url')->nullable();;
             $table->string('kategori')->nullable();;
             $table->string('lokasi')->nullable();;
+            $table->string('jenis')->nullable();;
+            $table->integer('harga')->nullable();
         });
     }
 

@@ -46,7 +46,7 @@
     <div class="col-sm-5">
         <h1 class="font-weight-bold display-4 margincontainer" style="margin-top: 115px"> Halo Pecinta Hasil Laut, </h1>
         <p style="font-size: 24px; margin-top:30px" class="margincontainer">Disini kalian bisa mempelajari semua tentang hasil laut dari hal yang paling umum hingga hal yang paling detil</p>
-        <button class="button buttonmasuk margincontainer">Tentang Kami</button>
+        <a href="{{route("tentangkami")}}"><button class="button buttonmasuk margincontainer">Tentang Kami</button></a>
     </div>
     <div class="col-sm-7">
         <img src="{{URL::asset('/images/gambarberanda.png')}}" width="110%" class="float-right">

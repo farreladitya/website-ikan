@@ -100,4 +100,9 @@ public function hapus($id)
 	// alihkan halaman ke halaman pegawai
 	return redirect('/dashboard/index');
 }
+
+public function tentangkami(){
+    return view('tentangkami');
+}
+
 }

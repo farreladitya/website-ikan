@@ -43,7 +43,8 @@
 </div>
 <div class="container mt-5">
     <h3 class="font-weight-bold text-center">Produk Mitra</h3>
-    <form action="/" method="GET">
+    <form action="/mitra/udbarokah/cari" method="POST">
+        @csrf
         <div class="row mt-4">
             <div class="col-sm-8">
                 <div class="form-group has-search center float-right" style="width: 62%">
@@ -65,11 +66,7 @@
             <div class="card"> <div class="container-gambar" style="aspect-ratio: 3/2;"><img class="card-img-top w-100 h-100" style="aspect-ratio: 3/2" @if ($i->gambar)
                 src="{{ url('/gambar_ikan/'.$i->gambar) }}"
                 @else
-                @foreach ($fotoikan as $foto)
-                    @if ($foto->ikan_id == $i->ikan)
-                    src="{{$foto->url_gambar}}"
-                    @endif
-                @endforeach
+                src="{{$i->url_gambar}}"
                 @endif></div>
                 <div class="card-body">
                     <h6 class="font-weight-bold pt-1">{{$i->nama_ikan}}</h6>

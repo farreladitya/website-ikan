@@ -50,7 +50,9 @@ Route::get('kualitas/product/{id}','IkanController@kualitas');
 //Fitur Mitra
 Route::get('/mitra', 'MitraController@index');
 Route::get('/mitra/udbarokah', 'MitraController@productbarokah');
+Route::post('/mitra/udbarokah/cari', 'MitraController@cariproductbarokah');
 Route::get('/mitra/cvwijayasuksesbersama', 'MitraController@productcvwijaya');
+Route::post('/mitra/cvwijayasuksesbersama/cari', 'MitraController@cariproductcvwijaya');
 
 Route::get('listkualitasproduct/kualitas', 'IkanController@kualitas');
 Route::get('/detailproduct', function () {

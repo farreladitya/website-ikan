@@ -61,7 +61,7 @@
                     <img src="{{URL::asset('/images/foto2.jpg')}}" width="100%" >
                 </div>
             </div>
-            <p class="text-center">Tim kami berasal dari mahasiswa Sistem informasi iInstitut Teknologi Nopember Surabaya</p>
+            <p class="text-center">Tim kami berasal dari mahasiswa Sistem informasi Institut Teknologi Nopember Surabaya</p>
         </div>
     </div>
 </div>
@@ -94,6 +94,6 @@
 </div>
 @endsection
 
-@section('berandaactive')
+@section('tentangkamiactive')
 class='navbar navbar-brand active'
 @endsection

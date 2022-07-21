@@ -66,8 +66,10 @@ class IkanController extends Controller
 
     public function listprodukgizi(){
         $ikan = DB::table('ikan')->join('harga_ikan', 'harga_ikan.ikan_id', '=', 'ikan.ikan_id')->join('foto_ikan', 'foto_ikan.ikan_id', '=', 'ikan.ikan_id')->get();
+        $jenis = [];
+        $habitat = [];
 
-        return view('gizi.listproduct', ['ikan'=>$ikan]);
+        return view('gizi.listproduct', ['ikan'=>$ikan, 'jenis' => $jenis, 'habitat'=>$habitat]);
     }
 
     public function listprodukkualitas(){
@@ -162,6 +164,9 @@ class IkanController extends Controller
     }
 
     public function filterprodukgizi(Request $request){
+        $jenis = [];
+        $habitat = [];
+
         if(!$request->kategori){
             $request->kategori = ['Cephalopod', 'Pelagic', 'Demersal'];
         }
@@ -181,6 +186,14 @@ class IkanController extends Controller
             $request->berat_max = 999999;
         }
 
+        foreach($request->habitat as $h){
+            array_push($habitat, $h);
+        }
+
+        foreach($request->kategori as $k){
+            array_push($jenis, $k);
+        }
+
         $ikan = DB::table('ikan')
         ->join('harga_ikan', 'harga_ikan.ikan_id', '=', 'ikan.ikan_id')
         ->join('foto_ikan', 'foto_ikan.ikan_id', '=', 'ikan.ikan_id')
@@ -192,7 +205,7 @@ class IkanController extends Controller
         ->where('ikan.berat_maksimal', '<=', $request->berat_max)
         ->get();
 
-        return view('gizi.listproduct', ['ikan'=>$ikan]);
+        return view('gizi.listproduct', ['ikan'=>$ikan, 'jenis' => $jenis, 'habitat' => $habitat]);
     }
 
     public function detailgizi($idgizi){

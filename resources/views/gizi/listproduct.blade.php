@@ -45,18 +45,24 @@
             <div>
                 <p class="font-weight-bold" style="margin-top: 20px; font-size:16px">Kategori</p>
                     <div class="form-check mt-1 custom-control custom-checkbox">
-                        <input class="form-check-input custom-control-input" type="checkbox" value="Cephalopod" id="defaultCheck1" name="kategori[]" {{ old('kategori.0') == 'Cephalopod' ? 'checked' : '' }}>
+                        <input class="form-check-input custom-control-input" type="checkbox" value="Cephalopod" id="defaultCheck1" name="kategori[]" @if (empty($jenis) || in_array('Cephalopod', $jenis))
+                            checked
+                        @endif>
                         <label class="form-check-label custom-control-label" for="defaultCheck1">
                           Sepalopoda
                         </label>
                     </div>
                     <div class="form-check mt-1 custom-control custom-checkbox">
-                        <input class="form-check-input custom-control-input" type="checkbox" value="Pelagic" id="defaultCheck2" name="kategori[]">
+                        <input class="form-check-input custom-control-input" type="checkbox" value="Pelagic" id="defaultCheck2" name="kategori[]" @if (empty($jenis) || in_array('Pelagic', $jenis))
+                        checked
+                    @endif>
                         <label class="form-check-label custom-control-label" for="defaultCheck2">
                           Ikan Pelagis
                     </div>
                     <div class="form-check mt-1 custom-control custom-checkbox">
-                        <input class="form-check-input custom-control-input" type="checkbox" value="Demersal" id="defaultCheck3" name="kategori[]">
+                        <input class="form-check-input custom-control-input" type="checkbox" value="Demersal" id="defaultCheck3" name="kategori[]" @if (empty($jenis) || in_array('Demersal', $jenis))
+                        checked
+                    @endif>
                         <label class="form-check-label custom-control-label" for="defaultCheck3">
                           Ikan Demersal
                     </div>
@@ -64,18 +70,24 @@
             <div class="py-3">
                 <p class="font-weight-bold" style="font-size:16px">Habitat Ikan</p>
                     <div class="form-check mt-1 custom-control custom-checkbox">
-                        <input class="form-check-input custom-control-input" type="checkbox" value="Air Laut" id="defaultCheck4" name="habitat[]">
-                        <label class="form-check-label custom-control-label" for="defaultCheck4">
+                        <input class="form-check-input custom-control-input" type="checkbox" value="Air Laut" id="defaultCheck4" name="habitat[]" @if (empty($habitat) || in_array('Air Laut', $habitat))
+                        checked
+                    @endif>
+                        <label class="form-check-label custom-control-label" for="defaultCheck4" >
                           Air Laut
                         </label>
                     </div>
                     <div class="form-check mt-1 custom-control custom-checkbox">
-                        <input class="form-check-input custom-control-input" type="checkbox" value="Air Tawar" id="defaultCheck5" name="habitat[]">
+                        <input class="form-check-input custom-control-input" type="checkbox" value="Air Tawar" id="defaultCheck5" name="habitat[]" @if (empty($habitat) || in_array('Air Tawar', $habitat))
+                        checked
+                    @endif>
                         <label class="form-check-label custom-control-label" for="defaultCheck5">
                           Air Tawar
                     </div>
                     <div class="form-check mt-1 custom-control custom-checkbox">
-                        <input class="form-check-input custom-control-input" type="checkbox" value="Air Payau" id="defaultCheck6" name="habitat[]">
+                        <input class="form-check-input custom-control-input" type="checkbox" value="Air Payau" id="defaultCheck6" name="habitat[]" @if (empty($habitat) || in_array('Air Payau', $habitat))
+                        checked
+                    @endif>
                         <label class="form-check-label custom-control-label" for="defaultCheck6">
                           Air Payau
                     </div>

@@ -225,13 +225,14 @@
 </body>
 <nav class="navbar navbar-expand-sm fixed-top">
     <div class="row">
-        <div class="col-sm-3"></div>
-        <div class="col-sm-6">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-7">
             <a @yield('berandaactive') class="navbar navbar-brand" href="/">Beranda</a>
             <a @yield('giziactive') class="navbar navbar-brand" href="/gizi">Gizi</a>
             <a @yield('kualitasactive') class="navbar navbar-brand" href="/kualitas">Kualitas</a>
             <a @yield('faktaactive') class="navbar navbar-brand" href="/faktaikan">Fakta</a>
             <a @yield('mitraactive') class="navbar navbar-brand" href="/mitra">Mitra</a>
+            <a @yield('tentangkamiactive') class="navbar navbar-brand" href="/tentangkami">Tentang Kami</a>
         </div>
 
         <div class="col-sm-3">

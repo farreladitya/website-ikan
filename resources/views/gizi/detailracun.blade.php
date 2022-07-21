@@ -4,7 +4,6 @@
 <img src="{{URL::asset('/images/merkury1.png')}}" height="424px">
 <div class="text-center mt-5">
     <h1 class="font-weight-bold"> {{$racun->nama_racun}} </h1>
-    <a href = "/" style="font-size:19px;" class="text-dark">[Edit]</a>
 </div>
 @if ($efeksamping->count() != 0)
 <div class="row container ">
@@ -47,7 +46,7 @@
 <div class="row container">
     <div class="col-1"></div>
     <div class="col-7 ml-5">
-        <h4 class="font-weight-bold mt-5">Tips dan ciri-ciri</h4>
+        <h4 class="font-weight-bold mt-5">Ciri-ciri :</h4>
         <ul class="mt-3" style="font-size: 18px">
             @php
             $ciris = explode('|', $ciriracun->ciriracun);

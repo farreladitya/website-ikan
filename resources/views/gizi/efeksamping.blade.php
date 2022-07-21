@@ -7,16 +7,16 @@
     <div class="col-1"></div>
     <div class="col-7 ml-5">
         <h1 class="font-weight-bold" style="display: inline"> {{$efeksamping->efek_samping}} </h1>
+        {{-- Kandungan Racun --}}
+        @if ($efeksamping->ktrt_racun)
+        @php
+            $kandunganRacun = explode(',', $efeksamping->ktrt_racun)
+        @endphp
+        <h4 class="font-weight-bold mt-5">Banyak terdapat pada kandungan berikut :</h4>
         {{-- <a href = "/" style="font-size:19px;" class="text-dark">[Edit]</a> --}}
     </div>
 </div>
 
-{{-- Kandungan Racun --}}
-@if ($efeksamping->ktrt_racun)
-@php
-    $kandunganRacun = explode(',', $efeksamping->ktrt_racun)
-@endphp
-<h4 class="font-weight-bold mt-5">Banyak terdapat pada kandungan berikut :</h4>
 <div class="row d-flex justify-content-center mt-4">
     <div class="col-1"></div>
     <div class="col-10 ml-5">
@@ -41,9 +41,9 @@
     <div class="col-10 ml-5">
         <h4 class="font-weight-bold">Banyak ditemukan pada hasil laut :</h4>
         <div class="row">
-            <div class="col-sm-11" style="margin-left:25px">
+            <div class="col-sm-12" style="margin-left:25px">
                 <div class="achievement section-padding mt-3">
-                    <div class="owl-carousel owl-carousels achievement-carousel">
+                    <div class="owl-carousel owl-carouselss achievement-carousel">
                         @foreach ($ikans as $i)
                         <div class="achievement-item bayangan">
                             <div class="ach-1 mb-3" style="aspect-ratio: 3/2;"><img src="{{$i->url_gambar}}" alt="ach-1" style="object-fit: contain" class="w-100 h-100 card-img"></div>

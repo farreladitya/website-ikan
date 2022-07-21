@@ -333,6 +333,13 @@
             dots:true,
             loop:true,
         });
+        $('.owl-carouselsss').owlCarousel({
+            autoplay:true,
+            autoplayHoverPause:true,
+            items:8,
+            dots:true,
+            loop:true,
+        });
         $('.owl-carouselss').owlCarousel({
             autoplay:true,
             autoplayHoverPause:true,

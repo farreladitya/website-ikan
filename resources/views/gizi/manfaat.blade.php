@@ -46,9 +46,9 @@
     <div class="col-10 ml-5">
         <h4 class="font-weight-bold">Banyak ditemukan pada hasil laut :</h4>
         <div class="row">
-            <div class="col-sm-11" style="margin-left:25px">
+            <div class="col-sm-12" style="margin-left:25px">
                 <div class="achievement section-padding mt-3">
-                    <div class="owl-carousel owl-carousels achievement-carousel">
+                    <div class="owl-carousel owl-carouselsss achievement-carousel">
                         @php
                         $namaGizi = explode(',', $manfaat->kandungan);
                         @endphp

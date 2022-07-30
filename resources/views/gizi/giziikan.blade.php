@@ -131,7 +131,7 @@ $racun = explode(',', $gizi->racun);
 @php
 $idracun = 0;
 foreach ($listracun as $lr) {
-    if ($lr->nama_racun === $r) {
+if ($lr->nama_racun === $r) {
         $idracun = $lr->racun_id;
     }
 }

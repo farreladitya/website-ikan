@@ -38,19 +38,19 @@
 
 
         })
+
+        var visitcount = localStorage.getItem("page_view");
+
+        if(visitcount){
+            visitcount = Number(visitcount) + 1;
+            localStorage.setItem("page_view", visitcount);
+        }else{
+            visitcount = 1;
+            localStorage.setItem("page_view", 1);
+        }
+
+        console.log("visit count = "+ visitcount);
     })
-
-    var visitcount = localStorage.getItem("page_view");
-
-    if(visitcount){
-        visitcount = Number(visitcount) + 1;
-        localStorage.setItem("page_view", visitcount);
-    }else{
-        visitcount = 1;
-        localStorage.setItem("page_view", 1);
-    }
-
-    console.log("visit count = "+ visitcount);
 </script>
 @endsection
 @section('isikonten')
@@ -185,17 +185,17 @@
                                 }else{
                                     echo "Rp. " . number_format($i->harga,0,",",".",);
                                 }
-                            @endphp</p>
+                                @endphp</p>
+                            </div>
                         </div>
+                        @endforeach
                     </div>
-                    @endforeach
                 </div>
             </div>
-        </div>
-    </div> --}}
-    @endsection
+        </div> --}}
+        @endsection
 
-    @section('berandaactive')
-    class='navbar navbar-brand active'
-    @endsection
+        @section('berandaactive')
+        class='navbar navbar-brand active'
+        @endsection
 

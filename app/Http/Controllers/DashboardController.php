@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\InputMitra;
+use App\Models\Page;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\User;
@@ -18,8 +19,6 @@ class DashboardController extends Controller
     {
         // mengambil data dari table pegawai
         $inputmitra = DB::table('input_mitra_tables')->join('ikan', 'ikan.ikan_id', '=', 'input_mitra_tables.ikan')->where('nama_mitra', auth()->user()->name)->get();
-
-
         // mengirim data pegawai ke view index
         return view('inputmitra.index',['input_mitra_tables' => $inputmitra]);
 
@@ -84,7 +83,7 @@ class DashboardController extends Controller
 
 
         $nama_file = time()."_".$file->getClientOriginalName();
-        
+
         // update data pegawai
         DB::table('input_mitra_tables')->where('id',$request->id)->update([
             'ikan' => $request->ikan,

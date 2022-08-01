@@ -159,7 +159,7 @@ class OutletSeeder extends Seeder
             'persebaran' => 'Tegal',
             'nama_ikan' => 'Tongkol,Teri,Baronang,Belanak,Ikan Kakap Merah,Ikan Kakap Domba,Ikan Kakap Batu,Ikan Kakap Sirip Kuning,Ikan Kakap Putih',
             'kategori' => 'offline',
-            'Jalan Sawo, Tegal, Tegal, Jawa Tengah, Indonesia',
+            'lokasi' => 'Jalan Sawo, Tegal, Tegal, Jawa Tengah, Indonesia',
 
         ]);
     }

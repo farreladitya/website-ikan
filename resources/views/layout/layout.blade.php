@@ -320,6 +320,11 @@
                 <p>© 2021 Bisnis Digital | All Rights Reserved</p>
                 <br>
             </div>
+            @isset($page)
+            <div class="pageview">
+                <p>Visitor this month : {{ visits($page)->period('month')->count()}} </p>
+            </div>
+            @endisset
         </footer>
     </div>
     <script src="{{asset('js/owl.carousel.min.js')}}"></script>

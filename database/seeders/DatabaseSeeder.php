@@ -34,7 +34,8 @@ class DatabaseSeeder extends Seeder
             TipeIkanSeeder::class,
             InputMitraSeeder::class,
             CiriRacunSeeder::class,
-            TipsGiziSeeder::class
+            TipsGiziSeeder::class,
+            PageSeeder::class
         ]);
     }
 }

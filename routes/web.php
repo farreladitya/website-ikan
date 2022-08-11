@@ -93,7 +93,8 @@ Route::get('/listpenjual/{persebaran}', 'OutletController@index')->name('listout
 
 Route::get('/faktaikan', 'IkanController@faktaikan')->name("fakta"); //halaman fakta ikan
 
-Route::get('/penjual/{namaikan}', 'IkanController@listpenjual'); //fitur hubungi penjual dari detail product
+Route::get('/penjual/
+{namaikan}', 'IkanController@listpenjual'); //fitur hubungi penjual dari detail product
 
 Route::post('/faktaikan', 'IkanController@simpancomment')->name('simpancomment'); //simpan comment di fakta ikan
 

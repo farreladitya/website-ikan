@@ -22,6 +22,7 @@ class CreateInputMitraTables extends Migration
             $table->string('tipeikan')->nullable();
             $table->integer('harga')->nullable();
             $table->string('berat')->nullable();
+            $table->string('satuan_berat')->nullable();
             $table->string('gambar')->nullable();
             $table->timestamps();
         });

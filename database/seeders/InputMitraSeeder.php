@@ -21,7 +21,8 @@ class InputMitraSeeder extends Seeder
                 'ikan' => 's01',
                 'tipeikan' => 'fresh',
                 'harga' => null,
-                'gambar' => null
+                'gambar' => null,
+                'satuan_berat' => 'Kg'
             ],
             [
                 'user_id' => 3,
@@ -29,7 +30,8 @@ class InputMitraSeeder extends Seeder
                 'ikan' => 's02',
                 'tipeikan' => 'fresh',
                 'harga' => null,
-                'gambar' => null
+                'gambar' => null,
+                'satuan_berat' => 'Kg'
             ],
             [
                 'user_id' => 3,
@@ -37,7 +39,8 @@ class InputMitraSeeder extends Seeder
                 'ikan' => 's03',
                 'tipeikan' => 'fresh',
                 'harga' => null,
-                'gambar' => null
+                'gambar' => null,
+                'satuan_berat' => 'Kg'
             ],
             [
                 'user_id' => 3,
@@ -45,7 +48,8 @@ class InputMitraSeeder extends Seeder
                 'ikan' => 's04',
                 'tipeikan' => 'fresh',
                 'harga' => null,
-                'gambar' => null
+                'gambar' => null,
+                'satuan_berat' => 'Kg'
             ],
             [
                 'user_id' => 3,
@@ -53,7 +57,8 @@ class InputMitraSeeder extends Seeder
                 'ikan' => 's05',
                 'tipeikan' => 'fresh',
                 'harga' => null,
-                'gambar' => null
+                'gambar' => null,
+                'satuan_berat' => 'Kg'
             ],
             [
                 'user_id' => 3,
@@ -61,7 +66,8 @@ class InputMitraSeeder extends Seeder
                 'ikan' => 's06',
                 'tipeikan' => 'fresh',
                 'harga' => null,
-                'gambar' => null
+                'gambar' => null,
+                'satuan_berat' => 'Kg'
             ],
             [
                 'user_id' => 3,
@@ -69,7 +75,8 @@ class InputMitraSeeder extends Seeder
                 'ikan' => 's07',
                 'tipeikan' => 'fresh',
                 'harga' => null,
-                'gambar' => null
+                'gambar' => null,
+                'satuan_berat' => 'Kg'
             ],
             [
                 'user_id' => 3,
@@ -77,7 +84,8 @@ class InputMitraSeeder extends Seeder
                 'ikan' => 's08',
                 'tipeikan' => 'fresh',
                 'harga' => null,
-                'gambar' => null
+                'gambar' => null,
+                'satuan_berat' => 'Kg'
             ],
             [
                 'user_id' => 3,
@@ -85,7 +93,8 @@ class InputMitraSeeder extends Seeder
                 'ikan' => 's09',
                 'tipeikan' => 'fresh',
                 'harga' => null,
-                'gambar' => null
+                'gambar' => null,
+                'satuan_berat' => 'Kg'
             ],
             [
                 'user_id' => 3,
@@ -93,7 +102,8 @@ class InputMitraSeeder extends Seeder
                 'ikan' => 's10',
                 'tipeikan' => 'fresh',
                 'harga' => null,
-                'gambar' => null
+                'gambar' => null,
+                'satuan_berat' => 'Kg'
             ],
             [
                 'user_id' => 3,
@@ -101,7 +111,8 @@ class InputMitraSeeder extends Seeder
                 'ikan' => 's11',
                 'tipeikan' => 'fresh',
                 'harga' => null,
-                'gambar' => null
+                'gambar' => null,
+                'satuan_berat' => 'Kg'
             ],
             [
                 'user_id' => 3,
@@ -109,7 +120,8 @@ class InputMitraSeeder extends Seeder
                 'ikan' => 's12',
                 'tipeikan' => 'fresh',
                 'harga' => null,
-                'gambar' => null
+                'gambar' => null,
+                'satuan_berat' => 'Kg'
             ],
             [
                 'user_id' => 3,
@@ -117,7 +129,8 @@ class InputMitraSeeder extends Seeder
                 'ikan' => 's13',
                 'tipeikan' => 'fresh',
                 'harga' => null,
-                'gambar' => null
+                'gambar' => null,
+                'satuan_berat' => 'Kg'
             ],
             [
                 'user_id' => 3,
@@ -125,7 +138,8 @@ class InputMitraSeeder extends Seeder
                 'ikan' => 's14',
                 'tipeikan' => 'fresh',
                 'harga' => null,
-                'gambar' => null
+                'gambar' => null,
+                'satuan_berat' => 'Kg'
             ],
             [
                 'user_id' => 3,
@@ -133,7 +147,8 @@ class InputMitraSeeder extends Seeder
                 'ikan' => 's15',
                 'tipeikan' => 'fresh',
                 'harga' => null,
-                'gambar' => null
+                'gambar' => null,
+                'satuan_berat' => 'Kg'
             ],
             [
                 'user_id' => 3,
@@ -141,7 +156,8 @@ class InputMitraSeeder extends Seeder
                 'ikan' => 's16',
                 'tipeikan' => 'fresh',
                 'harga' => null,
-                'gambar' => null
+                'gambar' => null,
+                'satuan_berat' => 'Kg'
             ],
             [
                 'user_id' => 3,
@@ -149,7 +165,8 @@ class InputMitraSeeder extends Seeder
                 'ikan' => 's17',
                 'tipeikan' => 'fresh',
                 'harga' => null,
-                'gambar' => null
+                'gambar' => null,
+                'satuan_berat' => 'Kg'
             ],
             [
                 'user_id' => 3,
@@ -157,7 +174,8 @@ class InputMitraSeeder extends Seeder
                 'ikan' => 's18',
                 'tipeikan' => 'fresh',
                 'harga' => null,
-                'gambar' => null
+                'gambar' => null,
+                'satuan_berat' => 'Kg'
             ],
             [
                 'user_id' => 3,
@@ -165,7 +183,8 @@ class InputMitraSeeder extends Seeder
                 'ikan' => 's19',
                 'tipeikan' => 'fresh',
                 'harga' => null,
-                'gambar' => null
+                'gambar' => null,
+                'satuan_berat' => 'Kg'
             ],
             [
                 'user_id' => 3,
@@ -173,7 +192,8 @@ class InputMitraSeeder extends Seeder
                 'ikan' => 's20',
                 'tipeikan' => 'fresh',
                 'harga' => null,
-                'gambar' => null
+                'gambar' => null,
+                'satuan_berat' => 'Kg'
             ],
             [
                 'user_id' => 3,
@@ -181,7 +201,8 @@ class InputMitraSeeder extends Seeder
                 'ikan' => 's21',
                 'tipeikan' => 'fresh',
                 'harga' => null,
-                'gambar' => null
+                'gambar' => null,
+                'satuan_berat' => 'Kg'
             ],
             [
                 'user_id' => 2,
@@ -189,7 +210,8 @@ class InputMitraSeeder extends Seeder
                 'ikan' => 's22',
                 'tipeikan' => 'fresh',
                 'harga' => null,
-                'gambar' => null
+                'gambar' => null,
+                'satuan_berat' => 'Kg'
             ],
             [
                 'user_id' => 2,
@@ -197,7 +219,8 @@ class InputMitraSeeder extends Seeder
                 'ikan' => 's23',
                 'tipeikan' => 'fresh',
                 'harga' => null,
-                'gambar' => null
+                'gambar' => null,
+                'satuan_berat' => 'Kg'
             ],
             [
                 'user_id' => 2,
@@ -205,7 +228,8 @@ class InputMitraSeeder extends Seeder
                 'ikan' => 's24',
                 'tipeikan' => 'fresh',
                 'harga' => null,
-                'gambar' => null
+                'gambar' => null,
+                'satuan_berat' => 'Kg'
             ],
             [
                 'user_id' => 2,
@@ -213,7 +237,8 @@ class InputMitraSeeder extends Seeder
                 'ikan' => 's25',
                 'tipeikan' => 'fresh',
                 'harga' => null,
-                'gambar' => null
+                'gambar' => null,
+                'satuan_berat' => 'Kg'
             ],
             [
                 'user_id' => 3,
@@ -221,7 +246,8 @@ class InputMitraSeeder extends Seeder
                 'ikan' => 's26',
                 'tipeikan' => 'fresh',
                 'harga' => null,
-                'gambar' => null
+                'gambar' => null,
+                'satuan_berat' => 'Kg'
             ],
             [
                 'user_id' => 3,
@@ -229,7 +255,8 @@ class InputMitraSeeder extends Seeder
                 'ikan' => 's27',
                 'tipeikan' => 'fresh',
                 'harga' => null,
-                'gambar' => null
+                'gambar' => null,
+                'satuan_berat' => 'Kg'
             ],
             [
                 'user_id' => 3,
@@ -237,7 +264,8 @@ class InputMitraSeeder extends Seeder
                 'ikan' => 's28',
                 'tipeikan' => 'fresh',
                 'harga' => null,
-                'gambar' => null
+                'gambar' => null,
+                'satuan_berat' => 'Kg'
             ],
             [
                 'user_id' => 3,
@@ -245,7 +273,8 @@ class InputMitraSeeder extends Seeder
                 'ikan' => 's29',
                 'tipeikan' => 'fresh',
                 'harga' => null,
-                'gambar' => null
+                'gambar' => null,
+                'satuan_berat' => 'Kg'
             ],
             [
                 'user_id' => 2,
@@ -253,7 +282,8 @@ class InputMitraSeeder extends Seeder
                 'ikan' => 's30',
                 'tipeikan' => 'fresh',
                 'harga' => null,
-                'gambar' => null
+                'gambar' => null,
+                'satuan_berat' => 'Kg'
             ],
             [
                 'user_id' => 3,
@@ -261,7 +291,8 @@ class InputMitraSeeder extends Seeder
                 'ikan' => 's31',
                 'tipeikan' => 'fresh',
                 'harga' => null,
-                'gambar' => null
+                'gambar' => null,
+                'satuan_berat' => 'Kg'
             ],
             [
                 'user_id' => 3,
@@ -269,7 +300,8 @@ class InputMitraSeeder extends Seeder
                 'ikan' => 's32',
                 'tipeikan' => 'fresh',
                 'harga' => null,
-                'gambar' => null
+                'gambar' => null,
+                'satuan_berat' => 'Kg'
             ],
             [
                 'user_id' => 3,
@@ -277,7 +309,8 @@ class InputMitraSeeder extends Seeder
                 'ikan' => 's33',
                 'tipeikan' => 'fresh',
                 'harga' => null,
-                'gambar' => null
+                'gambar' => null,
+                'satuan_berat' => 'Kg'
             ],
             [
                 'user_id' => 3,
@@ -285,7 +318,8 @@ class InputMitraSeeder extends Seeder
                 'ikan' => 's34',
                 'tipeikan' => 'fresh',
                 'harga' => null,
-                'gambar' => null
+                'gambar' => null,
+                'satuan_berat' => 'Kg'
             ],
             [
                 'user_id' => 3,
@@ -293,7 +327,8 @@ class InputMitraSeeder extends Seeder
                 'ikan' => 's35',
                 'tipeikan' => 'fresh',
                 'harga' => null,
-                'gambar' => null
+                'gambar' => null,
+                'satuan_berat' => 'Kg'
             ],
             [
                 'user_id' => 3,
@@ -301,7 +336,8 @@ class InputMitraSeeder extends Seeder
                 'ikan' => 's36',
                 'tipeikan' => 'fresh',
                 'harga' => null,
-                'gambar' => null
+                'gambar' => null,
+                'satuan_berat' => 'Kg'
             ],
             [
                 'user_id' => 3,
@@ -309,7 +345,8 @@ class InputMitraSeeder extends Seeder
                 'ikan' => 's37',
                 'tipeikan' => 'fresh',
                 'harga' => null,
-                'gambar' => null
+                'gambar' => null,
+                'satuan_berat' => 'Kg'
             ],
             [
                 'user_id' => 3,
@@ -317,7 +354,8 @@ class InputMitraSeeder extends Seeder
                 'ikan' => 's38',
                 'tipeikan' => 'fresh',
                 'harga' => null,
-                'gambar' => null
+                'gambar' => null,
+                'satuan_berat' => 'Kg'
             ],
             [
                 'user_id' => 3,
@@ -325,7 +363,8 @@ class InputMitraSeeder extends Seeder
                 'ikan' => 's39',
                 'tipeikan' => 'fresh',
                 'harga' => null,
-                'gambar' => null
+                'gambar' => null,
+                'satuan_berat' => 'Kg'
             ],
             [
                 'user_id' => 3,
@@ -333,7 +372,8 @@ class InputMitraSeeder extends Seeder
                 'ikan' => 's40',
                 'tipeikan' => 'fresh',
                 'harga' => null,
-                'gambar' => null
+                'gambar' => null,
+                'satuan_berat' => 'Kg'
             ],
             [
                 'user_id' => 3,
@@ -341,7 +381,8 @@ class InputMitraSeeder extends Seeder
                 'ikan' => 's41',
                 'tipeikan' => 'fresh',
                 'harga' => null,
-                'gambar' => null
+                'gambar' => null,
+                'satuan_berat' => 'Kg'
             ],
             [
                 'user_id' => 3,
@@ -349,7 +390,8 @@ class InputMitraSeeder extends Seeder
                 'ikan' => 's42',
                 'tipeikan' => 'fresh',
                 'harga' => null,
-                'gambar' => null
+                'gambar' => null,
+                'satuan_berat' => 'Kg'
             ],
             [
                 'user_id' => 3,
@@ -357,7 +399,8 @@ class InputMitraSeeder extends Seeder
                 'ikan' => 's43',
                 'tipeikan' => 'fresh',
                 'harga' => null,
-                'gambar' => null
+                'gambar' => null,
+                'satuan_berat' => 'Kg'
             ],
         ]);
     }

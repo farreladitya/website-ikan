@@ -59,7 +59,8 @@ class DashboardController extends Controller
             'tipeikan' => $request->tipeikan,
             'harga' => $request->harga,
             'berat' => $request->berat,
-            'gambar' => $nama_file
+            'gambar' => $nama_file,
+            'satuan_berat' => $request->satuan_berat
         ]);
 
 
@@ -72,30 +73,48 @@ class DashboardController extends Controller
         // mengambil data pegawai berdasarkan id yang dipilih
         $inputmitra = DB::table('input_mitra_tables')->where('id',$id)->get();
         $ikan= DB::table('ikan')->get();
+        $tipeikan = DB::table('tipeikan')->get();
         // passing data pegawai yang didapat ke view edit.blade.php
-        return view('inputmitra.edit',['input_mitra_tables' => $inputmitra, 'ikan'=>$ikan]);
+        return view('inputmitra.edit',['input_mitra_tables' => $inputmitra, 'ikan'=>$ikan, 'tipeikan' =>$tipeikan]);
 
     }
     // update data pegawai
     public function update(Request $request)
     {
-        $file = $request->file('gambar');
+        if($request->file('gambar')){
+            $file = $request->file('gambar');
 
 
-        $nama_file = time()."_".$file->getClientOriginalName();
+            $nama_file = time()."_".$file->getClientOriginalName();
+
+            // isi dengan nama folder tempat kemana file diupload
+            $tujuan_upload = 'gambar_ikan';
+            $file->move($tujuan_upload,$nama_file);
+        }
+
 
         // update data pegawai
-        DB::table('input_mitra_tables')->where('id',$request->id)->update([
-            'ikan' => $request->ikan,
-            'harga' => $request->harga,
-            'berat' => $request->berat,
-            'gambar' => $nama_file
-        ]);
+        if($request->file('gambar')){
+            DB::table('input_mitra_tables')->where('id',$request->id)->update([
+                'ikan' => $request->ikan,
+                'harga' => $request->harga,
+                'berat' => $request->berat,
+                'satuan_berat' => $request->satuan_berat,
+                'gambar' => $nama_file,
+                'tipeikan' => $request->tipeikan
+            ]);
+        }else{
+            DB::table('input_mitra_tables')->where('id',$request->id)->update([
+                'ikan' => $request->ikan,
+                'harga' => $request->harga,
+                'berat' => $request->berat,
+                'satuan_berat' => $request->satuan_berat,
+                'tipeikan' => $request->tipeikan
+            ]);
+        }
 
 
-        // isi dengan nama folder tempat kemana file diupload
-        $tujuan_upload = 'gambar_ikan';
-        $file->move($tujuan_upload,$nama_file);
+
         // alihkan halaman ke halaman pegawai
         return redirect('/dashboard/index');
     }

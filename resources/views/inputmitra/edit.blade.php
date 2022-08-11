@@ -40,12 +40,40 @@
         @endforeach
         </div>
         <div class="form-group mb-3">
-        <label class="form-label">Harga</label>
+            <label class="form-label">Tipe Ikan</label>
+            <select class="form-control" name="tipeikan" >
+                @foreach ($tipeikan as $t)
+                <option value="{{$t->tipe}}" @if ($i->tipeikan == $t->tipe)
+                    selected
+                @endif>{{$t->tipe}}</option>
+                @endforeach
+            </select>
+        </div>
+        <div class="form-group mb-3">
+        <label class="form-label">Harga (Rp/Satuan Berat)</label>
         <input type="text"  class="form-control" name="harga" value="{{$i->harga}}">
         </div>
         <div class="form-group mb-3">
-        <label class="form-label">Berat</label>
-        <input type="text" class="form-control"  name="berat" value="{{$i->berat}}">
+            <label class="form-label">Berat</label>
+        <div class="row">
+            <div class="col-9">
+
+                <input type="text"  class="form-control" name="berat" value="{{$i->berat}}">
+            </div>
+            <div class="col-3">
+                <select name="satuan_berat" id="satuan_berat">
+                    <option value="Kg" @if ($i->satuan_berat == 'Kg')
+                        selected
+                    @endif>Kg</option>
+                    <option value="Ons" @if ($i->satuan_berat == 'Ons')
+                        selected
+                    @endif>Ons</option>
+                    <option value="Gram" @if ($i->satuan_berat == 'Gram')
+                        selected
+                    @endif>Gram</option>
+                </select>
+            </div>
+        </div>
         </div>
         <div class="form-group mb-3">
         <label for="formFile" class="form-label">Gambar</label>

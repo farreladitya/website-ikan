@@ -66,7 +66,11 @@
             <div class="card"> <div class="container-gambar" style="aspect-ratio: 3/2;"><img class="card-img-top w-100 h-100" style="aspect-ratio: 3/2" @if ($i->gambar)
                 src="{{ url('/gambar_ikan/'.$i->gambar) }}"
                 @else
-                src="{{$i->url_gambar}}"
+                @foreach ($fotoikan as $f)
+                @if ($f->ikan_id == $i->ikan)
+                src="{{$f->url_gambar}}"
+                @endif
+                @endforeach
                 @endif></div>
                 <div class="card-body">
                     <h6 class="font-weight-bold pt-1">{{$i->nama_ikan}}</h6>

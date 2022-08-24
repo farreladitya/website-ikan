@@ -39,17 +39,6 @@
 
         })
 
-        var visitcount = localStorage.getItem("page_view");
-
-        if(visitcount){
-            visitcount = Number(visitcount) + 1;
-            localStorage.setItem("page_view", visitcount);
-        }else{
-            visitcount = 1;
-            localStorage.setItem("page_view", 1);
-        }
-
-        console.log("visit count = "+ visitcount);
     })
 </script>
 @endsection

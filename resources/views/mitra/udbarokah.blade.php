@@ -76,13 +76,17 @@
                     <h6 class="font-weight-bold pt-1">{{$i->nama_ikan}}</h6>
                     @if ($i->harga)
                     <div class="d-flex flex-column">
-                        <div class="h6 font-weight-bold">@if ($i->harga === 0)
+                        <div class="h6">@if ($i->harga === 0)
                             Harga Tidak Diketahui
                             @else
                             @php
-                            echo "Rp. " . number_format($i->harga,0,",",".",);
+                            echo "Rp. " . number_format($i->harga,0,",",".",) . "/". $i->satuan_berat;
                             @endphp
-                            @endif</div>
+                            @endif
+                        </div>
+                        <div class="h6">
+                            {{ $i->tipeikan }}
+                        </div>
                         </div>
                         @endif
                     </div>

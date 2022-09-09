@@ -65,10 +65,42 @@
 <div class="row">
     <div class="col-sm-5">
         <h1 class="font-weight-bold display-4 margincontainer" style="margin-top: 130px"> Ikan {{$i->nama_ikan}} </h1>
-        <h1 class="font-weight-bold margincontainer" style="margin-top: 30px; color: #96B7D6;"> @if (!$i->harga)
+        <h1 class="font-weight-bold margincontainer" style="margin-top: 30px; color: #96B7D6;"> @if (!$i->harga && $penjual == 0)
             Harga Belum Diketahui
+            @elseif ($i->harga && $ikanmitras->count() == 0)
+            Rp{{$i->harga}} / Kg
+            @elseif (!$i->harga && $ikanmitras->count() == 1)
+            @foreach ($ikanmitras as $ikanmitra)
+                @php
+                    $hargaikan = $ikanmitra->harga / $ikanmitra->berat;
+                    if($ikanmitra->satuan_berat == 'Ons'){
+                        $hargaikan *= 10;
+                    }elseif($ikanmitra->satuan_berat == 'Gram'){
+                        $hargaikan *= 1000;
+                    }
+                @endphp
+                RP{{ $hargaikan}} /Kg
+            @endforeach
             @else
-            Rp{{$i->harga}}
+            @php
+                $harga = [$i->harga];
+            @endphp
+            @foreach ($ikanmitras as $ikanmitra)
+            @php
+                    $hargaikanmitra = $ikanmitra->harga / (int)$ikanmitra->berat;
+                    if($ikanmitra->satuan_berat == 'Ons'){
+                        $hargaikanmitra *= 10;
+                    }elseif($ikanmitra->satuan_berat == 'Gram'){
+                        $hargaikanmitra *= 1000;
+                    }
+                    array_push($harga, $hargaikanmitra);
+            @endphp
+            @endforeach
+            @php
+                $hargaminimal = min($harga);
+                $hargamaksimal = max($harga);
+            @endphp
+            RP{{ $hargaminimal }} - {{ $hargamaksimal }} / Kg
             @endif
         </h1>
         <p style="font-size: 22px; color: #96B7D6;" class="margincontainer">@if ($i->berat_minimal == 0 && $i->berat_maksimal == 0)

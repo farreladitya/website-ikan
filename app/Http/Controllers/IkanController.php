@@ -85,8 +85,9 @@ class IkanController extends Controller
         $ikan = DB::table('ikan')->join('harga_ikan', 'harga_ikan.ikan_id', '=', 'ikan.ikan_id')->join('foto_ikan', 'foto_ikan.ikan_id', '=', 'ikan.ikan_id')->leftJoin('detail_ikan', 'detail_ikan.ikan_id', '=', 'ikan.ikan_id')->where('ikan.ikan_id', $idikan)->first();
 
         $penjual = DB::table('input_mitra_tables')->where('ikan', $idikan)->count();
+        $ikanmitra = DB::table('input_mitra_tables')->where('ikan', $idikan)->whereNotNull('berat')->get();
 
-        return view('kualitas.detailproduct', ['i'=>$ikan, 'penjual' => $penjual]);
+        return view('kualitas.detailproduct', ['i'=>$ikan, 'penjual' => $penjual, 'ikanmitras' => $ikanmitra]);
     }
 
     public function kualitas($id){
